@@ -1,0 +1,40 @@
+From 1cda076e3be0c15b038101e9817b0a01a9934e33 Mon Sep 17 00:00:00 2001
+From: Yiwen Li <detectivelyw@gmail.com>
+Date: Sat, 11 May 2019 14:38:42 -0400
+Subject: [PATCH 1/2] added kernel global variable in init/main.c
+
+---
+ init/main.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/init/main.c b/init/main.c
+index 2d355a6..92fdd6f 100644
+--- a/init/main.c
++++ b/init/main.c
+@@ -101,6 +101,9 @@ extern void init_IRQ(void);
+ extern void fork_init(void);
+ extern void radix_tree_init(void);
+ 
++extern int kernel_init_done = 0;
++EXPORT_SYMBOL(kernel_init_done);
++
+ /*
+  * Debug helper: via this flag we know that we are in 'early bootup code'
+  * where only the boot processor is running with IRQ disabled.  This means
+@@ -708,6 +711,7 @@ asmlinkage __visible void __init start_kernel(void)
+ 
+ 	/* Do the rest non-__init'ed, we're now alive */
+ 	rest_init();
++        kernel_init_done = 1;
+ }
+ 
+ /* Call all constructor functions linked into the kernel. */
+@@ -1095,4 +1099,5 @@ static noinline void __init kernel_init_freeable(void)
+ 
+ 	integrity_load_keys();
+ 	load_default_modules();
++        kernel_init_done = 1;
+ }
+-- 
+2.7.4
+

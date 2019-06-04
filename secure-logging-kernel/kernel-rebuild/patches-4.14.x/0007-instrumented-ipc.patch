@@ -1,0 +1,2920 @@
+From 2c0712622068082442e802b8eeb0968715bd4819 Mon Sep 17 00:00:00 2001
+From: Yiwen Li <detectivelyw@gmail.com>
+Date: Tue, 4 Jun 2019 15:04:09 -0400
+Subject: [PATCH 07/11] instrumented ipc.
+
+---
+ ipc/ipc_sysctl.c |   7 ++
+ ipc/mq_sysctl.c  |   4 ++
+ ipc/mqueue.c     |  83 +++++++++++++++++++++++
+ ipc/msg.c        |  40 +++++++++++
+ ipc/namespace.c  |   9 +++
+ ipc/sem.c        | 197 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ ipc/shm.c        | 126 +++++++++++++++++++++++++++++++++++
+ ipc/util.c       |  71 ++++++++++++++++++++
+ ipc/util.h       |   2 +
+ 9 files changed, 539 insertions(+)
+
+diff --git a/ipc/ipc_sysctl.c b/ipc/ipc_sysctl.c
+index 8ad93c2..c4e5b70 100644
+--- a/ipc/ipc_sysctl.c
++++ b/ipc/ipc_sysctl.c
+@@ -1,3 +1,5 @@
++extern int kernel_init_done;
++int printk(const char *fmt, ...);
+ /*
+  *  Copyright (C) 2007
+  *
+@@ -32,6 +34,7 @@ static int proc_ipc_dointvec(struct ctl_table *table, int write,
+ {
+ 	struct ctl_table ipc_table;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	memcpy(&ipc_table, table, sizeof(ipc_table));
+ 	ipc_table.data = get_ipc(table);
+ 
+@@ -43,6 +46,7 @@ static int proc_ipc_dointvec_minmax(struct ctl_table *table, int write,
+ {
+ 	struct ctl_table ipc_table;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	memcpy(&ipc_table, table, sizeof(ipc_table));
+ 	ipc_table.data = get_ipc(table);
+ 
+@@ -52,6 +56,7 @@ static int proc_ipc_dointvec_minmax(struct ctl_table *table, int write,
+ static int proc_ipc_dointvec_minmax_orphans(struct ctl_table *table, int write,
+ 	void __user *buffer, size_t *lenp, loff_t *ppos)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	struct ipc_namespace *ns = current->nsproxy->ipc_ns;
+ 	int err = proc_ipc_dointvec_minmax(table, write, buffer, lenp, ppos);
+ 
+@@ -66,6 +71,7 @@ static int proc_ipc_doulongvec_minmax(struct ctl_table *table, int write,
+ 	void __user *buffer, size_t *lenp, loff_t *ppos)
+ {
+ 	struct ctl_table ipc_table;
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	memcpy(&ipc_table, table, sizeof(ipc_table));
+ 	ipc_table.data = get_ipc(table);
+ 
+@@ -79,6 +85,7 @@ static int proc_ipc_auto_msgmni(struct ctl_table *table, int write,
+ 	struct ctl_table ipc_table;
+ 	int dummy = 0;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	memcpy(&ipc_table, table, sizeof(ipc_table));
+ 	ipc_table.data = &dummy;
+ 
+diff --git a/ipc/mq_sysctl.c b/ipc/mq_sysctl.c
+index 68d4e95..8425bad 100644
+--- a/ipc/mq_sysctl.c
++++ b/ipc/mq_sysctl.c
+@@ -1,3 +1,5 @@
++extern int kernel_init_done;
++int printk(const char *fmt, ...);
+ /*
+  *  Copyright (C) 2007 IBM Corporation
+  *
+@@ -26,6 +28,7 @@ static int proc_mq_dointvec(struct ctl_table *table, int write,
+ 			    void __user *buffer, size_t *lenp, loff_t *ppos)
+ {
+ 	struct ctl_table mq_table;
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	memcpy(&mq_table, table, sizeof(mq_table));
+ 	mq_table.data = get_mq(table);
+ 
+@@ -36,6 +39,7 @@ static int proc_mq_dointvec_minmax(struct ctl_table *table, int write,
+ 	void __user *buffer, size_t *lenp, loff_t *ppos)
+ {
+ 	struct ctl_table mq_table;
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	memcpy(&mq_table, table, sizeof(mq_table));
+ 	mq_table.data = get_mq(table);
+ 
+diff --git a/ipc/mqueue.c b/ipc/mqueue.c
+index d240256..1254624 100644
+--- a/ipc/mqueue.c
++++ b/ipc/mqueue.c
+@@ -1,3 +1,5 @@
++extern int kernel_init_done;
++int printk(const char *fmt, ...);
+ /*
+  * POSIX message queues filesystem for Linux.
+  *
+@@ -106,6 +108,7 @@ static inline struct mqueue_inode_info *MQUEUE_I(struct inode *inode)
+  */
+ static inline struct ipc_namespace *__get_ns_from_inode(struct inode *inode)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	return get_ipc_ns(inode->i_sb->s_fs_info);
+ }
+ 
+@@ -126,6 +129,7 @@ static int msg_insert(struct msg_msg *msg, struct mqueue_inode_info *info)
+ 	struct posix_msg_tree_node *leaf;
+ 
+ 	p = &info->msg_tree.rb_node;
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	while (*p) {
+ 		parent = *p;
+ 		leaf = rb_entry(parent, struct posix_msg_tree_node, rb_node);
+@@ -238,8 +242,11 @@ static struct inode *mqueue_get_inode(struct super_block *sb,
+ 		inode->i_size = FILENT_SIZE;
+ 		/* mqueue specific info */
+ 		info = MQUEUE_I(inode);
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		spin_lock_init(&info->lock);
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		init_waitqueue_head(&info->wait_q);
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		INIT_LIST_HEAD(&info->e_wait_q[0].list);
+ 		INIT_LIST_HEAD(&info->e_wait_q[1].list);
+ 		info->notify_owner = NULL;
+@@ -249,11 +256,14 @@ static struct inode *mqueue_get_inode(struct super_block *sb,
+ 		info->msg_tree = RB_ROOT;
+ 		info->node_cache = NULL;
+ 		memset(&info->attr, 0, sizeof(info->attr));
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		info->attr.mq_maxmsg = min(ipc_ns->mq_msg_max,
+ 					   ipc_ns->mq_msg_default);
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		info->attr.mq_msgsize = min(ipc_ns->mq_msgsize_max,
+ 					    ipc_ns->mq_msgsize_default);
+ 		if (attr) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			info->attr.mq_maxmsg = attr->mq_maxmsg;
+ 			info->attr.mq_msgsize = attr->mq_msgsize;
+ 		}
+@@ -280,11 +290,13 @@ static struct inode *mqueue_get_inode(struct super_block *sb,
+ 		spin_lock(&mq_lock);
+ 		if (u->mq_bytes + mq_bytes < u->mq_bytes ||
+ 		    u->mq_bytes + mq_bytes > rlimit(RLIMIT_MSGQUEUE)) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			spin_unlock(&mq_lock);
+ 			/* mqueue_evict_inode() releases info->messages */
+ 			ret = -EMFILE;
+ 			goto out_inode;
+ 		}
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		u->mq_bytes += mq_bytes;
+ 		spin_unlock(&mq_lock);
+ 
+@@ -298,6 +310,7 @@ static struct inode *mqueue_get_inode(struct super_block *sb,
+ 		inode->i_fop = &simple_dir_operations;
+ 	}
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	return inode;
+ out_inode:
+ 	iput(inode);
+@@ -318,11 +331,15 @@ static int mqueue_fill_super(struct super_block *sb, void *data, int silent)
+ 
+ 	inode = mqueue_get_inode(sb, ns, S_IFDIR | S_ISVTX | S_IRWXUGO, NULL);
+ 	if (IS_ERR(inode))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return PTR_ERR(inode);
++}
+ 
+ 	sb->s_root = d_make_root(inode);
+ 	if (!sb->s_root)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return -ENOMEM;
++}
+ 	return 0;
+ }
+ 
+@@ -332,6 +349,7 @@ static struct dentry *mqueue_mount(struct file_system_type *fs_type,
+ {
+ 	struct ipc_namespace *ns;
+ 	if (flags & MS_KERNMOUNT) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		ns = data;
+ 		data = NULL;
+ 	} else {
+@@ -353,12 +371,15 @@ static struct inode *mqueue_alloc_inode(struct super_block *sb)
+ 
+ 	ei = kmem_cache_alloc(mqueue_inode_cachep, GFP_KERNEL);
+ 	if (!ei)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return NULL;
++}
+ 	return &ei->vfs_inode;
+ }
+ 
+ static void mqueue_i_callback(struct rcu_head *head)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	struct inode *inode = container_of(head, struct inode, i_rcu);
+ 	kmem_cache_free(mqueue_inode_cachep, MQUEUE_I(inode));
+ }
+@@ -379,13 +400,18 @@ static void mqueue_evict_inode(struct inode *inode)
+ 	clear_inode(inode);
+ 
+ 	if (S_ISDIR(inode->i_mode))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return;
++}
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	ipc_ns = get_ns_from_inode(inode);
+ 	info = MQUEUE_I(inode);
+ 	spin_lock(&info->lock);
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	while ((msg = msg_get(info)) != NULL)
+ 		free_msg(msg);
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	kfree(info->node_cache);
+ 	spin_unlock(&info->lock);
+ 
+@@ -399,6 +425,7 @@ static void mqueue_evict_inode(struct inode *inode)
+ 
+ 	user = info->user;
+ 	if (user) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		spin_lock(&mq_lock);
+ 		user->mq_bytes -= mq_bytes;
+ 		/*
+@@ -408,13 +435,19 @@ static void mqueue_evict_inode(struct inode *inode)
+ 		 * We can't put it here under mq_lock, though.
+ 		 */
+ 		if (ipc_ns)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			ipc_ns->mq_queues_count--;
++}
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		spin_unlock(&mq_lock);
+ 		free_uid(user);
+ 	}
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	if (ipc_ns)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		put_ipc_ns(ipc_ns);
+ }
++}
+ 
+ static int mqueue_create(struct inode *dir, struct dentry *dentry,
+ 				umode_t mode, bool excl)
+@@ -427,6 +460,7 @@ static int mqueue_create(struct inode *dir, struct dentry *dentry,
+ 	spin_lock(&mq_lock);
+ 	ipc_ns = __get_ns_from_inode(dir);
+ 	if (!ipc_ns) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		error = -EACCES;
+ 		goto out_unlock;
+ 	}
+@@ -463,6 +497,7 @@ static int mqueue_create(struct inode *dir, struct dentry *dentry,
+ 
+ static int mqueue_unlink(struct inode *dir, struct dentry *dentry)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	struct inode *inode = d_inode(dentry);
+ 
+ 	dir->i_ctime = dir->i_mtime = dir->i_atime = current_time(dir);
+@@ -482,6 +517,7 @@ static int mqueue_unlink(struct inode *dir, struct dentry *dentry)
+ static ssize_t mqueue_read_file(struct file *filp, char __user *u_data,
+ 				size_t count, loff_t *off)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	struct mqueue_inode_info *info = MQUEUE_I(file_inode(filp));
+ 	char buffer[FILENT_SIZE];
+ 	ssize_t ret;
+@@ -509,6 +545,7 @@ static ssize_t mqueue_read_file(struct file *filp, char __user *u_data,
+ 
+ static int mqueue_flush_file(struct file *filp, fl_owner_t id)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	struct mqueue_inode_info *info = MQUEUE_I(file_inode(filp));
+ 
+ 	spin_lock(&info->lock);
+@@ -521,6 +558,7 @@ static int mqueue_flush_file(struct file *filp, fl_owner_t id)
+ 
+ static unsigned int mqueue_poll_file(struct file *filp, struct poll_table_struct *poll_tab)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	struct mqueue_inode_info *info = MQUEUE_I(file_inode(filp));
+ 	int retval = 0;
+ 
+@@ -545,6 +583,7 @@ static void wq_add(struct mqueue_inode_info *info, int sr,
+ 
+ 	ewp->task = current;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	list_for_each_entry(walk, &info->e_wait_q[sr].list, list) {
+ 		if (walk->task->static_prio <= current->static_prio) {
+ 			list_add_tail(&ewp->list, &walk->list);
+@@ -569,6 +608,7 @@ static int wq_sleep(struct mqueue_inode_info *info, int sr,
+ 	wq_add(info, sr, ewp);
+ 
+ 	for (;;) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		__set_current_state(TASK_INTERRUPTIBLE);
+ 
+ 		spin_unlock(&info->lock);
+@@ -610,13 +650,16 @@ static struct ext_wait_queue *wq_get_first_waiter(
+ 
+ 	ptr = info->e_wait_q[sr].list.prev;
+ 	if (ptr == &info->e_wait_q[sr].list)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return NULL;
++}
+ 	return list_entry(ptr, struct ext_wait_queue, list);
+ }
+ 
+ 
+ static inline void set_cookie(struct sk_buff *skb, char code)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	((char *)skb->data)[NOTIFY_COOKIE_LEN-1] = code;
+ }
+ 
+@@ -670,6 +713,7 @@ static void __do_notify(struct mqueue_inode_info *info)
+ static int prepare_timeout(const struct timespec __user *u_abs_timeout,
+ 			   struct timespec64 *ts)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	if (get_timespec64(ts, u_abs_timeout))
+ 		return -EFAULT;
+ 	if (!timespec64_valid(ts))
+@@ -679,6 +723,7 @@ static int prepare_timeout(const struct timespec __user *u_abs_timeout,
+ 
+ static void remove_notification(struct mqueue_inode_info *info)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	if (info->notify_owner != NULL &&
+ 	    info->notify.sigev_notify == SIGEV_THREAD) {
+ 		set_cookie(info->notify_cookie, NOTIFY_REMOVED);
+@@ -695,6 +740,7 @@ static int mq_attr_ok(struct ipc_namespace *ipc_ns, struct mq_attr *attr)
+ 	int mq_treesize;
+ 	unsigned long total_size;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	if (attr->mq_maxmsg <= 0 || attr->mq_msgsize <= 0)
+ 		return -EINVAL;
+ 	if (capable(CAP_SYS_RESOURCE)) {
+@@ -725,6 +771,7 @@ static struct file *do_create(struct ipc_namespace *ipc_ns, struct inode *dir,
+ 			struct path *path, int oflag, umode_t mode,
+ 			struct mq_attr *attr)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	const struct cred *cred = current_cred();
+ 	int ret;
+ 
+@@ -761,7 +808,9 @@ static struct file *do_open(struct path *path, int oflag)
+ 						  MAY_READ | MAY_WRITE };
+ 	int acc;
+ 	if ((oflag & O_ACCMODE) == (O_RDWR | O_WRONLY))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return ERR_PTR(-EINVAL);
++}
+ 	acc = oflag2acc[oflag & O_ACCMODE];
+ 	if (inode_permission(d_inode(path->dentry), acc))
+ 		return ERR_PTR(-EACCES);
+@@ -783,7 +832,9 @@ static int do_mq_open(const char __user *u_name, int oflag, umode_t mode,
+ 	audit_mq_open(oflag, mode, attr);
+ 
+ 	if (IS_ERR(name = getname(u_name)))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return PTR_ERR(name);
++}
+ 
+ 	fd = get_unused_fd_flags(O_CLOEXEC);
+ 	if (fd < 0)
+@@ -848,6 +899,7 @@ SYSCALL_DEFINE4(mq_open, const char __user *, u_name, int, oflag, umode_t, mode,
+ 		struct mq_attr __user *, u_attr)
+ {
+ 	struct mq_attr attr;
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	if (u_attr && copy_from_user(&attr, u_attr, sizeof(struct mq_attr)))
+ 		return -EFAULT;
+ 
+@@ -865,7 +917,9 @@ SYSCALL_DEFINE1(mq_unlink, const char __user *, u_name)
+ 
+ 	name = getname(u_name);
+ 	if (IS_ERR(name))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return PTR_ERR(name);
++}
+ 
+ 	audit_inode_parent_hidden(name, mnt->mnt_root);
+ 	err = mnt_want_write(mnt);
+@@ -926,6 +980,7 @@ static inline void pipelined_send(struct wake_q_head *wake_q,
+ 				  struct msg_msg *message,
+ 				  struct ext_wait_queue *receiver)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	receiver->msg = message;
+ 	list_del(&receiver->list);
+ 	wake_q_add(wake_q, receiver->task);
+@@ -945,6 +1000,7 @@ static inline void pipelined_send(struct wake_q_head *wake_q,
+ static inline void pipelined_receive(struct wake_q_head *wake_q,
+ 				     struct mqueue_inode_info *info)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	struct ext_wait_queue *sender = wq_get_first_waiter(info, SEND);
+ 
+ 	if (!sender) {
+@@ -976,7 +1032,9 @@ static int do_mq_timedsend(mqd_t mqdes, const char __user *u_msg_ptr,
+ 	DEFINE_WAKE_Q(wake_q);
+ 
+ 	if (unlikely(msg_prio >= (unsigned long) MQ_PRIO_MAX))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return -EINVAL;
++}
+ 
+ 	if (ts) {
+ 		expires = timespec64_to_ktime(*ts);
+@@ -1092,6 +1150,7 @@ static int do_mq_timedreceive(mqd_t mqdes, char __user *u_msg_ptr,
+ 	struct posix_msg_tree_node *new_leaf = NULL;
+ 
+ 	if (ts) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		expires = timespec64_to_ktime(*ts);
+ 		timeout = &expires;
+ 	}
+@@ -1186,6 +1245,7 @@ SYSCALL_DEFINE5(mq_timedsend, mqd_t, mqdes, const char __user *, u_msg_ptr,
+ {
+ 	struct timespec64 ts, *p = NULL;
+ 	if (u_abs_timeout) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		int res = prepare_timeout(u_abs_timeout, &ts);
+ 		if (res)
+ 			return res;
+@@ -1200,6 +1260,7 @@ SYSCALL_DEFINE5(mq_timedreceive, mqd_t, mqdes, char __user *, u_msg_ptr,
+ {
+ 	struct timespec64 ts, *p = NULL;
+ 	if (u_abs_timeout) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		int res = prepare_timeout(u_abs_timeout, &ts);
+ 		if (res)
+ 			return res;
+@@ -1227,6 +1288,7 @@ static int do_mq_notify(mqd_t mqdes, const struct sigevent *notification)
+ 	nc = NULL;
+ 	sock = NULL;
+ 	if (notification != NULL) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		if (unlikely(notification->sigev_notify != SIGEV_NONE &&
+ 			     notification->sigev_notify != SIGEV_SIGNAL &&
+ 			     notification->sigev_notify != SIGEV_THREAD))
+@@ -1344,6 +1406,7 @@ SYSCALL_DEFINE2(mq_notify, mqd_t, mqdes,
+ {
+ 	struct sigevent n, *p = NULL;
+ 	if (u_notification) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		if (copy_from_user(&n, u_notification, sizeof(struct sigevent)))
+ 			return -EFAULT;
+ 		p = &n;
+@@ -1357,6 +1420,7 @@ static int do_mq_getsetattr(int mqdes, struct mq_attr *new, struct mq_attr *old)
+ 	struct inode *inode;
+ 	struct mqueue_inode_info *info;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	if (new && (new->mq_flags & (~O_NONBLOCK)))
+ 		return -EINVAL;
+ 
+@@ -1404,6 +1468,7 @@ SYSCALL_DEFINE3(mq_getsetattr, mqd_t, mqdes,
+ 	struct mq_attr *new = NULL, *old = NULL;
+ 
+ 	if (u_mqstat) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		new = &mqstat;
+ 		if (copy_from_user(new, u_mqstat, sizeof(struct mq_attr)))
+ 			return -EFAULT;
+@@ -1436,7 +1501,9 @@ static inline int get_compat_mq_attr(struct mq_attr *attr,
+ 	struct compat_mq_attr v;
+ 
+ 	if (copy_from_user(&v, uattr, sizeof(*uattr)))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return -EFAULT;
++}
+ 
+ 	memset(attr, 0, sizeof(*attr));
+ 	attr->mq_flags = v.mq_flags;
+@@ -1457,7 +1524,9 @@ static inline int put_compat_mq_attr(const struct mq_attr *attr,
+ 	v.mq_msgsize = attr->mq_msgsize;
+ 	v.mq_curmsgs = attr->mq_curmsgs;
+ 	if (copy_to_user(uattr, &v, sizeof(*uattr)))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return -EFAULT;
++}
+ 	return 0;
+ }
+ 
+@@ -1466,6 +1535,7 @@ COMPAT_SYSCALL_DEFINE4(mq_open, const char __user *, u_name,
+ 		       struct compat_mq_attr __user *, u_attr)
+ {
+ 	struct mq_attr attr, *p = NULL;
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	if (u_attr && oflag & O_CREAT) {
+ 		p = &attr;
+ 		if (get_compat_mq_attr(&attr, u_attr))
+@@ -1477,6 +1547,7 @@ COMPAT_SYSCALL_DEFINE4(mq_open, const char __user *, u_name,
+ static int compat_prepare_timeout(const struct compat_timespec __user *p,
+ 				   struct timespec64 *ts)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	if (compat_get_timespec64(ts, p))
+ 		return -EFAULT;
+ 	if (!timespec64_valid(ts))
+@@ -1491,6 +1562,7 @@ COMPAT_SYSCALL_DEFINE5(mq_timedsend, mqd_t, mqdes,
+ {
+ 	struct timespec64 ts, *p = NULL;
+ 	if (u_abs_timeout) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		int res = compat_prepare_timeout(u_abs_timeout, &ts);
+ 		if (res)
+ 			return res;
+@@ -1506,6 +1578,7 @@ COMPAT_SYSCALL_DEFINE5(mq_timedreceive, mqd_t, mqdes,
+ {
+ 	struct timespec64 ts, *p = NULL;
+ 	if (u_abs_timeout) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		int res = compat_prepare_timeout(u_abs_timeout, &ts);
+ 		if (res)
+ 			return res;
+@@ -1519,6 +1592,7 @@ COMPAT_SYSCALL_DEFINE2(mq_notify, mqd_t, mqdes,
+ {
+ 	struct sigevent n, *p = NULL;
+ 	if (u_notification) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		if (get_compat_sigevent(&n, u_notification))
+ 			return -EFAULT;
+ 		if (n.sigev_notify == SIGEV_THREAD)
+@@ -1537,6 +1611,7 @@ COMPAT_SYSCALL_DEFINE3(mq_getsetattr, mqd_t, mqdes,
+ 	struct mq_attr *new = NULL, *old = NULL;
+ 
+ 	if (u_mqstat) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		new = &mqstat;
+ 		if (get_compat_mq_attr(new, u_mqstat))
+ 			return -EFAULT;
+@@ -1592,10 +1667,12 @@ int mq_init_ns(struct ipc_namespace *ns)
+ 
+ 	ns->mq_mnt = kern_mount_data(&mqueue_fs_type, ns);
+ 	if (IS_ERR(ns->mq_mnt)) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		int err = PTR_ERR(ns->mq_mnt);
+ 		ns->mq_mnt = NULL;
+ 		return err;
+ 	}
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	return 0;
+ }
+ 
+@@ -1617,7 +1694,9 @@ static int __init init_mqueue_fs(void)
+ 				sizeof(struct mqueue_inode_info), 0,
+ 				SLAB_HWCACHE_ALIGN|SLAB_ACCOUNT, init_once);
+ 	if (mqueue_inode_cachep == NULL)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return -ENOMEM;
++}
+ 
+ 	/* ignore failures - they are not fatal */
+ 	mq_sysctl_table = mq_register_sysctl_table();
+@@ -1632,13 +1711,17 @@ static int __init init_mqueue_fs(void)
+ 	if (error)
+ 		goto out_filesystem;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	return 0;
+ 
+ out_filesystem:
+ 	unregister_filesystem(&mqueue_fs_type);
+ out_sysctl:
+ 	if (mq_sysctl_table)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		unregister_sysctl_table(mq_sysctl_table);
++}
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	kmem_cache_destroy(mqueue_inode_cachep);
+ 	return error;
+ }
+diff --git a/ipc/msg.c b/ipc/msg.c
+index bce7ac1..7bc3a91 100644
+--- a/ipc/msg.c
++++ b/ipc/msg.c
+@@ -1,3 +1,5 @@
++extern int kernel_init_done;
++int printk(const char *fmt, ...);
+ // SPDX-License-Identifier: GPL-2.0
+ /*
+  * linux/ipc/msg.c
+@@ -72,6 +74,7 @@ struct msg_sender {
+ 
+ static inline struct msg_queue *msq_obtain_object(struct ipc_namespace *ns, int id)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	struct kern_ipc_perm *ipcp = ipc_obtain_object_idr(&msg_ids(ns), id);
+ 
+ 	if (IS_ERR(ipcp))
+@@ -83,6 +86,7 @@ static inline struct msg_queue *msq_obtain_object(struct ipc_namespace *ns, int
+ static inline struct msg_queue *msq_obtain_object_check(struct ipc_namespace *ns,
+ 							int id)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	struct kern_ipc_perm *ipcp = ipc_obtain_object_check(&msg_ids(ns), id);
+ 
+ 	if (IS_ERR(ipcp))
+@@ -93,11 +97,13 @@ static inline struct msg_queue *msq_obtain_object_check(struct ipc_namespace *ns
+ 
+ static inline void msg_rmid(struct ipc_namespace *ns, struct msg_queue *s)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	ipc_rmid(&msg_ids(ns), &s->q_perm);
+ }
+ 
+ static void msg_rcu_free(struct rcu_head *head)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	struct kern_ipc_perm *p = container_of(head, struct kern_ipc_perm, rcu);
+ 	struct msg_queue *msq = container_of(p, struct msg_queue, q_perm);
+ 
+@@ -121,7 +127,9 @@ static int newque(struct ipc_namespace *ns, struct ipc_params *params)
+ 
+ 	msq = kvmalloc(sizeof(*msq), GFP_KERNEL);
+ 	if (unlikely(!msq))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return -ENOMEM;
++}
+ 
+ 	msq->q_perm.mode = msgflg & S_IRWXUGO;
+ 	msq->q_perm.key = key;
+@@ -157,6 +165,7 @@ static int newque(struct ipc_namespace *ns, struct ipc_params *params)
+ 
+ static inline bool msg_fits_inqueue(struct msg_queue *msq, size_t msgsz)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	return msgsz + msq->q_cbytes <= msq->q_qbytes &&
+ 		1 + msq->q_qnum <= msq->q_qbytes;
+ }
+@@ -164,6 +173,7 @@ static inline bool msg_fits_inqueue(struct msg_queue *msq, size_t msgsz)
+ static inline void ss_add(struct msg_queue *msq,
+ 			  struct msg_sender *mss, size_t msgsz)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	mss->tsk = current;
+ 	mss->msgsz = msgsz;
+ 	__set_current_state(TASK_INTERRUPTIBLE);
+@@ -172,6 +182,7 @@ static inline void ss_add(struct msg_queue *msq,
+ 
+ static inline void ss_del(struct msg_sender *mss)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	if (mss->list.next)
+ 		list_del(&mss->list);
+ }
+@@ -183,6 +194,7 @@ static void ss_wakeup(struct msg_queue *msq,
+ 	struct task_struct *stop_tsk = NULL;
+ 	struct list_head *h = &msq->q_senders;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	list_for_each_entry_safe(mss, t, h, list) {
+ 		if (kill)
+ 			mss->list.next = NULL;
+@@ -218,6 +230,7 @@ static void expunge_all(struct msg_queue *msq, int res,
+ {
+ 	struct msg_receiver *msr, *t;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	list_for_each_entry_safe(msr, t, &msq->q_receivers, r_list) {
+ 		wake_q_add(wake_q, msr->r_tsk);
+ 		WRITE_ONCE(msr->r_msg, ERR_PTR(res));
+@@ -235,6 +248,7 @@ static void expunge_all(struct msg_queue *msq, int res,
+ static void freeque(struct ipc_namespace *ns, struct kern_ipc_perm *ipcp)
+ {
+ 	struct msg_msg *msg, *t;
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	struct msg_queue *msq = container_of(ipcp, struct msg_queue, q_perm);
+ 	DEFINE_WAKE_Q(wake_q);
+ 
+@@ -258,6 +272,7 @@ static void freeque(struct ipc_namespace *ns, struct kern_ipc_perm *ipcp)
+  */
+ static inline int msg_security(struct kern_ipc_perm *ipcp, int msgflg)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	struct msg_queue *msq = container_of(ipcp, struct msg_queue, q_perm);
+ 
+ 	return security_msg_queue_associate(msq, msgflg);
+@@ -283,6 +298,7 @@ SYSCALL_DEFINE2(msgget, key_t, key, int, msgflg)
+ static inline unsigned long
+ copy_msqid_to_user(void __user *buf, struct msqid64_ds *in, int version)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	switch (version) {
+ 	case IPC_64:
+ 		return copy_to_user(buf, in, sizeof(*in));
+@@ -328,6 +344,7 @@ copy_msqid_to_user(void __user *buf, struct msqid64_ds *in, int version)
+ static inline unsigned long
+ copy_msqid_from_user(struct msqid64_ds *out, void __user *buf, int version)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	switch (version) {
+ 	case IPC_64:
+ 		if (copy_from_user(out, buf, sizeof(*out)))
+@@ -374,6 +391,7 @@ static int msgctl_down(struct ipc_namespace *ns, int msqid, int cmd,
+ 	ipcp = ipcctl_pre_down_nolock(ns, &msg_ids(ns), msqid, cmd,
+ 				      &msqid64->msg_perm, msqid64->msg_qbytes);
+ 	if (IS_ERR(ipcp)) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		err = PTR_ERR(ipcp);
+ 		goto out_unlock1;
+ 	}
+@@ -450,7 +468,9 @@ static int msgctl_info(struct ipc_namespace *ns, int msqid,
+ 	 */
+ 	err = security_msg_queue_msgctl(NULL, cmd);
+ 	if (err)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return err;
++}
+ 
+ 	memset(msginfo, 0, sizeof(*msginfo));
+ 	msginfo->msgmni = ns->msg_ctlmni;
+@@ -484,6 +504,7 @@ static int msgctl_stat(struct ipc_namespace *ns, int msqid,
+ 
+ 	rcu_read_lock();
+ 	if (cmd == MSG_STAT) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		msq = msq_obtain_object(ns, msqid);
+ 		if (IS_ERR(msq)) {
+ 			err = PTR_ERR(msq);
+@@ -532,6 +553,7 @@ SYSCALL_DEFINE3(msgctl, int, msqid, int, cmd, struct msqid_ds __user *, buf)
+ 	struct msqid64_ds msqid64;
+ 	int err;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	if (msqid < 0 || cmd < 0)
+ 		return -EINVAL;
+ 
+@@ -589,6 +611,7 @@ struct compat_msqid_ds {
+ static int copy_compat_msqid_from_user(struct msqid64_ds *out, void __user *buf,
+ 					int version)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	memset(out, 0, sizeof(*out));
+ 	if (version == IPC_64) {
+ 		struct compat_msqid64_ds *p = buf;
+@@ -609,6 +632,7 @@ static int copy_compat_msqid_from_user(struct msqid64_ds *out, void __user *buf,
+ static int copy_compat_msqid_to_user(void __user *buf, struct msqid64_ds *in,
+ 					int version)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	if (version == IPC_64) {
+ 		struct compat_msqid64_ds v;
+ 		memset(&v, 0, sizeof(v));
+@@ -647,6 +671,7 @@ COMPAT_SYSCALL_DEFINE3(msgctl, int, msqid, int, cmd, void __user *, uptr)
+ 
+ 	ns = current->nsproxy->ipc_ns;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	if (msqid < 0 || cmd < 0)
+ 		return -EINVAL;
+ 
+@@ -683,6 +708,7 @@ COMPAT_SYSCALL_DEFINE3(msgctl, int, msqid, int, cmd, void __user *, uptr)
+ 
+ static int testmsg(struct msg_msg *msg, long type, int mode)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	switch (mode) {
+ 	case SEARCH_ANY:
+ 	case SEARCH_NUMBER:
+@@ -708,6 +734,7 @@ static inline int pipelined_send(struct msg_queue *msq, struct msg_msg *msg,
+ {
+ 	struct msg_receiver *msr, *t;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	list_for_each_entry_safe(msr, t, &msq->q_receivers, r_list) {
+ 		if (testmsg(msg, msr->r_msgtype, msr->r_mode) &&
+ 		    !security_msg_queue_msgrcv(msq, msg, msr->r_tsk,
+@@ -742,6 +769,7 @@ static long do_msgsnd(int msqid, long mtype, void __user *mtext,
+ 
+ 	ns = current->nsproxy->ipc_ns;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	if (msgsz > ns->msg_ctlmax || (long) msgsz < 0 || msqid < 0)
+ 		return -EINVAL;
+ 	if (mtype < 1)
+@@ -850,7 +878,9 @@ SYSCALL_DEFINE4(msgsnd, int, msqid, struct msgbuf __user *, msgp, size_t, msgsz,
+ 	long mtype;
+ 
+ 	if (get_user(mtype, &msgp->mtype))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return -EFAULT;
++}
+ 	return do_msgsnd(msqid, mtype, msgp->mtext, msgsz, msgflg);
+ }
+ 
+@@ -864,6 +894,7 @@ struct compat_msgbuf {
+ COMPAT_SYSCALL_DEFINE4(msgsnd, int, msqid, compat_uptr_t, msgp,
+ 		       compat_ssize_t, msgsz, int, msgflg)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	struct compat_msgbuf __user *up = compat_ptr(msgp);
+ 	compat_long_t mtype;
+ 
+@@ -875,6 +906,7 @@ COMPAT_SYSCALL_DEFINE4(msgsnd, int, msqid, compat_uptr_t, msgp,
+ 
+ static inline int convert_mode(long *msgtyp, int msgflg)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	if (msgflg & MSG_COPY)
+ 		return SEARCH_NUMBER;
+ 	/*
+@@ -902,6 +934,7 @@ static long do_msg_fill(void __user *dest, struct msg_msg *msg, size_t bufsz)
+ 	struct msgbuf __user *msgp = dest;
+ 	size_t msgsz;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	if (put_user(msg->m_type, &msgp->mtype))
+ 		return -EFAULT;
+ 
+@@ -937,6 +970,7 @@ static inline void free_copy(struct msg_msg *copy)
+ #else
+ static inline struct msg_msg *prepare_copy(void __user *buf, size_t bufsz)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	return ERR_PTR(-ENOSYS);
+ }
+ 
+@@ -950,6 +984,7 @@ static struct msg_msg *find_msg(struct msg_queue *msq, long *msgtyp, int mode)
+ 	struct msg_msg *msg, *found = NULL;
+ 	long count = 0;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	list_for_each_entry(msg, &msq->q_messages, m_list) {
+ 		if (testmsg(msg, *msgtyp, mode) &&
+ 		    !security_msg_queue_msgrcv(msq, msg, current,
+@@ -980,6 +1015,7 @@ static long do_msgrcv(int msqid, void __user *buf, size_t bufsz, long msgtyp, in
+ 
+ 	ns = current->nsproxy->ipc_ns;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	if (msqid < 0 || (long) bufsz < 0)
+ 		return -EINVAL;
+ 
+@@ -1130,6 +1166,7 @@ static long do_msgrcv(int msqid, void __user *buf, size_t bufsz, long msgtyp, in
+ SYSCALL_DEFINE5(msgrcv, int, msqid, struct msgbuf __user *, msgp, size_t, msgsz,
+ 		long, msgtyp, int, msgflg)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	return do_msgrcv(msqid, msgp, msgsz, msgtyp, msgflg, do_msg_fill);
+ }
+ 
+@@ -1139,6 +1176,7 @@ static long compat_do_msg_fill(void __user *dest, struct msg_msg *msg, size_t bu
+ 	struct compat_msgbuf __user *msgp = dest;
+ 	size_t msgsz;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	if (put_user(msg->m_type, &msgp->mtype))
+ 		return -EFAULT;
+ 
+@@ -1151,6 +1189,7 @@ static long compat_do_msg_fill(void __user *dest, struct msg_msg *msg, size_t bu
+ COMPAT_SYSCALL_DEFINE5(msgrcv, int, msqid, compat_uptr_t, msgp,
+ 		       compat_ssize_t, msgsz, compat_long_t, msgtyp, int, msgflg)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	return do_msgrcv(msqid, compat_ptr(msgp), (ssize_t)msgsz, (long)msgtyp,
+ 			 msgflg, compat_do_msg_fill);
+ }
+@@ -1179,6 +1218,7 @@ void msg_exit_ns(struct ipc_namespace *ns)
+ #ifdef CONFIG_PROC_FS
+ static int sysvipc_msg_proc_show(struct seq_file *s, void *it)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	struct user_namespace *user_ns = seq_user_ns(s);
+ 	struct kern_ipc_perm *ipcp = it;
+ 	struct msg_queue *msq = container_of(ipcp, struct msg_queue, q_perm);
+diff --git a/ipc/namespace.c b/ipc/namespace.c
+index f59a899..128545d 100644
+--- a/ipc/namespace.c
++++ b/ipc/namespace.c
+@@ -1,3 +1,5 @@
++extern int kernel_init_done;
++int printk(const char *fmt, ...);
+ // SPDX-License-Identifier: GPL-2.0
+ /*
+  * linux/ipc/namespace.c
+@@ -41,6 +43,7 @@ static struct ipc_namespace *create_ipc_ns(struct user_namespace *user_ns,
+ 	if (!ucounts)
+ 		goto fail;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	err = -ENOMEM;
+ 	ns = kmalloc(sizeof(struct ipc_namespace), GFP_KERNEL);
+ 	if (ns == NULL)
+@@ -69,6 +72,7 @@ static struct ipc_namespace *create_ipc_ns(struct user_namespace *user_ns,
+ 	if (err)
+ 		goto fail_destroy_shm;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	return ns;
+ 
+ fail_destroy_shm:
+@@ -116,9 +120,11 @@ void free_ipcs(struct ipc_namespace *ns, struct ipc_ids *ids,
+ 	in_use = ids->in_use;
+ 
+ 	for (total = 0, next_id = 0; total < in_use; next_id++) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		perm = idr_find(&ids->ipcs_idr, next_id);
+ 		if (perm == NULL)
+ 			continue;
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		rcu_read_lock();
+ 		ipc_lock_object(perm);
+ 		free(ns, perm);
+@@ -179,6 +185,7 @@ static struct ns_common *ipcns_get(struct task_struct *task)
+ 	nsproxy = task->nsproxy;
+ 	if (nsproxy)
+ 		ns = get_ipc_ns(nsproxy->ipc_ns);
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	task_unlock(task);
+ 
+ 	return ns ? &ns->ns : NULL;
+@@ -191,6 +198,7 @@ static void ipcns_put(struct ns_common *ns)
+ 
+ static int ipcns_install(struct nsproxy *nsproxy, struct ns_common *new)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	struct ipc_namespace *ns = to_ipc_ns(new);
+ 	if (!ns_capable(ns->user_ns, CAP_SYS_ADMIN) ||
+ 	    !ns_capable(current_user_ns(), CAP_SYS_ADMIN))
+@@ -205,6 +213,7 @@ static int ipcns_install(struct nsproxy *nsproxy, struct ns_common *new)
+ 
+ static struct user_namespace *ipcns_owner(struct ns_common *ns)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	return to_ipc_ns(ns)->user_ns;
+ }
+ 
+diff --git a/ipc/sem.c b/ipc/sem.c
+index b2698eb..c97f807 100644
+--- a/ipc/sem.c
++++ b/ipc/sem.c
+@@ -1,3 +1,5 @@
++extern int kernel_init_done;
++int printk(const char *fmt, ...);
+ // SPDX-License-Identifier: GPL-2.0
+ /*
+  * linux/ipc/sem.c
+@@ -226,7 +228,9 @@ static void unmerge_queues(struct sem_array *sma)
+ 
+ 	/* complex operations still around? */
+ 	if (sma->complex_count)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return;
++}
+ 	/*
+ 	 * We will switch back to simple mode.
+ 	 * Move all pending operation back into the per-semaphore
+@@ -238,6 +242,7 @@ static void unmerge_queues(struct sem_array *sma)
+ 
+ 		list_add_tail(&q->list, &curr->pending_alter);
+ 	}
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	INIT_LIST_HEAD(&sma->pending_alter);
+ }
+ 
+@@ -253,6 +258,7 @@ static void unmerge_queues(struct sem_array *sma)
+ static void merge_queues(struct sem_array *sma)
+ {
+ 	int i;
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	for (i = 0; i < sma->sem_nsems; i++) {
+ 		struct sem *sem = &sma->sems[i];
+ 
+@@ -262,7 +268,9 @@ static void merge_queues(struct sem_array *sma)
+ 
+ static void sem_rcu_free(struct rcu_head *head)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	struct kern_ipc_perm *p = container_of(head, struct kern_ipc_perm, rcu);
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	struct sem_array *sma = container_of(p, struct sem_array, sem_perm);
+ 
+ 	security_sem_free(sma);
+@@ -287,9 +295,12 @@ static void complexmode_enter(struct sem_array *sma)
+ 		sma->use_global_lock = USE_GLOBAL_LOCK_HYSTERESIS;
+ 		return;
+ 	}
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	sma->use_global_lock = USE_GLOBAL_LOCK_HYSTERESIS;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	for (i = 0; i < sma->sem_nsems; i++) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		sem = &sma->sems[i];
+ 		spin_lock(&sem->lock);
+ 		spin_unlock(&sem->lock);
+@@ -368,6 +379,7 @@ static inline int sem_lock(struct sem_array *sma, struct sembuf *sops,
+ 			/* fast path successful! */
+ 			return sops->sem_num;
+ 		}
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		spin_unlock(&sem->lock);
+ 	}
+ 
+@@ -418,6 +430,7 @@ static inline void sem_unlock(struct sem_array *sma, int locknum)
+  */
+ static inline struct sem_array *sem_obtain_object(struct ipc_namespace *ns, int id)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	struct kern_ipc_perm *ipcp = ipc_obtain_object_idr(&sem_ids(ns), id);
+ 
+ 	if (IS_ERR(ipcp))
+@@ -432,13 +445,17 @@ static inline struct sem_array *sem_obtain_object_check(struct ipc_namespace *ns
+ 	struct kern_ipc_perm *ipcp = ipc_obtain_object_check(&sem_ids(ns), id);
+ 
+ 	if (IS_ERR(ipcp))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return ERR_CAST(ipcp);
++}
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	return container_of(ipcp, struct sem_array, sem_perm);
+ }
+ 
+ static inline void sem_lock_and_putref(struct sem_array *sma)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	sem_lock(sma, NULL, -1);
+ 	ipc_rcu_putref(&sma->sem_perm, sem_rcu_free);
+ }
+@@ -454,13 +471,18 @@ static struct sem_array *sem_alloc(size_t nsems)
+ 	size_t size;
+ 
+ 	if (nsems > (INT_MAX - sizeof(*sma)) / sizeof(sma->sems[0]))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return NULL;
++}
+ 
+ 	size = sizeof(*sma) + nsems * sizeof(sma->sems[0]);
+ 	sma = kvmalloc(size, GFP_KERNEL);
+ 	if (unlikely(!sma))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return NULL;
++}
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	memset(sma, 0, size);
+ 
+ 	return sma;
+@@ -483,13 +505,19 @@ static int newary(struct ipc_namespace *ns, struct ipc_params *params)
+ 	int i;
+ 
+ 	if (!nsems)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return -EINVAL;
++}
+ 	if (ns->used_sems + nsems > ns->sc_semmns)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return -ENOSPC;
++}
+ 
+ 	sma = sem_alloc(nsems);
+ 	if (!sma)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return -ENOMEM;
++}
+ 
+ 	sma->sem_perm.mode = (semflg & S_IRWXUGO);
+ 	sma->sem_perm.key = key;
+@@ -497,6 +525,7 @@ static int newary(struct ipc_namespace *ns, struct ipc_params *params)
+ 	sma->sem_perm.security = NULL;
+ 	retval = security_sem_alloc(sma);
+ 	if (retval) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		kvfree(sma);
+ 		return retval;
+ 	}
+@@ -517,6 +546,7 @@ static int newary(struct ipc_namespace *ns, struct ipc_params *params)
+ 
+ 	retval = ipc_addid(&sem_ids(ns), &sma->sem_perm, ns->sc_semmni);
+ 	if (retval < 0) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		call_rcu(&sma->sem_perm.rcu, sem_rcu_free);
+ 		return retval;
+ 	}
+@@ -536,6 +566,7 @@ static inline int sem_security(struct kern_ipc_perm *ipcp, int semflg)
+ {
+ 	struct sem_array *sma;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	sma = container_of(ipcp, struct sem_array, sem_perm);
+ 	return security_sem_associate(sma, semflg);
+ }
+@@ -548,9 +579,12 @@ static inline int sem_more_checks(struct kern_ipc_perm *ipcp,
+ {
+ 	struct sem_array *sma;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	sma = container_of(ipcp, struct sem_array, sem_perm);
+ 	if (params->u.nsems > sma->sem_nsems)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return -EINVAL;
++}
+ 
+ 	return 0;
+ }
+@@ -568,7 +602,9 @@ SYSCALL_DEFINE3(semget, key_t, key, int, nsems, int, semflg)
+ 	ns = current->nsproxy->ipc_ns;
+ 
+ 	if (nsems < 0 || nsems > ns->sc_semmsl)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return -EINVAL;
++}
+ 
+ 	sem_params.key = key;
+ 	sem_params.flg = semflg;
+@@ -606,6 +642,7 @@ static int perform_atomic_semop_slow(struct sem_array *sma, struct sem_queue *q)
+ 	nsops = q->nsops;
+ 	un = q->undo;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	for (sop = sops; sop < sops + nsops; sop++) {
+ 		curr = &sma->sems[sop->sem_num];
+ 		sem_op = sop->sem_op;
+@@ -678,7 +715,9 @@ static int perform_atomic_semop(struct sem_array *sma, struct sem_queue *q)
+ 	un = q->undo;
+ 
+ 	if (unlikely(q->dupsop))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return perform_atomic_semop_slow(sma, q);
++}
+ 
+ 	/*
+ 	 * We scan the semaphore set twice, first to ensure that the entire
+@@ -698,19 +737,27 @@ static int perform_atomic_semop(struct sem_array *sma, struct sem_queue *q)
+ 		if (result < 0)
+ 			goto would_block;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		if (result > SEMVMX)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			return -ERANGE;
++}
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		if (sop->sem_flg & SEM_UNDO) {
+ 			int undo = un->semadj[sop->sem_num] - sem_op;
+ 
+ 			/* Exceeding the undo range is an error. */
+ 			if (undo < (-SEMAEM - 1) || undo > SEMAEM)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 				return -ERANGE;
++}
+ 		}
+ 	}
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	for (sop = sops; sop < sops + nsops; sop++) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		curr = &sma->sems[sop->sem_num];
+ 		sem_op = sop->sem_op;
+ 		result = curr->semval;
+@@ -720,10 +767,12 @@ static int perform_atomic_semop(struct sem_array *sma, struct sem_queue *q)
+ 
+ 			un->semadj[sop->sem_num] = undo;
+ 		}
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		curr->semval += sem_op;
+ 		curr->sempid = q->pid;
+ 	}
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	return 0;
+ 
+ would_block:
+@@ -734,6 +783,7 @@ static int perform_atomic_semop(struct sem_array *sma, struct sem_queue *q)
+ static inline void wake_up_sem_queue_prepare(struct sem_queue *q, int error,
+ 					     struct wake_q_head *wake_q)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	wake_q_add(wake_q, q->sleeper);
+ 	/*
+ 	 * Rely on the above implicit barrier, such that we can
+@@ -747,6 +797,7 @@ static inline void wake_up_sem_queue_prepare(struct sem_queue *q, int error,
+ 
+ static void unlink_queue(struct sem_array *sma, struct sem_queue *q)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	list_del(&q->list);
+ 	if (q->nsops > 1)
+ 		sma->complex_count--;
+@@ -808,7 +859,9 @@ static int wake_const_ops(struct sem_array *sma, int semnum,
+ 	int semop_completed = 0;
+ 
+ 	if (semnum == -1)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		pending_list = &sma->pending_const;
++}
+ 	else
+ 		pending_list = &sma->sems[semnum].pending_const;
+ 
+@@ -848,10 +901,12 @@ static int do_smart_wakeup_zero(struct sem_array *sma, struct sembuf *sops,
+ 
+ 	/* first: the per-semaphore queues, if known */
+ 	if (sops) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		for (i = 0; i < nsops; i++) {
+ 			int num = sops[i].sem_num;
+ 
+ 			if (sma->sems[num].semval == 0) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 				got_zero = 1;
+ 				semop_completed |= wake_const_ops(sma, num, wake_q);
+ 			}
+@@ -863,6 +918,7 @@ static int do_smart_wakeup_zero(struct sem_array *sma, struct sembuf *sops,
+ 		 */
+ 		for (i = 0; i < sma->sem_nsems; i++) {
+ 			if (sma->sems[i].semval == 0) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 				got_zero = 1;
+ 				semop_completed |= wake_const_ops(sma, i, wake_q);
+ 			}
+@@ -873,7 +929,9 @@ static int do_smart_wakeup_zero(struct sem_array *sma, struct sembuf *sops,
+ 	 * then check the global queue, too.
+ 	 */
+ 	if (got_zero)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		semop_completed |= wake_const_ops(sma, -1, wake_q);
++}
+ 
+ 	return semop_completed;
+ }
+@@ -902,7 +960,9 @@ static int update_queue(struct sem_array *sma, int semnum, struct wake_q_head *w
+ 	int semop_completed = 0;
+ 
+ 	if (semnum == -1)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		pending_list = &sma->pending_alter;
++}
+ 	else
+ 		pending_list = &sma->sems[semnum].pending_alter;
+ 
+@@ -920,22 +980,27 @@ static int update_queue(struct sem_array *sma, int semnum, struct wake_q_head *w
+ 		if (semnum != -1 && sma->sems[semnum].semval == 0)
+ 			break;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		error = perform_atomic_semop(sma, q);
+ 
+ 		/* Does q->sleeper still need to sleep? */
+ 		if (error > 0)
+ 			continue;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		unlink_queue(sma, q);
+ 
+ 		if (error) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			restart = 0;
+ 		} else {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			semop_completed = 1;
+ 			do_smart_wakeup_zero(sma, q->sops, q->nsops, wake_q);
+ 			restart = check_restart(sma, q);
+ 		}
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		wake_up_sem_queue_prepare(q, error, wake_q);
+ 		if (restart)
+ 			goto again;
+@@ -953,6 +1018,7 @@ static int update_queue(struct sem_array *sma, int semnum, struct wake_q_head *w
+  */
+ static void set_semotime(struct sem_array *sma, struct sembuf *sops)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	if (sops == NULL) {
+ 		sma->sems[0].sem_otime = get_seconds();
+ 	} else {
+@@ -1004,7 +1070,9 @@ static void do_smart_update(struct sem_array *sma, struct sembuf *sops, int nsop
+ 			 *   value will be too small, too.
+ 			 */
+ 			for (i = 0; i < nsops; i++) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 				if (sops[i].sem_op > 0) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 					otime |= update_queue(sma,
+ 							      sops[i].sem_num, wake_q);
+ 				}
+@@ -1012,8 +1080,10 @@ static void do_smart_update(struct sem_array *sma, struct sembuf *sops, int nsop
+ 		}
+ 	}
+ 	if (otime)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		set_semotime(sma, sops);
+ }
++}
+ 
+ /*
+  * check_qop: Test if a queued operation sleeps on the semaphore semnum
+@@ -1062,7 +1132,9 @@ static int count_semcnt(struct sem_array *sma, ushort semnum,
+ 	semcnt = 0;
+ 	/* First: check the simple operations. They are easy to evaluate */
+ 	if (count_zero)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		l = &sma->sems[semnum].pending_const;
++}
+ 	else
+ 		l = &sma->sems[semnum].pending_alter;
+ 
+@@ -1093,6 +1165,7 @@ static void freeary(struct ipc_namespace *ns, struct kern_ipc_perm *ipcp)
+ {
+ 	struct sem_undo *un, *tu;
+ 	struct sem_queue *q, *tq;
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	struct sem_array *sma = container_of(ipcp, struct sem_array, sem_perm);
+ 	int i;
+ 	DEFINE_WAKE_Q(wake_q);
+@@ -1100,31 +1173,37 @@ static void freeary(struct ipc_namespace *ns, struct kern_ipc_perm *ipcp)
+ 	/* Free the existing undo structures for this semaphore set.  */
+ 	ipc_assert_locked_object(&sma->sem_perm);
+ 	list_for_each_entry_safe(un, tu, &sma->list_id, list_id) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		list_del(&un->list_id);
+ 		spin_lock(&un->ulp->lock);
+ 		un->semid = -1;
+ 		list_del_rcu(&un->list_proc);
+ 		spin_unlock(&un->ulp->lock);
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		kfree_rcu(un, rcu);
+ 	}
+ 
+ 	/* Wake up all pending processes and let them fail with EIDRM. */
+ 	list_for_each_entry_safe(q, tq, &sma->pending_const, list) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		unlink_queue(sma, q);
+ 		wake_up_sem_queue_prepare(q, -EIDRM, &wake_q);
+ 	}
+ 
+ 	list_for_each_entry_safe(q, tq, &sma->pending_alter, list) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		unlink_queue(sma, q);
+ 		wake_up_sem_queue_prepare(q, -EIDRM, &wake_q);
+ 	}
+ 	for (i = 0; i < sma->sem_nsems; i++) {
+ 		struct sem *sem = &sma->sems[i];
+ 		list_for_each_entry_safe(q, tq, &sem->pending_const, list) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			unlink_queue(sma, q);
+ 			wake_up_sem_queue_prepare(q, -EIDRM, &wake_q);
+ 		}
+ 		list_for_each_entry_safe(q, tq, &sem->pending_alter, list) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			unlink_queue(sma, q);
+ 			wake_up_sem_queue_prepare(q, -EIDRM, &wake_q);
+ 		}
+@@ -1142,6 +1221,7 @@ static void freeary(struct ipc_namespace *ns, struct kern_ipc_perm *ipcp)
+ 
+ static unsigned long copy_semid_to_user(void __user *buf, struct semid64_ds *in, int version)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	switch (version) {
+ 	case IPC_64:
+ 		return copy_to_user(buf, in, sizeof(*in));
+@@ -1170,6 +1250,7 @@ static time64_t get_semotime(struct sem_array *sma)
+ 	time64_t res;
+ 
+ 	res = sma->sems[0].sem_otime;
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	for (i = 1; i < sma->sem_nsems; i++) {
+ 		time64_t to = sma->sems[i].sem_otime;
+ 
+@@ -1190,6 +1271,7 @@ static int semctl_stat(struct ipc_namespace *ns, int semid,
+ 
+ 	rcu_read_lock();
+ 	if (cmd == SEM_STAT) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		sma = sem_obtain_object(ns, semid);
+ 		if (IS_ERR(sma)) {
+ 			err = PTR_ERR(sma);
+@@ -1233,7 +1315,9 @@ static int semctl_info(struct ipc_namespace *ns, int semid,
+ 
+ 	err = security_sem_semctl(NULL, cmd);
+ 	if (err)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return err;
++}
+ 
+ 	memset(&seminfo, 0, sizeof(seminfo));
+ 	seminfo.semmni = ns->sc_semmni;
+@@ -1269,40 +1353,50 @@ static int semctl_setval(struct ipc_namespace *ns, int semid, int semnum,
+ 	DEFINE_WAKE_Q(wake_q);
+ 
+ 	if (val > SEMVMX || val < 0)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return -ERANGE;
++}
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	rcu_read_lock();
+ 	sma = sem_obtain_object_check(ns, semid);
+ 	if (IS_ERR(sma)) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		rcu_read_unlock();
+ 		return PTR_ERR(sma);
+ 	}
+ 
+ 	if (semnum < 0 || semnum >= sma->sem_nsems) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		rcu_read_unlock();
+ 		return -EINVAL;
+ 	}
+ 
+ 
+ 	if (ipcperms(ns, &sma->sem_perm, S_IWUGO)) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		rcu_read_unlock();
+ 		return -EACCES;
+ 	}
+ 
+ 	err = security_sem_semctl(sma, SETVAL);
+ 	if (err) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		rcu_read_unlock();
+ 		return -EACCES;
+ 	}
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	sem_lock(sma, NULL, -1);
+ 
+ 	if (!ipc_valid_object(&sma->sem_perm)) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		sem_unlock(sma, -1);
+ 		rcu_read_unlock();
+ 		return -EIDRM;
+ 	}
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	curr = &sma->sems[semnum];
+ 
+ 	ipc_assert_locked_object(&sma->sem_perm);
+@@ -1333,6 +1427,7 @@ static int semctl_main(struct ipc_namespace *ns, int semid, int semnum,
+ 	rcu_read_lock();
+ 	sma = sem_obtain_object_check(ns, semid);
+ 	if (IS_ERR(sma)) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		rcu_read_unlock();
+ 		return PTR_ERR(sma);
+ 	}
+@@ -1490,15 +1585,20 @@ copy_semid_from_user(struct semid64_ds *out, void __user *buf, int version)
+ 	switch (version) {
+ 	case IPC_64:
+ 		if (copy_from_user(out, buf, sizeof(*out)))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			return -EFAULT;
++}
+ 		return 0;
+ 	case IPC_OLD:
+ 	    {
+ 		struct semid_ds tbuf_old;
+ 
+ 		if (copy_from_user(&tbuf_old, buf, sizeof(tbuf_old)))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			return -EFAULT;
++}
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		out->sem_perm.uid	= tbuf_old.sem_perm.uid;
+ 		out->sem_perm.gid	= tbuf_old.sem_perm.gid;
+ 		out->sem_perm.mode	= tbuf_old.sem_perm.mode;
+@@ -1532,6 +1632,7 @@ static int semctl_down(struct ipc_namespace *ns, int semid,
+ 		goto out_unlock1;
+ 	}
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	sma = container_of(ipcp, struct sem_array, sem_perm);
+ 
+ 	err = security_sem_semctl(sma, cmd);
+@@ -1574,8 +1675,11 @@ SYSCALL_DEFINE4(semctl, int, semid, int, semnum, int, cmd, unsigned long, arg)
+ 	int err;
+ 
+ 	if (semid < 0)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return -EINVAL;
++}
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	version = ipc_parse_version(&cmd);
+ 	ns = current->nsproxy->ipc_ns;
+ 
+@@ -1587,9 +1691,15 @@ SYSCALL_DEFINE4(semctl, int, semid, int, semnum, int, cmd, unsigned long, arg)
+ 	case SEM_STAT:
+ 		err = semctl_stat(ns, semid, cmd, &semid64);
+ 		if (err < 0)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			return err;
++}
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		if (copy_semid_to_user(p, &semid64, version))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			err = -EFAULT;
++}
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return err;
+ 	case GETALL:
+ 	case GETVAL:
+@@ -1611,7 +1721,9 @@ SYSCALL_DEFINE4(semctl, int, semid, int, semnum, int, cmd, unsigned long, arg)
+ 	}
+ 	case IPC_SET:
+ 		if (copy_semid_from_user(&semid64, p, version))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			return -EFAULT;
++}
+ 	case IPC_RMID:
+ 		return semctl_down(ns, semid, cmd, &semid64);
+ 	default:
+@@ -1635,6 +1747,7 @@ struct compat_semid_ds {
+ static int copy_compat_semid_from_user(struct semid64_ds *out, void __user *buf,
+ 					int version)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	memset(out, 0, sizeof(*out));
+ 	if (version == IPC_64) {
+ 		struct compat_semid64_ds *p = buf;
+@@ -1648,6 +1761,7 @@ static int copy_compat_semid_from_user(struct semid64_ds *out, void __user *buf,
+ static int copy_compat_semid_to_user(void __user *buf, struct semid64_ds *in,
+ 					int version)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	if (version == IPC_64) {
+ 		struct compat_semid64_ds v;
+ 		memset(&v, 0, sizeof(v));
+@@ -1669,6 +1783,7 @@ static int copy_compat_semid_to_user(void __user *buf, struct semid64_ds *in,
+ 
+ COMPAT_SYSCALL_DEFINE4(semctl, int, semid, int, semnum, int, cmd, int, arg)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	void __user *p = compat_ptr(arg);
+ 	struct ipc_namespace *ns;
+ 	struct semid64_ds semid64;
+@@ -1732,8 +1847,11 @@ static inline int get_undo_list(struct sem_undo_list **undo_listp)
+ 	if (!undo_list) {
+ 		undo_list = kzalloc(sizeof(*undo_list), GFP_KERNEL);
+ 		if (undo_list == NULL)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			return -ENOMEM;
++}
+ 		spin_lock_init(&undo_list->lock);
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		refcount_set(&undo_list->refcnt, 1);
+ 		INIT_LIST_HEAD(&undo_list->list_proc);
+ 
+@@ -1747,6 +1865,7 @@ static struct sem_undo *__lookup_undo(struct sem_undo_list *ulp, int semid)
+ {
+ 	struct sem_undo *un;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	list_for_each_entry_rcu(un, &ulp->list_proc, list_proc) {
+ 		if (un->semid == semid)
+ 			return un;
+@@ -1758,6 +1877,7 @@ static struct sem_undo *lookup_undo(struct sem_undo_list *ulp, int semid)
+ {
+ 	struct sem_undo *un;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	assert_spin_locked(&ulp->lock);
+ 
+ 	un = __lookup_undo(ulp, semid);
+@@ -1788,7 +1908,9 @@ static struct sem_undo *find_alloc_undo(struct ipc_namespace *ns, int semid)
+ 
+ 	error = get_undo_list(&ulp);
+ 	if (error)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return ERR_PTR(error);
++}
+ 
+ 	rcu_read_lock();
+ 	spin_lock(&ulp->lock);
+@@ -1874,37 +1996,53 @@ static long do_semtimedop(int semid, struct sembuf __user *tsops,
+ 	ns = current->nsproxy->ipc_ns;
+ 
+ 	if (nsops < 1 || semid < 0)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return -EINVAL;
++}
+ 	if (nsops > ns->sc_semopm)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return -E2BIG;
++}
+ 	if (nsops > SEMOPM_FAST) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		sops = kvmalloc(sizeof(*sops)*nsops, GFP_KERNEL);
+ 		if (sops == NULL)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			return -ENOMEM;
++}
+ 	}
+ 
+ 	if (copy_from_user(sops, tsops, nsops * sizeof(*tsops))) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		error =  -EFAULT;
+ 		goto out_free;
+ 	}
+ 
+ 	if (timeout) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		if (timeout->tv_sec < 0 || timeout->tv_nsec < 0 ||
+ 			timeout->tv_nsec >= 1000000000L) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			error = -EINVAL;
+ 			goto out_free;
+ 		}
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		jiffies_left = timespec64_to_jiffies(timeout);
+ 	}
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	max = 0;
+ 	for (sop = sops; sop < sops + nsops; sop++) {
+ 		unsigned long mask = 1ULL << ((sop->sem_num) % BITS_PER_LONG);
+ 
+ 		if (sop->sem_num >= max)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			max = sop->sem_num;
++}
+ 		if (sop->sem_flg & SEM_UNDO)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			undos = true;
++}
+ 		if (dup & mask) {
+ 			/*
+ 			 * There was a previous alter access that appears
+@@ -1915,6 +2053,7 @@ static long do_semtimedop(int semid, struct sembuf __user *tsops,
+ 			dupsop = true;
+ 		}
+ 		if (sop->sem_op != 0) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			alter = true;
+ 			dup |= mask;
+ 		}
+@@ -1924,39 +2063,49 @@ static long do_semtimedop(int semid, struct sembuf __user *tsops,
+ 		/* On success, find_alloc_undo takes the rcu_read_lock */
+ 		un = find_alloc_undo(ns, semid);
+ 		if (IS_ERR(un)) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			error = PTR_ERR(un);
+ 			goto out_free;
+ 		}
+ 	} else {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		un = NULL;
+ 		rcu_read_lock();
+ 	}
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	sma = sem_obtain_object_check(ns, semid);
+ 	if (IS_ERR(sma)) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		rcu_read_unlock();
+ 		error = PTR_ERR(sma);
+ 		goto out_free;
+ 	}
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	error = -EFBIG;
+ 	if (max >= sma->sem_nsems) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		rcu_read_unlock();
+ 		goto out_free;
+ 	}
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	error = -EACCES;
+ 	if (ipcperms(ns, &sma->sem_perm, alter ? S_IWUGO : S_IRUGO)) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		rcu_read_unlock();
+ 		goto out_free;
+ 	}
+ 
+ 	error = security_sem_semop(sma, sops, nsops, alter);
+ 	if (error) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		rcu_read_unlock();
+ 		goto out_free;
+ 	}
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	error = -EIDRM;
+ 	locknum = sem_lock(sma, sops, nsops);
+ 	/*
+@@ -1995,10 +2144,13 @@ static long do_semtimedop(int semid, struct sembuf __user *tsops,
+ 		 * the required updates.
+ 		 */
+ 		if (alter)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			do_smart_update(sma, sops, nsops, 1, &wake_q);
++}
+ 		else
+ 			set_semotime(sma, sops);
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		sem_unlock(sma, locknum);
+ 		rcu_read_unlock();
+ 		wake_up_q(&wake_q);
+@@ -2018,6 +2170,7 @@ static long do_semtimedop(int semid, struct sembuf __user *tsops,
+ 
+ 		if (alter) {
+ 			if (sma->complex_count) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 				list_add_tail(&queue.list,
+ 						&sma->pending_alter);
+ 			} else {
+@@ -2026,17 +2179,25 @@ static long do_semtimedop(int semid, struct sembuf __user *tsops,
+ 						&curr->pending_alter);
+ 			}
+ 		} else {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			list_add_tail(&queue.list, &curr->pending_const);
+ 		}
+ 	} else {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		if (!sma->complex_count)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			merge_queues(sma);
++}
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		if (alter)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			list_add_tail(&queue.list, &sma->pending_alter);
++}
+ 		else
+ 			list_add_tail(&queue.list, &sma->pending_const);
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		sma->complex_count++;
+ 	}
+ 
+@@ -2049,7 +2210,9 @@ static long do_semtimedop(int semid, struct sembuf __user *tsops,
+ 		rcu_read_unlock();
+ 
+ 		if (timeout)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			jiffies_left = schedule_timeout(jiffies_left);
++}
+ 		else
+ 			schedule();
+ 
+@@ -2076,12 +2239,14 @@ static long do_semtimedop(int semid, struct sembuf __user *tsops,
+ 			goto out_free;
+ 		}
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		rcu_read_lock();
+ 		locknum = sem_lock(sma, sops, nsops);
+ 
+ 		if (!ipc_valid_object(&sma->sem_perm))
+ 			goto out_unlock_free;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		error = READ_ONCE(queue.status);
+ 
+ 		/*
+@@ -2095,9 +2260,13 @@ static long do_semtimedop(int semid, struct sembuf __user *tsops,
+ 		 * If an interrupt occurred we have to clean up the queue.
+ 		 */
+ 		if (timeout && jiffies_left == 0)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			error = -EAGAIN;
++}
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	} while (error == -EINTR && !signal_pending(current)); /* spurious */
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	unlink_queue(sma, &queue);
+ 
+ out_unlock_free:
+@@ -2105,13 +2274,17 @@ static long do_semtimedop(int semid, struct sembuf __user *tsops,
+ 	rcu_read_unlock();
+ out_free:
+ 	if (sops != fast_sops)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		kvfree(sops);
++}
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	return error;
+ }
+ 
+ SYSCALL_DEFINE4(semtimedop, int, semid, struct sembuf __user *, tsops,
+ 		unsigned, nsops, const struct timespec __user *, timeout)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	if (timeout) {
+ 		struct timespec64 ts;
+ 		if (get_timespec64(&ts, timeout))
+@@ -2126,6 +2299,7 @@ COMPAT_SYSCALL_DEFINE4(semtimedop, int, semid, struct sembuf __user *, tsems,
+ 		       unsigned, nsops,
+ 		       const struct compat_timespec __user *, timeout)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	if (timeout) {
+ 		struct timespec64 ts;
+ 		if (compat_get_timespec64(&ts, timeout))
+@@ -2154,12 +2328,15 @@ int copy_semundo(unsigned long clone_flags, struct task_struct *tsk)
+ 	if (clone_flags & CLONE_SYSVSEM) {
+ 		error = get_undo_list(&undo_list);
+ 		if (error)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			return error;
++}
+ 		refcount_inc(&undo_list->refcnt);
+ 		tsk->sysvsem.undo_list = undo_list;
+ 	} else
+ 		tsk->sysvsem.undo_list = NULL;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	return 0;
+ }
+ 
+@@ -2181,11 +2358,15 @@ void exit_sem(struct task_struct *tsk)
+ 
+ 	ulp = tsk->sysvsem.undo_list;
+ 	if (!ulp)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return;
++}
+ 	tsk->sysvsem.undo_list = NULL;
+ 
+ 	if (!refcount_dec_and_test(&ulp->refcnt))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return;
++}
+ 
+ 	for (;;) {
+ 		struct sem_array *sma;
+@@ -2210,30 +2391,37 @@ void exit_sem(struct task_struct *tsk)
+ 			rcu_read_unlock();
+ 			break;
+ 		}
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		spin_lock(&ulp->lock);
+ 		semid = un->semid;
+ 		spin_unlock(&ulp->lock);
+ 
+ 		/* exit_sem raced with IPC_RMID, nothing to do */
+ 		if (semid == -1) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			rcu_read_unlock();
+ 			continue;
+ 		}
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		sma = sem_obtain_object_check(tsk->nsproxy->ipc_ns, semid);
+ 		/* exit_sem raced with IPC_RMID, nothing to do */
+ 		if (IS_ERR(sma)) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			rcu_read_unlock();
+ 			continue;
+ 		}
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		sem_lock(sma, NULL, -1);
+ 		/* exit_sem raced with IPC_RMID, nothing to do */
+ 		if (!ipc_valid_object(&sma->sem_perm)) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			sem_unlock(sma, -1);
+ 			rcu_read_unlock();
+ 			continue;
+ 		}
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		un = __lookup_undo(ulp, semid);
+ 		if (un == NULL) {
+ 			/* exit_sem raced with IPC_RMID+semget() that created
+@@ -2258,6 +2446,7 @@ void exit_sem(struct task_struct *tsk)
+ 		for (i = 0; i < sma->sem_nsems; i++) {
+ 			struct sem *semaphore = &sma->sems[i];
+ 			if (un->semadj[i]) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 				semaphore->semval += un->semadj[i];
+ 				/*
+ 				 * Range checks of the new semaphore value,
+@@ -2273,9 +2462,15 @@ void exit_sem(struct task_struct *tsk)
+ 				 *	Manfred <manfred@colorfullife.com>
+ 				 */
+ 				if (semaphore->semval < 0)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 					semaphore->semval = 0;
++}
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 				if (semaphore->semval > SEMVMX)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 					semaphore->semval = SEMVMX;
++}
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 				semaphore->sempid = task_tgid_vnr(current);
+ 			}
+ 		}
+@@ -2285,6 +2480,7 @@ void exit_sem(struct task_struct *tsk)
+ 		rcu_read_unlock();
+ 		wake_up_q(&wake_q);
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		kfree_rcu(un, rcu);
+ 	}
+ 	kfree(ulp);
+@@ -2293,6 +2489,7 @@ void exit_sem(struct task_struct *tsk)
+ #ifdef CONFIG_PROC_FS
+ static int sysvipc_sem_proc_show(struct seq_file *s, void *it)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	struct user_namespace *user_ns = seq_user_ns(s);
+ 	struct kern_ipc_perm *ipcp = it;
+ 	struct sem_array *sma = container_of(ipcp, struct sem_array, sem_perm);
+diff --git a/ipc/shm.c b/ipc/shm.c
+index bd65275..08a89de 100644
+--- a/ipc/shm.c
++++ b/ipc/shm.c
+@@ -1,3 +1,5 @@
++extern int kernel_init_done;
++int printk(const char *fmt, ...);
+ // SPDX-License-Identifier: GPL-2.0
+ /*
+  * linux/ipc/shm.c
+@@ -94,6 +96,7 @@ static void do_shm_rmid(struct ipc_namespace *ns, struct kern_ipc_perm *ipcp)
+ 	shp = container_of(ipcp, struct shmid_kernel, shm_perm);
+ 
+ 	if (shp->shm_nattch) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		shp->shm_perm.mode |= SHM_DEST;
+ 		/* Do not find it any more */
+ 		ipc_set_key_private(&shm_ids(ns), &shp->shm_perm);
+@@ -133,6 +136,7 @@ void __init shm_init(void)
+ 
+ static inline struct shmid_kernel *shm_obtain_object(struct ipc_namespace *ns, int id)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	struct kern_ipc_perm *ipcp = ipc_obtain_object_idr(&shm_ids(ns), id);
+ 
+ 	if (IS_ERR(ipcp))
+@@ -146,7 +150,9 @@ static inline struct shmid_kernel *shm_obtain_object_check(struct ipc_namespace
+ 	struct kern_ipc_perm *ipcp = ipc_obtain_object_check(&shm_ids(ns), id);
+ 
+ 	if (IS_ERR(ipcp))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return ERR_CAST(ipcp);
++}
+ 
+ 	return container_of(ipcp, struct shmid_kernel, shm_perm);
+ }
+@@ -165,18 +171,22 @@ static inline struct shmid_kernel *shm_lock(struct ipc_namespace *ns, int id)
+ 	 * appropriate.
+ 	 */
+ 	if (IS_ERR(ipcp))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return (void *)ipcp;
++}
+ 	return container_of(ipcp, struct shmid_kernel, shm_perm);
+ }
+ 
+ static inline void shm_lock_by_ptr(struct shmid_kernel *ipcp)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	rcu_read_lock();
+ 	ipc_lock_object(&ipcp->shm_perm);
+ }
+ 
+ static void shm_rcu_free(struct rcu_head *head)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	struct kern_ipc_perm *ptr = container_of(head, struct kern_ipc_perm,
+ 							rcu);
+ 	struct shmid_kernel *shp = container_of(ptr, struct shmid_kernel,
+@@ -201,7 +211,9 @@ static int __shm_open(struct vm_area_struct *vma)
+ 	shp = shm_lock(sfd->ns, sfd->id);
+ 
+ 	if (IS_ERR(shp))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return PTR_ERR(shp);
++}
+ 
+ 	shp->shm_atim = ktime_get_real_seconds();
+ 	shp->shm_lprid = task_tgid_vnr(current);
+@@ -241,9 +253,12 @@ static void shm_destroy(struct ipc_namespace *ns, struct shmid_kernel *shp)
+ 	shm_unlock(shp);
+ 	if (!is_file_hugepages(shm_file))
+ 		shmem_lock(shm_file, 0, shp->mlock_user);
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	else if (shp->mlock_user)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		user_shm_unlock(i_size_read(file_inode(shm_file)),
+ 				shp->mlock_user);
++}
+ 	fput(shm_file);
+ 	ipc_rcu_putref(&shp->shm_perm, shm_rcu_free);
+ }
+@@ -293,7 +308,9 @@ static void shm_close(struct vm_area_struct *vma)
+ 	shp->shm_dtim = ktime_get_real_seconds();
+ 	shp->shm_nattch--;
+ 	if (shm_may_destroy(ns, shp))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		shm_destroy(ns, shp);
++}
+ 	else
+ 		shm_unlock(shp);
+ done:
+@@ -305,6 +322,7 @@ static int shm_try_destroy_orphaned(int id, void *p, void *data)
+ {
+ 	struct ipc_namespace *ns = data;
+ 	struct kern_ipc_perm *ipcp = p;
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	struct shmid_kernel *shp = container_of(ipcp, struct shmid_kernel, shm_perm);
+ 
+ 	/*
+@@ -325,6 +343,7 @@ static int shm_try_destroy_orphaned(int id, void *p, void *data)
+ 
+ void shm_destroy_orphaned(struct ipc_namespace *ns)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	down_write(&shm_ids(ns).rwsem);
+ 	if (shm_ids(ns).in_use)
+ 		idr_for_each(&shm_ids(ns).ipcs_idr, &shm_try_destroy_orphaned, ns);
+@@ -338,7 +357,9 @@ void exit_shm(struct task_struct *task)
+ 	struct shmid_kernel *shp, *n;
+ 
+ 	if (list_empty(&task->sysvshm.shm_clist))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return;
++}
+ 
+ 	/*
+ 	 * If kernel.shm_rmid_forced is not set then only keep track of
+@@ -346,7 +367,9 @@ void exit_shm(struct task_struct *task)
+ 	 * can clean them up.
+ 	 */
+ 	if (!ns->shm_rmid_forced) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		down_read(&shm_ids(ns).rwsem);
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		list_for_each_entry(shp, &task->sysvshm.shm_clist, shm_clist)
+ 			shp->shm_creator = NULL;
+ 		/*
+@@ -364,10 +387,13 @@ void exit_shm(struct task_struct *task)
+ 	 * Destroy is skipped if shm_may_destroy() returns false.
+ 	 */
+ 	down_write(&shm_ids(ns).rwsem);
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	list_for_each_entry_safe(shp, n, &task->sysvshm.shm_clist, shm_clist) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		shp->shm_creator = NULL;
+ 
+ 		if (shm_may_destroy(ns, shp)) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			shm_lock_by_ptr(shp);
+ 			shm_destroy(ns, shp);
+ 		}
+@@ -394,7 +420,9 @@ static int shm_set_policy(struct vm_area_struct *vma, struct mempolicy *new)
+ 	int err = 0;
+ 
+ 	if (sfd->vm_ops->set_policy)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		err = sfd->vm_ops->set_policy(vma, new);
++}
+ 	return err;
+ }
+ 
+@@ -406,7 +434,9 @@ static struct mempolicy *shm_get_policy(struct vm_area_struct *vma,
+ 	struct mempolicy *pol = NULL;
+ 
+ 	if (sfd->vm_ops->get_policy)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		pol = sfd->vm_ops->get_policy(vma, addr);
++}
+ 	else if (vma->vm_policy)
+ 		pol = vma->vm_policy;
+ 
+@@ -425,10 +455,13 @@ static int shm_mmap(struct file *file, struct vm_area_struct *vma)
+ 	 */
+ 	ret = __shm_open(vma);
+ 	if (ret)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return ret;
++}
+ 
+ 	ret = call_mmap(sfd->file, vma);
+ 	if (ret) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		shm_close(vma);
+ 		return ret;
+ 	}
+@@ -455,7 +488,9 @@ static int shm_fsync(struct file *file, loff_t start, loff_t end, int datasync)
+ 	struct shm_file_data *sfd = shm_file_data(file);
+ 
+ 	if (!sfd->file->f_op->fsync)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return -EINVAL;
++}
+ 	return sfd->file->f_op->fsync(sfd->file, start, end, datasync);
+ }
+ 
+@@ -465,7 +500,9 @@ static long shm_fallocate(struct file *file, int mode, loff_t offset,
+ 	struct shm_file_data *sfd = shm_file_data(file);
+ 
+ 	if (!sfd->file->f_op->fallocate)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return -EOPNOTSUPP;
++}
+ 	return sfd->file->f_op->fallocate(file, mode, offset, len);
+ }
+ 
+@@ -536,10 +573,14 @@ static int newseg(struct ipc_namespace *ns, struct ipc_params *params)
+ 	vm_flags_t acctflag = 0;
+ 
+ 	if (size < SHMMIN || size > ns->shm_ctlmax)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return -EINVAL;
++}
+ 
+ 	if (numpages << PAGE_SHIFT < size)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return -ENOSPC;
++}
+ 
+ 	if (ns->shm_tot + numpages < ns->shm_tot ||
+ 			ns->shm_tot + numpages > ns->shm_ctlall)
+@@ -547,7 +588,9 @@ static int newseg(struct ipc_namespace *ns, struct ipc_params *params)
+ 
+ 	shp = kvmalloc(sizeof(*shp), GFP_KERNEL);
+ 	if (unlikely(!shp))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return -ENOMEM;
++}
+ 
+ 	shp->shm_perm.key = key;
+ 	shp->shm_perm.mode = (shmflg & S_IRWXUGO);
+@@ -556,6 +599,7 @@ static int newseg(struct ipc_namespace *ns, struct ipc_params *params)
+ 	shp->shm_perm.security = NULL;
+ 	error = security_shm_alloc(shp);
+ 	if (error) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		kvfree(shp);
+ 		return error;
+ 	}
+@@ -567,14 +611,19 @@ static int newseg(struct ipc_namespace *ns, struct ipc_params *params)
+ 
+ 		hs = hstate_sizelog((shmflg >> SHM_HUGE_SHIFT) & SHM_HUGE_MASK);
+ 		if (!hs) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			error = -EINVAL;
+ 			goto no_file;
+ 		}
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		hugesize = ALIGN(size, huge_page_size(hs));
+ 
+ 		/* hugetlb_file_setup applies strict accounting */
+ 		if (shmflg & SHM_NORESERVE)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			acctflag = VM_NORESERVE;
++}
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		file = hugetlb_file_setup(name, hugesize, acctflag,
+ 				  &shp->mlock_user, HUGETLB_SHMFS_INODE,
+ 				(shmflg >> SHM_HUGE_SHIFT) & SHM_HUGE_MASK);
+@@ -622,7 +671,10 @@ static int newseg(struct ipc_namespace *ns, struct ipc_params *params)
+ 
+ no_id:
+ 	if (is_file_hugepages(file) && shp->mlock_user)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		user_shm_unlock(size, shp->mlock_user);
++}
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	fput(file);
+ no_file:
+ 	call_rcu(&shp->shm_perm.rcu, shm_rcu_free);
+@@ -636,6 +688,7 @@ static inline int shm_security(struct kern_ipc_perm *ipcp, int shmflg)
+ {
+ 	struct shmid_kernel *shp;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	shp = container_of(ipcp, struct shmid_kernel, shm_perm);
+ 	return security_shm_associate(shp, shmflg);
+ }
+@@ -648,6 +701,7 @@ static inline int shm_more_checks(struct kern_ipc_perm *ipcp,
+ {
+ 	struct shmid_kernel *shp;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	shp = container_of(ipcp, struct shmid_kernel, shm_perm);
+ 	if (shp->shm_segsz < params->u.size)
+ 		return -EINVAL;
+@@ -676,6 +730,7 @@ SYSCALL_DEFINE3(shmget, key_t, key, size_t, size, int, shmflg)
+ 
+ static inline unsigned long copy_shmid_to_user(void __user *buf, struct shmid64_ds *in, int version)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	switch (version) {
+ 	case IPC_64:
+ 		return copy_to_user(buf, in, sizeof(*in));
+@@ -703,6 +758,7 @@ static inline unsigned long copy_shmid_to_user(void __user *buf, struct shmid64_
+ static inline unsigned long
+ copy_shmid_from_user(struct shmid64_ds *out, void __user *buf, int version)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	switch (version) {
+ 	case IPC_64:
+ 		if (copy_from_user(out, buf, sizeof(*out)))
+@@ -728,6 +784,7 @@ copy_shmid_from_user(struct shmid64_ds *out, void __user *buf, int version)
+ 
+ static inline unsigned long copy_shminfo_to_user(void __user *buf, struct shminfo64 *in, int version)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	switch (version) {
+ 	case IPC_64:
+ 		return copy_to_user(buf, in, sizeof(*in));
+@@ -795,6 +852,7 @@ static void shm_get_stat(struct ipc_namespace *ns, unsigned long *rss,
+ 
+ 	in_use = shm_ids(ns).in_use;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	for (total = 0, next_id = 0; total < in_use; next_id++) {
+ 		struct kern_ipc_perm *ipc;
+ 		struct shmid_kernel *shp;
+@@ -828,6 +886,7 @@ static int shmctl_down(struct ipc_namespace *ns, int shmid, int cmd,
+ 	ipcp = ipcctl_pre_down_nolock(ns, &shm_ids(ns), shmid, cmd,
+ 				      &shmid64->shm_perm, 0);
+ 	if (IS_ERR(ipcp)) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		err = PTR_ERR(ipcp);
+ 		goto out_unlock1;
+ 	}
+@@ -849,6 +908,7 @@ static int shmctl_down(struct ipc_namespace *ns, int shmid, int cmd,
+ 		err = ipc_update_perm(&shmid64->shm_perm, ipcp);
+ 		if (err)
+ 			goto out_unlock0;
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		shp->shm_ctim = ktime_get_real_seconds();
+ 		break;
+ 	default:
+@@ -868,6 +928,7 @@ static int shmctl_down(struct ipc_namespace *ns, int shmid, int cmd,
+ static int shmctl_ipc_info(struct ipc_namespace *ns,
+ 			   struct shminfo64 *shminfo)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	int err = security_shm_shmctl(NULL, IPC_INFO);
+ 	if (!err) {
+ 		memset(shminfo, 0, sizeof(*shminfo));
+@@ -887,6 +948,7 @@ static int shmctl_ipc_info(struct ipc_namespace *ns,
+ static int shmctl_shm_info(struct ipc_namespace *ns,
+ 			   struct shm_info *shm_info)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	int err = security_shm_shmctl(NULL, SHM_INFO);
+ 	if (!err) {
+ 		memset(shm_info, 0, sizeof(*shm_info));
+@@ -913,6 +975,7 @@ static int shmctl_stat(struct ipc_namespace *ns, int shmid,
+ 
+ 	rcu_read_lock();
+ 	if (cmd == SHM_STAT) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		shp = shm_obtain_object(ns, shmid);
+ 		if (IS_ERR(shp)) {
+ 			err = PTR_ERR(shp);
+@@ -962,6 +1025,7 @@ static int shmctl_do_lock(struct ipc_namespace *ns, int shmid, int cmd)
+ 	rcu_read_lock();
+ 	shp = shm_obtain_object_check(ns, shmid);
+ 	if (IS_ERR(shp)) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		err = PTR_ERR(shp);
+ 		goto out_unlock1;
+ 	}
+@@ -1036,8 +1100,11 @@ SYSCALL_DEFINE3(shmctl, int, shmid, int, cmd, struct shmid_ds __user *, buf)
+ 	struct shmid64_ds sem64;
+ 
+ 	if (cmd < 0 || shmid < 0)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return -EINVAL;
++}
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	version = ipc_parse_version(&cmd);
+ 	ns = current->nsproxy->ipc_ns;
+ 
+@@ -1046,32 +1113,53 @@ SYSCALL_DEFINE3(shmctl, int, shmid, int, cmd, struct shmid_ds __user *, buf)
+ 		struct shminfo64 shminfo;
+ 		err = shmctl_ipc_info(ns, &shminfo);
+ 		if (err < 0)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			return err;
++}
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		if (copy_shminfo_to_user(buf, &shminfo, version))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			err = -EFAULT;
++}
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return err;
+ 	}
+ 	case SHM_INFO: {
+ 		struct shm_info shm_info;
+ 		err = shmctl_shm_info(ns, &shm_info);
+ 		if (err < 0)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			return err;
++}
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		if (copy_to_user(buf, &shm_info, sizeof(shm_info)))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			err = -EFAULT;
++}
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return err;
+ 	}
+ 	case SHM_STAT:
+ 	case IPC_STAT: {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		err = shmctl_stat(ns, shmid, cmd, &sem64);
+ 		if (err < 0)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			return err;
++}
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		if (copy_shmid_to_user(buf, &sem64, version))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			err = -EFAULT;
++}
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return err;
+ 	}
+ 	case IPC_SET:
+ 		if (copy_shmid_from_user(&sem64, buf, version))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			return -EFAULT;
++}
+ 		/* fallthru */
+ 	case IPC_RMID:
+ 		return shmctl_down(ns, shmid, cmd, &sem64);
+@@ -1120,6 +1208,7 @@ struct compat_shm_info {
+ static int copy_compat_shminfo_to_user(void __user *buf, struct shminfo64 *in,
+ 					int version)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	if (in->shmmax > INT_MAX)
+ 		in->shmmax = INT_MAX;
+ 	if (version == IPC_64) {
+@@ -1161,6 +1250,7 @@ static int put_compat_shm_info(struct shm_info *ip,
+ static int copy_compat_shmid_to_user(void __user *buf, struct shmid64_ds *in,
+ 					int version)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	if (version == IPC_64) {
+ 		struct compat_shmid64_ds v;
+ 		memset(&v, 0, sizeof(v));
+@@ -1192,6 +1282,7 @@ static int copy_compat_shmid_to_user(void __user *buf, struct shmid64_ds *in,
+ static int copy_compat_shmid_from_user(struct shmid64_ds *out, void __user *buf,
+ 					int version)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	memset(out, 0, sizeof(*out));
+ 	if (version == IPC_64) {
+ 		struct compat_shmid64_ds *p = buf;
+@@ -1211,6 +1302,7 @@ COMPAT_SYSCALL_DEFINE3(shmctl, int, shmid, int, cmd, void __user *, uptr)
+ 
+ 	ns = current->nsproxy->ipc_ns;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	if (cmd < 0 || shmid < 0)
+ 		return -EINVAL;
+ 
+@@ -1288,6 +1380,7 @@ long do_shmat(int shmid, char __user *shmaddr, int shmflg,
+ 		goto out;
+ 
+ 	if (addr) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		if (addr & (shmlba - 1)) {
+ 			/*
+ 			 * Round down to the nearest multiple of shmlba.
+@@ -1295,7 +1388,9 @@ long do_shmat(int shmid, char __user *shmaddr, int shmflg,
+ 			 * round downs that trigger nil-page and MAP_FIXED.
+ 			 */
+ 			if ((shmflg & SHM_RND) && addr >= shmlba)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 				addr &= ~(shmlba - 1);
++}
+ 			else
+ #ifndef __ARCH_FORCE_SHMLBA
+ 				if (addr & ~PAGE_MASK)
+@@ -1303,20 +1398,24 @@ long do_shmat(int shmid, char __user *shmaddr, int shmflg,
+ 					goto out;
+ 		}
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		flags |= MAP_FIXED;
+ 	} else if ((shmflg & SHM_REMAP))
+ 		goto out;
+ 
+ 	if (shmflg & SHM_RDONLY) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		prot = PROT_READ;
+ 		acc_mode = S_IRUGO;
+ 		f_mode = FMODE_READ;
+ 	} else {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		prot = PROT_READ | PROT_WRITE;
+ 		acc_mode = S_IRUGO | S_IWUGO;
+ 		f_mode = FMODE_READ | FMODE_WRITE;
+ 	}
+ 	if (shmflg & SHM_EXEC) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		prot |= PROT_EXEC;
+ 		acc_mode |= S_IXUGO;
+ 	}
+@@ -1329,10 +1428,12 @@ long do_shmat(int shmid, char __user *shmaddr, int shmflg,
+ 	rcu_read_lock();
+ 	shp = shm_obtain_object_check(ns, shmid);
+ 	if (IS_ERR(shp)) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		err = PTR_ERR(shp);
+ 		goto out_unlock;
+ 	}
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	err = -EACCES;
+ 	if (ipcperms(ns, &shp->shm_perm, acc_mode))
+ 		goto out_unlock;
+@@ -1341,10 +1442,12 @@ long do_shmat(int shmid, char __user *shmaddr, int shmflg,
+ 	if (err)
+ 		goto out_unlock;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	ipc_lock_object(&shp->shm_perm);
+ 
+ 	/* check if shm_destroy() is tearing down shp */
+ 	if (!ipc_valid_object(&shp->shm_perm)) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		ipc_unlock_object(&shp->shm_perm);
+ 		err = -EIDRM;
+ 		goto out_unlock;
+@@ -1360,6 +1463,7 @@ long do_shmat(int shmid, char __user *shmaddr, int shmflg,
+ 	err = -ENOMEM;
+ 	sfd = kzalloc(sizeof(*sfd), GFP_KERNEL);
+ 	if (!sfd) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		path_put(&path);
+ 		goto out_nattch;
+ 	}
+@@ -1370,6 +1474,7 @@ long do_shmat(int shmid, char __user *shmaddr, int shmflg,
+ 				&shm_file_operations);
+ 	err = PTR_ERR(file);
+ 	if (IS_ERR(file)) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		kfree(sfd);
+ 		path_put(&path);
+ 		goto out_nattch;
+@@ -1387,15 +1492,18 @@ long do_shmat(int shmid, char __user *shmaddr, int shmflg,
+ 		goto out_fput;
+ 
+ 	if (down_write_killable(&current->mm->mmap_sem)) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		err = -EINTR;
+ 		goto out_fput;
+ 	}
+ 
+ 	if (addr && !(shmflg & SHM_REMAP)) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		err = -EINVAL;
+ 		if (addr + size < addr)
+ 			goto invalid;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		if (find_vma_intersection(current->mm, addr, addr + size))
+ 			goto invalid;
+ 	}
+@@ -1404,11 +1512,15 @@ long do_shmat(int shmid, char __user *shmaddr, int shmflg,
+ 	*raddr = addr;
+ 	err = 0;
+ 	if (IS_ERR_VALUE(addr))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		err = (long)addr;
++}
+ invalid:
+ 	up_write(&current->mm->mmap_sem);
+ 	if (populate)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		mm_populate(addr, populate);
++}
+ 
+ out_fput:
+ 	fput(file);
+@@ -1418,7 +1530,9 @@ long do_shmat(int shmid, char __user *shmaddr, int shmflg,
+ 	shp = shm_lock(ns, shmid);
+ 	shp->shm_nattch--;
+ 	if (shm_may_destroy(ns, shp))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		shm_destroy(ns, shp);
++}
+ 	else
+ 		shm_unlock(shp);
+ 	up_write(&shm_ids(ns).rwsem);
+@@ -1437,7 +1551,9 @@ SYSCALL_DEFINE3(shmat, int, shmid, char __user *, shmaddr, int, shmflg)
+ 
+ 	err = do_shmat(shmid, shmaddr, shmflg, &ret, SHMLBA);
+ 	if (err)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return err;
++}
+ 	force_successful_syscall_return();
+ 	return (long)ret;
+ }
+@@ -1455,7 +1571,9 @@ COMPAT_SYSCALL_DEFINE3(shmat, int, shmid, compat_uptr_t, shmaddr, int, shmflg)
+ 
+ 	err = do_shmat(shmid, compat_ptr(shmaddr), shmflg, &ret, COMPAT_SHMLBA);
+ 	if (err)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return err;
++}
+ 	force_successful_syscall_return();
+ 	return (long)ret;
+ }
+@@ -1478,10 +1596,14 @@ SYSCALL_DEFINE1(shmdt, char __user *, shmaddr)
+ #endif
+ 
+ 	if (addr & ~PAGE_MASK)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return retval;
++}
+ 
+ 	if (down_write_killable(&mm->mmap_sem))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return -EINTR;
++}
+ 
+ 	/*
+ 	 * This function tries to be smart and unmap shm segments that
+@@ -1537,6 +1659,7 @@ SYSCALL_DEFINE1(shmdt, char __user *, shmaddr)
+ 			vma = next;
+ 			break;
+ 		}
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		vma = next;
+ 	}
+ 
+@@ -1547,6 +1670,7 @@ SYSCALL_DEFINE1(shmdt, char __user *, shmaddr)
+ 	 */
+ 	size = PAGE_ALIGN(size);
+ 	while (vma && (loff_t)(vma->vm_end - addr) <= size) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		next = vma->vm_next;
+ 
+ 		/* finding a matching vma now does not alter retval */
+@@ -1554,6 +1678,7 @@ SYSCALL_DEFINE1(shmdt, char __user *, shmaddr)
+ 		    ((vma->vm_start - addr)/PAGE_SIZE == vma->vm_pgoff) &&
+ 		    (vma->vm_file == file))
+ 			do_munmap(mm, vma->vm_start, vma->vm_end - vma->vm_start, NULL);
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		vma = next;
+ 	}
+ 
+@@ -1575,6 +1700,7 @@ SYSCALL_DEFINE1(shmdt, char __user *, shmaddr)
+ #ifdef CONFIG_PROC_FS
+ static int sysvipc_shm_proc_show(struct seq_file *s, void *it)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	struct user_namespace *user_ns = seq_user_ns(s);
+ 	struct kern_ipc_perm *ipcp = it;
+ 	struct shmid_kernel *shp;
+diff --git a/ipc/util.c b/ipc/util.c
+index 79b30ee..7c5f651 100644
+--- a/ipc/util.c
++++ b/ipc/util.c
+@@ -1,3 +1,5 @@
++extern int kernel_init_done;
++int printk(const char *fmt, ...);
+ // SPDX-License-Identifier: GPL-2.0
+ /*
+  * linux/ipc/util.c
+@@ -120,7 +122,10 @@ int ipc_init_ids(struct ipc_ids *ids)
+ 	init_rwsem(&ids->rwsem);
+ 	err = rhashtable_init(&ids->key_ht, &ipc_kht_params);
+ 	if (err)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return err;
++}
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	idr_init(&ids->ipcs_idr);
+ 	ids->tables_initialized = true;
+ 	return 0;
+@@ -143,7 +148,9 @@ void __init ipc_init_proc_interface(const char *path, const char *header,
+ 
+ 	iface = kmalloc(sizeof(*iface), GFP_KERNEL);
+ 	if (!iface)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return;
++}
+ 	iface->path	= path;
+ 	iface->header	= header;
+ 	iface->ids	= ids;
+@@ -155,8 +162,10 @@ void __init ipc_init_proc_interface(const char *path, const char *header,
+ 			       &sysvipc_proc_fops,
+ 			       iface);
+ 	if (!pde)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		kfree(iface);
+ }
++}
+ #endif
+ 
+ /**
+@@ -178,11 +187,13 @@ static struct kern_ipc_perm *ipc_findkey(struct ipc_ids *ids, key_t key)
+ 					      ipc_kht_params);
+ 
+ 	if (ipcp) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		rcu_read_lock();
+ 		ipc_lock_object(ipcp);
+ 		return ipcp;
+ 	}
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	return NULL;
+ }
+ 
+@@ -199,7 +210,9 @@ int ipc_get_maxid(struct ipc_ids *ids)
+ 	int total, id;
+ 
+ 	if (ids->in_use == 0)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return -1;
++}
+ 
+ 	if (ids->in_use == IPCMNI)
+ 		return IPCMNI - 1;
+@@ -237,10 +250,14 @@ int ipc_addid(struct ipc_ids *ids, struct kern_ipc_perm *new, int size)
+ 	int next_id = ids->next_id;
+ 
+ 	if (size > IPCMNI)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		size = IPCMNI;
++}
+ 
+ 	if (!ids->tables_initialized || ids->in_use >= size)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return -ENOSPC;
++}
+ 
+ 	idr_preload(GFP_KERNEL);
+ 
+@@ -263,11 +280,13 @@ int ipc_addid(struct ipc_ids *ids, struct kern_ipc_perm *new, int size)
+ 		err = rhashtable_insert_fast(&ids->key_ht, &new->khtnode,
+ 					     ipc_kht_params);
+ 		if (err < 0) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			idr_remove(&ids->ipcs_idr, id);
+ 			id = err;
+ 		}
+ 	}
+ 	if (id < 0) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		spin_unlock(&new->lock);
+ 		rcu_read_unlock();
+ 		return id;
+@@ -278,8 +297,11 @@ int ipc_addid(struct ipc_ids *ids, struct kern_ipc_perm *new, int size)
+ 	if (next_id < 0) {
+ 		new->seq = ids->seq++;
+ 		if (ids->seq > IPCID_SEQ_MAX)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			ids->seq = 0;
++}
+ 	} else {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		new->seq = ipcid_to_seqx(next_id);
+ 		ids->next_id = -1;
+ 	}
+@@ -332,7 +354,9 @@ static int ipc_check_perms(struct ipc_namespace *ns,
+ 	int err;
+ 
+ 	if (ipcperms(ns, ipcp, params->flg))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		err = -EACCES;
++}
+ 	else {
+ 		err = ops->associate(ipcp, params->flg);
+ 		if (!err)
+@@ -372,15 +396,20 @@ static int ipcget_public(struct ipc_namespace *ns, struct ipc_ids *ids,
+ 	if (ipcp == NULL) {
+ 		/* key not used */
+ 		if (!(flg & IPC_CREAT))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			err = -ENOENT;
++}
+ 		else
+ 			err = ops->getnew(ns, params);
+ 	} else {
+ 		/* ipc object has been locked by ipc_findkey() */
+ 
+ 		if (flg & IPC_CREAT && flg & IPC_EXCL)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			err = -EEXIST;
++}
+ 		else {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			err = 0;
+ 			if (ops->more_checks)
+ 				err = ops->more_checks(ipcp, params);
+@@ -391,6 +420,7 @@ static int ipcget_public(struct ipc_namespace *ns, struct ipc_ids *ids,
+ 				 */
+ 				err = ipc_check_perms(ns, ipcp, ops, params);
+ 		}
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		ipc_unlock(ipcp);
+ 	}
+ 	up_write(&ids->rwsem);
+@@ -441,12 +471,14 @@ void ipc_rmid(struct ipc_ids *ids, struct kern_ipc_perm *ipcp)
+  */
+ void ipc_set_key_private(struct ipc_ids *ids, struct kern_ipc_perm *ipcp)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	ipc_kht_remove(ids, ipcp);
+ 	ipcp->key = IPC_PRIVATE;
+ }
+ 
+ int ipc_rcu_getref(struct kern_ipc_perm *ptr)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	return refcount_inc_not_zero(&ptr->refcount);
+ }
+ 
+@@ -454,7 +486,9 @@ void ipc_rcu_putref(struct kern_ipc_perm *ptr,
+ 			void (*func)(struct rcu_head *head))
+ {
+ 	if (!refcount_dec_and_test(&ptr->refcount))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return;
++}
+ 
+ 	call_rcu(&ptr->rcu, func);
+ }
+@@ -481,8 +515,11 @@ int ipcperms(struct ipc_namespace *ns, struct kern_ipc_perm *ipcp, short flag)
+ 	if (uid_eq(euid, ipcp->cuid) ||
+ 	    uid_eq(euid, ipcp->uid))
+ 		granted_mode >>= 6;
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	else if (in_group_p(ipcp->cgid) || in_group_p(ipcp->gid))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		granted_mode >>= 3;
++}
+ 	/* is there some bit set in requested_mode but not in granted_mode? */
+ 	if ((requested_mode & ~granted_mode & 0007) &&
+ 	    !ns_capable(ns->user_ns, CAP_IPC_OWNER))
+@@ -506,6 +543,7 @@ int ipcperms(struct ipc_namespace *ns, struct kern_ipc_perm *ipcp, short flag)
+  */
+ void kernel_to_ipc64_perm(struct kern_ipc_perm *in, struct ipc64_perm *out)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	out->key	= in->key;
+ 	out->uid	= from_kuid_munged(current_user_ns(), in->uid);
+ 	out->gid	= from_kgid_munged(current_user_ns(), in->gid);
+@@ -525,6 +563,7 @@ void kernel_to_ipc64_perm(struct kern_ipc_perm *in, struct ipc64_perm *out)
+  */
+ void ipc64_perm_to_ipc_perm(struct ipc64_perm *in, struct ipc_perm *out)
+ {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	out->key	= in->key;
+ 	SET_UID(out->uid, in->uid);
+ 	SET_GID(out->gid, in->gid);
+@@ -550,11 +589,16 @@ struct kern_ipc_perm *ipc_obtain_object_idr(struct ipc_ids *ids, int id)
+ 	int lid = ipcid_to_idx(id);
+ 
+ 	if (unlikely(!ids->tables_initialized))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return ERR_PTR(-EINVAL);
++}
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	out = idr_find(&ids->ipcs_idr, lid);
+ 	if (!out)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return ERR_PTR(-EINVAL);
++}
+ 
+ 	return out;
+ }
+@@ -577,6 +621,7 @@ struct kern_ipc_perm *ipc_lock(struct ipc_ids *ids, int id)
+ 	if (IS_ERR(out))
+ 		goto err;
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	spin_lock(&out->lock);
+ 
+ 	/*
+@@ -586,8 +631,11 @@ struct kern_ipc_perm *ipc_lock(struct ipc_ids *ids, int id)
+ 	 * the ID points to a removed identifier.
+ 	 */
+ 	if (ipc_valid_object(out))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return out;
++}
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	spin_unlock(&out->lock);
+ 	out = ERR_PTR(-EIDRM);
+ err:
+@@ -614,7 +662,9 @@ struct kern_ipc_perm *ipc_obtain_object_check(struct ipc_ids *ids, int id)
+ 		goto out;
+ 
+ 	if (ipc_checkid(out, id))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return ERR_PTR(-EINVAL);
++}
+ out:
+ 	return out;
+ }
+@@ -648,7 +698,9 @@ int ipc_update_perm(struct ipc64_perm *in, struct kern_ipc_perm *out)
+ 	kuid_t uid = make_kuid(current_user_ns(), in->uid);
+ 	kgid_t gid = make_kgid(current_user_ns(), in->gid);
+ 	if (!uid_valid(uid) || !gid_valid(gid))
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return -EINVAL;
++}
+ 
+ 	out->uid = uid;
+ 	out->gid = gid;
+@@ -745,17 +797,25 @@ static struct kern_ipc_perm *sysvipc_find_ipc(struct ipc_ids *ids, loff_t pos,
+ 
+ 	total = 0;
+ 	for (id = 0; id < pos && total < ids->in_use; id++) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		ipc = idr_find(&ids->ipcs_idr, id);
+ 		if (ipc != NULL)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			total++;
++}
+ 	}
+ 
+ 	if (total >= ids->in_use)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return NULL;
++}
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	for (; pos < IPCMNI; pos++) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		ipc = idr_find(&ids->ipcs_idr, pos);
+ 		if (ipc != NULL) {
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 			*new_pos = pos + 1;
+ 			rcu_read_lock();
+ 			ipc_lock_object(ipc);
+@@ -775,7 +835,9 @@ static void *sysvipc_proc_next(struct seq_file *s, void *it, loff_t *pos)
+ 
+ 	/* If we had an ipc id locked before, unlock it */
+ 	if (ipc && ipc != SEQ_START_TOKEN)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		ipc_unlock(ipc);
++}
+ 
+ 	return sysvipc_find_ipc(&iter->ns->ids[iface->ids], *pos, pos);
+ }
+@@ -800,11 +862,15 @@ static void *sysvipc_proc_start(struct seq_file *s, loff_t *pos)
+ 
+ 	/* pos < 0 is invalid */
+ 	if (*pos < 0)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return NULL;
++}
+ 
+ 	/* pos == 0 means header */
+ 	if (*pos == 0)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return SEQ_START_TOKEN;
++}
+ 
+ 	/* Find the (pos-1)th ipc */
+ 	return sysvipc_find_ipc(ids, *pos - 1, pos);
+@@ -819,7 +885,9 @@ static void sysvipc_proc_stop(struct seq_file *s, void *it)
+ 
+ 	/* If we had a locked structure, release it */
+ 	if (ipc && ipc != SEQ_START_TOKEN)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		ipc_unlock(ipc);
++}
+ 
+ 	ids = &iter->ns->ids[iface->ids];
+ 	/* Release the lock we took in start() */
+@@ -836,6 +904,7 @@ static int sysvipc_proc_show(struct seq_file *s, void *it)
+ 		return 0;
+ 	}
+ 
++if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 	return iface->show(s, it);
+ }
+ 
+@@ -852,7 +921,9 @@ static int sysvipc_proc_open(struct inode *inode, struct file *file)
+ 
+ 	iter = __seq_open_private(file, &sysvipc_proc_seqops, sizeof(*iter));
+ 	if (!iter)
++{ if (kernel_init_done) printk("We reached unpopular paths: %s:%i\n", __FILE__, __LINE__);
+ 		return -ENOMEM;
++}
+ 
+ 	iter->iface = PDE_DATA(inode);
+ 	iter->ns    = get_ipc_ns(current->nsproxy->ipc_ns);
+diff --git a/ipc/util.h b/ipc/util.h
+index 579112d..c14ab49 100644
+--- a/ipc/util.h
++++ b/ipc/util.h
+@@ -1,3 +1,5 @@
++extern int kernel_init_done;
++int printk(const char *fmt, ...);
+ /* SPDX-License-Identifier: GPL-2.0 */
+ /*
+  * linux/ipc/util.h
+-- 
+2.7.4
+

@@ -1,7 +1,7 @@
 From 057b4917067af536281e128400ff7d43b6d65279 Mon Sep 17 00:00:00 2001
 From: Yiwen Li <detectivelyw@gmail.com>
 Date: Tue, 4 Jun 2019 17:24:05 -0400
-Subject: [PATCH 2/2] instrumented arch.
+Subject: [PATCH 2/5] instrumented arch.
 
 ---
  arch/x86/crypto/aes_glue.c                 |   2 +

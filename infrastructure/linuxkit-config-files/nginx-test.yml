@@ -1,0 +1,72 @@
+kernel:
+  image: detectivelyw/lind-linuxkit-experiment:v4.14.24-instrumented-v1.4-drivers
+  cmdline: "console=tty0 console=ttyS0 console=ttyAMA0"
+init:
+  - linuxkit/init:b212cfeb4bb6330e0a7547d8010fe2e8489b677a
+  - linuxkit/runc:7c39a68490a12cde830e1922f171c451fb08e731
+  - linuxkit/containerd:37e397ebfc6bd5d8e18695b121166ffd0cbfd9f0
+  - linuxkit/ca-certificates:v0.2
+  - linuxkit/getty:v0.2
+onboot:
+  - name: sysctl
+    image: linuxkit/sysctl:v0.2
+  - name: dhcpcd
+    image: linuxkit/dhcpcd:v0.2
+    command: ["/sbin/dhcpcd", "--nobackground", "-f", "/dhcpcd.conf", "-1"]
+onshutdown:
+  - name: shutdown
+    image: busybox:latest
+    command: ["/bin/echo", "so long and thanks for all the fish"]
+services:
+  - name: rngd
+    image: linuxkit/rngd:v0.2
+  - name: nginx
+    image: nginx:1.15.7-alpine
+    capabilities:
+     - CAP_NET_BIND_SERVICE
+     - CAP_CHOWN
+     - CAP_SETUID
+     - CAP_SETGID
+     - CAP_DAC_OVERRIDE
+    binds:
+     - /etc/resolv.conf:/etc/resolv.conf
+    command: ["sh", "-c", "sleep 6000"]
+  - name: ubuntu
+    image: ubuntu:17.10
+    capabilities:
+     - all
+    binds:
+     - /etc/resolv.conf:/etc/resolv.conf
+     - /sys:/sys
+     - /run:/run
+     - /root/.ssh/id_rsa:/root/.ssh/id_rsa
+    command: ["sh", "-c", "sleep infinity"]
+files:
+  - path: /root/.ssh/id_rsa
+    source: "/home/detectivelyw/.ssh/id_rsa"
+    mode: "0600"
+  - path: etc/containerd/config.toml
+    contents: |
+      state = "/run/containerd"
+      root = "/var/lib/containerd"
+      snapshotter = "io.containerd.snapshotter.v1.overlayfs"
+      differ = "io.containerd.differ.v1.base-diff"
+      subreaper = false
+
+      [grpc]
+      address = "/run/containerd/containerd.sock"
+      uid = 0
+      gid = 0
+
+      [debug]
+      address = "/run/containerd/debug.sock"
+      level = "info"
+
+      [metrics]
+      address = ":13337"
+  - path: etc/linuxkit-config
+    metadata: yaml
+trust:
+  org:
+    - linuxkit
+    - library

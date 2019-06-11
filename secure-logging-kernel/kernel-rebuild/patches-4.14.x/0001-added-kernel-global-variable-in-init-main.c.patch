@@ -1,6 +1,6 @@
-From 50f4ee7d23022c4fea40922181ff891ec7c84365 Mon Sep 17 00:00:00 2001
+From 2c9e787b07e456604cf32fd9a55d253dd3341895 Mon Sep 17 00:00:00 2001
 From: Yiwen Li <detectivelyw@gmail.com>
-Date: Wed, 5 Jun 2019 14:23:22 -0400
+Date: Mon, 10 Jun 2019 18:58:01 -0400
 Subject: [PATCH 1/2] added kernel global variable in init/main.c
 
 ---

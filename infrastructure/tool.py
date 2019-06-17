@@ -123,13 +123,18 @@ def generate_npp_bb(kernel_sub_dir):
   total_pp_functions = 0
   total_lines_inserted = 0
   total_lines_in_blacklist = 0
+  macro_inline_to_instrument = 0
+  macro_inline_instrumented = 0
   prefix = "SF:/home/detectivelyw/Documents/projects/tracks/linux-stable/"
+
+  generate_blacklist()
+
   for pp_file_name in pp_files:
     file_name = pp_file_name[len(prefix):-1]
     print "now processing file: " + file_name
 
     # debug
-    # if (file_name != "drivers/pci/probe.c"):
+    # if (file_name != "drivers/tty/serial/8250/8250_port.c"):
     #   continue
     if (file_name.startswith("arch/x86/include/asm/")) or (file_name.startswith("arch/x86/lib/kaslr.c")) or (file_name.startswith("lib/cmdline.c")) or (file_name.startswith("include/linux/compiler.h")) or (file_name.startswith("include/asm-generic/getorder.h")) or (file_name.startswith("include/linux/err.h")) or (file_name.startswith("lib/zlib_inflate/inflate.c")):
       continue
@@ -238,8 +243,6 @@ def generate_npp_bb(kernel_sub_dir):
     global multiple_line_for
     multiple_line_for = 0
 
-    generate_blacklist()
-
     with open(OutputFileName, "w+") as f:
       # f.write("#include <linux/kernel.h>\n")
       # f.write("#include <linux/linkage.h>\n")
@@ -278,16 +281,76 @@ def generate_npp_bb(kernel_sub_dir):
               line = fp.readline()
               continue
   
-          # output the macro definitions in our blacklist to log
+          is_in_blacklist = 0
           macro_definition_output = 0
           if is_syscall_define(line):
+            is_in_blacklist = 1
+          
+          # output the macro definitions in our blacklist to log
+          # decide if this line should be instrumented and do it          
+          if (str(original_file_counter) in npp_bb) and (middle_statement == 0) and (in_struct != 1) and (is_in_blacklist == 1):
+            if ("} else if" in line):
+              # decide if we are entering the middle of one statement
+              if is_line_incomplete(line):
+                middle_statement = 1
+              else:
+                middle_statement = 0
+              if ("{" not in line):
+                single_if_else_start = 1
+              f.write(line)
+              line = fp.readline()
+              new_file_counter += 1
+              original_file_counter += 1
+              continue
+            # instrument macro / inline function definitions 
+            if ((") {" in line) and ("}" in line)):
+              line_first = line.split("{")[0]
+              line_second = line.split("{")[1]
+              line_first = line_first + "{ if (kernel_init_done) printk(\"We reached unpopular paths: %s:%i\\n\", __FILE__, __LINE__);\n"
+              f.write(line_first)
+              f.write(line_second)
+              line = fp.readline()
+              new_file_counter += 2
+              original_file_counter += 1
+              insert_line_counter += 1
+              macro_inline_instrumented += 1
+              continue
+            if (("(" in line) and (")" in line) and (";" not in line) and ("PCI_USER_" not in line)):
+              f.write(line)
+              line = fp.readline()
+              f.write("{ if (kernel_init_done) printk(\"We reached unpopular paths: %s:%i\\n\", __FILE__, __LINE__);\n")
+              line = fp.readline()
+              new_file_counter += 2
+              original_file_counter += 2
+              insert_line_counter += 1
+              macro_inline_instrumented += 1
+              continue
+            # handle function definitions across multiple lines
+            if (("(" in line) and (")" not in line)):
+              f.write(line)
+              line = fp.readline()
+              tmp_counter = 0
+              while ("{" not in line):
+                f.write(line)
+                line = fp.readline()
+                tmp_counter += 1 
+              f.write("{ if (kernel_init_done) printk(\"We reached unpopular paths: %s:%i\\n\", __FILE__, __LINE__);\n")
+              line = fp.readline()
+              new_file_counter += 2 + tmp_counter 
+              original_file_counter += 2 + tmp_counter
+              insert_line_counter += 1
+              macro_inline_instrumented += 1
+              continue
+            
+            # output to our log, if the line was not instrumented
             if macro_definition_output == 1:
-              fmacro = open("log-macro-definitions.txt", "a+")
+              fmacro = open("log-macro-definitions.instrumented.01.txt", "a+")
               macro_output_log = file_name + ": " + str(original_file_counter) + ": " + line
               fmacro.write(macro_output_log)
               fmacro.close()
+              macro_inline_to_instrument += 1
 
-          if (str(original_file_counter) in npp_bb) and (middle_statement == 0) and (in_struct != 1) and (not is_syscall_define(line)):
+          if (str(original_file_counter) in npp_bb) and (middle_statement == 0) and (in_struct != 1) and (is_in_blacklist == 0):
             if single_if_else_start == 1: 
               f.write("{ if (kernel_init_done) printk(\"We reached unpopular paths: %s:%i\\n\", __FILE__, __LINE__);\n")
               # check if we have another single-statement if/for branch here
@@ -353,6 +416,7 @@ def generate_npp_bb(kernel_sub_dir):
   print "total number of lines inserted: " + str(total_lines_inserted)
   print "total number of lines in our blacklist: " + str(total_lines_in_blacklist)
   print "total number of macro definitions: " + str(macro_definition_counter)
+  print "total number of macro and inlines candidates: " + str(macro_inline_to_instrument)
 
 def main():
   print "Our program has started ..."

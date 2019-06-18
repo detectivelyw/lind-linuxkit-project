@@ -1,0 +1,7 @@
+drivers/tty/serial/8250/8250_port.c,604
+drivers/tty/serial/8250/8250_port.c,593
+drivers/tty/serial/8250/8250_port.c,3475
+drivers/tty/vt/vt.c,339
+drivers/tty/vt/vt.c,2919
+drivers/tty/vt/vt.c,2882
+drivers/tty/tty_audit.c,127

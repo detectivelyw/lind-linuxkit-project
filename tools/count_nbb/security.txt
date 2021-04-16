@@ -1,0 +1,76 @@
+Our program has started ...
+We are going to instrument kernel dir: security
+First, checking the required input files to conduct our kernel instrumentation...
+Popular paths data found. Now processing...
+now processing file: security/keys/key.c
+non-popular functions: 11
+popular functions: 12
+npp_bb: 168
+now processing file: security/inode.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: security/keys/gc.c
+non-popular functions: 4
+popular functions: 2
+npp_bb: 46
+now processing file: security/keys/permission.c
+non-popular functions: 0
+popular functions: 2
+npp_bb: 13
+now processing file: security/keys/process_keys.c
+non-popular functions: 6
+popular functions: 10
+npp_bb: 135
+now processing file: security/commoncap.c
+non-popular functions: 11
+popular functions: 25
+npp_bb: 209
+now processing file: security/integrity/iint.c
+non-popular functions: 6
+popular functions: 3
+npp_bb: 38
+now processing file: security/yama/yama_lsm.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: security/keys/proc.c
+non-popular functions: 16
+popular functions: 1
+npp_bb: 80
+now processing file: security/keys/encrypted-keys/encrypted.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: security/keys/internal.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: security/min_addr.c
+non-popular functions: 0
+popular functions: 3
+npp_bb: 4
+now processing file: security/keys/keyctl.c
+non-popular functions: 28
+popular functions: 4
+npp_bb: 337
+now processing file: security/security.c
+non-popular functions: 73
+popular functions: 118
+npp_bb: 142
+now processing file: security/device_cgroup.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: security/keys/big_key.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: security/keys/keyring.c
+non-popular functions: 24
+popular functions: 21
+npp_bb: 251
+total non-popular functions: 179
+total popular functions: 201
+****************
+total npp_bb = 1423

@@ -1,0 +1,2769 @@
+[    0.000000] Linux version 4.14.24-linuxkit (root@d611a7831622) (gcc version 6.4.0 (Alpine 6.4.0)) #1 SMP Thu Aug 22 15:15:28 UTC 2019
+[    0.000000] Command line: console=tty0 console=ttyS0 console=ttyAMA0
+[    0.000000] x86/fpu: x87 FPU will use FXSAVE
+[    0.000000] e820: BIOS-provided physical RAM map:
+[    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+[    0.000000] BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000000100000-0x000000003ffdefff] usable
+[    0.000000] BIOS-e820: [mem 0x000000003ffdf000-0x000000003fffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000b0000000-0x00000000bfffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000feffc000-0x00000000feffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+[    0.000000] NX (Execute Disable) protection: active
+[    0.000000] random: fast init done
+[    0.000000] SMBIOS 2.8 present.
+[    0.000000] DMI: QEMU Standard PC (Q35 + ICH9, 2009), BIOS Ubuntu-1.8.2-1ubuntu1 04/01/2014
+[    0.000000] Hypervisor detected: KVM
+[    0.000000] tsc: Fast TSC calibration using PIT
+[    0.000000] e820: last_pfn = 0x3ffdf max_arch_pfn = 0x400000000
+[    0.000000] x86/PAT: PAT not supported by CPU.
+[    0.000000] x86/PAT: Configuration [0-7]: WB  WT  UC- UC  WB  WT  UC- UC  
+[    0.000000] found SMP MP-table at [mem 0x000f6630-0x000f663f] mapped at [ffffffffff200630]
+[    0.000000] RAMDISK: [mem 0x3a94e000-0x3ffcffff]
+[    0.000000] ACPI: Early table checksum verification disabled
+[    0.000000] ACPI: RSDP 0x00000000000F6460 000014 (v00 BOCHS )
+[    0.000000] ACPI: RSDT 0x000000003FFE2267 000038 (v01 BOCHS  BXPCRSDT 00000001 BXPC 00000001)
+[    0.000000] ACPI: FACP 0x000000003FFE1E32 000074 (v01 BOCHS  BXPCFACP 00000001 BXPC 00000001)
+[    0.000000] ACPI: DSDT 0x000000003FFE0040 001DF2 (v01 BOCHS  BXPCDSDT 00000001 BXPC 00000001)
+[    0.000000] ACPI: FACS 0x000000003FFE0000 000040
+[    0.000000] ACPI: SSDT 0x000000003FFE1EA6 0002D5 (v01 BOCHS  BXPCSSDT 00000001 BXPC 00000001)
+[    0.000000] ACPI: APIC 0x000000003FFE217B 000078 (v01 BOCHS  BXPCAPIC 00000001 BXPC 00000001)
+[    0.000000] ACPI: HPET 0x000000003FFE21F3 000038 (v01 BOCHS  BXPCHPET 00000001 BXPC 00000001)
+[    0.000000] ACPI: MCFG 0x000000003FFE222B 00003C (v01 BOCHS  BXPCMCFG 00000001 BXPC 00000001)
+[    0.000000] kvm-clock: Using msrs 4b564d01 and 4b564d00
+[    0.000000] kvm-clock: cpu 0, msr 0:3ffdd001, primary cpu clock
+[    0.000000] kvm-clock: using sched offset of 11054139579 cycles
+[    0.000000] clocksource: kvm-clock: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns
+[    0.000000] Zone ranges:
+[    0.000000]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+[    0.000000]   DMA32    [mem 0x0000000001000000-0x000000003ffdefff]
+[    0.000000]   Normal   empty
+[    0.000000]   Device   empty
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000001000-0x000000000009efff]
+[    0.000000]   node   0: [mem 0x0000000000100000-0x000000003ffdefff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000001000-0x000000003ffdefff]
+[    0.000000] ACPI: PM-Timer IO Port: 0x608
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0xff] dfl dfl lint[0x1])
+[    0.000000] IOAPIC[0]: apic_id 0, version 17, address 0xfec00000, GSI 0-23
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 5 global_irq 5 high level)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 high level)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 10 global_irq 10 high level)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 11 global_irq 11 high level)
+[    0.000000] Using ACPI (MADT) for SMP configuration information
+[    0.000000] Using ACPI for processor (LAPIC) configuration information
+[    0.000000] ACPI: HPET id: 0x8086a201 base: 0xfed00000
+[    0.000000] smpboot: Allowing 1 CPUs, 0 hotplug CPUs
+[    0.000000] e820: [mem 0x40000000-0xafffffff] available for PCI devices
+[    0.000000] Booting paravirtualized kernel on KVM
+[    0.000000] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.000000] setup_percpu: NR_CPUS:128 nr_cpumask_bits:128 nr_cpu_ids:1 nr_node_ids:1
+[    0.000000] percpu: Embedded 44 pages/cpu @ffff95e83a600000 s143192 r8192 d28840 u2097152
+[    0.000000] KVM setup async PF for cpu 0
+[    0.000000] kvm-stealtime: cpu 0, msr 3a615f00
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 257896
+[    0.000000] Kernel command line: console=tty0 console=ttyS0 console=ttyAMA0
+[    0.000000] PID hash table entries: 4096 (order: 3, 32768 bytes)
+[    0.000000] Dentry cache hash table entries: 131072 (order: 8, 1048576 bytes)
+[    0.000000] Inode-cache hash table entries: 65536 (order: 7, 524288 bytes)
+[    0.000000] Memory: 896112K/1048052K available (18444K kernel code, 7684K rwdata, 3192K rodata, 1880K init, 7652K bss, 151940K reserved, 0K cma-reserved)
+[    0.000000] Kernel/User page tables isolation: enabled
+[    0.000000] ftrace: allocating 41772 entries in 164 pages
+[    0.010000] Hierarchical RCU implementation.
+[    0.010000] 	RCU restricting CPUs from NR_CPUS=128 to nr_cpu_ids=1.
+[    0.010000] RCU: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
+[    0.010000] NR_IRQS: 8448, nr_irqs: 256, preallocated irqs: 16
+[    0.010000] Console: colour VGA+ 80x25
+[    0.010000] console [tty0] enabled
+[    0.010000] console [ttyS0] enabled
+[    0.010000] clocksource: hpet: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604467 ns
+[    0.010011] tsc: Detected 2993.200 MHz processor
+[    0.011057] Calibrating delay loop (skipped) preset value.. 5986.40 BogoMIPS (lpj=29932000)
+[    0.011826] pid_max: default: 32768 minimum: 301
+[    0.012872] ACPI: Core revision 20170728
+[    0.014902] ACPI: 2 ACPI AML tables successfully acquired and loaded
+[    0.016346] Security Framework initialized
+[    0.017293] Yama: becoming mindful.
+[    0.018147] Mount-cache hash table entries: 2048 (order: 2, 16384 bytes)
+[    0.020007] Mountpoint-cache hash table entries: 2048 (order: 2, 16384 bytes)
+[    0.021802] Last level iTLB entries: 4KB 0, 2MB 0, 4MB 0
+[    0.022983] Last level dTLB entries: 4KB 0, 2MB 0, 4MB 0, 1GB 0
+[    0.024317] Spectre V2 : Vulnerable: Minimal generic ASM retpoline
+[    0.030401] Freeing SMP alternatives memory: 20K
+[    0.031869] smpboot: Max logical packages: 1
+[    0.033158] x2apic enabled
+[    0.034185] Switched APIC routing to physical x2apic.
+[    0.036848] ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+[    0.040000] smpboot: CPU0: Intel QEMU Virtual CPU version 2.5+ (family: 0x6, model: 0x6, stepping: 0x3)
+[    0.040000] Performance Events: PMU not available due to virtualization, using software events only.
+[    0.040000] Hierarchical SRCU implementation.
+[    0.040000] NMI watchdog: Perf event create on CPU 0 failed with -2
+[    0.040000] NMI watchdog: Perf NMI watchdog permanently disabled
+[    0.040000] smp: Bringing up secondary CPUs ...
+[    0.040000] smp: Brought up 1 node, 1 CPU
+[    0.040000] smpboot: Total of 1 processors activated (5986.40 BogoMIPS)
+[    0.040416] devtmpfs: initialized
+[    0.041262] x86/mm: Memory block size: 128MB
+[    0.042394] gcov: version magic: 0x3630342a
+[    0.043588] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.045662] futex hash table entries: 256 (order: 2, 16384 bytes)
+[    0.047136] NET: Registered protocol family 16
+[    0.048320] cpuidle: using governor ladder
+[    0.050004] cpuidle: using governor menu
+[    0.050956] ACPI: bus type PCI registered
+[    0.051984] PCI: MMCONFIG for domain 0000 [bus 00-ff] at [mem 0xb0000000-0xbfffffff] (base 0xb0000000)
+[    0.053942] PCI: MMCONFIG at [mem 0xb0000000-0xbfffffff] reserved in E820
+[    0.055367] PCI: Using configuration type 1 for base access
+[    0.058433] HugeTLB registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.060255] ACPI: Added _OSI(Module Device)
+[    0.061202] ACPI: Added _OSI(Processor Device)
+[    0.062193] ACPI: Added _OSI(3.0 _SCP Extensions)
+[    0.063232] ACPI: Added _OSI(Processor Aggregator Device)
+[    0.067470] ACPI: Interpreter enabled
+[    0.068332] ACPI: (supports S0 S5)
+[    0.069266] ACPI: Using IOAPIC for interrupt routing
+[    0.070044] PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+[    0.072633] ACPI: Enabled 16 GPEs in block 00 to 3F
+[    0.076791] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+[    0.078155] acpi PNP0A08:00: _OSC: OS supports [ExtendedConfig ASPM ClockPM Segments MSI]
+[    0.080189] acpi PNP0A08:00: _OSC: OS now controls [PCIeHotplug PME PCIeCapability]
+[    0.081946] PCI host bridge to bus 0000:00
+[    0.082901] pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+[    0.084369] pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+[    0.085827] pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+[    0.087490] pci_bus 0000:00: root bus resource [mem 0xc0000000-0xfebfffff window]
+[    0.089146] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    0.113769] pci 0000:00:1f.0: quirk: [io  0x0600-0x067f] claimed by ICH6 ACPI/GPIO/TCO
+[    0.127070] ACPI: PCI Interrupt Link [LNKA] (IRQs 5 *10 11)
+[    0.128462] ACPI: PCI Interrupt Link [LNKB] (IRQs 5 *10 11)
+[    0.129823] ACPI: PCI Interrupt Link [LNKC] (IRQs 5 10 *11)
+[    0.130123] ACPI: PCI Interrupt Link [LNKD] (IRQs 5 10 *11)
+[    0.131487] ACPI: PCI Interrupt Link [LNKE] (IRQs 5 *10 11)
+[    0.132840] ACPI: PCI Interrupt Link [LNKF] (IRQs 5 *10 11)
+[    0.134433] ACPI: PCI Interrupt Link [LNKG] (IRQs 5 10 *11)
+[    0.135798] ACPI: PCI Interrupt Link [LNKH] (IRQs 5 10 *11)
+[    0.137086] ACPI: PCI Interrupt Link [GSIA] (IRQs *16)
+[    0.138252] ACPI: PCI Interrupt Link [GSIB] (IRQs *17)
+[    0.140013] ACPI: PCI Interrupt Link [GSIC] (IRQs *18)
+[    0.141176] ACPI: PCI Interrupt Link [GSID] (IRQs *19)
+[    0.142337] ACPI: PCI Interrupt Link [GSIE] (IRQs *20)
+[    0.143500] ACPI: PCI Interrupt Link [GSIF] (IRQs *21)
+[    0.144646] ACPI: PCI Interrupt Link [GSIG] (IRQs *22)
+[    0.145807] ACPI: PCI Interrupt Link [GSIH] (IRQs *23)
+[    0.147000] acpi LNXCPU:00: Invalid PBLK length [0]
+[    0.150246] SCSI subsystem initialized
+[    0.151210] ACPI: bus type USB registered
+[    0.152144] usbcore: registered new interface driver usbfs
+[    0.160021] usbcore: registered new interface driver hub
+[    0.161192] usbcore: registered new device driver usb
+[    0.162318] pps_core: LinuxPPS API ver. 1 registered
+[    0.163404] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.165331] PTP clock support registered
+[    0.166283] PCI: Using ACPI for IRQ routing
+[    0.244664] NetLabel: Initializing
+[    0.245464] NetLabel:  domain hash size = 128
+[    0.246452] NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+[    0.247691] NetLabel:  unlabeled traffic allowed by default
+[    0.249003] HPET: 3 timers in total, 0 timers will be used for per-cpu timer
+[    0.250023] hpet0: at MMIO 0xfed00000, IRQs 2, 8, 0
+[    0.251089] hpet0: 3 comparators, 64-bit 100.000000 MHz counter
+[    0.255480] clocksource: Switched to clocksource kvm-clock
+[    0.267511] VFS: Disk quotas dquot_6.6.0
+[    0.268512] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    0.270078] FS-Cache: Loaded
+[    0.270885] CacheFiles: Loaded
+[    0.271660] pnp: PnP ACPI init
+[    0.273114] pnp: PnP ACPI: found 5 devices
+[    0.280296] clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+[    0.282316] NET: Registered protocol family 2
+[    0.283485] TCP established hash table entries: 8192 (order: 4, 65536 bytes)
+[    0.285038] TCP bind hash table entries: 8192 (order: 5, 131072 bytes)
+[    0.286645] TCP: Hash tables configured (established 8192 bind 8192)
+[    0.288070] UDP hash table entries: 512 (order: 2, 16384 bytes)
+[    0.289374] UDP-Lite hash table entries: 512 (order: 2, 16384 bytes)
+[    0.290837] NET: Registered protocol family 1
+[    0.291904] pci 0000:00:01.0: Video device with shadowed ROM at [mem 0x000c0000-0x000dffff]
+[    0.293864] Trying to unpack rootfs image as initramfs...
+[    1.614980] Freeing initrd memory: 88584K
+[    1.617087] PCLMULQDQ-NI instructions are not detected.
+[    1.618334] AVX or AES-NI instructions are not detected.
+[    1.619522] CPU feature 'AVX registers' is not supported.
+[    1.620750] CPU feature 'AVX registers' is not supported.
+[    1.621951] CPU feature 'AVX registers' is not supported.
+[    1.623178] CPU feature 'AVX registers' is not supported.
+[    1.624380] AVX2 or AES-NI instructions are not detected.
+[    1.625582] AVX2 instructions are not detected.
+[    1.626802] audit: initializing netlink subsys (disabled)
+[    1.630046] audit: type=2000 audit(1566489425.776:1): state=initialized audit_enabled=0 res=1
+[    1.742716] workingset: timestamp_bits=46 max_order=18 bucket_order=0
+[    1.744375] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    1.745744] FS-Cache: Netfs 'cifs' registered for caching
+[    1.746952] fuse init (API version 7.26)
+[    1.747931] SGI XFS with ACLs, security attributes, no debug enabled
+[    1.749438] 9p: Installing v9fs 9p2000 file system support
+[    1.750656] FS-Cache: Netfs '9p' registered for caching
+[    1.753354] NET: Registered protocol family 38
+[    1.754354] Key type asymmetric registered
+[    1.755274] Asymmetric key parser 'x509' registered
+[    1.756353] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 248)
+[    1.757986] io scheduler noop registered
+[    1.758890] io scheduler deadline registered (default)
+[    1.760047] io scheduler cfq registered
+[    1.760927] io scheduler mq-deadline registered
+[    1.761931] io scheduler kyber registered
+[    1.762929] shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+[    1.764358] hv_vmbus: registering driver hyperv_fb
+[    1.765517] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+[    1.767142] ACPI: Power Button [PWRF]
+[    1.768055] button: probe of LNXPWRBN:00 failed with error -22
+[    1.769891] ACPI: PCI Interrupt Link [GSIG] enabled at IRQ 22
+[    1.771222] virtio-pci 0000:00:02.0: virtio_pci: leaving for legacy driver
+[    1.773418] ACPI: PCI Interrupt Link [GSIH] enabled at IRQ 23
+[    1.774726] virtio-pci 0000:00:03.0: virtio_pci: leaving for legacy driver
+[    1.776624] Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
+[    1.800596] 00:04: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A
+[    1.802723] Non-volatile memory driver v1.3
+[    1.803900] !!! Set our kernel_init_done FLAG !!!
+[    1.805072] Hangcheck: starting hangcheck timer 0.9.1 (tick is 180 seconds, margin is 60 seconds).
+[    1.807694] random: crng init done
+[    1.810197] brd: module loaded
+[    1.812368] loop: module loaded
+[    1.816124] lpc_ich 0000:00:1f.0: RCBA is disabled by hardware/BIOS, device disabled
+[    1.817836] lpc_ich 0000:00:1f.0: I/O space for GPIO uninitialized
+[    1.819152] lpc_ich 0000:00:1f.0: No MFD cells added
+[    1.820363] VMware PVSCSI driver - version 1.0.7.0-k
+[    1.821463] hv_vmbus: registering driver hv_storvsc
+[    1.823065] ACPI: PCI Interrupt Link [GSIA] enabled at IRQ 16
+[    1.825001] ahci 0000:00:1f.2: AHCI 0001.0000 32 slots 6 ports 1.5 Gbps 0x3f impl SATA mode
+[    1.826791] ahci 0000:00:1f.2: flags: ncq only 
+[    1.828789] scsi host0: ahci
+[    1.829580] scsi host1: ahci
+[    1.830390] scsi host2: ahci
+[    1.831166] scsi host3: ahci
+[    1.831947] scsi host4: ahci
+[    1.832734] scsi host5: ahci
+[    1.833485] ata1: SATA max UDMA/133 abar m4096@0xfebd2000 port 0xfebd2100 irq 24
+[    1.835099] ata2: SATA max UDMA/133 abar m4096@0xfebd2000 port 0xfebd2180 irq 24
+[    1.836711] ata3: SATA max UDMA/133 abar m4096@0xfebd2000 port 0xfebd2200 irq 24
+[    1.838319] ata4: SATA max UDMA/133 abar m4096@0xfebd2000 port 0xfebd2280 irq 24
+[    1.839937] ata5: SATA max UDMA/133 abar m4096@0xfebd2000 port 0xfebd2300 irq 24
+[    1.841553] ata6: SATA max UDMA/133 abar m4096@0xfebd2000 port 0xfebd2380 irq 24
+[    1.843776] tun: Universal TUN/TAP device driver, 1.6
+[    1.845760] VMware vmxnet3 virtual NIC driver - version 1.4.a.0-k-NAPI
+[    1.847165] hv_vmbus: registering driver hv_netvsc
+[    1.848217] Fusion MPT base driver 3.04.20
+[    1.849141] Copyright (c) 1999-2008 LSI Corporation
+[    1.850240] Fusion MPT SPI Host driver 3.04.20
+[    1.851281] i8042: PNP: PS/2 Controller [PNP0303:KBD,PNP0f13:MOU] at 0x60,0x64 irq 1,12
+[    1.853819] serio: i8042 KBD port at 0x60,0x64 irq 1
+[    1.854916] serio: i8042 AUX port at 0x60,0x64 irq 12
+[    1.856109] hv_vmbus: registering driver hyperv_keyboard
+[    1.857317] mousedev: PS/2 mouse device common for all mice
+[    1.858817] input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input1
+[    1.860921] input: PC Speaker as /devices/platform/pcspkr/input/input3
+[    1.862423] rtc_cmos 00:00: RTC can wake from S4
+[    1.863761] rtc_cmos 00:00: rtc core: registered rtc_cmos as rtc0
+[    1.865233] rtc_cmos 00:00: alarms up to one day, 114 bytes nvram, hpet irqs
+[    1.866733] i2c /dev entries driver
+[    1.867615] device-mapper: ioctl: 4.37.0-ioctl (2017-09-20) initialised: dm-devel@redhat.com
+[    1.869554] usbcore: registered new interface driver usbhid
+[    1.870776] usbhid: USB HID core driver
+[    1.871678] hv_utils: Registering HyperV Utility Driver
+[    1.872816] hv_vmbus: registering driver hv_util
+[    1.873832] hv_vmbus: registering driver hv_balloon
+[    1.874901] oprofile: using NMI interrupt.
+[    1.875850] GACT probability on
+[    1.876604] Mirror/redirect action on
+[    1.877448] Simple TC action Loaded
+[    1.878264] u32 classifier
+[    1.878932]     Performance counters on
+[    1.879802]     input device check on
+[    1.880653]     Actions configured
+[    1.881523] Netfilter messages via NETLINK v0.30.
+[    1.882581] nfnl_acct: registering with nfnetlink.
+[    1.883670] nf_conntrack version 0.5.0 (8192 buckets, 32768 max)
+[    1.884981] ctnetlink v0.93: registering with nfnetlink.
+[    1.886201] nf_tables: (c) 2007-2009 Patrick McHardy <kaber@trash.net>
+[    1.887590] nf_tables_compat: (c) 2012 Pablo Neira Ayuso <pablo@netfilter.org>
+[    1.889200] xt_time: kernel timezone is -0000
+[    1.890207] ip_set: protocol 6
+[    1.890972] IPVS: Registered protocols (TCP, UDP, SCTP, AH, ESP)
+[    1.892254] IPVS: Connection hash table configured (size=4096, memory=64Kbytes)
+[    1.893907] IPVS: ipvs loaded.
+[    1.894650] IPVS: [rr] scheduler registered.
+[    1.895604] IPVS: [wrr] scheduler registered.
+[    1.896602] IPVS: [lc] scheduler registered.
+[    1.897560] IPVS: [wlc] scheduler registered.
+[    1.898538] IPVS: [fo] scheduler registered.
+[    1.899490] IPVS: [ovf] scheduler registered.
+[    1.900482] IPVS: [lblc] scheduler registered.
+[    1.901478] IPVS: [lblcr] scheduler registered.
+[    1.902505] IPVS: [dh] scheduler registered.
+[    1.903458] IPVS: [sh] scheduler registered.
+[    1.904426] IPVS: [sed] scheduler registered.
+[    1.905397] IPVS: [nq] scheduler registered.
+[    1.906377] IPVS: ftp: loaded support on port[0] = 21
+[    1.907521] ipip: IPv4 and MPLS over IPv4 tunneling driver
+[    1.908804] gre: GRE over IPv4 demultiplexor driver
+[    1.909920] ip_tables: (C) 2000-2006 Netfilter Core Team
+[    1.911141] ipt_CLUSTERIP: ClusterIP Version 0.8 loaded successfully
+[    1.912495] arp_tables: arp_tables: (C) 2002 David S. Miller
+[    1.913746] NET: Registered protocol family 10
+[    1.914989] Segment Routing with IPv6
+[    1.924129] ip6_tables: (C) 2000-2006 Netfilter Core Team
+[    1.925493] NET: Registered protocol family 17
+[    1.926507] Bridge firewalling registered
+[    1.927423] Ebtables v2.0 registered
+[    1.928278] 8021q: 802.1Q VLAN Support v1.8
+[    1.929233] 9pnet: Installing 9P2000 support
+[    1.930229] Key type dns_resolver registered
+[    1.931280] sched_clock: Marking stable (1930194171, 0)->(2327302334, -397108163)
+[    1.933018] registered taskstats version 1
+[    1.939752] Key type big_key registered
+[    1.943469] Key type encrypted registered
+[    1.944704] rtc_cmos 00:00: setting system clock to 2019-08-22 15:57:05 UTC (1566489425)
+[    2.173425] ata6: SATA link down (SStatus 0 SControl 300)
+[    2.176201] ata2: SATA link down (SStatus 0 SControl 300)
+[    2.178947] ata5: SATA link down (SStatus 0 SControl 300)
+[    2.181708] ata4: SATA link down (SStatus 0 SControl 300)
+[    2.184475] ata3: SATA link up 1.5 Gbps (SStatus 113 SControl 300)
+[    2.187333] ata3.00: ATAPI: QEMU DVD-ROM, 2.5+, max UDMA/100
+[    2.189707] ata3.00: applying bridge limits
+[    2.191885] ata1: SATA link down (SStatus 0 SControl 300)
+[    2.194414] ata3.00: configured for UDMA/100
+[    2.196892] scsi 2:0:0:0: CD-ROM            QEMU     QEMU DVD-ROM     2.5+ PQ: 0 ANSI: 5
+[    2.250558] sr 2:0:0:0: [sr0] scsi3-mmc drive: 4x/4x cd/rw xa/form2 tray
+[    2.253505] cdrom: Uniform CD-ROM driver Revision: 3.20
+[    2.256396] sr 2:0:0:0: Attached scsi generic sg0 type 5
+[    2.263897] Freeing unused kernel memory: 1880K
+[    2.265861] Write protecting the kernel read-only data: 24576k
+[    2.269504] Freeing unused kernel memory: 2024K
+[    2.279133] Freeing unused kernel memory: 904K
+[    2.640077] tsc: Refined TSC clocksource calibration: 2993.204 MHz
+[    2.641463] clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x2b253149a2c, max_idle_ns: 440795254665 ns
+[    3.541213] We reached unpopular paths: kernel/sched/fair.c:3210
+
+Welcome to LinuxKit
+
+                        ##         .
+                  ## ## ##        ==
+               ## ## ## ## ##    ===
+           /"""""""""""""""""\___/ ===
+          {                       /  ===-
+           \______ O           __/
+             \    \         __/
+              \____\_______/
+
+[    3.573083] We reached unpopular paths: fs/read_write.c:1043
+[    3.576506] We reached unpopular paths: fs/read_write.c:1061
+[    3.578623] We reached unpopular paths: fs/read_write.c:1148
+[    3.580784] We reached unpopular paths: fs/read_write.c:1043
+[    3.584164] We reached unpopular paths: fs/read_write.c:1061
+[    3.586285] We reached unpopular paths: fs/read_write.c:1148
+[    3.589207] We reached unpopular paths: fs/read_write.c:336
+[    3.591299] We reached unpopular paths: fs/read_write.c:319
+[    3.593284] We reached unpopular paths: fs/read_write.c:72
+[    3.596124] We reached unpopular paths: fs/read_write.c:336
+[    3.598135] We reached unpopular paths: fs/read_write.c:319
+[    3.600153] We reached unpopular paths: fs/read_write.c:72
+[    3.603153] We reached unpopular paths: fs/read_write.c:1043
+[    3.606145] We reached unpopular paths: fs/read_write.c:1061
+[    3.608071] We reached unpopular paths: fs/read_write.c:1148
+[    3.609982] We reached unpopular paths: fs/read_write.c:1043
+[    3.612016] We reached unpopular paths: net/unix/af_unix.c:1307
+[    3.614018] We reached unpopular paths: net/unix/af_unix.c:905
+[    3.615914] We reached unpopular paths: net/unix/af_unix.c:910
+[    3.617788] We reached unpopular paths: net/unix/af_unix.c:301
+[    3.619672] We reached unpopular paths: net/unix/af_unix.c:994
+[    3.621570] We reached unpopular paths: net/unix/af_unix.c:301
+[    3.623449] We reached unpopular paths: net/unix/af_unix.c:320
+[    3.625315] We reached unpopular paths: net/unix/af_unix.c:484
+[    3.627911] We reached unpopular paths: fs/read_write.c:336
+[    3.629653] We reached unpopular paths: fs/read_write.c:319
+[    3.631406] We reached unpopular paths: fs/read_write.c:72
+[    3.634088] We reached unpopular paths: fs/read_write.c:1061
+[    3.635837] We reached unpopular paths: fs/read_write.c:1148
+[    3.637798] We reached unpopular paths: net/unix/af_unix.c:1307
+[    3.639587] We reached unpopular paths: net/unix/af_unix.c:905
+[    3.641327] We reached unpopular paths: net/unix/af_unix.c:910
+[    3.643080] We reached unpopular paths: net/unix/af_unix.c:1307
+[    3.644843] We reached unpopular paths: net/unix/af_unix.c:905
+[    3.646567] We reached unpopular paths: net/unix/af_unix.c:910
+[    3.648291] We reached unpopular paths: net/unix/af_unix.c:301
+[    3.655205] We reached unpopular paths: net/unix/af_unix.c:301
+[    3.656929] We reached unpopular paths: net/unix/af_unix.c:994
+[    3.658588] We reached unpopular paths: net/unix/af_unix.c:301
+[    3.660265] We reached unpopular paths: net/unix/af_unix.c:320
+[    3.661915] We reached unpopular paths: net/unix/af_unix.c:484
+[    3.663644] We reached unpopular paths: kernel/pid.c:485
+[    3.665123] We reached unpopular paths: fs/proc/base.c:3312
+[    3.666659] We reached unpopular paths: fs/proc/base.c:1851
+[    3.668188] We reached unpopular paths: fs/proc/base.c:1946
+[    3.669709] We reached unpopular paths: kernel/pid.c:517
+[    3.671195] We reached unpopular paths: fs/proc/base.c:3289
+[    3.672720] We reached unpopular paths: fs/proc/root.c:184
+[    3.674254] We reached unpopular paths: net/unix/af_unix.c:994
+[    3.675785] We reached unpopular paths: net/unix/af_unix.c:301
+[    3.677312] We reached unpopular paths: net/unix/af_unix.c:320
+[    3.678840] We reached unpopular paths: net/unix/af_unix.c:484
+[    3.680415] We reached unpopular paths: net/unix/af_unix.c:1307
+[    3.681965] We reached unpopular paths: net/unix/af_unix.c:905
+[    3.683499] We reached unpopular paths: net/unix/af_unix.c:910
+[    3.685027] We reached unpopular paths: net/unix/af_unix.c:301
+[    3.686563] We reached unpopular paths: net/unix/af_unix.c:994
+[    3.688033] We reached unpopular paths: net/unix/af_unix.c:301
+[    3.689501] We reached unpopular paths: net/unix/af_unix.c:320
+[    3.691002] We reached unpopular paths: net/unix/af_unix.c:484
+
+
+Welcome to LinuxKit
+
+                [    3.707445] We reached unpopular paths: kernel/pid.c:517
+[    3.707446] We reached unpopular paths: fs/proc/base.c:724
+[    3.707448] We reached unpopular paths: kernel/pid.c:517
+[    3.707450] We reached unpopular paths: fs/proc/base.c:1851
+[    3.707451] We reached unpopular paths: fs/proc/base.c:2550
+[    3.707452] We reached unpopular paths: fs/proc/base.c:1946
+[    3.707452] We reached unpopular paths: kernel/pid.c:517
+[    3.707453] We reached unpopular paths: fs/proc/base.c:1851
+        ##         .
+                  ## ## ##        ==
+               ##** 8152 printk messages dropped ** [    3.738721] We reached unpopular paths: fs/dcache.c:3278
+[    3.738722] We reached unpopular paths: fs/dcache.c:3294
+[    3.738722] We reached unpopular paths: fs/dcache.c:3371
+[    3.738723] We reached unpopular paths: fs/dcache.c:3364
+[    3.738723] We reached unpopular paths: fs/dcache.c:3278
+[    3.738724] We reached unpopular paths: fs/dcache.c:3294
+[    3.738724] We reached unpopular paths: fs/dcache.c:3371
+[    3.738724] We reached unpopular paths: fs/dcache.c:3364
+[    3.738725] We reached unpopular paths: fs/dcache.c:3278
+ ## ## ## ##    ===
+           /"""""""""""""""""__** 7379 printk messages dropped ** [    3.773914] We reached unpopular paths: fs/dcache.c:3371
+[    3.773914] We reached unpopular paths: fs/dcache.c:3364
+[    3.773915] We reached unpopular paths: fs/dcache.c:3278
+[    3.773915] We reached unpopular paths: fs/dcache.c:3294
+_/ ===
+          {                       /  ===-
+           ______ ** 5633 printk messages dropped ** [    3.792416] We reached unpopular paths: fs/seq_file.c:450
+[    3.792417] We reached unpopular paths: kernel/cgroup/cgroup-v1.c:970
+[    3.792417] We reached unpopular paths: fs/namespace.c:1448
+[    3.792418] We reached unpopular paths: kernel/cgroup/cgroup.c:1766
+[    3.792419] We reached unpopular paths: kernel/cgroup/cgroup.c:1317
+O           __/
+              ** 8249 printk messages dropped ** [    3.810596] We reached unpopular paths: kernel/cgroup/cgroup.c:1340
+[    3.810597] We reached unpopular paths: fs/kernfs/dir.c:152
+[    3.810597] We reached unpopular paths: fs/dcache.c:3364
+[    3.810598] We reached unpopular paths: fs/dcache.c:3278
+[    3.810598] We reached unpopular paths: fs/dcache.c:3294
+[    3.810599] We reached unpopular paths: fs/dcache.c:3371
+            __/
+              ___________/
+
+linuxkit-5ebc163c0dee login: root (automatic login)
+
+** 8936 printk messages dropped ** [    3.833220] We reached unpopular paths: fs/dcache.c:3294
+Welcome to LinuxKit!
+
+NOTE: This system is namespaced.
+The namespace you are currently in may not be the root.
+** 931 printk messages dropped ** [    3.834375] We reached unpopular paths: fs/namespace.c:1959
+[    3.834377] We reached unpopular paths: fs/namespace.c:1233
+[    3.834378] We reached unpopular paths: fs/namespace.c:1959
+[    3.834380] We reached unpopular paths: fs/namespace.c:1233
+[    3.834381] We reached unpopular paths: fs/namespace.c:1959
+** 2645 printk messages dropped ** [    3.853988] We reached unpopular paths: fs/namespace.c:1326
+[    3.853988] We reached unpopular paths: fs/fs_pin.c:51
+[    3.853989] We reached unpopular paths: fs/namespace.c:204
+[    3.853989] We reached unpopular paths: fs/fs_pin.c:14
+** 370 printk messages dropped ** [    3.854540] We reached unpopular paths: fs/proc/array.c:164
+[    3.854540] We reached unpopular paths: fs/proc/array.c:174
+** 690 printk messages dropped ** [    3.855462] We reached unpopular paths: fs/dcache.c:3278
+[    3.855462] We reached unpopular paths: fs/dcache.c:3294
+[    3.855463] We reached unpopular paths: fs/dcache.c:3371
+[    3.855463] We reached unpopular paths: fs/dcache.c:3364
+[    3.855464] We reached unpopular paths: fs/dcache.c:3278
+[    3.855464] We reached unpopular paths: fs/dcache.c:3294
+** 6948 printk messages dropped ** [    3.894913] We reached unpopular paths: fs/dcache.c:3621
+[    3.894914] We reached unpopular paths: fs/dcache.c:3632
+[    3.894914] We reached unpopular paths: fs/dcache.c:3663
+** 4826 printk messages dropped ** [    3.903208] We reached unpopular paths: kernel/pid.c:517
+[    3.903209] We reached unpopular paths: fs/kernfs/dir.c:152
+[    3.903209] We reached unpopular paths: fs/kernfs/dir.c:152
+[    3.903210] We reached unpopular paths: fs/kernfs/dir.c:152
+** 6216 printk messages dropped ** [    3.913986] We reached unpopular paths: fs/seq_file.c:450
+[    3.913987] We reached unpopular paths: fs/dcache.c:3364
+[    3.913987] We reached unpopular paths: fs/dcache.c:3278
+[    3.913988] We reached unpopular paths: fs/dcache.c:3294
+** 6235 printk messages dropped ** [    3.924794] We reached unpopular paths: fs/dcache.c:3364
+[    3.924794] We reached unpopular paths: fs/dcache.c:3278
+[    3.924795] We reached unpopular paths: fs/dcache.c:3294
+** 4873 printk messages dropped ** [    3.933147] We reached unpopular paths: fs/dcache.c:3364
+[    3.933147] We reached unpopular paths: fs/dcache.c:3278
+[    3.933148] We reached unpopular paths: fs/dcache.c:3294
+[    3.933148] We reached unpopular paths: fs/dcache.c:3371
+** 6247 printk messages dropped ** [    3.943935] We reached unpopular paths: fs/dcache.c:3294
+[    3.943935] We reached unpopular paths: fs/dcache.c:3371
+[    3.943936] We reached unpopular paths: fs/dcache.c:3364
+[    3.943936] We reached unpopular paths: fs/dcache.c:3278
+** 5120 printk messages dropped ** [    3.954346] We reached unpopular paths: net/unix/af_unix.c:484
+** 3441 printk messages dropped ** [    3.975402] We reached unpopular paths: fs/dcache.c:3278
+[    3.975402] We reached unpopular paths: fs/dcache.c:3294
+** 173 printk messages dropped ** [    3.975501] We reached unpopular paths: fs/dcache.c:3364
+[    3.975501] We reached unpopular paths: fs/dcache.c:3278
+[    3.975502] We reached unpopular paths: fs/dcache.c:3294
+[    3.975502] We reached unpopular paths: fs/dcache.c:3371
+[    3.975503] We reached unpopular paths: fs/seq_file.c:450
+[    3.975505] We reached unpopular paths: kernel/cgroup/cgroup-v1.c:970
+** 603 printk messages dropped ** [    3.979444] We reached unpopular paths: mm/mprotect.c:346
+[    3.979444] We reached unpopular paths: mm/util.c:681
+[    3.979447] We reached unpopular paths: mm/mprotect.c:141
+[    3.979447] We reached unpopular paths: mm/mprotect.c:141
+[    3.979448] We reached unpopular paths: mm/mprotect.c:141
+[    3.979448] We reached unpopular paths: mm/mprotect.c:141
+[    3.979449] We reached unpopular paths: mm/mprotect.c:141
+[    3.979449] We reached unpopular paths: mm/mprotect.c:141
+[    3.979449] We reached unpopular paths: mm/mprotect.c:141
+** 608 printk messages dropped ** [    3.983939] We reached unpopular paths: net/ipv4/devinet.c:1762
+** 61 printk messages dropped ** [    3.983967] We reached unpopular paths: net/ipv4/devinet.c:1762
+** 425 printk messages dropped ** [    3.984164] We reached unpopular paths: net/ipv6/addrconf.c:5123
+[    3.984165] We reached unpopular paths: net/ipv6/addrconf.c:5123
+[    3.984193] We reached unpopular paths: net/core/dev_ioctl.c:465
+[    3.984211] We reached unpopular paths: net/netlink/genetlink.c:121
+[    3.984277] We reached unpopular paths: fs/eventpoll.c:1277
+** 1042 printk messages dropped ** [    4.022568] We reached unpopular paths: fs/proc/proc_sysctl.c:957
+[    4.022569] We reached unpopular paths: fs/proc/proc_sysctl.c:957
+[    4.022569] We reached unpopular paths: fs/proc/proc_sysctl.c:957
+** 61 printk messages dropped ** [    4.024191] We reached unpopular paths: fs/read_write.c:1148
+[    4.024259] We reached unpopular paths: mm/util.c:681
+[    4.024407] We reached unpopular paths: fs/ioctl.c:507
+[    4.024415] We reached unpopular paths: fs/read_write.c:1043
+[    4.024417] We reached unpopular paths: mm/util.c:681
+[    4.024421] We reached unpopular paths: fs/read_write.c:1061
+[    4.024422] We reached unpopular paths: fs/read_write.c:1148
+[    4.024494] We reached unpopular paths: fs/ioctl.c:507
+** 44 printk messages dropped ** [    4.024643] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024643] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024644] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024644] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024645] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024645] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024645] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024646] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024646] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024647] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024647] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024648] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024648] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024649] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024649] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+** 19 printk messages dropped ** [    4.024658] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024659] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024659] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024659] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024660] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024660] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024661] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024661] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024662] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024662] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024663] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024663] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024664] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024664] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024665] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024665] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024666] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024666] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024666] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024667] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024667] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024668] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024668] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024669] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024669] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024670] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024670] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024670] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024671] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024671] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024672] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024672] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024673] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024673] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024674] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024674] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024674] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024675] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024675] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024676] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024676] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024677] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024677] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024678] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024678] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024678] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024679] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024679] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024680] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024680] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024681] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024681] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024681] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024682] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024682] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024683] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024683] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024684] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024684] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024685] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024685] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024685] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024686] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024686] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024687] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024687] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024688] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024688] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024689] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024689] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024690] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024690] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024691] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024691] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024692] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024692] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024692] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024693] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024693] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024694] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024694] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024695] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024695] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024695] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024696] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024696] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024697] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024697] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024698] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024698] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024699] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024699] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024699] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024700] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024700] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024701] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024701] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024702] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024702] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024702] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024703] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024703] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024704] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024704] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024705] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024705] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024706] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024706] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024706] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024707] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024707] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024708] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024708] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024709] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024709] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024710] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024710] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024710] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024711] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024711] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024712] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024712] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024713] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024713] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024713] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024714] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024714] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024715] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024715] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024716] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024717] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024717] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024718] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024718] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024719] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024719] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024719] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024720] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024720] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024721] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024721] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024722] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024722] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024722] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024723] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024723] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024724] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024724] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024725] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024725] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024725] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024726] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024726] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024727] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024727] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024728] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024728] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024729] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024729] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024729] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024730] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024730] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024731] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024731] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024732] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024732] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024732] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024733] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024733] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024734] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024734] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024735] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024735] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024736] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024736] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024736] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024737] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024737] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024738] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024738] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024739] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024739] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024739] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024740] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024740] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024741] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024741] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024742] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024742] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024743] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024743] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024744] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024744] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024745] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024745] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024746] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024746] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024747] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024747] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024748] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024748] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024749] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024749] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024749] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024750] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024750] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024751] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024751] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024752] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024752] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024752] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024753] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024753] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024755] We reached unpopular paths: net/ipv6/route.c:3870
+[    4.024756] We reached unpopular paths: net/ipv6/ip6_fib.c:580
+[    4.024758] We reached unpopular paths: net/ipv6/route.c:3870
+[    4.024758] We reached unpopular paths: net/ipv6/ip6_fib.c:601
+[    4.024761] We reached unpopular paths: net/core/datagram.c:185
+[    4.024762] We reached unpopular paths: net/core/datagram.c:454
+[    4.024763] We reached unpopular paths: net/ipv6/ip6_fib.c:601
+[    4.024766] We reached unpopular paths: net/core/datagram.c:185
+[    4.024771] We reached unpopular paths: net/core/datagram.c:185
+[    4.024796] We reached unpopular paths: net/ipv6/ipv6_sockglue.c:126
+[    4.024798] We reached unpopular paths: net/ipv6/ipv6_sockglue.c:126
+[    4.024800] We reached unpopular paths: net/ipv6/ipv6_sockglue.c:126
+[    4.024802] We reached unpopular paths: net/ipv6/raw.c:984
+[    4.024806] We reached unpopular paths: net/core/datagram.c:958
+[    4.024807] We reached unpopular paths: fs/eventpoll.c:1336
+[    4.024807] We reached unpopular paths: fs/eventpoll.c:1338
+[    4.024807] We reached unpopular paths: fs/eventpoll.c:1336
+[    4.024808] We reached unpopular paths: fs/eventpoll.c:1338
+[    4.024816] We reached unpopular paths: net/ipv4/datagram.c:121
+[    4.024817] We reached unpopular paths: net/ipv4/datagram.c:133
+[    4.024819] We reached unpopular paths: net/ipv4/af_inet.c:468
+[    4.024819] We reached unpopular paths: net/ipv4/fib_frontend.c:238
+[    4.024821] We reached unpopular paths: net/ipv4/udp.c:188
+[    4.024822] We reached unpopular paths: net/ipv4/udp.c:374
+[    4.024823] We reached unpopular paths: net/ipv4/datagram.c:121
+[    4.024823] We reached unpopular paths: net/ipv4/datagram.c:133
+[    4.024826] We reached unpopular paths: net/core/datagram.c:958
+[    4.024826] We reached unpopular paths: fs/eventpoll.c:1336
+[    4.024827] We reached unpopular paths: fs/eventpoll.c:1338
+[    4.024827] We reached unpopular paths: fs/eventpoll.c:1336
+[    4.024828] We reached unpopular paths: fs/eventpoll.c:1338
+[    4.024839] We reached unpopular paths: net/core/datagram.c:185
+[    4.024846] We reached unpopular paths: net/core/datagram.c:185
+[    4.024857] We reached unpopular paths: net/packet/af_packet.c:3411
+[    4.024858] We reached unpopular paths: net/packet/af_packet.c:309
+[    4.024859] We reached unpopular paths: net/packet/af_packet.c:3415
+[    4.024859] We reached unpopular paths: net/packet/af_packet.c:348
+[    4.024860] We reached unpopular paths: net/packet/af_packet.c:359
+[    4.024870] We reached unpopular paths: net/core/filter.c:972
+[    4.024871] We reached unpopular paths: net/core/filter.c:984
+[    4.024872] We reached unpopular paths: net/core/filter.c:718
+[    4.024874] We reached unpopular paths: net/core/filter.c:402
+[    4.024874] We reached unpopular paths: net/core/filter.c:404
+[    4.024875] We reached unpopular paths: net/core/filter.c:366
+[    4.024876] We reached unpopular paths: net/core/filter.c:366
+[    4.024877] We reached unpopular paths: kernel/bpf/core.c:124
+[    4.024878] We reached unpopular paths: net/core/filter.c:402
+[    4.024878] We reached unpopular paths: net/core/filter.c:404
+[    4.024879] We reached unpopular paths: net/core/filter.c:366
+[    4.024880] We reached unpopular paths: net/core/filter.c:366
+[    4.024881] We reached unpopular paths: net/core/filter.c:366
+[    4.024881] We reached unpopular paths: net/core/filter.c:366
+[    4.024882] We reached unpopular paths: net/core/filter.c:699
+[    4.024889] We reached unpopular paths: arch/x86/kernel/module.c:96
+[    4.024924] We reached unpopular paths: kernel/bpf/core.c:1375
+[    4.024925] We reached unpopular paths: net/core/filter.c:1184
+[    4.024926] We reached unpopular paths: net/core/filter.c:1318
+[    4.024926] We reached unpopular paths: net/core/filter.c:1330
+[    4.024927] We reached unpopular paths: net/core/filter.c:1432
+[    4.024931] We reached unpopular paths: net/packet/af_packet.c:3208
+[    4.024932] We reached unpopular paths: net/packet/af_packet.c:3245
+[    4.024932] We reached unpopular paths: net/packet/af_packet.c:3256
+[    4.024933] We reached unpopular paths: net/packet/af_packet.c:374
+[    4.024934] We reached unpopular paths: net/packet/af_packet.c:386
+[    4.024934] We reached unpopular paths: net/packet/af_packet.c:390
+[    4.024935] We reached unpopular paths: net/packet/af_packet.c:348
+[    4.024936] We reached unpopular paths: net/packet/af_packet.c:359
+[    4.024939] We reached unpopular paths: net/core/datagram.c:958
+[    4.024940] We reached unpopular paths: net/packet/af_packet.c:4444
+[    4.024941] We reached unpopular paths: net/packet/af_packet.c:4454
+[    4.024941] We reached unpopular paths: fs/eventpoll.c:1336
+[    4.024942] We reached unpopular paths: fs/eventpoll.c:1338
+[    4.024942] We reached unpopular paths: fs/eventpoll.c:1336
+[    4.024943] We reached unpopular paths: fs/eventpoll.c:1338
+[    4.024943] We reached unpopular paths: fs/eventpoll.c:1336
+[    4.024944] We reached unpopular paths: fs/eventpoll.c:1338
+[    4.024951] We reached unpopular paths: fs/namei.c:2698
+[    4.024981] We reached unpopular paths: net/core/datagram.c:574
+[    4.024983] We reached unpopular paths: net/core/dev.c:3290
+[    4.024984] We reached unpopular paths: net/core/dev.c:3340
+[    4.024985] We reached unpopular paths: net/core/dev.c:3359
+[    4.024986] We reached unpopular paths: net/core/dev.c:3373
+[    4.024987] We reached unpopular paths: net/core/dev.c:3037
+[    4.024988] We reached unpopular paths: net/core/dev.c:3228
+[    4.024988] We reached unpopular paths: net/core/dev.c:3248
+[    4.024989] We reached unpopular paths: net/core/dev.c:3274
+[    4.024991] We reached unpopular paths: fs/eventpoll.c:1277
+[    4.024992] We reached unpopular paths: net/core/sock.c:2714
+[    4.025013] We reached unpopular paths: net/core/dev.c:3167
+[    4.025014] We reached unpopular paths: net/sched/sch_generic.c:206
+[    4.025015] We reached unpopular paths: net/core/dev.c:3386
+[    4.025015] We reached unpopular paths: net/core/dev.c:3390
+[    4.025016] We reached unpopular paths: net/core/dev.c:3406
+[    4.025017] We reached unpopular paths: net/packet/af_packet.c:3089
+[    4.025022] We reached unpopular paths: net/core/datagram.c:958
+[    4.025025] We reached unpopular paths: net/core/datagram.c:185
+[    4.025032] We reached unpopular paths: net/core/datagram.c:958
+[    4.025034] We reached unpopular paths: net/core/datagram.c:185
+[    4.025041] We reached unpopular paths: net/core/datagram.c:958
+[    4.025043] We reached unpopular paths: net/core/datagram.c:185
+[    4.025049] We reached unpopular paths: net/core/datagram.c:958
+[    4.025050] We reached unpopular paths: fs/eventpoll.c:1920
+[    4.027015] We reached unpopular paths: net/core/dev.c:5566
+[    4.027017] We reached unpopular paths: net/core/skbuff.c:489
+[    4.027021] We reached unpopular paths: net/ethernet/eth.c:197
+[    4.027021] We reached unpopular paths: net/core/dev.c:5268
+[    4.027022] We reached unpopular paths: net/core/dev.c:5033
+[    4.027026] We reached unpopular paths: net/core/skbuff.c:2539
+[    4.027026] We reached unpopular paths: net/core/skbuff.c:2546
+[    4.027027] We reached unpopular paths: net/ipv4/udp.c:616
+[    4.027028] We reached unpopular paths: net/ipv4/udp.c:463
+[    4.027029] We reached unpopular paths: net/ipv4/udp.c:593
+[    4.027030] We reached unpopular paths: net/ipv4/udp.c:607
+[    4.027030] We reached unpopular paths: net/core/dev.c:5125
+[    4.027031] We reached unpopular paths: net/core/dev.c:4809
+[    4.027031] We reached unpopular paths: net/core/dev.c:4831
+[    4.027033] We reached unpopular paths: net/core/dev.c:1966
+[    4.027034] We reached unpopular paths: net/ipv4/ip_input.c:447
+[    4.027036] We reached unpopular paths: net/ipv4/ip_input.c:461
+[    4.027036] We reached unpopular paths: net/ipv4/ip_input.c:478
+[    4.027037] We reached unpopular paths: net/ipv4/ip_input.c:480
+[    4.027037] We reached unpopular paths: net/ipv4/ip_input.c:482
+[    4.027038] We reached unpopular paths: net/ipv4/ip_input.c:491
+[    4.027040] We reached unpopular paths: net/ipv4/netfilter/ip_tables.c:323
+[    4.027042] We reached unpopular paths: net/ipv4/netfilter/ip_tables.c:323
+[    4.027043] We reached unpopular paths: net/netfilter/core.c:539
+[    4.027043] We reached unpopular paths: net/ipv4/ip_input.c:329
+[    4.027045] We reached unpopular paths: net/ipv4/route.c:1976
+[    4.027046] We reached unpopular paths: net/ipv4/fib_trie.c:1470
+[    4.027048] We reached unpopular paths: net/core/dev.c:1966
+[    4.027049] We reached unpopular paths: net/packet/af_packet.c:2126
+[    4.027050] We reached unpopular paths: net/packet/af_packet.c:2231
+[    4.027051] We reached unpopular paths: net/packet/af_packet.c:2234
+[    4.027051] We reached unpopular paths: net/ethernet/eth.c:228
+[    4.027053] We reached unpopular paths: fs/eventpoll.c:689
+[    4.027056] We reached unpopular paths: fs/eventpoll.c:1277
+[    4.027057] We reached unpopular paths: net/core/dev.c:5642
+[    4.027057] We reached unpopular paths: net/core/dev.c:5662
+[    4.027062] We reached unpopular paths: fs/eventpoll.c:1930
+[    4.027063] We reached unpopular paths: net/core/datagram.c:958
+[    4.027063] We reached unpopular paths: net/packet/af_packet.c:4444
+[    4.027064] We reached unpopular paths: net/packet/af_packet.c:4454
+[    4.027068] We reached unpopular paths: net/core/datagram.c:487
+[    4.027070] We reached unpopular paths: net/core/skbuff.c:577
+[    4.027103] We reached unpopular paths: net/core/datagram.c:574
+[    4.027104] We reached unpopular paths: net/core/dev.c:3290
+[    4.027105] We reached unpopular paths: net/core/dev.c:3340
+[    4.027105] We reached unpopular paths: net/core/dev.c:3359
+[    4.027106] We reached unpopular paths: net/core/dev.c:3373
+[    4.027106] We reached unpopular paths: net/core/dev.c:3037
+[    4.027107] We reached unpopular paths: net/core/dev.c:3228
+[    4.027107] We reached unpopular paths: net/core/dev.c:3248
+[    4.027108] We reached unpopular paths: net/core/dev.c:3274
+[    4.027110] We reached unpopular paths: fs/eventpoll.c:1277
+[    4.027111] We reached unpopular paths: net/core/sock.c:2714
+[    4.027131] We reached unpopular paths: net/core/dev.c:3167
+[    4.027131] We reached unpopular paths: net/sched/sch_generic.c:206
+[    4.027132] We reached unpopular paths: net/core/dev.c:3386
+[    4.027132] We reached unpopular paths: net/core/dev.c:3390
+[    4.027133] We reached unpopular paths: net/core/dev.c:3406
+[    4.027134] We reached unpopular paths: net/packet/af_packet.c:3089
+[    4.027138] We reached unpopular paths: net/core/datagram.c:958
+[    4.027139] We reached unpopular paths: net/packet/af_packet.c:4444
+[    4.027139] We reached unpopular paths: net/packet/af_packet.c:4454
+[    4.027140] We reached unpopular paths: fs/eventpoll.c:1920
+[    4.029045] We reached unpopular paths: net/core/dev.c:5566
+[    4.029047] We reached unpopular paths: net/core/skbuff.c:489
+[    4.029049] We reached unpopular paths: net/ethernet/eth.c:197
+[    4.029049] We reached unpopular paths: net/core/dev.c:5268
+[    4.029050] We reached unpopular paths: net/core/dev.c:5033
+[    4.029051] We reached unpopular paths: net/core/skbuff.c:2539
+[    4.029051] We reached unpopular paths: net/core/skbuff.c:2546
+[    4.029052] We reached unpopular paths: net/ipv4/udp.c:616
+[    4.029053] We reached unpopular paths: net/ipv4/udp.c:463
+[    4.029053] We reached unpopular paths: net/ipv4/udp.c:593
+[    4.029054] We reached unpopular paths: net/ipv4/udp.c:607
+[    4.029054] We reached unpopular paths: net/core/dev.c:5125
+[    4.029055] We reached unpopular paths: net/core/dev.c:4809
+[    4.029055] We reached unpopular paths: net/core/dev.c:4831
+[    4.029056] We reached unpopular paths: net/core/dev.c:1966
+[    4.029057] We reached unpopular paths: net/ipv4/ip_input.c:447
+[    4.029057] We reached unpopular paths: net/ipv4/ip_input.c:461
+[    4.029058] We reached unpopular paths: net/ipv4/ip_input.c:478
+[    4.029058] We reached unpopular paths: net/ipv4/ip_input.c:480
+[    4.029059] We reached unpopular paths: net/ipv4/ip_input.c:482
+[    4.029059] We reached unpopular paths: net/ipv4/ip_input.c:491
+[    4.029060] We reached unpopular paths: net/ipv4/netfilter/ip_tables.c:323
+[    4.029061] We reached unpopular paths: net/ipv4/netfilter/ip_tables.c:323
+[    4.029062] We reached unpopular paths: net/netfilter/core.c:539
+[    4.029062] We reached unpopular paths: net/ipv4/ip_input.c:329
+[    4.029063] We reached unpopular paths: net/ipv4/route.c:1976
+[    4.029064] We reached unpopular paths: net/ipv4/fib_trie.c:1470
+[    4.029065] We reached unpopular paths: net/core/dev.c:1966
+[    4.029066] We reached unpopular paths: net/packet/af_packet.c:2126
+[    4.029067] We reached unpopular paths: net/packet/af_packet.c:2231
+[    4.029067] We reached unpopular paths: net/packet/af_packet.c:2234
+[    4.029068] We reached unpopular paths: net/ethernet/eth.c:228
+[    4.029069] We reached unpopular paths: fs/eventpoll.c:689
+[    4.029071] We reached unpopular paths: fs/eventpoll.c:1277
+[    4.029072] We reached unpopular paths: net/core/dev.c:5642
+[    4.029073] We reached unpopular paths: net/core/dev.c:5662
+[    4.029077] We reached unpopular paths: fs/eventpoll.c:1930
+[    4.029078] We reached unpopular paths: net/core/datagram.c:958
+[    4.029079] We reached unpopular paths: net/packet/af_packet.c:4444
+[    4.029079] We reached unpopular paths: net/packet/af_packet.c:4454
+[    4.029083] We reached unpopular paths: net/core/datagram.c:487
+[    4.029084] We reached unpopular paths: net/core/skbuff.c:577
+[    4.029112] We reached unpopular paths: fs/dcache.c:3120
+[    4.029113] We reached unpopular paths: fs/dcache.c:3120
+[    4.029117] We reached unpopular paths: fs/xattr.c:410
+[    4.029118] We reached unpopular paths: fs/xattr.c:420
+[    4.029119] We reached unpopular paths: mm/shmem.c:3662
+[    4.029119] We reached unpopular paths: fs/xattr.c:1098
+[    4.029120] We reached unpopular paths: fs/xattr.c:1110
+[    4.029120] We reached unpopular paths: fs/xattr.c:432
+[    4.029124] We reached unpopular paths: mm/shmem.c:3742
+[    4.029125] We reached unpopular paths: fs/xattr.c:131
+[    4.029126] We reached unpopular paths: fs/xattr.c:255
+[    4.029126] We reached unpopular paths: security/security.c:808
+[    4.029127] We reached unpopular paths: mm/shmem.c:3631
+[    4.029128] We reached unpopular paths: fs/xattr.c:931
+[    4.029129] We reached unpopular paths: fs/xattr.c:1009
+[    4.029130] We reached unpopular paths: fs/xattr.c:1040
+[    4.029130] We reached unpopular paths: security/security.c:825
+[    4.029131] We reached unpopular paths: fs/xattr.c:237
+[    4.029132] We reached unpopular paths: fs/namei.c:4733
+[    4.029133] We reached unpopular paths: fs/namei.c:4738
+[    4.029133] We reached unpopular paths: fs/namei.c:4740
+[    4.029134] We reached unpopular paths: fs/namei.c:4752
+[    4.029134] We reached unpopular paths: fs/namei.c:4758
+[    4.029135] We reached unpopular paths: fs/namei.c:4769
+[    4.029135] We reached unpopular paths: fs/namei.c:4775
+[    4.029136] We reached unpopular paths: fs/namei.c:4786
+[    4.029136] We reached unpopular paths: fs/namei.c:4794
+[    4.029137] We reached unpopular paths: fs/dcache.c:296
+[    4.029137] We reached unpopular paths: fs/namei.c:4802
+[    4.029138] We reached unpopular paths: fs/namei.c:4804
+[    4.029138] We reached unpopular paths: fs/namei.c:4808
+[    4.029139] We reached unpopular paths: fs/namei.c:4819
+[    4.029139] We reached unpopular paths: fs/namei.c:4830
+[    4.029140] We reached unpopular paths: fs/namei.c:4837
+[    4.029140] We reached unpopular paths: mm/shmem.c:3421
+[    4.029141] We reached unpopular paths: fs/namei.c:4843
+[    4.029141] We reached unpopular paths: fs/namei.c:4852
+[    4.029142] We reached unpopular paths: fs/dcache.c:3120
+[    4.029142] We reached unpopular paths: fs/dcache.c:3120
+[    4.029143] We reached unpopular paths: fs/dcache.c:3120
+[    4.029143] We reached unpopular paths: fs/dcache.c:2934
+[    4.029144] We reached unpopular paths: fs/dcache.c:3010
+[    4.029145] We reached unpopular paths: fs/dcache.c:3054
+[    4.029145] We reached unpopular paths: fs/dcache.c:2952
+[    4.029146] We reached unpopular paths: fs/dcache.c:2956
+[    4.029146] We reached unpopular paths: fs/dcache.c:2959
+[    4.029147] We reached unpopular paths: fs/namei.c:4874
+[    4.029149] We reached unpopular paths: fs/xattr.c:131
+[    4.029150] We reached unpopular paths: fs/xattr.c:255
+[    4.029150] We reached unpopular paths: security/security.c:808
+[    4.029151] We reached unpopular paths: mm/shmem.c:3631
+[    4.029151] We reached unpopular paths: fs/xattr.c:931
+[    4.029152] We reached unpopular paths: fs/xattr.c:1009
+[    4.029153] We reached unpopular paths: fs/xattr.c:1040
+[    4.029153] We reached unpopular paths: security/security.c:825
+[    4.029153] We reached unpopular paths: fs/xattr.c:237
+[    4.029154] We reached unpopular paths: fs/dcache.c:3120
+[    4.029155] We reached unpopular paths: fs/dcache.c:3120
+[    4.029157] We reached unpopular paths: fs/xattr.c:410
+[    4.029158] We reached unpopular paths: fs/xattr.c:420
+[    4.029158] We reached unpopular paths: mm/shmem.c:3662
+[    4.029159] We reached unpopular paths: fs/xattr.c:1098
+[    4.029159] We reached unpopular paths: fs/xattr.c:1110
+[    4.029159] We reached unpopular paths: fs/xattr.c:432
+[    4.029161] We reached unpopular paths: mm/shmem.c:3742
+[    4.029162] We reached unpopular paths: fs/xattr.c:131
+[    4.029162] We reached unpopular paths: fs/xattr.c:255
+[    4.029163] We reached unpopular paths: security/security.c:808
+[    4.029164] We reached unpopular paths: mm/shmem.c:3631
+[    4.029164] We reached unpopular paths: fs/xattr.c:931
+[    4.029165] We reached unpopular paths: fs/xattr.c:1009
+[    4.029165] We reached unpopular paths: fs/xattr.c:1040
+[    4.029166] We reached unpopular paths: security/security.c:825
+[    4.029166] We reached unpopular paths: fs/xattr.c:237
+[    4.029167] We reached unpopular paths: fs/namei.c:4733
+[    4.029168] We reached unpopular paths: fs/namei.c:4738
+[    4.029168] We reached unpopular paths: fs/namei.c:4740
+[    4.029169] We reached unpopular paths: fs/namei.c:4752
+[    4.029169] We reached unpopular paths: fs/namei.c:4758
+[    4.029170] We reached unpopular paths: fs/namei.c:4769
+[    4.029170] We reached unpopular paths: fs/namei.c:4775
+[    4.029171] We reached unpopular paths: fs/namei.c:4786
+[    4.029171] We reached unpopular paths: fs/namei.c:4794
+[    4.029172] We reached unpopular paths: fs/dcache.c:296
+[    4.029172] We reached unpopular paths: fs/namei.c:4802
+[    4.029173] We reached unpopular paths: fs/namei.c:4804
+[    4.029173] We reached unpopular paths: fs/namei.c:4808
+[    4.029174] We reached unpopular paths: fs/namei.c:4819
+[    4.029174] We reached unpopular paths: fs/namei.c:4830
+[    4.029175] We reached unpopular paths: fs/namei.c:4837
+[    4.029175] We reached unpopular paths: mm/shmem.c:3421
+[    4.029176] We reached unpopular paths: fs/namei.c:4843
+[    4.029176] We reached unpopular paths: fs/namei.c:4852
+[    4.029177] We reached unpopular paths: fs/dcache.c:3120
+[    4.029177] We reached unpopular paths: fs/dcache.c:3120
+[    4.029177] We reached unpopular paths: fs/dcache.c:3120
+[    4.029178] We reached unpopular paths: fs/dcache.c:2934
+[    4.029178] We reached unpopular paths: fs/dcache.c:3010
+[    4.029179] We reached unpopular paths: fs/dcache.c:3054
+[    4.029179] We reached unpopular paths: fs/dcache.c:2952
+[    4.029180] We reached unpopular paths: fs/dcache.c:2956
+[    4.029180] We reached unpopular paths: fs/dcache.c:2959
+[    4.029181] We reached unpopular paths: fs/namei.c:4874
+[    4.029183] We reached unpopular paths: fs/xattr.c:131
+[    4.029183] We reached unpopular paths: fs/xattr.c:255
+[    4.029184] We reached unpopular paths: security/security.c:808
+[    4.029184] We reached unpopular paths: mm/shmem.c:3631
+[    4.029185] We reached unpopular paths: fs/xattr.c:931
+[    4.029185] We reached unpopular paths: fs/xattr.c:1009
+[    4.029186] We reached unpopular paths: fs/xattr.c:1040
+[    4.029186] We reached unpopular paths: security/security.c:825
+[    4.029187] We reached unpopular paths: fs/xattr.c:237
+[    4.029187] We reached unpopular paths: fs/dcache.c:3120
+[    4.029188] We reached unpopular paths: fs/dcache.c:3120
+[    4.029190] We reached unpopular paths: fs/xattr.c:410
+[    4.029190] We reached unpopular paths: fs/xattr.c:420
+[    4.029191] We reached unpopular paths: mm/shmem.c:3662
+[    4.029191] We reached unpopular paths: fs/xattr.c:1098
+[    4.029192] We reached unpopular paths: fs/xattr.c:1110
+[    4.029192] We reached unpopular paths: fs/xattr.c:432
+[    4.029194] We reached unpopular paths: mm/shmem.c:3742
+[    4.029195] We reached unpopular paths: fs/xattr.c:131
+[    4.029195] We reached unpopular paths: fs/xattr.c:255
+[    4.029196] We reached unpopular paths: security/security.c:808
+[    4.029196] We reached unpopular paths: mm/shmem.c:3631
+[    4.029197] We reached unpopular paths: fs/xattr.c:931
+[    4.029197] We reached unpopular paths: fs/xattr.c:1009
+[    4.029198] We reached unpopular paths: fs/xattr.c:1040
+[    4.029198] We reached unpopular paths: security/security.c:825
+[    4.029199] We reached unpopular paths: fs/xattr.c:237
+[    4.029200] We reached unpopular paths: fs/namei.c:4733
+[    4.029200] We reached unpopular paths: fs/namei.c:4738
+[    4.029201] We reached unpopular paths: fs/namei.c:4740
+[    4.029201] We reached unpopular paths: fs/namei.c:4752
+[    4.029202] We reached unpopular paths: fs/namei.c:4758
+[    4.029202] We reached unpopular paths: fs/namei.c:4769
+[    4.029203] We reached unpopular paths: fs/namei.c:4775
+[    4.029203] We reached unpopular paths: fs/namei.c:4786
+[    4.029204] We reached unpopular paths: fs/namei.c:4794
+[    4.029204] We reached unpopular paths: fs/dcache.c:296
+[    4.029204] We reached unpopular paths: fs/namei.c:4802
+[    4.029205] We reached unpopular paths: fs/namei.c:4804
+[    4.029205] We reached unpopular paths: fs/namei.c:4808
+[    4.029206] We reached unpopular paths: fs/namei.c:4819
+[    4.029206] We reached unpopular paths: fs/namei.c:4830
+[    4.029207] We reached unpopular paths: fs/namei.c:4837
+[    4.029207] We reached unpopular paths: mm/shmem.c:3421
+[    4.029208] We reached unpopular paths: fs/namei.c:4843
+[    4.029208] We reached unpopular paths: fs/namei.c:4852
+[    4.029209] We reached unpopular paths: fs/dcache.c:3120
+[    4.029209] We reached unpopular paths: fs/dcache.c:3120
+[    4.029210] We reached unpopular paths: fs/dcache.c:3120
+[    4.029210] We reached unpopular paths: fs/dcache.c:2934
+[    4.029211] We reached unpopular paths: fs/dcache.c:3010
+[    4.029211] We reached unpopular paths: fs/dcache.c:3054
+[    4.029212] We reached unpopular paths: fs/dcache.c:2952
+[    4.029212] We reached unpopular paths: fs/dcache.c:2956
+[    4.029213] We reached unpopular paths: fs/dcache.c:2959
+[    4.029213] We reached unpopular paths: fs/namei.c:4874
+[    4.029226] We reached unpopular paths: mm/util.c:681
+[    4.029248] We reached unpopular paths: net/netlink/af_netlink.c:1496
+[    4.029249] We reached unpopular paths: net/netlink/af_netlink.c:1534
+[    4.029250] We reached unpopular paths: net/core/net_namespace.c:221
+[    4.029250] We reached unpopular paths: net/netlink/af_netlink.c:1465
+[    4.029251] We reached unpopular paths: fs/eventpoll.c:689
+[    4.029252] We reached unpopular paths: fs/eventpoll.c:1277
+[    4.029253] We reached unpopular paths: net/netlink/af_netlink.c:1642
+[    4.029264] We reached unpopular paths: net/netlink/af_netlink.c:1496
+[    4.029264] We reached unpopular paths: net/netlink/af_netlink.c:1534
+[    4.029265] We reached unpopular paths: net/core/net_namespace.c:221
+[    4.029266] We reached unpopular paths: net/netlink/af_netlink.c:1465
+[    4.029266] We reached unpopular paths: fs/eventpoll.c:1277
+[    4.029267] We reached unpopular paths: net/netlink/af_netlink.c:1642
+[    4.029273] We reached unpopular paths: net/netlink/af_netlink.c:1496
+[    4.029273] We reached unpopular paths: net/netlink/af_netlink.c:1534
+[    4.029274] We reached unpopular paths: net/core/net_namespace.c:221
+[    4.029274] We reached unpopular paths: net/netlink/af_netlink.c:1465
+[    4.029275] We reached unpopular paths: fs/eventpoll.c:1277
+[    4.029275] We reached unpopular paths: net/netlink/af_netlink.c:1642
+[    4.029277] We reached unpopular paths: net/ipv4/fib_semantics.c:1117
+[    4.029280] We reached unpopular paths: net/netlink/af_netlink.c:1496
+[    4.029281] We reached unpopular paths: net/netlink/af_netlink.c:1534
+[    4.029282] We reached unpopular paths: net/core/net_namespace.c:221
+[    4.029282] We reached unpopular paths: net/netlink/af_netlink.c:1465
+[    4.029283] We reached unpopular paths: fs/eventpoll.c:1277
+[    4.029283] We reached unpopular paths: net/netlink/af_netlink.c:1642
+[    4.029287] We reached unpopular paths: net/netlink/af_netlink.c:1496
+[    4.029287] We reached unpopular paths: net/netlink/af_netlink.c:1534
+[    4.029288] We reached unpopular paths: net/core/net_namespace.c:221
+[    4.029289] We reached unpopular paths: net/netlink/af_netlink.c:1465
+[    4.029289] We reached unpopular paths: fs/eventpoll.c:1277
+[    4.029290] We reached unpopular paths: net/netlink/af_netlink.c:1642
+[    4.029298] We reached unpopular paths: net/core/datagram.c:185
+[    4.029311] We reached unpopular paths: net/core/datagram.c:185
+[    4.029312] We reached unpopular paths: net/core/datagram.c:454
+[    4.029316] We reached unpopular paths: net/core/datagram.c:185
+[    4.029321] We reached unpopular paths: net/core/datagram.c:185
+[    4.029347] We reached unpopular paths: net/ipv4/fib_semantics.c:1117
+[    4.029348] We reached unpopular paths: net/ipv4/fib_trie.c:1130
+[    4.029349] We reached unpopular paths: net/ipv4/fib_trie.c:1130
+[    4.029351] We reached unpopular paths: net/netlink/af_netlink.c:1496
+[    4.029351] We reached unpopular paths: net/netlink/af_netlink.c:1534
+[    4.029352] We reached unpopular paths: net/core/net_namespace.c:221
+[    4.029353] We reached unpopular paths: net/netlink/af_netlink.c:1465
+[    4.029354] We reached unpopular paths: fs/eventpoll.c:1277
+[    4.029355] We reached unpopular paths: net/netlink/af_netlink.c:1642
+[    4.029359] We reached unpopular paths: net/core/datagram.c:185
+[    4.029366] We reached unpopular paths: net/ipv4/fib_trie.c:1628
+[    4.029366] We reached unpopular paths: net/ipv4/fib_trie.c:1632
+[    4.029367] We reached unpopular paths: net/ipv4/fib_semantics.c:763
+[    4.029367] We reached unpopular paths: net/ipv4/fib_trie.c:1650
+[    4.029369] We reached unpopular paths: net/netlink/af_netlink.c:1496
+[    4.029370] We reached unpopular paths: net/netlink/af_netlink.c:1534
+[    4.029370] We reached unpopular paths: net/core/net_namespace.c:221
+[    4.029371] We reached unpopular paths: net/netlink/af_netlink.c:1465
+[    4.029372] We reached unpopular paths: fs/eventpoll.c:1277
+[    4.029372] We reached unpopular paths: net/netlink/af_netlink.c:1642
+[    4.029373] We reached unpopular paths: net/ipv4/fib_trie.c:1568
+[    4.029373] We reached unpopular paths: net/ipv4/fib_trie.c:1588
+[    4.029377] We reached unpopular paths: net/core/datagram.c:185
+[    4.029398] We reached unpopular paths: net/ipv4/fib_semantics.c:910
+[    4.029399] We reached unpopular paths: net/ipv4/fib_semantics.c:952
+[    4.029400] We reached unpopular paths: net/ipv4/fib_semantics.c:968
+[    4.029401] We reached unpopular paths: net/ipv4/fib_semantics.c:1117
+[    4.029404] We reached unpopular paths: net/netlink/af_netlink.c:1496
+[    4.029405] We reached unpopular paths: net/netlink/af_netlink.c:1534
+[    4.029406] We reached unpopular paths: net/core/net_namespace.c:221
+[    4.029406] We reached unpopular paths: net/netlink/af_netlink.c:1465
+[    4.029407] We reached unpopular paths: fs/eventpoll.c:1277
+[    4.029408] We reached unpopular paths: net/netlink/af_netlink.c:1642
+[    4.029412] We reached unpopular paths: net/core/datagram.c:185
+[    4.029471] We reached unpopular paths: kernel/cgroup/freezer.c:243
+[    4.029495] We reached unpopular paths: mm/util.c:681
+[    4.029498] We reached unpopular paths: fs/dcache.c:1008
+[    4.029498] We reached unpopular paths: fs/dcache.c:966
+[    4.029499] We reached unpopular paths: fs/dcache.c:974
+[    4.029499] We reached unpopular paths: security/commoncap.c:426
+[    4.029500] We reached unpopular paths: security/commoncap.c:433
+[    4.029501] We reached unpopular paths: security/security.c:901
+[    4.029502] We reached unpopular paths: fs/xattr.c:283
+[    4.029521] We reached unpopular paths: fs/namei.c:5172
+[    4.029524] We reached unpopular paths: fs/dcache.c:1008
+[    4.029525] We reached unpopular paths: fs/dcache.c:966
+[    4.029525] We reached unpopular paths: fs/dcache.c:974
+[    4.029526] We reached unpopular paths: security/commoncap.c:426
+[    4.029527] We reached unpopular paths: security/commoncap.c:433
+[    4.029527] We reached unpopular paths: security/security.c:901
+[    4.029528] We reached unpopular paths: fs/xattr.c:283
+[    4.029559] We reached unpopular paths: mm/util.c:681
+[    4.029566] We reached unpopular paths: mm/util.c:681
+[    4.029580] We reached unpopular paths: mm/util.c:681
+[    4.029586] We reached unpopular paths: mm/util.c:681
+[    4.029741] We reached unpopular paths: mm/util.c:681
+[    4.029906] We reached unpopular paths: mm/util.c:681
+[    4.029946] We reached unpopular paths: mm/util.c:681
+[    4.029991] We reached unpopular paths: mm/util.c:681
+[    4.030046] We reached unpopular paths: mm/util.c:681
+[    4.030084] We reached unpopular paths: mm/util.c:681
+[    4.030116] We reached unpopular paths: mm/util.c:681
+[    4.030174] We reached unpopular paths: mm/util.c:681
+[    4.030210] We reached unpopular paths: mm/util.c:681
+[    4.030243] We reached unpopular paths: mm/util.c:681
+[    4.030332] We reached unpopular paths: fs/namespace.c:1293
+[    4.030510] We reached unpopular paths: mm/util.c:681
+[    4.030534] We reached unpopular paths: mm/util.c:681
+[    4.030655] We reached unpopular paths: mm/util.c:681
+[    4.030866] We reached unpopular paths: fs/namei.c:1839
+[    4.030870] We reached unpopular paths: fs/namei.c:1839
+[    4.030873] We reached unpopular paths: fs/namei.c:1839
+[    4.030876] We reached unpopular paths: fs/namei.c:1839
+[    4.030878] We reached unpopular paths: fs/namei.c:1839
+[    4.030881] We reached unpopular paths: fs/namei.c:1839
+[    4.030884] We reached unpopular paths: fs/read_write.c:1043
+[    4.030885] We reached unpopular paths: drivers/char/mem.c:671
+[    4.030885] We reached unpopular paths: fs/read_write.c:1061
+[    4.030886] We reached unpopular paths: fs/read_write.c:1148
+[    4.030901] We reached unpopular paths: fs/namei.c:5172
+[    4.030905] We reached unpopular paths: fs/namei.c:2698
+[    4.030916] We reached unpopular paths: fs/namei.c:5172
+[    4.030926] We reached unpopular paths: fs/namei.c:5172
+[    4.030945] We reached unpopular paths: fs/read_write.c:1043
+[    4.030947] We reached unpopular paths: mm/util.c:681
+[    4.030951] We reached unpopular paths: fs/read_write.c:1061
+[    4.030952] We reached unpopular paths: fs/read_write.c:1148
+[    4.030984] We reached unpopular paths: mm/util.c:681
+[    4.030989] We reached unpopular paths: mm/util.c:681
+[    4.030991] We reached unpopular paths: mm/util.c:681
+[    4.030995] We reached unpopular paths: mm/util.c:681
+[    4.030998] We reached unpopular paths: mm/util.c:681
+[    4.030999] We reached unpopular paths: mm/util.c:681
+[    4.031001] We reached unpopular paths: mm/util.c:681
+[    4.031008] We reached unpopular paths: kernel/cgroup/freezer.c:243
+[    4.031131] We reached unpopular paths: fs/namei.c:5172
+[    4.031146] We reached unpopular paths: fs/inode.c:1663
+[    4.031150] We reached unpopular paths: fs/inode.c:1663
+[    4.031154] We reached unpopular paths: fs/namespace.c:1293
+[    4.031174] We reached unpopular paths: fs/namei.c:5172
+[    4.031190] We reached unpopular paths: fs/namei.c:5172
+[    4.031197] We reached unpopular paths: fs/inode.c:1663
+[    4.031199] We reached unpopular paths: fs/inode.c:1663
+[    4.031202] We reached unpopular paths: fs/namespace.c:1293
+[    4.031212] We reached unpopular paths: fs/namei.c:5172
+[    4.031215] We reached unpopular paths: fs/namei.c:2698
+[    4.031225] We reached unpopular paths: fs/namei.c:5172
+[    4.031232] We reached unpopular paths: fs/inode.c:1663
+[    4.031234] We reached unpopular paths: fs/inode.c:1663
+[    4.031237] We reached unpopular paths: fs/namespace.c:1293
+[    4.031246] We reached unpopular paths: fs/namei.c:5172
+[    4.031249] We reached unpopular paths: fs/namei.c:2698
+[    4.031257] We reached unpopular paths: fs/namei.c:5172
+[    4.031264] We reached unpopular paths: fs/inode.c:1663
+[    4.031266] We reached unpopular paths: fs/inode.c:1663
+[    4.031269] We reached unpopular paths: fs/namespace.c:1293
+[    4.031278] We reached unpopular paths: fs/namei.c:5172
+[    4.031281] We reached unpopular paths: fs/namei.c:2698
+[    4.031288] We reached unpopular paths: fs/namei.c:5172
+[    4.031295] We reached unpopular paths: fs/inode.c:1663
+[    4.031297] We reached unpopular paths: fs/inode.c:1663
+[    4.031301] We reached unpopular paths: fs/namespace.c:1293
+[    4.031309] We reached unpopular paths: fs/namei.c:5172
+[    4.031482] We reached unpopular paths: mm/util.c:681
+[    4.031486] We reached unpopular paths: mm/util.c:681
+[    4.031488] We reached unpopular paths: mm/util.c:681
+[    4.031492] We reached unpopular paths: mm/util.c:681
+[    4.031495] We reached unpopular paths: mm/util.c:681
+[    4.031496] We reached unpopular paths: mm/util.c:681
+[    4.031498] We reached unpopular paths: mm/util.c:681
+[    4.031504] We reached unpopular paths: kernel/cgroup/freezer.c:243
+[    4.031597] We reached unpopular paths: fs/namei.c:5172
+[    4.031652] We reached unpopular paths: fs/namei.c:1839
+[    4.031657] We reached unpopular paths: fs/namei.c:2698
+[    4.031663] We reached unpopular paths: fs/namei.c:2698
+[    4.031676] We reached unpopular paths: fs/namei.c:2698
+[    4.031681] We reached unpopular paths: fs/namei.c:2698
+[    4.031686] We reached unpopular paths: fs/namei.c:2698
+[    4.031688] We reached unpopular paths: fs/inode.c:1277
+[    4.031690] We reached unpopular paths: fs/namei.c:5172
+[    4.031700] We reached unpopular paths: fs/read_write.c:1043
+[    4.031702] We reached unpopular paths: drivers/char/mem.c:671
+[    4.031702] We reached unpopular paths: fs/read_write.c:1061
+[    4.031703] We reached unpopular paths: fs/read_write.c:1148
+[    4.031737] We reached unpopular paths: mm/util.c:681
+[    4.031742] We reached unpopular paths: mm/util.c:681
+[    4.031743] We reached unpopular paths: mm/util.c:681
+[    4.031750] We reached unpopular paths: mm/util.c:681
+[    4.031753] We reached unpopular paths: mm/util.c:681
+[    4.031755] We reached unpopular paths: mm/util.c:681
+[    4.031756] We reached unpopular paths: mm/util.c:681
+[    4.031764] We reached unpopular paths: kernel/cgroup/freezer.c:243
+[    4.031834] We reached unpopular paths: fs/namei.c:5172
+[    4.031841] We reached unpopular paths: mm/util.c:681
+[    4.031844] We reached unpopular paths: fs/dcache.c:1008
+[    4.031845] We reached unpopular paths: fs/dcache.c:966
+[    4.031845] We reached unpopular paths: fs/dcache.c:974
+[    4.031846] We reached unpopular paths: security/commoncap.c:426
+[    4.031847] We reached unpopular paths: security/commoncap.c:433
+[    4.031847] We reached unpopular paths: security/security.c:901
+[    4.031848] We reached unpopular paths: fs/xattr.c:283
+[    4.031907] We reached unpopular paths: mm/util.c:681
+[    4.031915] We reached unpopular paths: mm/util.c:681
+[    4.031928] We reached unpopular paths: mm/util.c:681
+[    4.031934] We reached unpopular paths: mm/util.c:681
+[    4.032073] We reached unpopular paths: mm/util.c:681
+[    4.032101] We reached unpopular paths: fs/inode.c:1663
+[    4.032106] We reached unpopular paths: fs/inode.c:1663
+[    4.032278] We reached unpopular paths: mm/util.c:681
+[    4.032282] We reached unpopular paths: mm/util.c:681
+[    4.032284] We reached unpopular paths: mm/util.c:681
+[    4.032288] We reached unpopular paths: mm/util.c:681
+[    4.032290] We reached unpopular paths: mm/util.c:681
+[    4.032292] We reached unpopular paths: mm/util.c:681
+[    4.032293] We reached unpopular paths: mm/util.c:681
+[    4.032300] We reached unpopular paths: kernel/cgroup/freezer.c:243
+[    4.032393] We reached unpopular paths: fs/namei.c:5172
+[    4.032447] We reached unpopular paths: fs/namei.c:1839
+[    4.032451] We reached unpopular paths: fs/namei.c:1839
+[    4.032453] We reached unpopular paths: fs/namei.c:1839
+[    4.032456] We reached unpopular paths: fs/namei.c:1839
+[    4.032459] We reached unpopular paths: fs/namei.c:1839
+[    4.032462] We reached unpopular paths: fs/namei.c:5172
+[    4.032471] We reached unpopular paths: fs/read_write.c:1043
+[    4.032472] We reached unpopular paths: drivers/char/mem.c:671
+[    4.032473] We reached unpopular paths: fs/read_write.c:1061
+[    4.032473] We reached unpopular paths: fs/read_write.c:1148
+[    4.032493] We reached unpopular paths: mm/util.c:681
+[    4.032496] We reached unpopular paths: mm/util.c:681
+[    4.032498] We reached unpopular paths: mm/util.c:681
+[    4.032502] We reached unpopular paths: mm/util.c:681
+[    4.032505] We reached unpopular paths: mm/util.c:681
+[    4.032506] We reached unpopular paths: mm/util.c:681
+[    4.032507] We reached unpopular paths: mm/util.c:681
+[    4.032514] We reached unpopular paths: kernel/cgroup/freezer.c:243
+[    4.032582] We reached unpopular paths: fs/namei.c:5172
+[    4.032588] We reached unpopular paths: mm/util.c:681
+[    4.032590] We reached unpopular paths: fs/dcache.c:1008
+[    4.032591] We reached unpopular paths: fs/dcache.c:966
+[    4.032591] We reached unpopular paths: fs/dcache.c:974
+[    4.032592] We reached unpopular paths: security/commoncap.c:426
+[    4.032592] We reached unpopular paths: security/commoncap.c:433
+[    4.032593] We reached unpopular paths: security/security.c:901
+[    4.032593] We reached unpopular paths: fs/xattr.c:283
+[    4.032650] We reached unpopular paths: mm/util.c:681
+[    4.032658] We reached unpopular paths: mm/util.c:681
+[    4.032671] We reached unpopular paths: mm/util.c:681
+[    4.032677] We reached unpopular paths: mm/util.c:681
+[    4.032815] We reached unpopular paths: mm/util.c:681
+[    4.032840] We reached unpopular paths: fs/inode.c:1663
+[    4.032845] We reached unpopular paths: fs/inode.c:1663
+[    4.033047] We reached unpopular paths: mm/util.c:681
+[    4.033051] We reached unpopular paths: mm/util.c:681
+[    4.033053] We reached unpopular paths: mm/util.c:681
+[    4.033057] We reached unpopular paths: mm/util.c:681
+[    4.033059] We reached unpopular paths: mm/util.c:681
+[    4.033061] We reached unpopular paths: mm/util.c:681
+[    4.033062] We reached unpopular paths: mm/util.c:681
+[    4.033068] We reached unpopular paths: kernel/cgroup/freezer.c:243
+[    4.040118] We reached unpopular paths: security/keys/key.c:677
+[    4.040119] We reached unpopular paths: security/keys/key.c:677
+[    4.040119] We reached unpopular paths: security/keys/key.c:677
+[    4.040120] We reached unpopular paths: security/keys/key.c:677
+[    4.040120] We reached unpopular paths: security/keys/key.c:677
+[    4.040121] We reached unpopular paths: security/keys/key.c:677
+[    4.040121] We reached unpopular paths: security/keys/key.c:677
+[    4.040122] We reached unpopular paths: security/keys/key.c:677
+[    4.040134] We reached unpopular paths: security/keys/key.c:677
+[    4.040135] We reached unpopular paths: security/keys/key.c:677
+[    4.040135] We reached unpopular paths: security/keys/key.c:677
+[    4.040136] We reached unpopular paths: security/keys/key.c:677
+[    4.040137] We reached unpopular paths: security/keys/key.c:677
+[    4.040137] We reached unpopular paths: security/keys/key.c:677
+[    4.040138] We reached unpopular paths: security/keys/key.c:677
+[    4.040154] We reached unpopular paths: mm/percpu.c:833
+[    4.040239] We reached unpopular paths: fs/namei.c:5172
+[    4.040295] We reached unpopular paths: fs/namei.c:1839
+[    4.040299] We reached unpopular paths: fs/namei.c:1839
+[    4.040301] We reached unpopular paths: fs/namei.c:1839
+[    4.040304] We reached unpopular paths: fs/namei.c:1839
+[    4.040307] We reached unpopular paths: fs/namei.c:1839
+[    4.040310] We reached unpopular paths: fs/namei.c:5172
+[    4.040320] We reached unpopular paths: fs/read_write.c:1043
+[    4.040321] We reached unpopular paths: drivers/char/mem.c:671
+[    4.040321] We reached unpopular paths: fs/read_write.c:1061
+[    4.040322] We reached unpopular paths: fs/read_write.c:1148
+[    4.040343] We reached unpopular paths: mm/util.c:681
+[    4.040347] We reached unpopular paths: mm/util.c:681
+[    4.040349] We reached unpopular paths: mm/util.c:681
+[    4.040353] We reached unpopular paths: mm/util.c:681
+[    4.040356] We reached unpopular paths: mm/util.c:681
+[    4.040357] We reached unpopular paths: mm/util.c:681
+[    4.040359] We reached unpopular paths: mm/util.c:681
+[    4.040365] We reached unpopular paths: kernel/cgroup/freezer.c:243
+[    4.040434] We reached unpopular paths: fs/namei.c:5172
+[    4.040440] We reached unpopular paths: mm/util.c:681
+[    4.040442] We reached unpopular paths: fs/dcache.c:1008
+[    4.040443] We reached unpopular paths: fs/dcache.c:966
+[    4.040443] We reached unpopular paths: fs/dcache.c:974
+[    4.040444] We reached unpopular paths: security/commoncap.c:426
+[    4.040445] We reached unpopular paths: security/commoncap.c:433
+[    4.040445] We reached unpopular paths: security/security.c:901
+[    4.040446] We reached unpopular paths: fs/xattr.c:283
+[    4.040504] We reached unpopular paths: mm/util.c:681
+[    4.040511] We reached unpopular paths: mm/util.c:681
+[    4.040523] We reached unpopular paths: mm/util.c:681
+[    4.040529] We reached unpopular paths: mm/util.c:681
+[    4.040665] We reached unpopular paths: mm/util.c:681
+[    4.040682] We reached unpopular paths: mm/util.c:681
+[    4.040697] We reached unpopular paths: fs/inode.c:1663
+[    4.040703] We reached unpopular paths: fs/inode.c:1663
+[    4.040714] We reached unpopular paths: fs/ioctl.c:50
+[    4.040716] We reached unpopular paths: fs/read_write.c:1043
+[    4.040721] We reached unpopular paths: fs/read_write.c:1061
+[    4.040721] We reached unpopular paths: fs/read_write.c:1148
+[    4.040895] We reached unpopular paths: mm/util.c:681
+[    4.040899] We reached unpopular paths: mm/util.c:681
+[    4.040901] We reached unpopular paths: mm/util.c:681
+[    4.040905] We reached unpopular paths: mm/util.c:681
+[    4.040907] We reached unpopular paths: mm/util.c:681
+[    4.040909] We reached unpopular paths: mm/util.c:681
+[    4.040910] We reached unpopular paths: mm/util.c:681
+[    4.040917] We reached unpopular paths: kernel/cgroup/freezer.c:243
+[    4.041149] We reached unpopular paths: fs/namei.c:5172
+[    4.041151] We reached unpopular paths: fs/namei.c:1839
+[    4.041160] We reached unpopular paths: fs/namei.c:5172
+[    4.041173] We reached unpopular paths: fs/namei.c:5172
+[    4.041196] We reached unpopular paths: mm/util.c:681
+[    4.041221] We reached unpopular paths: fs/namei.c:5172
+[    4.041243] We reached unpopular paths: fs/namei.c:5172
+[    4.041257] We reached unpopular paths: fs/read_write.c:1043
+[    4.041259] We reached unpopular paths: fs/read_write.c:1061
+[    4.041260] We reached unpopular paths: fs/read_write.c:1148
+[    4.041278] We reached unpopular paths: fs/namei.c:5172
+[    4.041325] We reached unpopular paths: fs/namei.c:5172
+[    4.041345] We reached unpopular paths: fs/namei.c:1839
+[    4.041348] We reached unpopular paths: fs/namei.c:1839
+[    4.041351] We reached unpopular paths: fs/namei.c:1839
+[    4.041355] We reached unpopular paths: fs/namei.c:5172
+[    4.041362] We reached unpopular paths: fs/read_write.c:1043
+[    4.041363] We reached unpopular paths: drivers/char/mem.c:671
+[    4.041364] We reached unpopular paths: fs/read_write.c:1061
+[    4.041364] We reached unpopular paths: fs/read_write.c:1148
+[    4.041384] We reached unpopular paths: mm/util.c:681
+[    4.041388] We reached unpopular paths: mm/util.c:681
+[    4.041389] We reached unpopular paths: mm/util.c:681
+[    4.041393] We reached unpopular paths: mm/util.c:681
+[    4.041396] We reached unpopular paths: mm/util.c:681
+[    4.041397] We reached unpopular paths: mm/util.c:681
+[    4.041399] We reached unpopular paths: mm/util.c:681
+[    4.041405] We reached unpopular paths: kernel/cgroup/freezer.c:243
+[    4.041479] We reached unpopular paths: fs/namei.c:5172
+[    4.041484] We reached unpopular paths: mm/util.c:681
+[    4.041487] We reached unpopular paths: fs/dcache.c:1008
+[    4.041487] We reached unpopular paths: fs/dcache.c:966
+[    4.041488] We reached unpopular paths: fs/dcache.c:974
+[    4.041488] We reached unpopular paths: security/commoncap.c:426
+[    4.041489] We reached unpopular paths: security/commoncap.c:433
+[    4.041490] We reached unpopular paths: security/security.c:901
+[    4.041490] We reached unpopular paths: fs/xattr.c:283
+[    4.041549] We reached unpopular paths: mm/util.c:681
+[    4.041556] We reached unpopular paths: mm/util.c:681
+[    4.041568] We reached unpopular paths: mm/util.c:681
+[    4.041574] We reached unpopular paths: mm/util.c:681
+[    4.041714] We reached unpopular paths: fs/namei.c:5172
+[    4.041722] We reached unpopular paths: fs/inode.c:1663
+[    4.041725] We reached unpopular paths: fs/read_write.c:336
+[    4.041726] We reached unpopular paths: fs/read_write.c:319
+[    4.041726] We reached unpopular paths: fs/read_write.c:72
+[    4.041728] We reached unpopular paths: fs/read_write.c:336
+[    4.041728] We reached unpopular paths: fs/read_write.c:319
+[    4.041729] We reached unpopular paths: fs/read_write.c:72
+[    4.041800] We reached unpopular paths: fs/inode.c:1895
+[    4.041802] We reached unpopular paths: mm/shmem.c:175
+[    4.041802] We reached unpopular paths: mm/shmem.c:1080
+[    4.041807] We reached unpopular paths: mm/shmem.c:1102
+[    4.041807] We reached unpopular paths: mm/shmem.c:1113
+[    4.041816] We reached unpopular paths: fs/namei.c:1839
+[    4.041821] We reached unpopular paths: fs/namei.c:1839
+[    4.041824] We reached unpopular paths: fs/namei.c:1839
+[    4.041827] We reached unpopular paths: fs/namei.c:1839
+[    4.041829] We reached unpopular paths: fs/namei.c:1839
+[    4.041833] We reached unpopular paths: fs/namei.c:5172
+[    4.041849] We reached unpopular paths: mm/util.c:681
+[    4.041853] We reached unpopular paths: mm/util.c:681
+[    4.041854] We reached unpopular paths: mm/util.c:681
+[    4.041858] We reached unpopular paths: mm/util.c:681
+[    4.041861] We reached unpopular paths: mm/util.c:681
+[    4.041862] We reached unpopular paths: mm/util.c:681
+[    4.041864] We reached unpopular paths: mm/util.c:681
+[    4.041870] We reached unpopular paths: kernel/cgroup/freezer.c:243
+[    4.041949] We reached unpopular paths: fs/namei.c:5172
+[    4.041954] We reached unpopular paths: mm/util.c:681
+[    4.041957] We reached unpopular paths: fs/dcache.c:1008
+[    4.041957] We reached unpopular paths: fs/dcache.c:966
+[    4.041958] We reached unpopular paths: fs/dcache.c:974
+[    4.041958] We reached unpopular paths: security/commoncap.c:426
+[    4.041959] We reached unpopular paths: security/commoncap.c:433
+[    4.041959] We reached unpopular paths: security/security.c:901
+[    4.041960] We reached unpopular paths: fs/xattr.c:283
+[    4.042018] We reached unpopular paths: mm/util.c:681
+[    4.042026] We reached unpopular paths: mm/util.c:681
+[    4.042038] We reached unpopular paths: mm/util.c:681
+[    4.042044] We reached unpopular paths: mm/util.c:681
+[    4.042177] We reached unpopular paths: fs/namei.c:5172
+[    4.042183] We reached unpopular paths: fs/splice.c:962
+[    4.042185] We reached unpopular paths: fs/inode.c:1663
+[    4.042186] We reached unpopular paths: fs/inode.c:1663
+[    4.042186] We reached unpopular paths: fs/splice.c:925
+[    4.042187] We reached unpopular paths: fs/splice.c:140
+[    4.042188] We reached unpopular paths: fs/read_write.c:1043
+[    4.042189] We reached unpopular paths: mm/util.c:681
+[    4.042193] We reached unpopular paths: fs/read_write.c:1061
+[    4.042194] We reached unpopular paths: fs/splice.c:860
+[    4.042194] We reached unpopular paths: fs/splice.c:962
+[    4.042195] We reached unpopular paths: fs/inode.c:1663
+[    4.042196] We reached unpopular paths: fs/inode.c:1663
+[    4.042198] We reached unpopular paths: fs/splice.c:962
+[    4.042199] We reached unpopular paths: fs/inode.c:1663
+[    4.042199] We reached unpopular paths: fs/inode.c:1663
+[    4.042284] We reached unpopular paths: fs/namei.c:1839
+[    4.042289] We reached unpopular paths: fs/namei.c:1839
+[    4.042292] We reached unpopular paths: fs/namei.c:1839
+[    4.042295] We reached unpopular paths: fs/namei.c:1839
+[    4.042297] We reached unpopular paths: fs/namei.c:1839
+[    4.042301] We reached unpopular paths: fs/namei.c:5172
+[    4.042314] We reached unpopular paths: mm/util.c:681
+[    4.042318] We reached unpopular paths: mm/util.c:681
+[    4.042320] We reached unpopular paths: mm/util.c:681
+[    4.042324] We reached unpopular paths: mm/util.c:681
+[    4.042326] We reached unpopular paths: mm/util.c:681
+[    4.042328] We reached unpopular paths: mm/util.c:681
+[    4.042329] We reached unpopular paths: mm/util.c:681
+[    4.042335] We reached unpopular paths: kernel/cgroup/freezer.c:243
+[    4.042414] We reached unpopular paths: fs/namei.c:5172
+[    4.042420] We reached unpopular paths: mm/util.c:681
+[    4.042422] We reached unpopular paths: fs/dcache.c:1008
+[    4.042423] We reached unpopular paths: fs/dcache.c:966
+[    4.042423] We reached unpopular paths: fs/dcache.c:974
+[    4.042424] We reached unpopular paths: security/commoncap.c:426
+[    4.042425] We reached unpopular paths: security/commoncap.c:433
+[    4.042425] We reached unpopular paths: security/security.c:901
+[    4.042426] We reached unpopular paths: fs/xattr.c:283
+[    4.042484] We reached unpopular paths: mm/util.c:681
+[    4.042490] We reached unpopular paths: mm/util.c:681
+[    4.042502] We reached unpopular paths: mm/util.c:681
+[    4.042509] We reached unpopular paths: mm/util.c:681
+[    4.042641] We reached unpopular paths: fs/namei.c:5172
+[    4.042647] We reached unpopular paths: fs/namei.c:5172
+[    4.042651] We reached unpopular paths: fs/dcache.c:521
+[    4.042652] We reached unpopular paths: mm/list_lru.c:137
+[    4.042660] We reached unpopular paths: fs/inode.c:1598
+[    4.042729] We reached unpopular paths: fs/namei.c:1839
+[    4.042732] We reached unpopular paths: fs/namei.c:1839
+[    4.042735] We reached unpopular paths: fs/namei.c:1839
+[    4.042738] We reached unpopular paths: fs/namei.c:1839
+[    4.042740] We reached unpopular paths: fs/namei.c:1839
+[    4.042744] We reached unpopular paths: fs/namei.c:5172
+[    4.042762] We reached unpopular paths: mm/util.c:681
+[    4.042766] We reached unpopular paths: mm/util.c:681
+[    4.042768] We reached unpopular paths: mm/util.c:681
+[    4.042772] We reached unpopular paths: mm/util.c:681
+[    4.042774] We reached unpopular paths: mm/util.c:681
+[    4.042776] We reached unpopular paths: mm/util.c:681
+[    4.042777] We reached unpopular paths: mm/util.c:681
+[    4.042784] We reached unpopular paths: kernel/cgroup/freezer.c:243
+[    4.042859] We reached unpopular paths: fs/namei.c:5172
+[    4.042864] We reached unpopular paths: mm/util.c:681
+[    4.042867] We reached unpopular paths: fs/dcache.c:1008
+[    4.042867] We reached unpopular paths: fs/dcache.c:966
+[    4.042868] We reached unpopular paths: fs/dcache.c:974
+[    4.042869] We reached unpopular paths: security/commoncap.c:426
+[    4.042869] We reached unpopular paths: security/commoncap.c:433
+[    4.042870] We reached unpopular paths: security/security.c:901
+[    4.042870] We reached unpopular paths: fs/xattr.c:283
+[    4.042928] We reached unpopular paths: mm/util.c:681
+[    4.042936] We reached unpopular paths: mm/util.c:681
+[    4.042948] We reached unpopular paths: mm/util.c:681
+[    4.042954] We reached unpopular paths: mm/util.c:681
+[    4.043167] We reached unpopular paths: mm/util.c:681
+[    4.043171] We reached unpopular paths: mm/util.c:681
+[    4.043173] We reached unpopular paths: mm/util.c:681
+[    4.043176] We reached unpopular paths: mm/util.c:681
+[    4.043179] We reached unpopular paths: mm/util.c:681
+[    4.043181] We reached unpopular paths: mm/util.c:681
+[    4.043182] We reached unpopular paths: mm/util.c:681
+[    4.043188] We reached unpopular paths: kernel/cgroup/freezer.c:243
+[    4.043264] We reached unpopular paths: fs/namei.c:5172
+[    4.043269] We reached unpopular paths: mm/util.c:681
+[    4.043271] We reached unpopular paths: fs/dcache.c:1008
+[    4.043272] We reached unpopular paths: fs/dcache.c:966
+[    4.043272] We reached unpopular paths: fs/dcache.c:974
+[    4.043273] We reached unpopular paths: security/commoncap.c:426
+[    4.043274] We reached unpopular paths: security/commoncap.c:433
+[    4.043274] We reached unpopular paths: security/security.c:901
+[    4.043275] We reached unpopular paths: fs/xattr.c:283
+[    4.043332] We reached unpopular paths: mm/util.c:681
+[    4.043338] We reached unpopular paths: mm/util.c:681
+[    4.043350] We reached unpopular paths: mm/util.c:681
+[    4.043356] We reached unpopular paths: mm/util.c:681
+[    4.043492] We reached unpopular paths: fs/namei.c:5172
+[    4.043496] We reached unpopular paths: fs/namei.c:2698
+[    4.043664] We reached unpopular paths: mm/util.c:681
+[    4.043720] We reached unpopular paths: mm/util.c:681
+[    4.043815] We reached unpopular paths: mm/util.c:681
+[    4.043820] We reached unpopular paths: mm/util.c:681
+[    4.043821] We reached unpopular paths: mm/util.c:681
+[    4.043825] We reached unpopular paths: mm/util.c:681
+[    4.043828] We reached unpopular paths: mm/util.c:681
+[    4.043829] We reached unpopular paths: mm/util.c:681
+[    4.043830] We reached unpopular paths: mm/util.c:681
+[    4.043837] We reached unpopular paths: kernel/cgroup/freezer.c:243
+[    4.043973] We reached unpopular paths: fs/namei.c:1839
+[    4.043979] We reached unpopular paths: fs/namei.c:2698
+[    4.043986] We reached unpopular paths: fs/namei.c:2698
+[    4.043991] We reached unpopular paths: fs/namei.c:2698
+[    4.043996] We reached unpopular paths: fs/namei.c:2698
+[    4.044000] We reached unpopular paths: fs/namei.c:2698
+[    4.044004] We reached unpopular paths: fs/inode.c:1277
+[    4.044006] We reached unpopular paths: fs/namei.c:5172
+[    4.044016] We reached unpopular paths: fs/read_write.c:1043
+[    4.044017] We reached unpopular paths: drivers/char/mem.c:671
+[    4.044017] We reached unpopular paths: fs/read_write.c:1061
+[    4.044018] We reached unpopular paths: fs/read_write.c:1148
+[    4.044036] We reached unpopular paths: mm/util.c:681
+[    4.044040] We reached unpopular paths: mm/util.c:681
+[    4.044041] We reached unpopular paths: mm/util.c:681
+[    4.044045] We reached unpopular paths: mm/util.c:681
+[    4.044048] We reached unpopular paths: mm/util.c:681
+[    4.044050] We reached unpopular paths: mm/util.c:681
+[    4.044051] We reached unpopular paths: mm/util.c:681
+[    4.044059] We reached unpopular paths: kernel/cgroup/freezer.c:243
+[    4.044119] We reached unpopular paths: fs/namei.c:5172
+[    4.044125] We reached unpopular paths: mm/util.c:681
+[    4.044127] We reached unpopular paths: fs/dcache.c:1008
+[    4.044128] We reached unpopular paths: fs/dcache.c:966
+[    4.044128] We reached unpopular paths: fs/dcache.c:974
+[    4.044129] We reached unpopular paths: security/commoncap.c:426
+[    4.044130] We reached unpopular paths: security/commoncap.c:433
+[    4.044130] We reached unpopular paths: security/security.c:901
+[    4.044131] We reached unpopular paths: fs/xattr.c:283
+[    4.044187] We reached unpopular paths: mm/util.c:681
+[    4.044194] We reached unpopular paths: mm/util.c:681
+[    4.044207] We reached unpopular paths: mm/util.c:681
+[    4.044213] We reached unpopular paths: mm/util.c:681
+[    4.044357] We reached unpopular paths: fs/ioctl.c:50
+[    4.044359] We reached unpopular paths: fs/read_write.c:1043
+[    4.044364] We reached unpopular paths: fs/read_write.c:1061
+[    4.044364] We reached unpopular paths: fs/read_write.c:1148
+[    4.044711] We reached unpopular paths: fs/namei.c:1839
+[    4.044719] We reached unpopular paths: fs/namei.c:1839
+[    4.044726] We reached unpopular paths: fs/namei.c:1839
+[    4.044735] We reached unpopular paths: fs/namei.c:1839
+[    4.044742] We reached unpopular paths: fs/namei.c:1839
+[    4.044749] We reached unpopular paths: fs/namei.c:1839
+[    4.044803] We reached unpopular paths: fs/namei.c:1839
+[    4.044806] We reached unpopular paths: fs/namei.c:1839
+[    4.044809] We reached unpopular paths: fs/namei.c:1839
+[    4.044812] We reached unpopular paths: fs/namei.c:1839
+[    4.044814] We reached unpopular paths: fs/namei.c:1839
+[    4.044817] We reached unpopular paths: fs/namei.c:1839
+[    4.044819] We reached unpopular paths: fs/read_write.c:1043
+[    4.044820] We reached unpopular paths: drivers/char/mem.c:671
+[    4.044821] We reached unpopular paths: fs/read_write.c:1061
+[    4.044821] We reached unpopular paths: fs/read_write.c:1148
+[    4.044899] We reached unpopular paths: mm/util.c:681
+[    4.044963] We reached unpopular paths: fs/namei.c:5172
+[    4.044968] We reached unpopular paths: fs/namei.c:2698
+[    4.044978] We reached unpopular paths: fs/namei.c:5172
+[    4.045012] We reached unpopular paths: mm/util.c:681
+[    4.045016] We reached unpopular paths: mm/util.c:681
+[    4.045018] We reached unpopular paths: mm/util.c:681
+[    4.045021] We reached unpopular paths: mm/util.c:681
+[    4.045024] We reached unpopular paths: mm/util.c:681
+[    4.045026] We reached unpopular paths: mm/util.c:681
+[    4.045027] We reached unpopular paths: mm/util.c:681
+[    4.045034] We reached unpopular paths: kernel/cgroup/freezer.c:243
+[    4.045155] We reached unpopular paths: fs/namei.c:5172
+[    4.045169] We reached unpopular paths: fs/inode.c:1663
+[    4.045172] We reached unpopular paths: fs/inode.c:1663
+[    4.045176] We reached unpopular paths: fs/namespace.c:1293
+[    4.045196] We reached unpopular paths: fs/namei.c:5172
+[    4.045199] We reached unpopular paths: fs/namei.c:2698
+[    4.045209] We reached unpopular paths: fs/namei.c:5172
+[    4.045216] We reached unpopular paths: fs/inode.c:1663
+[    4.045218] We reached unpopular paths: fs/inode.c:1663
+[    4.045221] We reached unpopular paths: fs/namespace.c:1293
+[    4.045231] We reached unpopular paths: fs/namei.c:5172
+[    4.045234] We reached unpopular paths: fs/namei.c:2698
+[    4.045243] We reached unpopular paths: fs/namei.c:5172
+[    4.045249] We reached unpopular paths: fs/inode.c:1663
+[    4.045251] We reached unpopular paths: fs/inode.c:1663
+[    4.045254] We reached unpopular paths: fs/namespace.c:1293
+[    4.045263] We reached unpopular paths: fs/namei.c:5172
+[    4.045266] We reached unpopular paths: fs/namei.c:2698
+[    4.045274] We reached unpopular paths: fs/namei.c:5172
+[    4.045280] We reached unpopular paths: fs/inode.c:1663
+[    4.045282] We reached unpopular paths: fs/inode.c:1663
+[    4.045285] We reached unpopular paths: fs/namespace.c:1293
+[    4.045294] We reached unpopular paths: fs/namei.c:5172
+[    4.045297] We reached unpopular paths: fs/namei.c:2698
+[    4.045305] We reached unpopular paths: fs/namei.c:5172
+[    4.045312] We reached unpopular paths: fs/inode.c:1663
+[    4.045314] We reached unpopular paths: fs/inode.c:1663
+[    4.045316] We reached unpopular paths: fs/namespace.c:1293
+[    4.045325] We reached unpopular paths: fs/namei.c:5172
+[    4.045328] We reached unpopular paths: fs/namei.c:2698
+[    4.045469] We reached unpopular paths: fs/namei.c:5172
+[    4.045471] We reached unpopular paths: fs/namei.c:1839
+[    4.045479] We reached unpopular paths: fs/namei.c:5172
+[    4.045511] We reached unpopular paths: fs/namei.c:5172
+[    4.045513] We reached unpopular paths: fs/namei.c:1839
+[    4.045633] We reached unpopular paths: net/packet/af_packet.c:3136
+[    4.045634] We reached unpopular paths: net/packet/af_packet.c:399
+[    4.045635] We reached unpopular paths: net/packet/af_packet.c:374
+[    4.045635] We reached unpopular paths: net/packet/af_packet.c:386
+[    4.045636] We reached unpopular paths: net/packet/af_packet.c:309
+[    4.045637] We reached unpopular paths: net/packet/af_packet.c:3153
+[    4.045637] We reached unpopular paths: net/packet/af_packet.c:3157
+[    4.045638] We reached unpopular paths: net/packet/af_packet.c:3794
+[    4.045638] We reached unpopular paths: net/packet/af_packet.c:3799
+[    4.045639] We reached unpopular paths: net/packet/af_packet.c:1876
+[    4.045641] We reached unpopular paths: net/packet/af_packet.c:3194
+[    4.045642] We reached unpopular paths: net/packet/af_packet.c:1394
+[    4.045657] We reached unpopular paths: net/ipv6/mcast.c:320
+[    4.045658] We reached unpopular paths: net/ipv6/anycast.c:186
+[    4.045658] We reached unpopular paths: net/ipv6/raw.c:1259
+[    4.045660] We reached unpopular paths: net/ipv6/ip6_flowlabel.c:282
+[    4.045670] We reached unpopular paths: net/netlink/af_netlink.c:624
+[    4.045671] We reached unpopular paths: net/netlink/af_netlink.c:552
+[    4.045710] We reached unpopular paths: fs/namei.c:5172
+[    4.045714] We reached unpopular paths: fs/namei.c:2698
+[    4.045716] We reached unpopular paths: fs/dcache.c:521
+[    4.045718] We reached unpopular paths: mm/list_lru.c:137
+[    4.045720] We reached unpopular paths: fs/inode.c:1598
+[    4.045729] We reached unpopular paths: fs/namei.c:5172
+[    4.045732] We reached unpopular paths: fs/namei.c:2698
+[    4.045734] We reached unpopular paths: fs/dcache.c:521
+[    4.045735] We reached unpopular paths: mm/list_lru.c:137
+[    4.045737] We reached unpopular paths: fs/inode.c:1598
+[    4.045760] We reached unpopular paths: fs/open.c:189
+[    4.045760] We reached unpopular paths: fs/open.c:197
+[    4.045761] We reached unpopular paths: fs/open.c:207
+[    4.045761] We reached unpopular paths: fs/open.c:213
+[    4.045763] We reached unpopular paths: fs/dcache.c:1008
+[    4.045763] We reached unpopular paths: fs/dcache.c:966
+[    4.045764] We reached unpopular paths: fs/dcache.c:974
+[    4.045764] We reached unpopular paths: security/commoncap.c:426
+[    4.045765] We reached unpopular paths: security/commoncap.c:433
+[    4.045766] We reached unpopular paths: security/security.c:901
+[    4.045768] We reached unpopular paths: mm/shmem.c:175
+[    4.045769] We reached unpopular paths: mm/shmem.c:1080
+[    4.045773] We reached unpopular paths: mm/shmem.c:1102
+[    4.045773] We reached unpopular paths: mm/shmem.c:1113
+[    4.045777] We reached unpopular paths: fs/namei.c:5172
+[    4.045781] We reached unpopular paths: fs/namei.c:2698
+[    4.045783] We reached unpopular paths: fs/dcache.c:521
+[    4.045787] We reached unpopular paths: fs/locks.c:1046
+[    4.045787] We reached unpopular paths: fs/locks.c:686
+[    4.045788] We reached unpopular paths: fs/locks.c:797
+[    4.045792] We reached unpopular paths: fs/inode.c:1598
+[    4.045796] We reached unpopular paths: fs/read_write.c:1043
+[    4.045800] We reached unpopular paths: fs/read_write.c:1061
+[    4.045800] We reached unpopular paths: fs/read_write.c:1148
+[    4.045859] We reached unpopular paths: fs/namespace.c:1557
+[    4.045860] We reached unpopular paths: fs/fs_pin.c:27
+[    4.045861] We reached unpopular paths: fs/namespace.c:1557
+[    4.045862] We reached unpopular paths: fs/fs_pin.c:27
+[    4.045863] We reached unpopular paths: fs/namespace.c:1557
+[    4.045863] We reached unpopular paths: fs/fs_pin.c:27
+[    4.045864] We reached unpopular paths: fs/namespace.c:1557
+[    4.045865] We reached unpopular paths: fs/fs_pin.c:27
+[    4.045866] We reached unpopular paths: fs/namespace.c:1557
+[    4.045866] We reached unpopular paths: fs/fs_pin.c:27
+[    4.045867] We reached unpopular paths: fs/namespace.c:1557
+[    4.045868] We reached unpopular paths: fs/fs_pin.c:27
+[    4.045869] We reached unpopular paths: fs/namespace.c:1557
+[    4.045869] We reached unpopular paths: fs/fs_pin.c:27
+[    4.045870] We reached unpopular paths: fs/namespace.c:1557
+[    4.045870] We reached unpopular paths: fs/fs_pin.c:27
+[    4.045871] We reached unpopular paths: fs/namespace.c:1557
+[    4.045871] We reached unpopular paths: fs/fs_pin.c:27
+[    4.045872] We reached unpopular paths: fs/namespace.c:1557
+[    4.045873] We reached unpopular paths: fs/fs_pin.c:27
+[    4.045873] We reached unpopular paths: fs/namespace.c:1557
+[    4.045874] We reached unpopular paths: fs/fs_pin.c:27
+[    4.045875] We reached unpopular paths: fs/namespace.c:1557
+[    4.045875] We reached unpopular paths: fs/fs_pin.c:27
+[    4.045876] We reached unpopular paths: fs/namespace.c:1557
+[    4.045876] We reached unpopular paths: fs/fs_pin.c:27
+[    4.045877] We reached unpopular paths: fs/namespace.c:1557
+[    4.045877] We reached unpopular paths: fs/fs_pin.c:27
+[    4.045878] We reached unpopular paths: fs/namespace.c:1557
+[    4.045878] We reached unpopular paths: fs/fs_pin.c:27
+[    4.045879] We reached unpopular paths: fs/pnode.c:104
+[    4.045880] We reached unpopular paths: fs/namespace.c:1557
+[    4.045880] We reached unpopular paths: fs/fs_pin.c:27
+[    4.045881] We reached unpopular paths: fs/pnode.c:104
+[    4.045881] We reached unpopular paths: fs/namespace.c:1557
+[    4.045882] We reached unpopular paths: fs/fs_pin.c:27
+[    4.045882] We reached unpopular paths: fs/pnode.c:104
+[    4.045883] We reached unpopular paths: fs/namespace.c:1557
+[    4.045883] We reached unpopular paths: fs/fs_pin.c:27
+[    4.045884] We reached unpopular paths: fs/pnode.c:104
+[    4.045884] We reached unpopular paths: fs/namespace.c:1557
+[    4.045885] We reached unpopular paths: fs/fs_pin.c:27
+[    4.045885] We reached unpopular paths: fs/pnode.c:104
+[    4.045886] We reached unpopular paths: fs/namespace.c:1557
+[    4.045886] We reached unpopular paths: fs/fs_pin.c:27
+[    4.045887] We reached unpopular paths: fs/pnode.c:104
+[    4.045887] We reached unpopular paths: fs/namespace.c:1557
+[    4.045888] We reached unpopular paths: fs/fs_pin.c:27
+[    4.045888] We reached unpopular paths: fs/namespace.c:1557
+[    4.045889] We reached unpopular paths: fs/fs_pin.c:27
+[    4.045889] We reached unpopular paths: fs/pnode.c:104
+[    4.045890] We reached unpopular paths: fs/namespace.c:1536
+[    4.045891] We reached unpopular paths: fs/fs_pin.c:51
+[    4.045891] We reached unpopular paths: fs/namespace.c:204
+[    4.045892] We reached unpopular paths: fs/fs_pin.c:14
+[    4.045893] We reached unpopular paths: fs/namespace.c:1320
+[    4.045893] We reached unpopular paths: fs/namespace.c:1323
+[    4.045894] We reached unpopular paths: fs/namespace.c:1326
+[    4.045894] We reached unpopular paths: fs/fs_pin.c:51
+[    4.045895] We reached unpopular paths: fs/namespace.c:204
+[    4.045896] We reached unpopular paths: fs/fs_pin.c:14
+[    4.045896] We reached unpopular paths: fs/namespace.c:1293
+[    4.045897] We reached unpopular paths: fs/fs_pin.c:51
+[    4.045897] We reached unpopular paths: fs/namespace.c:204
+[    4.045897] We reached unpopular paths: fs/fs_pin.c:14
+[    4.045898] We reached unpopular paths: fs/namespace.c:1320
+[    4.045898] We reached unpopular paths: fs/namespace.c:1323
+[    4.045899] We reached unpopular paths: fs/namespace.c:1326
+[    4.045899] We reached unpopular paths: fs/fs_pin.c:51
+[    4.045900] We reached unpopular paths: fs/namespace.c:204
+[    4.045900] We reached unpopular paths: fs/fs_pin.c:14
+[    4.045901] We reached unpopular paths: fs/namespace.c:1320
+[    4.045901] We reached unpopular paths: fs/namespace.c:1323
+[    4.045902] We reached unpopular paths: fs/namespace.c:1326
+[    4.045902] We reached unpopular paths: fs/fs_pin.c:51
+[    4.045903] We reached unpopular paths: fs/namespace.c:204
+[    4.045903] We reached unpopular paths: fs/fs_pin.c:14
+[    4.045904] We reached unpopular paths: fs/namespace.c:1293
+[    4.045904] We reached unpopular paths: fs/fs_pin.c:51
+[    4.045905] We reached unpopular paths: fs/namespace.c:204
+[    4.045905] We reached unpopular paths: fs/fs_pin.c:14
+[    4.045906] We reached unpopular paths: fs/namespace.c:1320
+[    4.045906] We reached unpopular paths: fs/namespace.c:1323
+[    4.045907] We reached unpopular paths: fs/namespace.c:1326
+[    4.045907] We reached unpopular paths: fs/fs_pin.c:51
+[    4.045907] We reached unpopular paths: fs/namespace.c:204
+[    4.045908] We reached unpopular paths: fs/fs_pin.c:14
+[    4.045908] We reached unpopular paths: fs/namespace.c:1320
+[    4.045909] We reached unpopular paths: fs/namespace.c:1323
+[    4.045909] We reached unpopular paths: fs/namespace.c:1326
+[    4.045910] We reached unpopular paths: fs/fs_pin.c:51
+[    4.045910] We reached unpopular paths: fs/namespace.c:204
+[    4.045911] We reached unpopular paths: fs/fs_pin.c:14
+[    4.045911] We reached unpopular paths: fs/namespace.c:1320
+[    4.045912] We reached unpopular paths: fs/namespace.c:1323
+[    4.045912] We reached unpopular paths: fs/namespace.c:1326
+[    4.045913] We reached unpopular paths: fs/fs_pin.c:51
+[    4.045913] We reached unpopular paths: fs/namespace.c:204
+[    4.045914] We reached unpopular paths: fs/fs_pin.c:14
+[    4.045914] We reached unpopular paths: fs/namespace.c:1320
+[    4.045915] We reached unpopular paths: fs/namespace.c:1323
+[    4.045915] We reached unpopular paths: fs/namespace.c:1326
+[    4.045915] We reached unpopular paths: fs/fs_pin.c:51
+[    4.045916] We reached unpopular paths: fs/namespace.c:204
+[    4.045916] We reached unpopular paths: fs/fs_pin.c:14
+[    4.045917] We reached unpopular paths: fs/namespace.c:1320
+[    4.045917] We reached unpopular paths: fs/namespace.c:1323
+[    4.045918] We reached unpopular paths: fs/namespace.c:1326
+[    4.045918] We reached unpopular paths: fs/fs_pin.c:51
+[    4.045919] We reached unpopular paths: fs/namespace.c:204
+[    4.045919] We reached unpopular paths: fs/fs_pin.c:14
+[    4.045920] We reached unpopular paths: fs/namespace.c:1320
+[    4.045920] We reached unpopular paths: fs/namespace.c:1323
+[    4.045921] We reached unpopular paths: fs/namespace.c:1326
+[    4.045921] We reached unpopular paths: fs/fs_pin.c:51
+[    4.045922] We reached unpopular paths: fs/namespace.c:204
+[    4.045922] We reached unpopular paths: fs/fs_pin.c:14
+[    4.045923] We reached unpopular paths: fs/namespace.c:1320
+[    4.045923] We reached unpopular paths: fs/namespace.c:1323
+[    4.045924] We reached unpopular paths: fs/namespace.c:1326
+[    4.045924] We reached unpopular paths: fs/fs_pin.c:51
+[    4.045925] We reached unpopular paths: fs/namespace.c:204
+[    4.045925] We reached unpopular paths: fs/fs_pin.c:14
+[    4.045926] We reached unpopular paths: fs/namespace.c:1320
+[    4.045926] We reached unpopular paths: fs/namespace.c:1323
+[    4.045927] We reached unpopular paths: fs/namespace.c:1326
+[    4.045927] We reached unpopular paths: fs/fs_pin.c:51
+[    4.045927] We reached unpopular paths: fs/namespace.c:204
+[    4.045928] We reached unpopular paths: fs/fs_pin.c:14
+[    4.045928] We reached unpopular paths: fs/namespace.c:1320
+[    4.045929] We reached unpopular paths: fs/namespace.c:1323
+[    4.045929] We reached unpopular paths: fs/namespace.c:1326
+[    4.045930] We reached unpopular paths: fs/fs_pin.c:51
+[    4.045930] We reached unpopular paths: fs/namespace.c:204
+[    4.045931] We reached unpopular paths: fs/fs_pin.c:14
+[    4.045931] We reached unpopular paths: fs/namespace.c:1320
+[    4.045932] We reached unpopular paths: fs/namespace.c:1323
+[    4.045932] We reached unpopular paths: fs/namespace.c:1326
+[    4.045933] We reached unpopular paths: fs/fs_pin.c:51
+[    4.045933] We reached unpopular paths: fs/namespace.c:204
+[    4.045933] We reached unpopular paths: fs/fs_pin.c:14
+[    4.045934] We reached unpopular paths: fs/namespace.c:1320
+[    4.045935] We reached unpopular paths: fs/namespace.c:1323
+[    4.045935] We reached unpopular paths: fs/namespace.c:1326
+[    4.045936] We reached unpopular paths: fs/fs_pin.c:51
+[    4.045936] We reached unpopular paths: fs/namespace.c:204
+[    4.045937] We reached unpopular paths: fs/fs_pin.c:14
+[    4.045937] We reached unpopular paths: fs/namespace.c:1320
+[    4.045938] We reached unpopular paths: fs/namespace.c:1323
+[    4.045938] We reached unpopular paths: fs/namespace.c:1326
+[    4.045939] We reached unpopular paths: fs/fs_pin.c:51
+[    4.045939] We reached unpopular paths: fs/namespace.c:204
+[    4.045939] We reached unpopular paths: fs/fs_pin.c:14
+[    4.045940] We reached unpopular paths: fs/namespace.c:1320
+[    4.045940] We reached unpopular paths: fs/namespace.c:1323
+[    4.045941] We reached unpopular paths: fs/namespace.c:1326
+[    4.045941] We reached unpopular paths: fs/fs_pin.c:51
+[    4.045942] We reached unpopular paths: fs/namespace.c:204
+[    4.045942] We reached unpopular paths: fs/fs_pin.c:14
+[    4.045943] We reached unpopular paths: fs/namespace.c:1320
+[    4.045943] We reached unpopular paths: fs/namespace.c:1323
+[    4.045944] We reached unpopular paths: fs/namespace.c:1326
+[    4.045944] We reached unpopular paths: fs/fs_pin.c:51
+[    4.045945] We reached unpopular paths: fs/namespace.c:204
+[    4.045945] We reached unpopular paths: fs/fs_pin.c:14
+[    4.045946] We reached unpopular paths: fs/namespace.c:1320
+[    4.045946] We reached unpopular paths: fs/namespace.c:1323
+[    4.045947] We reached unpopular paths: fs/namespace.c:1326
+[    4.045947] We reached unpopular paths: fs/fs_pin.c:51
+[    4.045947] We reached unpopular paths: fs/namespace.c:204
+[    4.045948] We reached unpopular paths: fs/fs_pin.c:14
+[    4.045949] We reached unpopular paths: fs/namespace.c:1320
+[    4.045949] We reached unpopular paths: fs/namespace.c:1323
+[    4.045949] We reached unpopular paths: fs/namespace.c:1326
+[    4.045950] We reached unpopular paths: fs/fs_pin.c:51
+[    4.045950] We reached unpopular paths: fs/namespace.c:204
+[    4.045951] We reached unpopular paths: fs/fs_pin.c:14
+[    4.045951] We reached unpopular paths: fs/namespace.c:1320
+[    4.045952] We reached unpopular paths: fs/namespace.c:1323
+[    4.045952] We reached unpopular paths: fs/namespace.c:1326
+[    4.045953] We reached unpopular paths: fs/fs_pin.c:114
+[    4.045955] We reached unpopular paths: kernel/ucount.c:193
+[    4.045956] We reached unpopular paths: fs/notify/fsnotify.c:43
+[    4.045958] We reached unpopular paths: fs/namespace.c:130
+[    4.045958] We reached unpopular paths: fs/notify/fsnotify.c:43
+[    4.045959] We reached unpopular paths: fs/namespace.c:130
+[    4.045960] We reached unpopular paths: fs/notify/fsnotify.c:43
+[    4.045961] We reached unpopular paths: fs/namespace.c:130
+[    4.045961] We reached unpopular paths: fs/notify/fsnotify.c:43
+[    4.045962] We reached unpopular paths: fs/namespace.c:130
+[    4.045962] We reached unpopular paths: fs/notify/fsnotify.c:43
+[    4.045963] We reached unpopular paths: fs/namespace.c:130
+[    4.045963] We reached unpopular paths: fs/notify/fsnotify.c:43
+[    4.045964] We reached unpopular paths: fs/namespace.c:130
+[    4.045965] We reached unpopular paths: fs/notify/fsnotify.c:43
+[    4.045965] We reached unpopular paths: fs/namespace.c:130
+[    4.045966] We reached unpopular paths: fs/notify/fsnotify.c:43
+[    4.045966] We reached unpopular paths: fs/namespace.c:130
+[    4.045967] We reached unpopular paths: fs/notify/fsnotify.c:43
+[    4.045967] We reached unpopular paths: fs/namespace.c:130
+[    4.045968] We reached unpopular paths: fs/notify/fsnotify.c:43
+[    4.045969] We reached unpopular paths: fs/namespace.c:130
+[    4.045969] We reached unpopular paths: fs/notify/fsnotify.c:43
+[    4.045970] We reached unpopular paths: fs/namespace.c:130
+[    4.045970] We reached unpopular paths: fs/notify/fsnotify.c:43
+[    4.045971] We reached unpopular paths: fs/namespace.c:130
+[    4.045971] We reached unpopular paths: fs/notify/fsnotify.c:43
+[    4.045972] We reached unpopular paths: fs/namespace.c:130
+[    4.045973] We reached unpopular paths: fs/notify/fsnotify.c:43
+[    4.045973] We reached unpopular paths: fs/namespace.c:130
+[    4.045974] We reached unpopular paths: fs/notify/fsnotify.c:43
+[    4.045975] We reached unpopular paths: fs/super.c:316
+[    4.045976] We reached unpopular paths: fs/dcache.c:3815
+[    4.045977] We reached unpopular paths: fs/dcache.c:3815
+[    4.045977] We reached unpopular paths: fs/dcache.c:3815
+[    4.045978] We reached unpopular paths: fs/dcache.c:3815
+[    4.045978] We reached unpopular paths: fs/dcache.c:3815
+[    4.045979] We reached unpopular paths: fs/dcache.c:3815
+[    4.045979] We reached unpopular paths: fs/dcache.c:3815
+[    4.045979] We reached unpopular paths: fs/dcache.c:3815
+[    4.045980] We reached unpopular paths: fs/dcache.c:3815
+[    4.045980] We reached unpopular paths: fs/dcache.c:3815
+[    4.045981] We reached unpopular paths: fs/dcache.c:3815
+[    4.045981] We reached unpopular paths: fs/dcache.c:3815
+[    4.045982] We reached unpopular paths: fs/dcache.c:3815
+[    4.045982] We reached unpopular paths: fs/dcache.c:3815
+[    4.045983] We reached unpopular paths: fs/dcache.c:3815
+[    4.045984] We reached unpopular paths: fs/dcache.c:666
+[    4.045986] We reached unpopular paths: fs/dcache.c:666
+[    4.045988] We reached unpopular paths: fs/dcache.c:666
+[    4.045989] We reached unpopular paths: fs/dcache.c:666
+[    4.045990] We reached unpopular paths: fs/dcache.c:666
+[    4.045991] We reached unpopular paths: fs/dcache.c:666
+[    4.045992] We reached unpopular paths: fs/dcache.c:666
+[    4.045993] We reached unpopular paths: fs/dcache.c:666
+[    4.045994] We reached unpopular paths: fs/dcache.c:666
+[    4.045995] We reached unpopular paths: fs/dcache.c:666
+[    4.045996] We reached unpopular paths: fs/dcache.c:666
+[    4.045997] We reached unpopular paths: fs/dcache.c:666
+[    4.045998] We reached unpopular paths: fs/dcache.c:666
+[    4.045999] We reached unpopular paths: fs/dcache.c:666
+[    4.046001] We reached unpopular paths: fs/dcache.c:1577
+[    4.046001] We reached unpopular paths: fs/dcache.c:521
+[    4.046004] We reached unpopular paths: fs/notify/fsnotify.c:103
+[    4.046005] We reached unpopular paths: fs/inode.c:662
+[    4.046006] We reached unpopular paths: mm/shmem.c:4058
+[    4.046008] We reached unpopular paths: fs/super.c:459
+[    4.046008] We reached unpopular paths: fs/super.c:1057
+[    4.046011] We reached unpopular paths: mm/list_lru.c:588
+[    4.046011] We reached unpopular paths: mm/list_lru.c:588
+[    4.046012] We reached unpopular paths: fs/namespace.c:130
+[    4.046013] We reached unpopular paths: fs/notify/fsnotify.c:43
+[    4.046013] We reached unpopular paths: fs/namespace.c:130
+[    4.046014] We reached unpopular paths: fs/notify/fsnotify.c:43
+[    4.046015] We reached unpopular paths: fs/super.c:316
+[    4.046015] We reached unpopular paths: fs/devpts/inode.c:518
+[    4.046017] We reached unpopular paths: fs/dcache.c:3815
+[    4.046017] We reached unpopular paths: fs/dcache.c:3815
+[    4.046018] We reached unpopular paths: fs/dcache.c:666
+[    4.046020] We reached unpopular paths: fs/dcache.c:1577
+[    4.046020] We reached unpopular paths: fs/dcache.c:521
+[    4.046022] We reached unpopular paths: fs/notify/fsnotify.c:103
+[    4.046022] We reached unpopular paths: fs/inode.c:662
+[    4.046022] We reached unpopular paths: fs/super.c:459
+[    4.046023] We reached unpopular paths: fs/super.c:1057
+[    4.046025] We reached unpopular paths: mm/list_lru.c:588
+[    4.046025] We reached unpopular paths: mm/list_lru.c:588
+[    4.046026] We reached unpopular paths: fs/namespace.c:130
+[    4.046026] We reached unpopular paths: fs/notify/fsnotify.c:43
+[    4.046027] We reached unpopular paths: fs/namespace.c:130
+[    4.046027] We reached unpopular paths: fs/notify/fsnotify.c:43
+[    4.046028] We reached unpopular paths: fs/namespace.c:130
+[    4.046029] We reached unpopular paths: fs/notify/fsnotify.c:43
+[    4.046029] We reached unpopular paths: fs/namespace.c:130
+[    4.046031] We reached unpopular paths: fs/namespace.c:1320
+[    4.046031] We reached unpopular paths: fs/namespace.c:1323
+[    4.046031] We reached unpopular paths: fs/namespace.c:1326
+[    4.046032] We reached unpopular paths: fs/namespace.c:1293
+[    4.046033] We reached unpopular paths: fs/namespace.c:1320
+[    4.046034] We reached unpopular paths: fs/namespace.c:1323
+[    4.046034] We reached unpopular paths: fs/namespace.c:1326
+[    4.046035] We reached unpopular paths: fs/notify/fsnotify.c:43
+[    4.046036] We reached unpopular paths: fs/namespace.c:130
+[    4.046036] We reached unpopular paths: fs/notify/fsnotify.c:43
+[    4.046037] We reached unpopular paths: fs/super.c:316
+[    4.046037] We reached unpopular paths: fs/dcache.c:3815
+[    4.046038] We reached unpopular paths: fs/dcache.c:3815
+[    4.046039] We reached unpopular paths: fs/dcache.c:3815
+[    4.046039] We reached unpopular paths: fs/dcache.c:3815
+[    4.046039] We reached unpopular paths: fs/dcache.c:3815
+[    4.046040] We reached unpopular paths: fs/dcache.c:3815
+[    4.046040] We reached unpopular paths: fs/dcache.c:3815
+[    4.046041] We reached unpopular paths: fs/dcache.c:3815
+[    4.046041] We reached unpopular paths: fs/dcache.c:3815
+[    4.046042] We reached unpopular paths: fs/dcache.c:3815
+[    4.046042] We reached unpopular paths: fs/dcache.c:3815
+[    4.046043] We reached unpopular paths: fs/dcache.c:3815
+[    4.046043] We reached unpopular paths: fs/dcache.c:3815
+[    4.046044] We reached unpopular paths: fs/dcache.c:3815
+[    4.046045] We reached unpopular paths: fs/dcache.c:666
+[    4.046046] We reached unpopular paths: fs/dcache.c:666
+[    4.046047] We reached unpopular paths: fs/dcache.c:666
+[    4.046048] We reached unpopular paths: fs/dcache.c:666
+[    4.046049] We reached unpopular paths: fs/dcache.c:666
+[    4.046050] We reached unpopular paths: fs/dcache.c:666
+[    4.046052] We reached unpopular paths: fs/dcache.c:666
+[    4.046053] We reached unpopular paths: fs/dcache.c:666
+[    4.046054] We reached unpopular paths: fs/dcache.c:666
+[    4.046055] We reached unpopular paths: fs/dcache.c:666
+[    4.046056] We reached unpopular paths: fs/dcache.c:666
+[    4.046057] We reached unpopular paths: fs/dcache.c:666
+[    4.046059] We reached unpopular paths: fs/dcache.c:666
+[    4.046060] We reached unpopular paths: fs/dcache.c:1577
+[    4.046060] We reached unpopular paths: fs/dcache.c:521
+[    4.046061] We reached unpopular paths: fs/notify/fsnotify.c:103
+[    4.046062] We reached unpopular paths: fs/inode.c:662
+[    4.046062] We reached unpopular paths: mm/shmem.c:4058
+[    4.046063] We reached unpopular paths: fs/super.c:459
+[    4.046064] We reached unpopular paths: fs/super.c:1057
+[    4.046065] We reached unpopular paths: mm/list_lru.c:588
+[    4.046066] We reached unpopular paths: mm/list_lru.c:588
+[    4.046067] We reached unpopular paths: fs/namespace.c:130
+[    4.046075] We reached unpopular paths: kernel/exit.c:597
+[    4.046075] We reached unpopular paths: kernel/pid.c:388
+[    4.046077] We reached unpopular paths: kernel/pid.c:251
+[    4.046078] We reached unpopular paths: kernel/pid_namespace.c:266
+[    4.046079] We reached unpopular paths: kernel/acct.c:310
+[    4.046080] We reached unpopular paths: fs/fs_pin.c:46
+[    4.046106] We reached unpopular paths: fs/dcache.c:1670
+[    4.046107] We reached unpopular paths: mm/list_lru.c:137
+[    4.046108] We reached unpopular paths: mm/list_lru.c:137
+[    4.046109] We reached unpopular paths: mm/list_lru.c:137
+[    4.046109] We reached unpopular paths: mm/list_lru.c:137
+[    4.046110] We reached unpopular paths: mm/list_lru.c:137
+[    4.046111] We reached unpopular paths: mm/list_lru.c:137
+[    4.046111] We reached unpopular paths: mm/list_lru.c:137
+[    4.046112] We reached unpopular paths: mm/list_lru.c:137
+[    4.046113] We reached unpopular paths: fs/dcache.c:666
+[    4.046115] We reached unpopular paths: fs/dcache.c:666
+[    4.046117] We reached unpopular paths: fs/dcache.c:666
+[    4.046118] We reached unpopular paths: fs/dcache.c:666
+[    4.046119] We reached unpopular paths: fs/dcache.c:666
+[    4.046121] We reached unpopular paths: fs/dcache.c:666
+[    4.046122] We reached unpopular paths: fs/dcache.c:666
+[    4.046123] We reached unpopular paths: fs/dcache.c:666
+[    4.046124] We reached unpopular paths: fs/dcache.c:666
+[    4.046127] We reached unpopular paths: fs/dcache.c:1670
+[    4.046127] We reached unpopular paths: mm/list_lru.c:137
+[    4.046128] We reached unpopular paths: mm/list_lru.c:137
+[    4.046129] We reached unpopular paths: mm/list_lru.c:137
+[    4.046129] We reached unpopular paths: mm/list_lru.c:137
+[    4.046130] We reached unpopular paths: mm/list_lru.c:137
+[    4.046131] We reached unpopular paths: mm/list_lru.c:137
+[    4.046131] We reached unpopular paths: mm/list_lru.c:137
+[    4.046132] We reached unpopular paths: mm/list_lru.c:137
+[    4.046132] We reached unpopular paths: mm/list_lru.c:137
+[    4.046133] We reached unpopular paths: mm/list_lru.c:137
+[    4.046133] We reached unpopular paths: fs/dcache.c:666
+[    4.046134] We reached unpopular paths: fs/dcache.c:666
+[    4.046136] We reached unpopular paths: fs/dcache.c:666
+[    4.046137] We reached unpopular paths: fs/dcache.c:666
+[    4.046138] We reached unpopular paths: fs/dcache.c:666
+[    4.046139] We reached unpopular paths: fs/dcache.c:666
+[    4.046140] We reached unpopular paths: fs/dcache.c:666
+[    4.046141] We reached unpopular paths: fs/dcache.c:666
+[    4.046142] We reached unpopular paths: fs/dcache.c:666
+[    4.046143] We reached unpopular paths: fs/dcache.c:666
+[    4.046144] We reached unpopular paths: fs/dcache.c:666
+[    4.046161] We reached unpopular paths: fs/namespace.c:1843
+[    4.046166] We reached unpopular paths: fs/namespace.c:1858
+[    4.046167] We reached unpopular paths: fs/pnode.c:175
+[    4.046168] We reached unpopular paths: fs/pnode.c:180
+[    4.046168] We reached unpopular paths: fs/pnode.c:494
+[    4.046169] We reached unpopular paths: fs/pnode.c:175
+[    4.046169] We reached unpopular paths: fs/pnode.c:180
+[    4.046170] We reached unpopular paths: fs/pnode.c:175
+[    4.046171] We reached unpopular paths: fs/pnode.c:180
+[    4.046172] We reached unpopular paths: fs/namespace.c:1557
+[    4.046172] We reached unpopular paths: fs/fs_pin.c:27
+[    4.046173] We reached unpopular paths: fs/pnode.c:104
+[    4.046174] We reached unpopular paths: fs/namespace.c:1755
+[    4.046174] We reached unpopular paths: fs/namespace.c:1536
+[    4.046175] We reached unpopular paths: fs/fs_pin.c:51
+[    4.046175] We reached unpopular paths: fs/namespace.c:204
+[    4.046176] We reached unpopular paths: fs/fs_pin.c:14
+[    4.046176] We reached unpopular paths: fs/namespace.c:1293
+[    4.046177] We reached unpopular paths: fs/fs_pin.c:114
+[    4.046177] We reached unpopular paths: fs/namespace.c:1320
+[    4.046178] We reached unpopular paths: fs/namespace.c:1323
+[    4.046178] We reached unpopular paths: fs/namespace.c:1326
+[    4.046179] We reached unpopular paths: fs/notify/fsnotify.c:43
+[    4.046180] We reached unpopular paths: fs/super.c:316
+[    4.046181] We reached unpopular paths: mm/list_lru.c:137
+[    4.046181] We reached unpopular paths: mm/list_lru.c:137
+[    4.046182] We reached unpopular paths: mm/list_lru.c:137
+[    4.046182] We reached unpopular paths: mm/list_lru.c:137
+[    4.046183] We reached unpopular paths: mm/list_lru.c:137
+[    4.046183] We reached unpopular paths: mm/list_lru.c:137
+[    4.046184] We reached unpopular paths: mm/list_lru.c:137
+[    4.046184] We reached unpopular paths: mm/list_lru.c:137
+[    4.046185] We reached unpopular paths: mm/list_lru.c:137
+[    4.046185] We reached unpopular paths: mm/list_lru.c:137
+[    4.046186] We reached unpopular paths: mm/list_lru.c:137
+[    4.046187] We reached unpopular paths: mm/list_lru.c:137
+[    4.046187] We reached unpopular paths: mm/list_lru.c:137
+[    4.046188] We reached unpopular paths: mm/list_lru.c:137
+[    4.046188] We reached unpopular paths: mm/list_lru.c:137
+[    4.046189] We reached unpopular paths: mm/list_lru.c:137
+[    4.046189] We reached unpopular paths: mm/list_lru.c:137
+[    4.046190] We reached unpopular paths: mm/list_lru.c:137
+[    4.046190] We reached unpopular paths: mm/list_lru.c:137
+[    4.046191] We reached unpopular paths: mm/list_lru.c:137
+[    4.046191] We reached unpopular paths: mm/list_lru.c:137
+[    4.046192] We reached unpopular paths: mm/list_lru.c:137
+[    4.046192] We reached unpopular paths: mm/list_lru.c:137
+[    4.046193] We reached unpopular paths: mm/list_lru.c:137
+[    4.046193] We reached unpopular paths: mm/list_lru.c:137
+[    4.046194] We reached unpopular paths: mm/list_lru.c:137
+[    4.046194] We reached unpopular paths: mm/list_lru.c:137
+[    4.046194] We reached unpopular paths: mm/list_lru.c:137
+[    4.046195] We reached unpopular paths: mm/list_lru.c:137
+[    4.046196] We reached unpopular paths: mm/list_lru.c:137
+[    4.046196] We reached unpopular paths: mm/list_lru.c:137
+[    4.046197] We reached unpopular paths: mm/list_lru.c:137
+[    4.046197] We reached unpopular paths: mm/list_lru.c:137
+[    4.046198] We reached unpopular paths: mm/list_lru.c:137
+[    4.046198] We reached unpopular paths: mm/list_lru.c:137
+[    4.046199] We reached unpopular paths: mm/list_lru.c:137
+[    4.046199] We reached unpopular paths: mm/list_lru.c:137
+[    4.046200] We reached unpopular paths: mm/list_lru.c:137
+[    4.046200] We reached unpopular paths: mm/list_lru.c:137
+[    4.046201] We reached unpopular paths: mm/list_lru.c:137
+[    4.046201] We reached unpopular paths: mm/list_lru.c:137
+[    4.046202] We reached unpopular paths: mm/list_lru.c:137
+[    4.046202] We reached unpopular paths: mm/list_lru.c:137
+[    4.046203] We reached unpopular paths: mm/list_lru.c:137
+[    4.046203] We reached unpopular paths: mm/list_lru.c:137
+[    4.046204] We reached unpopular paths: mm/list_lru.c:137
+[    4.046204] We reached unpopular paths: mm/list_lru.c:137
+[    4.046205] We reached unpopular paths: mm/list_lru.c:137
+[    4.046206] We reached unpopular paths: mm/list_lru.c:137
+[    4.046206] We reached unpopular paths: mm/list_lru.c:137
+[    4.046207] We reached unpopular paths: mm/list_lru.c:137
+[    4.046207] We reached unpopular paths: mm/list_lru.c:137
+[    4.046207] We reached unpopular paths: mm/list_lru.c:137
+[    4.046208] We reached unpopular paths: mm/list_lru.c:137
+[    4.046208] We reached unpopular paths: mm/list_lru.c:137
+[    4.046209] We reached unpopular paths: mm/list_lru.c:137
+[    4.046209] We reached unpopular paths: mm/list_lru.c:137
+[    4.046210] We reached unpopular paths: mm/list_lru.c:137
+[    4.046210] We reached unpopular paths: mm/list_lru.c:137
+[    4.046211] We reached unpopular paths: mm/list_lru.c:137
+[    4.046211] We reached unpopular paths: mm/list_lru.c:137
+[    4.046221] We reached unpopular paths: mm/list_lru.c:137
+[    4.046222] We reached unpopular paths: mm/list_lru.c:137
+[    4.046222] We reached unpopular paths: mm/list_lru.c:137
+[    4.046223] We reached unpopular paths: mm/list_lru.c:137
+[    4.046223] We reached unpopular paths: mm/list_lru.c:137
+[    4.046224] We reached unpopular paths: mm/list_lru.c:137
+[    4.046224] We reached unpopular paths: mm/list_lru.c:137
+[    4.046225] We reached unpopular paths: mm/list_lru.c:137
+[    4.046225] We reached unpopular paths: mm/list_lru.c:137
+[    4.046226] We reached unpopular paths: mm/list_lru.c:137
+[    4.046226] We reached unpopular paths: mm/list_lru.c:137
+[    4.046227] We reached unpopular paths: mm/list_lru.c:137
+[    4.046227] We reached unpopular paths: mm/list_lru.c:137
+[    4.046228] We reached unpopular paths: mm/list_lru.c:137
+[    4.046228] We reached unpopular paths: mm/list_lru.c:137
+[    4.046229] We reached unpopular paths: mm/list_lru.c:137
+[    4.046229] We reached unpopular paths: mm/list_lru.c:137
+[    4.046230] We reached unpopular paths: mm/list_lru.c:137
+[    4.046231] We reached unpopular paths: mm/list_lru.c:137
+[    4.046231] We reached unpopular paths: fs/dcache.c:666
+[    4.046233] We reached unpopular paths: fs/dcache.c:666
+[    4.046234] We reached unpopular paths: fs/dcache.c:666
+[    4.046236] We reached unpopular paths: fs/dcache.c:666
+[    4.046237] We reached unpopular paths: fs/dcache.c:666
+[    4.046238] We reached unpopular paths: fs/dcache.c:666
+[    4.046239] We reached unpopular paths: fs/dcache.c:666
+[    4.046239] We reached unpopular paths: fs/dcache.c:666
+[    4.046240] We reached unpopular paths: fs/dcache.c:666
+[    4.046241] We reached unpopular paths: fs/dcache.c:666
+[    4.046242] We reached unpopular paths: fs/dcache.c:666
+[    4.046243] We reached unpopular paths: fs/dcache.c:666
+[    4.046244] We reached unpopular paths: fs/dcache.c:666
+[    4.046245] We reached unpopular paths: fs/dcache.c:666
+[    4.046246] We reached unpopular paths: fs/dcache.c:666
+[    4.046246] We reached unpopular paths: fs/dcache.c:666
+[    4.046247] We reached unpopular paths: fs/dcache.c:666
+[    4.046248] We reached unpopular paths: fs/dcache.c:666
+[    4.046249] We reached unpopular paths: fs/dcache.c:666
+[    4.046249] We reached unpopular paths: fs/dcache.c:666
+[    4.046250] We reached unpopular paths: fs/dcache.c:666
+[    4.046251] We reached unpopular paths: fs/dcache.c:666
+[    4.046252] We reached unpopular paths: fs/dcache.c:666
+[    4.046252] We reached unpopular paths: fs/dcache.c:666
+[    4.046253] We reached unpopular paths: fs/dcache.c:666
+[    4.046253] We reached unpopular paths: fs/dcache.c:666
+[    4.046254] We reached unpopular paths: fs/dcache.c:666
+[    4.046255] We reached unpopular paths: fs/dcache.c:666
+[    4.046256] We reached unpopular paths: fs/dcache.c:666
+[    4.046256] We reached unpopular paths: fs/dcache.c:666
+[    4.046257] We reached unpopular paths: fs/dcache.c:666
+[    4.046258] We reached unpopular paths: fs/dcache.c:666
+[    4.046259] We reached unpopular paths: fs/dcache.c:666
+[    4.046259] We reached unpopular paths: fs/dcache.c:666
+[    4.046260] We reached unpopular paths: fs/dcache.c:666
+[    4.046261] We reached unpopular paths: fs/dcache.c:666
+[    4.046261] We reached unpopular paths: fs/dcache.c:666
+[    4.046262] We reached unpopular paths: fs/dcache.c:666
+[    4.046263] We reached unpopular paths: fs/dcache.c:666
+[    4.046263] We reached unpopular paths: fs/dcache.c:666
+[    4.046264] We reached unpopular paths: fs/dcache.c:666
+[    4.046265] We reached unpopular paths: fs/dcache.c:666
+[    4.046266] We reached unpopular paths: fs/dcache.c:666
+[    4.046266] We reached unpopular paths: fs/dcache.c:666
+[    4.046267] We reached unpopular paths: fs/dcache.c:666
+[    4.046268] We reached unpopular paths: fs/dcache.c:666
+[    4.046269] We reached unpopular paths: fs/dcache.c:666
+[    4.046270] We reached unpopular paths: fs/dcache.c:666
+[    4.046271] We reached unpopular paths: fs/dcache.c:666
+[    4.046272] We reached unpopular paths: fs/dcache.c:666
+[    4.046273] We reached unpopular paths: fs/dcache.c:666
+[    4.046274] We reached unpopular paths: fs/dcache.c:666
+[    4.046275] We reached unpopular paths: fs/dcache.c:666
+[    4.046277] We reached unpopular paths: fs/dcache.c:666
+[    4.046278] We reached unpopular paths: fs/dcache.c:666
+[    4.046279] We reached unpopular paths: fs/dcache.c:666
+[    4.046279] We reached unpopular paths: fs/dcache.c:666
+[    4.046280] We reached unpopular paths: fs/dcache.c:666
+[    4.046281] We reached unpopular paths: fs/dcache.c:666
+[    4.046281] We reached unpopular paths: fs/dcache.c:666
+[    4.046282] We reached unpopular paths: fs/dcache.c:666
+[    4.046283] We reached unpopular paths: fs/dcache.c:666
+[    4.046283] We reached unpopular paths: fs/dcache.c:666
+[    4.046284] We reached unpopular paths: fs/dcache.c:666
+[    4.046285] We reached unpopular paths: fs/inode.c:1598
+[    4.046285] We reached unpopular paths: fs/dcache.c:666
+[    4.046286] We reached unpopular paths: fs/dcache.c:666
+[    4.046287] We reached unpopular paths: fs/dcache.c:666
+[    4.046287] We reached unpopular paths: fs/dcache.c:666
+[    4.046288] We reached unpopular paths: fs/inode.c:1598
+[    4.046289] We reached unpopular paths: fs/dcache.c:666
+[    4.046290] We reached unpopular paths: fs/inode.c:1598
+[    4.046290] We reached unpopular paths: fs/dcache.c:666
+[    4.046291] We reached unpopular paths: fs/inode.c:1598
+[    4.046292] We reached unpopular paths: fs/dcache.c:666
+[    4.046293] We reached unpopular paths: fs/dcache.c:666
+[    4.046294] We reached unpopular paths: fs/inode.c:1598
+[    4.046295] We reached unpopular paths: fs/dcache.c:666
+[    4.046296] We reached unpopular paths: fs/dcache.c:666
+[    4.046297] We reached unpopular paths: fs/dcache.c:666
+[    4.046298] We reached unpopular paths: fs/dcache.c:666
+[    4.046299] We reached unpopular paths: fs/dcache.c:666
+[    4.046300] We reached unpopular paths: fs/dcache.c:666
+[    4.046301] We reached unpopular paths: fs/dcache.c:666
+[    4.046303] We reached unpopular paths: fs/dcache.c:666
+[    4.046303] We reached unpopular paths: fs/dcache.c:666
+[    4.046304] We reached unpopular paths: fs/dcache.c:666
+[    4.046304] We reached unpopular paths: fs/dcache.c:666
+[    4.046305] We reached unpopular paths: fs/dcache.c:666
+[    4.046306] We reached unpopular paths: fs/dcache.c:666
+[    4.046307] We reached unpopular paths: fs/dcache.c:666
+[    4.046307] We reached unpopular paths: fs/dcache.c:666
+[    4.046308] We reached unpopular paths: fs/dcache.c:666
+[    4.046309] We reached unpopular paths: fs/dcache.c:666
+[    4.046310] We reached unpopular paths: fs/dcache.c:666
+[    4.046312] We reached unpopular paths: fs/dcache.c:666
+[    4.046313] We reached unpopular paths: fs/dcache.c:666
+[    4.046314] We reached unpopular paths: fs/dcache.c:666
+[    4.046316] We reached unpopular paths: fs/dcache.c:1577
+[    4.046316] We reached unpopular paths: fs/dcache.c:521
+[    4.046318] We reached unpopular paths: fs/notify/fsnotify.c:103
+[    4.046319] We reached unpopular paths: fs/inode.c:662
+[    4.046320] We reached unpopular paths: fs/namespace.c:1320
+[    4.046321] We reached unpopular paths: fs/namespace.c:1323
+[    4.046321] We reached unpopular paths: fs/namespace.c:1326
+[    4.046322] We reached unpopular paths: fs/namespace.c:1320
+[    4.046322] We reached unpopular paths: fs/namespace.c:1323
+[    4.046323] We reached unpopular paths: fs/namespace.c:1326
+[    4.046324] We reached unpopular paths: fs/super.c:459
+[    4.046324] We reached unpopular paths: fs/super.c:1057
+[    4.046326] We reached unpopular paths: mm/list_lru.c:588
+[    4.046326] We reached unpopular paths: mm/list_lru.c:588
+[    4.046327] We reached unpopular paths: fs/namespace.c:130
+[    4.046327] We reached unpopular paths: fs/notify/fsnotify.c:43
+[    4.046328] We reached unpopular paths: fs/namespace.c:130
+[    4.046329] We reached unpopular paths: fs/notify/fsnotify.c:43
+[    4.046329] We reached unpopular paths: fs/namespace.c:130
+[    4.046412] We reached unpopular paths: fs/notify/fsnotify.c:43
+[    4.046413] We reached unpopular paths: fs/super.c:316
+[    4.046415] We reached unpopular paths: mm/list_lru.c:137
+[    4.046416] We reached unpopular paths: mm/list_lru.c:137
+[    4.046416] We reached unpopular paths: mm/list_lru.c:137
+[    4.046417] We reached unpopular paths: mm/list_lru.c:137
+[    4.046417] We reached unpopular paths: mm/list_lru.c:137
+[    4.046418] We reached unpopular paths: mm/list_lru.c:137
+[    4.046418] We reached unpopular paths: mm/list_lru.c:137
+[    4.046419] We reached unpopular paths: fs/dcache.c:666
+[    4.046420] We reached unpopular paths: fs/proc/inode.c:52
+[    4.046421] We reached unpopular paths: fs/proc/proc_sysctl.c:543
+[    4.046422] We reached unpopular paths: fs/proc/proc_sysctl.c:550
+[    4.046423] We reached unpopular paths: fs/dcache.c:666
+[    4.046424] We reached unpopular paths: fs/proc/inode.c:52
+[    4.046424] We reached unpopular paths: fs/proc/proc_sysctl.c:543
+[    4.046424] We reached unpopular paths: fs/proc/proc_sysctl.c:550
+[    4.046425] We reached unpopular paths: fs/dcache.c:666
+[    4.046426] We reached unpopular paths: fs/proc/inode.c:52
+[    4.046426] We reached unpopular paths: fs/proc/proc_sysctl.c:543
+[    4.046427] We reached unpopular paths: fs/proc/proc_sysctl.c:550
+[    4.046428] We reached unpopular paths: fs/dcache.c:666
+[    4.046428] We reached unpopular paths: fs/proc/inode.c:52
+[    4.046429] We reached unpopular paths: fs/proc/proc_sysctl.c:543
+[    4.046429] We reached unpopular paths: fs/proc/proc_sysctl.c:550
+[    4.046430] We reached unpopular paths: fs/dcache.c:666
+[    4.046431] We reached unpopular paths: fs/proc/inode.c:52
+[    4.046432] We reached unpopular paths: fs/proc/proc_sysctl.c:543
+[    4.046432] We reached unpopular paths: fs/proc/proc_sysctl.c:550
+[    4.046433] We reached unpopular paths: fs/dcache.c:666
+[    4.046434] We reached unpopular paths: fs/proc/inode.c:52
+[    4.046434] We reached unpopular paths: fs/proc/proc_sysctl.c:543
+[    4.046434] We reached unpopular paths: fs/proc/proc_sysctl.c:550
+[    4.046435] We reached unpopular paths: fs/dcache.c:666
+[    4.046436] We reached unpopular paths: fs/proc/inode.c:52
+[    4.046436] We reached unpopular paths: fs/proc/proc_sysctl.c:543
+[    4.046437] We reached unpopular paths: fs/proc/proc_sysctl.c:550
+[    4.046437] We reached unpopular paths: fs/dcache.c:666
+[    4.046438] We reached unpopular paths: fs/proc/inode.c:52
+[    4.046439] We reached unpopular paths: fs/proc/proc_sysctl.c:543
+[    4.046439] We reached unpopular paths: fs/proc/proc_sysctl.c:550
+[    4.046440] We reached unpopular paths: fs/dcache.c:666
+[    4.046441] We reached unpopular paths: fs/proc/inode.c:52
+[    4.046441] We reached unpopular paths: fs/proc/proc_sysctl.c:543
+[    4.046442] We reached unpopular paths: fs/proc/proc_sysctl.c:550
+[    4.046442] We reached unpopular paths: fs/dcache.c:666
+[    4.046443] We reached unpopular paths: fs/proc/inode.c:52
+[    4.046443] We reached unpopular paths: fs/proc/proc_sysctl.c:543
+[    4.046444] We reached unpopular paths: fs/proc/proc_sysctl.c:550
+[    4.046445] We reached unpopular paths: fs/dcache.c:666
+[    4.046446] We reached unpopular paths: fs/proc/inode.c:52
+[    4.046446] We reached unpopular paths: fs/proc/proc_sysctl.c:543
+[    4.046446] We reached unpopular paths: fs/proc/proc_sysctl.c:550
+[    4.046447] We reached unpopular paths: fs/dcache.c:666
+[    4.046448] We reached unpopular paths: fs/proc/inode.c:52
+[    4.046448] We reached unpopular paths: fs/proc/proc_sysctl.c:543
+[    4.046449] We reached unpopular paths: fs/proc/proc_sysctl.c:550
+[    4.046449] We reached unpopular paths: fs/dcache.c:666
+[    4.046450] We reached unpopular paths: fs/proc/inode.c:52
+[    4.046451] We reached unpopular paths: fs/proc/proc_sysctl.c:543
+[    4.046451] We reached unpopular paths: fs/proc/proc_sysctl.c:550
+[    4.046452] We reached unpopular paths: fs/dcache.c:666
+[    4.046453] We reached unpopular paths: fs/dcache.c:666
+[    4.046454] We reached unpopular paths: fs/dcache.c:666
+[    4.046455] We reached unpopular paths: fs/dcache.c:1577
+[    4.046456] We reached unpopular paths: fs/dcache.c:521
+[    4.046457] We reached unpopular paths: fs/notify/fsnotify.c:103
+[    4.046458] We reached unpopular paths: fs/inode.c:662
+[    4.046458] We reached unpopular paths: fs/super.c:459
+[    4.046459] We reached unpopular paths: fs/super.c:1057
+[    4.046472] We reached unpopular paths: mm/list_lru.c:588
+[    4.046472] We reached unpopular paths: mm/list_lru.c:588
+[    4.046473] We reached unpopular paths: fs/namespace.c:130
+[    4.051093] We reached unpopular paths: net/ipv6/mcast.c:1838
+[    4.051094] We reached unpopular paths: net/ipv6/mcast.c:1838
+[    4.051094] We reached unpopular paths: net/ipv6/mcast.c:1838
+[    4.051097] We reached unpopular paths: net/ipv6/mcast.c:1834
+[    4.051098] We reached unpopular paths: net/ipv6/mcast.c:1834
+[    4.051098] We reached unpopular paths: net/ipv6/mcast.c:1834
+[    4.051098] We reached unpopular paths: net/ipv6/mcast.c:1834
+[    4.051099] We reached unpopular paths: net/ipv6/mcast.c:1725
+[    4.051100] We reached unpopular paths: net/ipv6/icmp.c:1021
+[    4.051101] We reached unpopular paths: net/core/dst.c:98
+[    4.051104] We reached unpopular paths: net/core/dst.c:233
+[    4.051104] We reached unpopular paths: net/core/dst.c:262
+[    4.051106] We reached unpopular paths: net/xfrm/xfrm_policy.c:2385
+[    4.051107] We reached unpopular paths: net/xfrm/xfrm_policy.c:2380
+[    4.051107] We reached unpopular paths: net/ipv6/mcast.c:1761
+[    4.051108] We reached unpopular paths: net/ipv6/mcast.c:1766
+[    4.051109] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:121
+[    4.051110] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:356
+[    4.051111] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:121
+[    4.051112] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:356
+[    4.051114] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:121
+[    4.051114] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:356
+[    4.051115] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:121
+[    4.051116] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:356
+[    4.051116] We reached unpopular paths: net/netfilter/core.c:539
+[    4.051117] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:121
+[    4.051118] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:356
+[    4.051118] We reached unpopular paths: net/netfilter/core.c:539
+[    4.051120] We reached unpopular paths: net/ipv6/route.c:1831
+[    4.051120] We reached unpopular paths: net/ipv6/route.c:1836
+[    4.051121] We reached unpopular paths: net/ipv6/route.c:1843
+[    4.051122] We reached unpopular paths: net/ipv6/ip6_output.c:66
+[    4.051122] We reached unpopular paths: net/ipv6/ip6_output.c:74
+[    4.051123] We reached unpopular paths: net/ipv6/mcast.c:1073
+[    4.051124] We reached unpopular paths: net/ipv6/ip6_output.c:127
+[    4.051127] We reached unpopular paths: net/core/dev.c:3290
+[    4.051128] We reached unpopular paths: net/core/dev.c:3340
+[    4.051129] We reached unpopular paths: net/core/dev.c:3359
+[    4.051129] We reached unpopular paths: net/core/dev.c:3373
+[    4.051130] We reached unpopular paths: net/core/dev.c:3037
+[    4.051131] We reached unpopular paths: net/core/dev.c:3228
+[    4.051131] We reached unpopular paths: net/core/dev.c:3248
+[    4.051132] We reached unpopular paths: net/core/dev.c:3274
+[    4.051136] We reached unpopular paths: net/core/sock.c:2714
+[    4.051155] We reached unpopular paths: net/core/dev.c:3167
+[    4.051155] We reached unpopular paths: net/sched/sch_generic.c:206
+[    4.051156] We reached unpopular paths: net/core/dev.c:3386
+[    4.051157] We reached unpopular paths: net/core/dev.c:3390
+[    4.051157] We reached unpopular paths: net/core/dev.c:3406
+[    4.051158] We reached unpopular paths: net/ipv6/mcast.c:1781
+[    4.051160] We reached unpopular paths: net/ipv6/mcast.c:1102
+[    4.051180] We reached unpopular paths: security/keys/key.c:677
+[    4.051180] We reached unpopular paths: security/keys/key.c:677
+[    4.051181] We reached unpopular paths: security/keys/key.c:677
+[    4.051182] We reached unpopular paths: security/keys/key.c:677
+[    4.051182] We reached unpopular paths: security/keys/key.c:677
+[    4.051183] We reached unpopular paths: security/keys/key.c:677
+[    4.051184] We reached unpopular paths: security/keys/key.c:677
+[    4.061164] We reached unpopular paths: fs/super.c:157
+[    4.061167] We reached unpopular paths: fs/super.c:157
+[    4.061168] We reached unpopular paths: mm/percpu.c:833
+[    4.061174] We reached unpopular paths: fs/super.c:157
+[    4.061180] We reached unpopular paths: kernel/pid_namespace.c:213
+[    4.061181] We reached unpopular paths: kernel/cgroup/cgroup.c:852
+[    4.061183] We reached unpopular paths: kernel/cgroup/cgroup.c:874
+[    4.061184] We reached unpopular paths: kernel/cgroup/cgroup.c:874
+[    4.061184] We reached unpopular paths: kernel/cgroup/cgroup.c:874
+[    4.061185] We reached unpopular paths: kernel/cgroup/cgroup.c:874
+[    4.061185] We reached unpopular paths: kernel/cgroup/cgroup.c:874
+[    4.061186] We reached unpopular paths: kernel/cgroup/cgroup.c:874
+[    4.061187] We reached unpopular paths: kernel/cgroup/cgroup.c:874
+[    4.061187] We reached unpopular paths: kernel/cgroup/cgroup.c:874
+[    4.061188] We reached unpopular paths: kernel/cgroup/cgroup.c:874
+[    4.061189] We reached unpopular paths: kernel/cgroup/cgroup.c:874
+[    4.061190] We reached unpopular paths: kernel/cgroup/cgroup.c:874
+[    4.061190] We reached unpopular paths: kernel/cgroup/cgroup.c:874
+[    4.061191] We reached unpopular paths: kernel/cgroup/cgroup.c:874
+[    4.061219] We reached unpopular paths: fs/super.c:157
+[    4.061224] We reached unpopular paths: fs/super.c:157
+[    4.061225] We reached unpopular paths: mm/percpu.c:833
+[    4.061226] We reached unpopular paths: net/core/dst.c:143
+[    4.061227] We reached unpopular paths: net/core/dst.c:156
+[    4.061227] We reached unpopular paths: security/keys/key.c:677
+[    4.061228] We reached unpopular paths: security/keys/key.c:677
+[    4.061228] We reached unpopular paths: security/keys/key.c:677
+[    4.061229] We reached unpopular paths: security/keys/key.c:677
+[    4.061230] We reached unpopular paths: security/keys/key.c:677
+[    4.061231] We reached unpopular paths: security/keys/key.c:677
+[    4.061231] We reached unpopular paths: security/keys/key.c:677
+[    4.061236] We reached unpopular paths: kernel/bpf/core.c:1427
+[    4.061249] We reached unpopular paths: kernel/rcu/sync.c:239
+[    4.061250] We reached unpopular paths: kernel/rcu/sync.c:239
+[    4.061250] We reached unpopular paths: kernel/rcu/sync.c:239
+[    4.061251] We reached unpopular paths: kernel/rcu/sync.c:239
+[    4.061252] We reached unpopular paths: kernel/rcu/sync.c:239
+[    4.061253] We reached unpopular paths: kernel/rcu/sync.c:239
+[    4.061253] We reached unpopular paths: mm/percpu.c:833
+[    4.061254] We reached unpopular paths: kernel/rcu/sync.c:239
+[    4.061255] We reached unpopular paths: kernel/rcu/sync.c:239
+[    4.061255] We reached unpopular paths: kernel/rcu/sync.c:239
+[    4.061256] We reached unpopular paths: kernel/rcu/sync.c:239
+[    4.061257] We reached unpopular paths: kernel/rcu/sync.c:239
+[    4.061258] We reached unpopular paths: kernel/rcu/sync.c:239
+[    4.061258] We reached unpopular paths: mm/percpu.c:833
+[    4.061259] We reached unpopular paths: kernel/rcu/sync.c:239
+[    4.061259] We reached unpopular paths: mm/percpu.c:833
+[    4.061260] We reached unpopular paths: kernel/rcu/sync.c:239
+[    4.061260] We reached unpopular paths: mm/percpu.c:833
+[    4.061261] We reached unpopular paths: kernel/rcu/sync.c:239
+[    4.061262] We reached unpopular paths: mm/percpu.c:833
+[    4.070831] We reached unpopular paths: security/keys/key.c:677
+[    4.070832] We reached unpopular paths: security/keys/key.c:677
+[    4.070833] We reached unpopular paths: security/keys/key.c:677
+[    4.081148] We reached unpopular paths: security/keys/key.c:677
+[    4.081149] We reached unpopular paths: security/keys/key.c:677
+[    4.081149] We reached unpopular paths: security/keys/key.c:677
+[    4.081150] We reached unpopular paths: security/keys/key.c:677
+[    4.081150] We reached unpopular paths: security/keys/key.c:677
+[    4.081151] We reached unpopular paths: security/keys/key.c:677
+[    4.081152] We reached unpopular paths: security/keys/key.c:677
+[    4.081152] We reached unpopular paths: security/keys/key.c:677
+[    4.081153] We reached unpopular paths: security/keys/key.c:677
+[    4.081153] We reached unpopular paths: security/keys/key.c:677
+[    4.081164] We reached unpopular paths: security/keys/key.c:677
+[    4.081165] We reached unpopular paths: security/keys/key.c:677
+[    4.081166] We reached unpopular paths: security/keys/key.c:677
+[    4.081166] We reached unpopular paths: security/keys/key.c:677
+[    4.081167] We reached unpopular paths: security/keys/key.c:677
+[    4.081167] We reached unpopular paths: security/keys/key.c:677
+[    4.081168] We reached unpopular paths: security/keys/key.c:677
+[    4.081169] We reached unpopular paths: security/keys/key.c:677
+[    4.081169] We reached unpopular paths: security/keys/key.c:677
+[    4.081170] We reached unpopular paths: kernel/ucount.c:193
+[    4.081172] We reached unpopular paths: security/keys/key.c:677
+[    4.081180] We reached unpopular paths: security/keys/gc.c:197
+[    4.081181] We reached unpopular paths: security/keys/gc.c:218
+[    4.081182] We reached unpopular paths: security/keys/gc.c:322
+[    4.081183] We reached unpopular paths: security/keys/gc.c:142
+[    4.081183] We reached unpopular paths: security/keys/gc.c:144
+[    4.081184] We reached unpopular paths: security/keys/keyring.c:402
+[    4.081186] We reached unpopular paths: security/keys/gc.c:353
+[    4.081187] We reached unpopular paths: security/keys/gc.c:197
+[    4.081188] We reached unpopular paths: security/keys/gc.c:218
+[    4.081188] We reached unpopular paths: security/keys/gc.c:353
+[    4.550948] We reached unpopular paths: net/ipv6/mcast.c:1838
+[    4.550949] We reached unpopular paths: net/ipv6/mcast.c:1838
+[    4.550950] We reached unpopular paths: net/ipv6/mcast.c:1838
+[    4.550954] We reached unpopular paths: net/ipv6/mcast.c:1834
+[    4.550954] We reached unpopular paths: net/ipv6/mcast.c:1834
+[    4.550955] We reached unpopular paths: net/ipv6/mcast.c:1834
+[    4.550955] We reached unpopular paths: net/ipv6/mcast.c:1834
+[    4.550956] We reached unpopular paths: net/ipv6/mcast.c:1725
+[    4.550957] We reached unpopular paths: net/ipv6/icmp.c:1021
+[    4.550959] We reached unpopular paths: net/core/dst.c:98
+[    4.550962] We reached unpopular paths: net/core/dst.c:233
+[    4.550963] We reached unpopular paths: net/core/dst.c:262
+[    4.550964] We reached unpopular paths: net/xfrm/xfrm_policy.c:2385
+[    4.550965] We reached unpopular paths: net/xfrm/xfrm_policy.c:2380
+[    4.550965] We reached unpopular paths: net/ipv6/mcast.c:1761
+[    4.550966] We reached unpopular paths: net/ipv6/mcast.c:1766
+[    4.550967] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:121
+[    4.550968] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:356
+[    4.550969] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:121
+[    4.550969] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:356
+[    4.550971] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:121
+[    4.550971] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:356
+[    4.550972] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:121
+[    4.550973] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:356
+[    4.550973] We reached unpopular paths: net/netfilter/core.c:539
+[    4.550974] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:121
+[    4.550975] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:356
+[    4.550975] We reached unpopular paths: net/netfilter/core.c:539
+[    4.550976] We reached unpopular paths: net/ipv6/route.c:1831
+[    4.550977] We reached unpopular paths: net/ipv6/route.c:1836
+[    4.550977] We reached unpopular paths: net/ipv6/route.c:1843
+[    4.550978] We reached unpopular paths: net/ipv6/ip6_output.c:66
+[    4.550978] We reached unpopular paths: net/ipv6/ip6_output.c:74
+[    4.550979] We reached unpopular paths: net/ipv6/mcast.c:1073
+[    4.550980] We reached unpopular paths: net/ipv6/ip6_output.c:127
+[    4.550981] We reached unpopular paths: net/core/dev.c:3290
+[    4.550983] We reached unpopular paths: net/core/dev.c:3340
+[    4.550983] We reached unpopular paths: net/core/dev.c:3359
+[    4.550984] We reached unpopular paths: net/core/dev.c:3373
+[    4.550985] We reached unpopular paths: net/core/dev.c:3037
+[    4.550986] We reached unpopular paths: net/core/dev.c:3228
+[    4.550986] We reached unpopular paths: net/core/dev.c:3248
+[    4.550987] We reached unpopular paths: net/core/dev.c:3274
+[    4.550993] We reached unpopular paths: net/core/sock.c:2714
+[    4.551012] We reached unpopular paths: net/core/dev.c:3167
+[    4.551013] We reached unpopular paths: net/sched/sch_generic.c:206
+[    4.551013] We reached unpopular paths: net/core/dev.c:3386
+[    4.551014] We reached unpopular paths: net/core/dev.c:3390
+[    4.551015] We reached unpopular paths: net/core/dev.c:3406
+[    4.551016] We reached unpopular paths: net/ipv6/mcast.c:1781
+[    4.580024] We reached unpopular paths: net/core/dst.c:143
+[    4.580024] We reached unpopular paths: net/core/dst.c:156
+[    4.960842] We reached unpopular paths: net/ipv6/addrconf.c:4108
+[    4.960843] We reached unpopular paths: net/ipv6/addrconf.c:4135
+[    4.960844] We reached unpopular paths: net/ipv6/addrconf.c:343
+[    4.960846] We reached unpopular paths: net/ipv6/ndisc.c:621
+[    4.960849] We reached unpopular paths: net/ipv6/ndisc.c:466
+[    4.960850] We reached unpopular paths: net/ipv6/icmp.c:1021
+[    4.960851] We reached unpopular paths: net/core/dst.c:98
+[    4.960854] We reached unpopular paths: net/core/dst.c:233
+[    4.960854] We reached unpopular paths: net/core/dst.c:262
+[    4.960855] We reached unpopular paths: net/xfrm/xfrm_policy.c:2385
+[    4.960856] We reached unpopular paths: net/xfrm/xfrm_policy.c:2380
+[    4.960857] We reached unpopular paths: net/ipv6/ndisc.c:489
+[    4.960859] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:121
+[    4.960859] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:356
+[    4.960860] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:121
+[    4.960861] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:356
+[    4.960862] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:121
+[    4.960862] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:356
+[    4.960863] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:121
+[    4.960864] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:356
+[    4.960864] We reached unpopular paths: net/netfilter/core.c:539
+[    4.960865] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:121
+[    4.960866] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:356
+[    4.960866] We reached unpopular paths: net/netfilter/core.c:539
+[    4.960867] We reached unpopular paths: net/ipv6/route.c:1831
+[    4.960867] We reached unpopular paths: net/ipv6/route.c:1836
+[    4.960868] We reached unpopular paths: net/ipv6/route.c:1843
+[    4.960869] We reached unpopular paths: net/ipv6/ip6_output.c:66
+[    4.960869] We reached unpopular paths: net/ipv6/ip6_output.c:74
+[    4.960870] We reached unpopular paths: net/ipv6/ip6_output.c:127
+[    4.960873] We reached unpopular paths: net/core/dev.c:3290
+[    4.960874] We reached unpopular paths: net/core/dev.c:3340
+[    4.960875] We reached unpopular paths: net/core/dev.c:3359
+[    4.960875] We reached unpopular paths: net/core/dev.c:3373
+[    4.960877] We reached unpopular paths: net/core/dev.c:3037
+[    4.960877] We reached unpopular paths: net/core/dev.c:3228
+[    4.960878] We reached unpopular paths: net/core/dev.c:3248
+[    4.960879] We reached unpopular paths: net/core/dev.c:3274
+[    4.960883] We reached unpopular paths: net/core/sock.c:2714
+[    4.960901] We reached unpopular paths: net/core/dev.c:3167
+[    4.960901] We reached unpopular paths: net/sched/sch_generic.c:206
+[    4.960902] We reached unpopular paths: net/core/dev.c:3386
+[    4.960902] We reached unpopular paths: net/core/dev.c:3390
+[    4.960903] We reached unpopular paths: net/core/dev.c:3406
+[    4.960904] We reached unpopular paths: net/ipv6/ndisc.c:512
+[    4.990963] We reached unpopular paths: net/core/dst.c:143
+[    4.990964] We reached unpopular paths: net/core/dst.c:156
+[    6.000617] We reached unpopular paths: net/ipv6/addrconf.c:4108
+[    6.000618] We reached unpopular paths: net/ipv6/addrconf.c:2080
+[    6.000619] We reached unpopular paths: net/ipv6/addrconf.c:4135
+[    6.000624] We reached unpopular paths: net/ipv6/addrconf.c:4883
+[    6.000631] We reached unpopular paths: net/ipv6/ip6_fib.c:849
+[    6.000638] We reached unpopular paths: net/ipv6/addrconf.c:4194
+[    6.000639] We reached unpopular paths: net/ipv6/mcast.c:2197
+[    6.000640] We reached unpopular paths: net/ipv6/mcast.c:2201
+[    6.000640] We reached unpopular paths: net/ipv6/mcast.c:2204
+[    6.000641] We reached unpopular paths: net/ipv6/mcast.c:1838
+[    6.000643] We reached unpopular paths: net/ipv6/mcast.c:1704
+[    6.000644] We reached unpopular paths: net/ipv6/mcast.c:2201
+[    6.000645] We reached unpopular paths: net/ipv6/mcast.c:2204
+[    6.000646] We reached unpopular paths: net/ipv6/mcast.c:1834
+[    6.000646] We reached unpopular paths: net/ipv6/mcast.c:2201
+[    6.000647] We reached unpopular paths: net/ipv6/mcast.c:2204
+[    6.000647] We reached unpopular paths: net/ipv6/mcast.c:1834
+[    6.000648] We reached unpopular paths: net/ipv6/mcast.c:1725
+[    6.000649] We reached unpopular paths: net/ipv6/icmp.c:1021
+[    6.000651] We reached unpopular paths: net/core/dst.c:98
+[    6.000654] We reached unpopular paths: net/core/dst.c:233
+[    6.000655] We reached unpopular paths: net/core/dst.c:262
+[    6.000656] We reached unpopular paths: net/xfrm/xfrm_policy.c:2385
+[    6.000657] We reached unpopular paths: net/xfrm/xfrm_policy.c:2380
+[    6.000658] We reached unpopular paths: net/ipv6/mcast.c:1761
+[    6.000658] We reached unpopular paths: net/ipv6/mcast.c:1766
+[    6.000660] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:121
+[    6.000661] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:356
+[    6.000662] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:121
+[    6.000662] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:356
+[    6.000664] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:121
+[    6.000665] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:356
+[    6.000665] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:121
+[    6.000666] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:356
+[    6.000666] We reached unpopular paths: net/netfilter/core.c:539
+[    6.000667] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:121
+[    6.000668] We reached unpopular paths: net/ipv6/netfilter/ip6_tables.c:356
+[    6.000669] We reached unpopular paths: net/netfilter/core.c:539
+[    6.000669] We reached unpopular paths: net/ipv6/route.c:1831
+[    6.000670] We reached unpopular paths: net/ipv6/route.c:1836
+[    6.000670] We reached unpopular paths: net/ipv6/route.c:1843
+[    6.000671] We reached unpopular paths: net/ipv6/ip6_output.c:66
+[    6.000672] We reached unpopular paths: net/ipv6/ip6_output.c:74
+[    6.000672] We reached unpopular paths: net/ipv6/mcast.c:1073
+[    6.000673] We reached unpopular paths: net/ipv6/ip6_output.c:127
+[    6.000674] We reached unpopular paths: net/core/dev.c:3290
+[    6.000676] We reached unpopular paths: net/core/dev.c:3340
+[    6.000677] We reached unpopular paths: net/core/dev.c:3359
+[    6.000677] We reached unpopular paths: net/core/dev.c:3373
+[    6.000679] We reached unpopular paths: net/core/dev.c:3037
+[    6.000679] We reached unpopular paths: net/core/dev.c:3228
+[    6.000680] We reached unpopular paths: net/core/dev.c:3248
+[    6.000680] We reached unpopular paths: net/core/dev.c:3274
+[    6.000685] We reached unpopular paths: net/core/sock.c:2714
+[    6.000705] We reached unpopular paths: net/core/dev.c:3167
+[    6.000706] We reached unpopular paths: net/sched/sch_generic.c:206
+[    6.000707] We reached unpopular paths: net/core/dev.c:3386
+[    6.000707] We reached unpopular paths: net/core/dev.c:3390
+[    6.000708] We reached unpopular paths: net/core/dev.c:3406
+[    6.000709] We reached unpopular paths: net/ipv6/mcast.c:1781
+[    6.000711] We reached unpopular paths: net/ipv6/mcast.c:1121
+[    6.031954] We reached unpopular paths: net/core/dst.c:143

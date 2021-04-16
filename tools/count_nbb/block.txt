@@ -1,0 +1,184 @@
+Our program has started ...
+We are going to instrument kernel dir: block
+First, checking the required input files to conduct our kernel instrumentation...
+Popular paths data found. Now processing...
+now processing file: block/partitions/cmdline.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: block/blk-exec.c
+non-popular functions: 0
+popular functions: 2
+npp_bb: 3
+now processing file: block/partitions/check.c
+non-popular functions: 0
+popular functions: 3
+npp_bb: 13
+now processing file: block/blk-ioc.c
+non-popular functions: 10
+popular functions: 4
+npp_bb: 72
+now processing file: block/ioctl.c
+non-popular functions: 18
+popular functions: 4
+npp_bb: 189
+now processing file: block/blk-settings.c
+non-popular functions: 17
+popular functions: 22
+npp_bb: 79
+now processing file: block/blk-core.c
+non-popular functions: 62
+popular functions: 54
+npp_bb: 511
+now processing file: block/blk-throttle.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: block/cfq-iosched.c
+non-popular functions: 129
+popular functions: 1
+npp_bb: 789
+now processing file: block/blk-stat.c
+non-popular functions: 10
+popular functions: 4
+npp_bb: 52
+now processing file: block/kyber-iosched.c
+non-popular functions: 25
+popular functions: 1
+npp_bb: 121
+now processing file: block/blk-mq.c
+non-popular functions: 96
+popular functions: 17
+npp_bb: 569
+now processing file: block/blk-sysfs.c
+non-popular functions: 45
+popular functions: 1
+npp_bb: 174
+now processing file: block/blk-mq-cpumap.c
+non-popular functions: 1
+popular functions: 3
+npp_bb: 9
+now processing file: block/blk-stat.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: block/blk-timeout.c
+non-popular functions: 1
+popular functions: 6
+npp_bb: 18
+now processing file: block/scsi_ioctl.c
+non-popular functions: 19
+popular functions: 3
+npp_bb: 146
+now processing file: block/bio-integrity.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: block/partitions/check.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: block/blk-map.c
+non-popular functions: 5
+popular functions: 2
+npp_bb: 55
+now processing file: block/blk-mq-debugfs.c
+non-popular functions: 26
+popular functions: 6
+npp_bb: 117
+now processing file: block/bsg.c
+non-popular functions: 29
+popular functions: 3
+npp_bb: 208
+now processing file: block/noop-iosched.c
+non-popular functions: 7
+popular functions: 1
+npp_bb: 15
+now processing file: block/blk-mq-sysfs.c
+non-popular functions: 12
+popular functions: 6
+npp_bb: 61
+now processing file: block/blk-cgroup.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: block/blk-merge.c
+non-popular functions: 22
+popular functions: 5
+npp_bb: 202
+now processing file: block/genhd.c
+non-popular functions: 35
+popular functions: 45
+npp_bb: 201
+now processing file: block/blk-flush.c
+non-popular functions: 12
+popular functions: 1
+npp_bb: 92
+now processing file: block/blk-mq-sched.c
+non-popular functions: 19
+popular functions: 3
+npp_bb: 136
+now processing file: block/deadline-iosched.c
+non-popular functions: 13
+popular functions: 3
+npp_bb: 43
+now processing file: block/blk-integrity.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: block/partitions/efi.c
+non-popular functions: 8
+popular functions: 5
+npp_bb: 118
+now processing file: block/mq-deadline.c
+non-popular functions: 18
+popular functions: 2
+npp_bb: 72
+now processing file: block/blk.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: block/blk-tag.c
+non-popular functions: 6
+popular functions: 6
+npp_bb: 41
+now processing file: block/blk-softirq.c
+non-popular functions: 3
+popular functions: 4
+npp_bb: 18
+now processing file: block/partitions/msdos.c
+non-popular functions: 11
+popular functions: 3
+npp_bb: 123
+now processing file: block/blk-mq-tag.c
+non-popular functions: 17
+popular functions: 4
+npp_bb: 96
+now processing file: block/partition-generic.c
+non-popular functions: 20
+popular functions: 4
+npp_bb: 125
+now processing file: block/partitions/ldm.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: block/elevator.c
+non-popular functions: 39
+popular functions: 13
+npp_bb: 267
+now processing file: block/bio.c
+non-popular functions: 32
+popular functions: 22
+npp_bb: 285
+now processing file: block/bounce.c
+non-popular functions: 10
+popular functions: 1
+npp_bb: 52
+now processing file: block/blk-mq.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+total non-popular functions: 777
+total popular functions: 264
+****************
+total npp_bb = 5072

@@ -1,0 +1,61 @@
+# tracer: nop
+#
+# entries-in-buffer/entries-written: 50/50   #P:4
+#
+#                              _-----=> irqs-off
+#                             / _----=> need-resched
+#                            | / _---=> hardirq/softirq
+#                            || / _--=> preempt-depth
+#                            ||| /     delay
+#           TASK-PID   CPU#  ||||    TIMESTAMP  FUNCTION
+#              | |       |   ||||       |         |
+ qemu-system-x86-21665 [003] .... 1293675.036500: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 8714; line_num: 2916
+ qemu-system-x86-21665 [003] .... 1293675.036505: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 8714; line_num: 2916
+ qemu-system-x86-21665 [003] .... 1293675.686709: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 3853; line_num: 460
+ qemu-system-x86-21665 [003] .... 1293675.686712: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 3853; line_num: 475
+ qemu-system-x86-21665 [003] .... 1293675.686713: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 3853; line_num: 904
+ qemu-system-x86-21665 [003] .... 1293675.696766: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 3853; line_num: 192
+ qemu-system-x86-21665 [003] .... 1293675.806483: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33292; line_num: 2089
+ qemu-system-x86-21665 [003] .... 1293675.806486: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33303; line_num: 386
+ qemu-system-x86-21665 [003] .... 1293675.806490: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33279; line_num: 650
+ qemu-system-x86-21665 [003] .... 1293675.806492: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33279; line_num: 1326
+ qemu-system-x86-21665 [003] .... 1293675.806500: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33279; line_num: 1329
+ qemu-system-x86-21665 [003] .... 1293675.806501: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33279; line_num: 1485
+ qemu-system-x86-21665 [003] .... 1293675.806502: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33279; line_num: 1488
+ qemu-system-x86-21665 [003] .... 1293675.806510: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33279; line_num: 1628
+ qemu-system-x86-21665 [003] .... 1293675.806511: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33279; line_num: 1326
+ qemu-system-x86-21665 [003] .... 1293675.806512: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33279; line_num: 1329
+ qemu-system-x86-21665 [003] .... 1293675.806513: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33279; line_num: 1640
+ qemu-system-x86-21665 [003] .... 1293675.806517: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33279; line_num: 1763
+ qemu-system-x86-21665 [003] .... 1293675.806518: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33279; line_num: 1699
+ qemu-system-x86-21665 [003] .... 1293675.806519: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33279; line_num: 1379
+ qemu-system-x86-21665 [003] .... 1293675.806519: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33279; line_num: 1397
+ qemu-system-x86-21665 [003] .... 1293675.806520: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33279; line_num: 1706
+ qemu-system-x86-21665 [003] .... 1293675.806521: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33279; line_num: 1785
+ qemu-system-x86-21665 [003] .... 1293675.806522: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33279; line_num: 1789
+ qemu-system-x86-21665 [003] .... 1293675.806523: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33279; line_num: 1792
+ qemu-system-x86-21665 [003] .... 1293675.806620: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33292; line_num: 2089
+ qemu-system-x86-21665 [003] .... 1293675.806621: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33303; line_num: 386
+ qemu-system-x86-21665 [003] .... 1293675.806623: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33279; line_num: 650
+ qemu-system-x86-21665 [003] .... 1293675.806624: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33279; line_num: 1326
+ qemu-system-x86-21665 [003] .... 1293675.806625: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33279; line_num: 1329
+ qemu-system-x86-21665 [003] .... 1293675.806626: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33279; line_num: 1485
+ qemu-system-x86-21665 [003] .... 1293675.806632: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33279; line_num: 1628
+ qemu-system-x86-21665 [003] .... 1293675.806633: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33279; line_num: 1326
+ qemu-system-x86-21665 [003] .... 1293675.806634: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33279; line_num: 1329
+ qemu-system-x86-21665 [003] .... 1293675.806634: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33279; line_num: 1640
+ qemu-system-x86-21665 [003] .... 1293675.806637: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33279; line_num: 1763
+ qemu-system-x86-21665 [003] .... 1293675.806638: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33279; line_num: 1699
+ qemu-system-x86-21665 [003] .... 1293675.806646: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33279; line_num: 1379
+ qemu-system-x86-21665 [003] .... 1293675.806647: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33279; line_num: 1397
+ qemu-system-x86-21665 [003] .... 1293675.806648: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33279; line_num: 1706
+ qemu-system-x86-21665 [003] .... 1293675.806649: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33279; line_num: 1785
+ qemu-system-x86-21665 [003] .... 1293675.806649: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33279; line_num: 1789
+ qemu-system-x86-21665 [003] .... 1293675.806650: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33279; line_num: 1792
+ qemu-system-x86-21665 [003] .... 1293675.972680: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33783; line_num: 604
+ qemu-system-x86-21665 [003] .... 1293675.972859: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33783; line_num: 488
+ qemu-system-x86-21665 [000] .... 1293685.799538: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33783; line_num: 604
+ qemu-system-x86-21665 [000] .... 1293685.799745: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 33783; line_num: 488
+ qemu-system-x86-21665 [000] .... 1293685.803834: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 8707; line_num: 676
+ qemu-system-x86-21665 [000] .... 1293685.803929: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 8707; line_num: 676
+ qemu-system-x86-21665 [000] .... 1293690.829426: kvm_emulate_hypercall: From MY_HYPERCALL: unpopular path: file_name: 55532; line_num: 665

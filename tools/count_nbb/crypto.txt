@@ -1,0 +1,364 @@
+Our program has started ...
+We are going to instrument kernel dir: crypto
+First, checking the required input files to conduct our kernel instrumentation...
+Popular paths data found. Now processing...
+now processing file: crypto/jitterentropy.c
+non-popular functions: 9
+popular functions: 3
+npp_bb: 61
+now processing file: crypto/md5.c
+non-popular functions: 9
+popular functions: 1
+npp_bb: 23
+now processing file: crypto/xcbc.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/camellia_generic.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/des_generic.c
+non-popular functions: 10
+popular functions: 1
+npp_bb: 39
+now processing file: crypto/lz4hc.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/proc.c
+non-popular functions: 6
+popular functions: 1
+npp_bb: 19
+now processing file: crypto/salsa20_generic.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/aes_generic.c
+non-popular functions: 6
+popular functions: 1
+npp_bb: 58
+now processing file: crypto/xts.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/rsa.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/khazad.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/crc32_generic.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/crc32c_generic.c
+non-popular functions: 8
+popular functions: 2
+npp_bb: 11
+now processing file: crypto/tea.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/cast6_generic.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/algif_rng.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/pcbc.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/authenc.c
+non-popular functions: 16
+popular functions: 1
+npp_bb: 69
+now processing file: crypto/drbg.c
+non-popular functions: 25
+popular functions: 2
+npp_bb: 182
+now processing file: crypto/crypto_null.c
+non-popular functions: 12
+popular functions: 1
+npp_bb: 26
+now processing file: crypto/crypto_wq.c
+non-popular functions: 1
+popular functions: 1
+npp_bb: 2
+now processing file: crypto/lrw.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/dh.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/ctr.c
+non-popular functions: 14
+popular functions: 3
+npp_bb: 56
+now processing file: crypto/sha256_generic.c
+non-popular functions: 10
+popular functions: 1
+npp_bb: 15
+now processing file: crypto/blkcipher.c
+non-popular functions: 22
+popular functions: 2
+npp_bb: 84
+now processing file: crypto/fcrypt.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/api.c
+non-popular functions: 4
+popular functions: 17
+npp_bb: 57
+now processing file: crypto/rmd320.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/algif_skcipher.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/sha1_generic.c
+non-popular functions: 5
+popular functions: 1
+npp_bb: 7
+now processing file: crypto/sha512_generic.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/seed.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/scompress.c
+non-popular functions: 17
+popular functions: 1
+npp_bb: 70
+now processing file: crypto/anubis.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/jitterentropy-kcapi.c
+non-popular functions: 11
+popular functions: 2
+npp_bb: 18
+now processing file: crypto/michael_mic.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/tgr192.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/md4.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/seqiv.c
+non-popular functions: 7
+popular functions: 1
+npp_bb: 34
+now processing file: crypto/algboss.c
+non-popular functions: 1
+popular functions: 6
+npp_bb: 23
+now processing file: crypto/hmac.c
+non-popular functions: 13
+popular functions: 1
+npp_bb: 42
+now processing file: crypto/crypto_user.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/arc4.c
+non-popular functions: 5
+popular functions: 1
+npp_bb: 17
+now processing file: crypto/cbc.c
+non-popular functions: 7
+popular functions: 4
+npp_bb: 20
+now processing file: crypto/wp512.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/cryptd.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/serpent_generic.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/kpp.c
+non-popular functions: 6
+popular functions: 0
+npp_bb: 11
+now processing file: crypto/chacha20_generic.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/authencesn.c
+non-popular functions: 17
+popular functions: 1
+npp_bb: 66
+now processing file: crypto/rmd160.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/shash.c
+non-popular functions: 34
+popular functions: 6
+npp_bb: 85
+now processing file: crypto/blowfish_generic.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/af_alg.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/842.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/ccm.c
+non-popular functions: 36
+popular functions: 1
+npp_bb: 175
+now processing file: crypto/internal.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/lzo.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/poly1305_generic.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/asymmetric_keys/asymmetric_type.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/gcm.c
+non-popular functions: 53
+popular functions: 5
+npp_bb: 207
+now processing file: crypto/algif_hash.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/rng.c
+non-popular functions: 11
+popular functions: 2
+npp_bb: 30
+now processing file: crypto/cmac.c
+non-popular functions: 8
+popular functions: 1
+npp_bb: 41
+now processing file: crypto/asymmetric_keys/x509_public_key.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/twofish_generic.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/deflate.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/keywrap.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/crct10dif_generic.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/ansi_cprng.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/chacha20poly1305.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/cast5_generic.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/algif_aead.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/cts.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/algapi.c
+non-popular functions: 18
+popular functions: 31
+npp_bb: 156
+now processing file: crypto/ahash.c
+non-popular functions: 37
+popular functions: 3
+npp_bb: 124
+now processing file: crypto/lz4.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/vmac.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/rmd128.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/aead.c
+non-popular functions: 17
+popular functions: 5
+npp_bb: 64
+now processing file: crypto/akcipher.c
+non-popular functions: 9
+popular functions: 0
+npp_bb: 14
+now processing file: crypto/ecb.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/skcipher.c
+non-popular functions: 46
+popular functions: 9
+npp_bb: 171
+now processing file: crypto/echainiv.c
+non-popular functions: 5
+popular functions: 1
+npp_bb: 23
+now processing file: crypto/ghash-generic.c
+non-popular functions: 7
+popular functions: 1
+npp_bb: 34
+now processing file: crypto/rmd256.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: crypto/cipher.c
+non-popular functions: 5
+popular functions: 1
+npp_bb: 17
+total non-popular functions: 527
+total popular functions: 121
+****************
+total npp_bb = 2151

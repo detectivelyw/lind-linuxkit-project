@@ -1,0 +1,244 @@
+Our program has started ...
+We are going to instrument kernel dir: mm
+First, checking the required input files to conduct our kernel instrumentation...
+Popular paths data found. Now processing...
+now processing file: mm/hugetlb.c
+non-popular functions: 115
+popular functions: 31
+npp_bb: 799
+now processing file: mm/mempool.c
+non-popular functions: 6
+popular functions: 5
+npp_bb: 59
+now processing file: mm/list_lru.c
+non-popular functions: 8
+popular functions: 7
+npp_bb: 23
+now processing file: mm/backing-dev.c
+non-popular functions: 20
+popular functions: 11
+npp_bb: 87
+now processing file: mm/oom_kill.c
+non-popular functions: 26
+popular functions: 3
+npp_bb: 219
+now processing file: mm/early_ioremap.c
+non-popular functions: 6
+popular functions: 6
+npp_bb: 22
+now processing file: mm/mmap.c
+non-popular functions: 15
+popular functions: 71
+npp_bb: 364
+now processing file: mm/gup.c
+non-popular functions: 16
+popular functions: 21
+npp_bb: 306
+now processing file: mm/memblock.c
+non-popular functions: 35
+popular functions: 34
+npp_bb: 179
+now processing file: mm/nobootmem.c
+non-popular functions: 10
+popular functions: 9
+npp_bb: 40
+now processing file: mm/khugepaged.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: mm/vmalloc.c
+non-popular functions: 47
+popular functions: 50
+npp_bb: 343
+now processing file: mm/workingset.c
+non-popular functions: 6
+popular functions: 3
+npp_bb: 50
+now processing file: mm/util.c
+non-popular functions: 9
+popular functions: 20
+npp_bb: 81
+now processing file: mm/truncate.c
+non-popular functions: 14
+popular functions: 7
+npp_bb: 136
+now processing file: mm/mmzone.c
+non-popular functions: 1
+popular functions: 5
+npp_bb: 9
+now processing file: mm/rmap.c
+non-popular functions: 29
+popular functions: 23
+npp_bb: 274
+now processing file: mm/mlock.c
+non-popular functions: 19
+popular functions: 6
+npp_bb: 149
+now processing file: mm/ksm.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: mm/readahead.c
+non-popular functions: 6
+popular functions: 9
+npp_bb: 58
+now processing file: mm/usercopy.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: mm/interval_tree.c
+non-popular functions: 4
+popular functions: 22
+npp_bb: 5
+now processing file: mm/vmacache.c
+non-popular functions: 1
+popular functions: 4
+npp_bb: 16
+now processing file: mm/slab.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: mm/memory.c
+non-popular functions: 41
+popular functions: 79
+npp_bb: 600
+now processing file: mm/mremap.c
+non-popular functions: 7
+popular functions: 5
+npp_bb: 136
+now processing file: mm/mm_init.c
+non-popular functions: 2
+popular functions: 5
+npp_bb: 25
+now processing file: mm/filemap.c
+non-popular functions: 32
+popular functions: 40
+npp_bb: 401
+now processing file: mm/slab.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: mm/page_alloc.c
+non-popular functions: 85
+popular functions: 119
+npp_bb: 776
+now processing file: mm/hugetlb_cgroup.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: mm/pgtable-generic.c
+non-popular functions: 4
+popular functions: 1
+npp_bb: 4
+now processing file: mm/page_poison.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: mm/memory_hotplug.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: mm/pagewalk.c
+non-popular functions: 4
+popular functions: 7
+npp_bb: 48
+now processing file: mm/slab_common.c
+non-popular functions: 20
+popular functions: 18
+npp_bb: 88
+now processing file: mm/sparse.c
+non-popular functions: 4
+popular functions: 14
+npp_bb: 26
+now processing file: mm/shmem.c
+non-popular functions: 45
+popular functions: 60
+npp_bb: 616
+now processing file: mm/percpu.c
+non-popular functions: 9
+popular functions: 48
+npp_bb: 161
+now processing file: mm/huge_memory.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: mm/sparse-vmemmap.c
+non-popular functions: 8
+popular functions: 9
+npp_bb: 53
+now processing file: mm/page-writeback.c
+non-popular functions: 51
+popular functions: 14
+npp_bb: 366
+now processing file: mm/swap.c
+non-popular functions: 6
+popular functions: 34
+npp_bb: 74
+now processing file: mm/swap_state.c
+non-popular functions: 18
+popular functions: 5
+npp_bb: 135
+now processing file: mm/vmpressure.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: mm/internal.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: mm/page_ext.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: mm/percpu-vm.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: mm/vmstat.c
+non-popular functions: 40
+popular functions: 32
+npp_bb: 199
+now processing file: mm/vmscan.c
+non-popular functions: 53
+popular functions: 13
+npp_bb: 629
+now processing file: mm/fadvise.c
+non-popular functions: 0
+popular functions: 4
+npp_bb: 21
+now processing file: mm/mprotect.c
+non-popular functions: 2
+popular functions: 9
+npp_bb: 56
+now processing file: mm/swapfile.c
+non-popular functions: 101
+popular functions: 6
+npp_bb: 751
+now processing file: mm/maccess.c
+non-popular functions: 1
+popular functions: 2
+npp_bb: 7
+now processing file: mm/page_counter.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: mm/percpu-internal.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: mm/memcontrol.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: mm/madvise.c
+non-popular functions: 2
+popular functions: 12
+npp_bb: 112
+now processing file: mm/compaction.c
+non-popular functions: 48
+popular functions: 6
+npp_bb: 380
+total non-popular functions: 976
+total popular functions: 889
+****************
+total npp_bb = 8883

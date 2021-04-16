@@ -1,0 +1,740 @@
+Our program has started ...
+We are going to instrument kernel dir: kernel
+First, checking the required input files to conduct our kernel instrumentation...
+Popular paths data found. Now processing...
+now processing file: kernel/trace/ftrace.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/locking/rwsem.c
+non-popular functions: 2
+popular functions: 6
+npp_bb: 16
+now processing file: kernel/pid_namespace.c
+non-popular functions: 3
+popular functions: 17
+npp_bb: 40
+now processing file: kernel/acct.c
+non-popular functions: 13
+popular functions: 3
+npp_bb: 69
+now processing file: kernel/cgroup/rdma.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/rcu/rcu_segcblist.c
+non-popular functions: 6
+popular functions: 13
+npp_bb: 35
+now processing file: kernel/sched/core.c
+non-popular functions: 68
+popular functions: 117
+npp_bb: 648
+now processing file: kernel/sched/debug.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/jump_label.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/dma.c
+non-popular functions: 4
+popular functions: 1
+npp_bb: 14
+now processing file: kernel/time/tick-oneshot.c
+non-popular functions: 2
+popular functions: 4
+npp_bb: 11
+now processing file: kernel/fork.c
+non-popular functions: 8
+popular functions: 61
+npp_bb: 158
+now processing file: kernel/profile.c
+non-popular functions: 19
+popular functions: 6
+npp_bb: 122
+now processing file: kernel/trace/trace_events_filter.c
+non-popular functions: 86
+popular functions: 1
+npp_bb: 466
+now processing file: kernel/trace/trace_stat.c
+non-popular functions: 11
+popular functions: 3
+npp_bb: 54
+now processing file: kernel/sched/deadline.c
+non-popular functions: 80
+popular functions: 9
+npp_bb: 476
+now processing file: kernel/time/timer_list.c
+non-popular functions: 14
+popular functions: 1
+npp_bb: 63
+now processing file: kernel/kthread.c
+non-popular functions: 23
+popular functions: 19
+npp_bb: 118
+now processing file: kernel/time/posix-timers.c
+non-popular functions: 30
+popular functions: 28
+npp_bb: 200
+now processing file: kernel/sched/stats.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/module.c
+non-popular functions: 158
+popular functions: 13
+npp_bb: 782
+now processing file: kernel/irq/msi.c
+non-popular functions: 8
+popular functions: 11
+npp_bb: 50
+now processing file: kernel/watchdog_hld.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/sched/autogroup.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/trace/trace_functions.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/audit_watch.c
+non-popular functions: 24
+popular functions: 1
+npp_bb: 107
+now processing file: kernel/trace/ring_buffer.c
+non-popular functions: 117
+popular functions: 11
+npp_bb: 659
+now processing file: kernel/taskstats.c
+non-popular functions: 15
+popular functions: 5
+npp_bb: 129
+now processing file: kernel/trace/trace_output.c
+non-popular functions: 50
+popular functions: 3
+npp_bb: 199
+now processing file: kernel/auditsc.c
+non-popular functions: 62
+popular functions: 3
+npp_bb: 621
+now processing file: kernel/time/time.c
+non-popular functions: 18
+popular functions: 23
+npp_bb: 85
+now processing file: kernel/seccomp.c
+non-popular functions: 29
+popular functions: 4
+npp_bb: 196
+now processing file: kernel/tracepoint.c
+non-popular functions: 20
+popular functions: 1
+npp_bb: 101
+now processing file: kernel/irq/chip.c
+non-popular functions: 26
+popular functions: 32
+npp_bb: 180
+now processing file: kernel/notifier.c
+non-popular functions: 8
+popular functions: 14
+npp_bb: 26
+now processing file: kernel/sched/sched.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/audit_fsnotify.c
+non-popular functions: 10
+popular functions: 1
+npp_bb: 38
+now processing file: kernel/irq/settings.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/audit.c
+non-popular functions: 48
+popular functions: 22
+npp_bb: 377
+now processing file: kernel/rcu/rcu.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/async.c
+non-popular functions: 2
+popular functions: 9
+npp_bb: 14
+now processing file: kernel/sched/stop_task.c
+non-popular functions: 5
+popular functions: 4
+npp_bb: 9
+now processing file: kernel/panic.c
+non-popular functions: 18
+popular functions: 2
+npp_bb: 85
+now processing file: kernel/sched/cpuacct.c
+non-popular functions: 15
+popular functions: 5
+npp_bb: 55
+now processing file: kernel/kmod.c
+non-popular functions: 0
+popular functions: 3
+npp_bb: 11
+now processing file: kernel/workqueue_internal.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/gcov/gcc_4_7.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/time/timekeeping_internal.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/freezer.c
+non-popular functions: 3
+popular functions: 3
+npp_bb: 26
+now processing file: kernel/irq/irqdomain.c
+non-popular functions: 32
+popular functions: 22
+npp_bb: 259
+now processing file: kernel/workqueue.c
+non-popular functions: 61
+popular functions: 92
+npp_bb: 552
+now processing file: kernel/time/timekeeping_debug.c
+non-popular functions: 3
+popular functions: 1
+npp_bb: 8
+now processing file: kernel/pid.c
+non-popular functions: 1
+popular functions: 27
+npp_bb: 38
+now processing file: kernel/futex.c
+non-popular functions: 27
+popular functions: 34
+npp_bb: 409
+now processing file: kernel/signal.c
+non-popular functions: 40
+popular functions: 85
+npp_bb: 379
+now processing file: kernel/rcu/sync.c
+non-popular functions: 1
+popular functions: 5
+npp_bb: 25
+now processing file: kernel/ptrace.c
+non-popular functions: 15
+popular functions: 16
+npp_bb: 226
+now processing file: kernel/time/clocksource.c
+non-popular functions: 19
+popular functions: 20
+npp_bb: 95
+now processing file: kernel/power/qos.c
+non-popular functions: 17
+popular functions: 5
+npp_bb: 91
+now processing file: kernel/trace/trace_functions_graph.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/events/hw_breakpoint.c
+non-popular functions: 24
+popular functions: 4
+npp_bb: 112
+now processing file: kernel/smp.c
+non-popular functions: 13
+popular functions: 14
+npp_bb: 90
+now processing file: kernel/irq/irqdesc.c
+non-popular functions: 20
+popular functions: 18
+npp_bb: 97
+now processing file: kernel/events/uprobes.c
+non-popular functions: 69
+popular functions: 11
+npp_bb: 431
+now processing file: kernel/trace/trace_mmiotrace.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/cgroup/freezer.c
+non-popular functions: 5
+popular functions: 14
+npp_bb: 44
+now processing file: kernel/trace/trace_uprobe.c
+non-popular functions: 46
+popular functions: 1
+npp_bb: 281
+now processing file: kernel/trace/blktrace.c
+non-popular functions: 81
+popular functions: 2
+npp_bb: 386
+now processing file: kernel/sched/swait.c
+non-popular functions: 2
+popular functions: 7
+npp_bb: 10
+now processing file: kernel/rcu/srcutree.c
+non-popular functions: 10
+popular functions: 30
+npp_bb: 128
+now processing file: kernel/rcu/update.c
+non-popular functions: 7
+popular functions: 12
+npp_bb: 44
+now processing file: kernel/ksysfs.c
+non-popular functions: 16
+popular functions: 1
+npp_bb: 37
+now processing file: kernel/tsacct.c
+non-popular functions: 2
+popular functions: 4
+npp_bb: 19
+now processing file: kernel/irq_work.c
+non-popular functions: 5
+popular functions: 3
+npp_bb: 35
+now processing file: kernel/irq/handle.c
+non-popular functions: 4
+popular functions: 2
+npp_bb: 14
+now processing file: kernel/cred.c
+non-popular functions: 5
+popular functions: 14
+npp_bb: 45
+now processing file: kernel/bpf/devmap.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/locking/mutex.c
+non-popular functions: 15
+popular functions: 25
+npp_bb: 145
+now processing file: kernel/locking/semaphore.c
+non-popular functions: 5
+popular functions: 7
+npp_bb: 19
+now processing file: kernel/bpf/cgroup.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/trace/trace.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/trace/trace_kprobe.c
+non-popular functions: 47
+popular functions: 1
+npp_bb: 294
+now processing file: kernel/trace/trace_events_trigger.c
+non-popular functions: 55
+popular functions: 5
+npp_bb: 278
+now processing file: kernel/irq/pm.c
+non-popular functions: 7
+popular functions: 3
+npp_bb: 37
+now processing file: kernel/irq/manage.c
+non-popular functions: 46
+popular functions: 15
+npp_bb: 377
+now processing file: kernel/softirq.c
+non-popular functions: 13
+popular functions: 22
+npp_bb: 84
+now processing file: kernel/stop_machine.c
+non-popular functions: 8
+popular functions: 15
+npp_bb: 56
+now processing file: kernel/cpu.c
+non-popular functions: 39
+popular functions: 31
+npp_bb: 249
+now processing file: kernel/rcu/rcu_segcblist.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/sys_ni.c
+non-popular functions: 0
+popular functions: 1
+npp_bb: 0
+now processing file: kernel/range.c
+non-popular functions: 2
+popular functions: 4
+npp_bb: 28
+now processing file: kernel/sched/cputime.c
+non-popular functions: 4
+popular functions: 12
+npp_bb: 28
+now processing file: kernel/user_namespace.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/power/poweroff.c
+non-popular functions: 2
+popular functions: 1
+npp_bb: 2
+now processing file: kernel/bpf/core.c
+non-popular functions: 14
+popular functions: 8
+npp_bb: 256
+now processing file: kernel/time/tick-sched.c
+non-popular functions: 9
+popular functions: 29
+npp_bb: 63
+now processing file: kernel/sched/cpupri.c
+non-popular functions: 2
+popular functions: 3
+npp_bb: 19
+now processing file: kernel/configs.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/time/jiffies.c
+non-popular functions: 0
+popular functions: 3
+npp_bb: 0
+now processing file: kernel/gcov/fs.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/cgroup/cgroup-v1.c
+non-popular functions: 19
+popular functions: 20
+npp_bb: 194
+now processing file: kernel/gcov/base.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/watchdog.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/time/clockevents.c
+non-popular functions: 13
+popular functions: 15
+npp_bb: 101
+now processing file: kernel/time/hrtimer.c
+non-popular functions: 12
+popular functions: 45
+npp_bb: 107
+now processing file: kernel/cgroup/pids.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/delayacct.c
+non-popular functions: 3
+popular functions: 7
+npp_bb: 4
+now processing file: kernel/resource.c
+non-popular functions: 27
+popular functions: 21
+npp_bb: 191
+now processing file: kernel/events/core.c
+non-popular functions: 312
+popular functions: 37
+npp_bb: 2177
+now processing file: kernel/irq/spurious.c
+non-popular functions: 9
+popular functions: 3
+npp_bb: 78
+now processing file: kernel/locking/spinlock.c
+non-popular functions: 4
+popular functions: 19
+npp_bb: 9
+now processing file: kernel/audit_tree.c
+non-popular functions: 37
+popular functions: 1
+npp_bb: 215
+now processing file: kernel/auditfilter.c
+non-popular functions: 32
+popular functions: 2
+npp_bb: 349
+now processing file: kernel/cgroup/cgroup.c
+non-popular functions: 62
+popular functions: 104
+npp_bb: 657
+now processing file: kernel/cgroup/cpuset.c
+non-popular functions: 40
+popular functions: 43
+npp_bb: 300
+now processing file: kernel/reboot.c
+non-popular functions: 21
+popular functions: 2
+npp_bb: 67
+now processing file: kernel/kprobes.c
+non-popular functions: 101
+popular functions: 9
+npp_bb: 524
+now processing file: kernel/sched/completion.c
+non-popular functions: 4
+popular functions: 12
+npp_bb: 24
+now processing file: kernel/trace/trace_clock.c
+non-popular functions: 4
+popular functions: 0
+npp_bb: 10
+now processing file: kernel/trace/trace_entries.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/sched/fair.c
+non-popular functions: 90
+popular functions: 129
+npp_bb: 876
+now processing file: kernel/exit.c
+non-popular functions: 7
+popular functions: 36
+npp_bb: 153
+now processing file: kernel/trace/trace_stack.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/memremap.c
+non-popular functions: 5
+popular functions: 3
+npp_bb: 19
+now processing file: kernel/sched/clock.c
+non-popular functions: 5
+popular functions: 16
+npp_bb: 25
+now processing file: kernel/ucount.c
+non-popular functions: 3
+popular functions: 8
+npp_bb: 26
+now processing file: kernel/utsname.c
+non-popular functions: 7
+popular functions: 4
+npp_bb: 21
+now processing file: kernel/rcu/tree_exp.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/sched/wait_bit.c
+non-popular functions: 15
+popular functions: 4
+npp_bb: 52
+now processing file: kernel/trace/trace_printk.c
+non-popular functions: 17
+popular functions: 2
+npp_bb: 65
+now processing file: kernel/capability.c
+non-popular functions: 6
+popular functions: 14
+npp_bb: 34
+now processing file: kernel/umh.c
+non-popular functions: 6
+popular functions: 10
+npp_bb: 55
+now processing file: kernel/trace/trace_events.c
+non-popular functions: 86
+popular functions: 25
+npp_bb: 460
+now processing file: kernel/time/posix-cpu-timers.c
+non-popular functions: 28
+popular functions: 15
+npp_bb: 253
+now processing file: kernel/extable.c
+non-popular functions: 3
+popular functions: 5
+npp_bb: 33
+now processing file: kernel/irq/migration.c
+non-popular functions: 2
+popular functions: 1
+npp_bb: 26
+now processing file: kernel/nsproxy.c
+non-popular functions: 0
+popular functions: 9
+npp_bb: 36
+now processing file: kernel/trace/trace.c
+non-popular functions: 222
+popular functions: 36
+npp_bb: 1333
+now processing file: kernel/irq/internals.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/sys.c
+non-popular functions: 24
+popular functions: 39
+npp_bb: 411
+now processing file: kernel/cgroup/cgroup-internal.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/sysctl.c
+non-popular functions: 20
+popular functions: 18
+npp_bb: 195
+now processing file: kernel/irq/proc.c
+non-popular functions: 24
+popular functions: 6
+npp_bb: 101
+now processing file: kernel/task_work.c
+non-popular functions: 1
+popular functions: 2
+npp_bb: 11
+now processing file: kernel/groups.c
+non-popular functions: 0
+popular functions: 15
+npp_bb: 22
+now processing file: kernel/hung_task.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/time/ntp.c
+non-popular functions: 13
+popular functions: 6
+npp_bb: 133
+now processing file: kernel/time/alarmtimer.c
+non-popular functions: 24
+popular functions: 4
+npp_bb: 128
+now processing file: kernel/sched/loadavg.c
+non-popular functions: 2
+popular functions: 11
+npp_bb: 18
+now processing file: kernel/user.c
+non-popular functions: 1
+popular functions: 7
+npp_bb: 11
+now processing file: kernel/time/timekeeping.c
+non-popular functions: 27
+popular functions: 35
+npp_bb: 183
+now processing file: kernel/smpboot.c
+non-popular functions: 12
+popular functions: 8
+npp_bb: 76
+now processing file: kernel/time/tick-common.c
+non-popular functions: 12
+popular functions: 9
+npp_bb: 66
+now processing file: kernel/utsname_sysctl.c
+non-popular functions: 0
+popular functions: 4
+npp_bb: 4
+now processing file: kernel/time/timer.c
+non-popular functions: 13
+popular functions: 53
+npp_bb: 89
+now processing file: kernel/locking/rtmutex.c
+non-popular functions: 47
+popular functions: 1
+npp_bb: 256
+now processing file: kernel/sched/wait.c
+non-popular functions: 3
+popular functions: 20
+npp_bb: 32
+now processing file: kernel/irq/devres.c
+non-popular functions: 4
+popular functions: 1
+npp_bb: 15
+now processing file: kernel/kallsyms.c
+non-popular functions: 19
+popular functions: 10
+npp_bb: 89
+now processing file: kernel/sched/topology.c
+non-popular functions: 21
+popular functions: 29
+npp_bb: 227
+now processing file: kernel/bpf/inode.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/kcmp.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/printk/printk_safe.c
+non-popular functions: 9
+popular functions: 7
+npp_bb: 40
+now processing file: kernel/sched/autogroup.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/locking/rwsem.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/sched/idle_task.c
+non-popular functions: 6
+popular functions: 2
+npp_bb: 8
+now processing file: kernel/sched/cpudeadline.c
+non-popular functions: 10
+popular functions: 4
+npp_bb: 40
+now processing file: kernel/params.c
+non-popular functions: 30
+popular functions: 20
+npp_bb: 134
+now processing file: kernel/rcu/tree_plugin.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/irq/resend.c
+non-popular functions: 0
+popular functions: 1
+npp_bb: 1
+now processing file: kernel/sched/idle.c
+non-popular functions: 8
+popular functions: 4
+npp_bb: 54
+now processing file: kernel/rcu/tree.c
+non-popular functions: 62
+popular functions: 81
+npp_bb: 534
+now processing file: kernel/locking/rwsem-xadd.c
+non-popular functions: 5
+popular functions: 11
+npp_bb: 63
+now processing file: kernel/printk/printk.c
+non-popular functions: 42
+popular functions: 45
+npp_bb: 388
+now processing file: kernel/exec_domain.c
+non-popular functions: 4
+popular functions: 1
+npp_bb: 6
+now processing file: kernel/sched/rt.c
+non-popular functions: 49
+popular functions: 48
+npp_bb: 323
+now processing file: kernel/cgroup/namespace.c
+non-popular functions: 9
+popular functions: 2
+npp_bb: 26
+now processing file: kernel/time/itimer.c
+non-popular functions: 6
+popular functions: 7
+npp_bb: 51
+now processing file: kernel/trace/trace_syscalls.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/power/main.c
+non-popular functions: 29
+popular functions: 4
+npp_bb: 128
+now processing file: kernel/time/tick-internal.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: kernel/time/tick-broadcast.c
+non-popular functions: 26
+popular functions: 13
+npp_bb: 156
+now processing file: kernel/locking/percpu-rwsem.c
+non-popular functions: 0
+popular functions: 7
+npp_bb: 5
+total non-popular functions: 3562
+total popular functions: 2280
+****************
+total npp_bb = 24528

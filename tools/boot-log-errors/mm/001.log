@@ -1,0 +1,113 @@
+[    0.000000] Linux version 4.14.24-linuxkit (root@d57eb0c044d9) (gcc version 6.4.0 (Alpine 6.4.0)) #1 SMP Thu Aug 8 20:44:30 UTC 2019
+[    0.000000] Command line: console=tty0 console=ttyS0 console=ttyAMA0
+[    0.000000] x86/fpu: x87 FPU will use FXSAVE
+[    0.000000] e820: BIOS-provided physical RAM map:
+[    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+[    0.000000] BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000000100000-0x000000003ffdefff] usable
+[    0.000000] BIOS-e820: [mem 0x000000003ffdf000-0x000000003fffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000b0000000-0x00000000bfffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000feffc000-0x00000000feffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+[    0.000000] NX (Execute Disable) protection: active
+[    0.000000] random: fast init done
+[    0.000000] SMBIOS 2.8 present.
+[    0.000000] DMI: QEMU Standard PC (Q35 + ICH9, 2009), BIOS Ubuntu-1.8.2-1ubuntu1 04/01/2014
+[    0.000000] Hypervisor detected: KVM
+[    0.000000] tsc: Fast TSC calibration using PIT
+[    0.000000] e820: last_pfn = 0x3ffdf max_arch_pfn = 0x400000000
+[    0.000000] x86/PAT: PAT not supported by CPU.
+[    0.000000] x86/PAT: Configuration [0-7]: WB  WT  UC- UC  WB  WT  UC- UC  
+[    0.000000] found SMP MP-table at [mem 0x000f6630-0x000f663f] mapped at [ffffffffff200630]
+[    0.000000] RAMDISK: [mem 0x3a94e000-0x3ffcffff]
+[    0.000000] ACPI: Early table checksum verification disabled
+[    0.000000] ACPI: RSDP 0x00000000000F6460 000014 (v00 BOCHS )
+[    0.000000] ACPI: RSDT 0x000000003FFE2267 000038 (v01 BOCHS  BXPCRSDT 00000001 BXPC 00000001)
+[    0.000000] ACPI: FACP 0x000000003FFE1E32 000074 (v01 BOCHS  BXPCFACP 00000001 BXPC 00000001)
+[    0.000000] ACPI: DSDT 0x000000003FFE0040 001DF2 (v01 BOCHS  BXPCDSDT 00000001 BXPC 00000001)
+[    0.000000] ACPI: FACS 0x000000003FFE0000 000040
+[    0.000000] ACPI: SSDT 0x000000003FFE1EA6 0002D5 (v01 BOCHS  BXPCSSDT 00000001 BXPC 00000001)
+[    0.000000] ACPI: APIC 0x000000003FFE217B 000078 (v01 BOCHS  BXPCAPIC 00000001 BXPC 00000001)
+[    0.000000] ACPI: HPET 0x000000003FFE21F3 000038 (v01 BOCHS  BXPCHPET 00000001 BXPC 00000001)
+[    0.000000] ACPI: MCFG 0x000000003FFE222B 00003C (v01 BOCHS  BXPCMCFG 00000001 BXPC 00000001)
+[    0.000000] kvm-clock: Using msrs 4b564d01 and 4b564d00
+[    0.000000] kvm-clock: cpu 0, msr 0:3ffdd001, primary cpu clock
+[    0.000000] kvm-clock: using sched offset of 11288904195 cycles
+[    0.000000] clocksource: kvm-clock: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns
+[    0.000000] Zone ranges:
+[    0.000000]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+[    0.000000]   DMA32    [mem 0x0000000001000000-0x000000003ffdefff]
+[    0.000000]   Normal   empty
+[    0.000000]   Device   empty
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000001000-0x000000000009efff]
+[    0.000000]   node   0: [mem 0x0000000000100000-0x000000003ffdefff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000001000-0x000000003ffdefff]
+[    0.000000] ACPI: PM-Timer IO Port: 0x608
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0xff] dfl dfl lint[0x1])
+[    0.000000] IOAPIC[0]: apic_id 0, version 17, address 0xfec00000, GSI 0-23
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 5 global_irq 5 high level)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 high level)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 10 global_irq 10 high level)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 11 global_irq 11 high level)
+[    0.000000] Using ACPI (MADT) for SMP configuration information
+[    0.000000] ACPI: HPET id: 0x8086a201 base: 0xfed00000
+[    0.000000] smpboot: Allowing 1 CPUs, 0 hotplug CPUs
+[    0.000000] e820: [mem 0x40000000-0xafffffff] available for PCI devices
+[    0.000000] Booting paravirtualized kernel on KVM
+[    0.000000] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.000000] setup_percpu: NR_CPUS:128 nr_cpumask_bits:128 nr_cpu_ids:1 nr_node_ids:1
+[    0.000000] percpu: Embedded 44 pages/cpu @ffff95bc7a600000 s143192 r8192 d28840 u2097152
+[    0.000000] KVM setup async PF for cpu 0
+[    0.000000] kvm-stealtime: cpu 0, msr 3a615f00
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 257896
+[    0.000000] Kernel command line: console=tty0 console=ttyS0 console=ttyAMA0
+[    0.000000] PID hash table entries: 4096 (order: 3, 32768 bytes)
+[    0.000000] Dentry cache hash table entries: 131072 (order: 8, 1048576 bytes)
+[    0.000000] Inode-cache hash table entries: 65536 (order: 7, 524288 bytes)
+[    0.000000] Memory: 896324K/1048052K available (18444K kernel code, 7671K rwdata, 3188K rodata, 1816K init, 7556K bss, 151728K reserved, 0K cma-reserved)
+[    0.000000] Kernel/User page tables isolation: enabled
+[    0.000000] ftrace: allocating 41738 entries in 164 pages
+[    0.010000] Hierarchical RCU implementation.
+[    0.010000] 	RCU restricting CPUs from NR_CPUS=128 to nr_cpu_ids=1.
+[    0.010000] RCU: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
+[    0.010000] NR_IRQS: 8448, nr_irqs: 256, preallocated irqs: 16
+[    0.010000] Console: colour VGA+ 80x25
+[    0.010000] console [tty0] enabled
+[    0.010000] console [ttyS0] enabled
+[    0.010000] ------------[ cut here ]------------
+[    0.010000] kernel BUG at lib/ioremap.c:72!
+[    0.010000] invalid opcode: 0000 [#1] SMP PTI
+[    0.010000] Modules linked in:
+[    0.010000] CPU: 0 PID: 0 Comm: swapper/0 Not tainted 4.14.24-linuxkit #1
+[    0.010000] Hardware name: QEMU Standard PC (Q35 + ICH9, 2009), BIOS Ubuntu-1.8.2-1ubuntu1 04/01/2014
+[    0.010000] task: ffffffffb4817800 task.stack: ffffffffb4800000
+[    0.010000] RIP: 0010:ioremap_page_range+0x49b/0x60b
+[    0.010000] RSP: 0000:ffffffffb4803dc0 EFLAGS: 00010202
+[    0.010000] RAX: 0000000000000001 RBX: ffffb49840000000 RCX: 0000000000000000
+[    0.010000] RDX: ffff95bc40000000 RSI: 000000003a130067 RDI: 000000003a130000
+[    0.010000] RBP: ffff95bc7a12f308 R08: 0000000000000001 R09: ffffd638c0e84c40
+[    0.010000] R10: 0000000000000000 R11: 0000000000000000 R12: ffff95bc7a130000
+[    0.010000] R13: ffff95bc7a130000 R14: ffffffffb480cb48 R15: ffffb49840001000
+[    0.010000] FS:  0000000000000000(0000) GS:ffff95bc7a600000(0000) knlGS:0000000000000000
+[    0.010000] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[    0.010000] CR2: 00000000ffffffff CR3: 000000001b80c000 CR4: 00000000000006b0
+[    0.010000] Call Trace:
+[    0.010000]  __ioremap_caller+0x2ee/0x3d1
+[    0.010000]  ? hpet_enable+0x47/0x423
+[    0.010000]  ioremap_nocache+0x21/0x29
+[    0.010000]  hpet_enable+0x47/0x423
+[    0.010000]  hpet_time_init+0x11/0x66
+[    0.010000]  x86_late_time_init+0x12/0x26
+[    0.010000]  start_kernel+0x718/0x8c3
+[    0.010000]  x86_64_start_reservations+0x3c/0x44
+[    0.010000]  x86_64_start_kernel+0xc6/0xcf
+[    0.010000]  secondary_startup_64+0xa5/0xb0
+[    0.010000] Code: 01 48 c1 e0 0c 48 29 d8 48 89 44 24 28 48 8b 44 24 10 83 e0 01 48 89 44 24 48 49 f7 04 24 9f ff ff ff 74 17 48 ff 05 2e 44 dd 01 <0f> 0b 48 ff 05 35 44 dd 01 48 ff 05 36 44 dd 01 48 ff 05 1f 44 
+[    0.010000] RIP: ioremap_page_range+0x49b/0x60b RSP: ffffffffb4803dc0
+[    0.010000] ---[ end trace 7561aed497abce4a ]---
+[    0.010000] Kernel panic - not syncing: Fatal exception
+[    0.010000] ---[ end Kernel panic - not syncing: Fatal exception

@@ -1,0 +1,2180 @@
+Our program has started ...
+We are going to instrument kernel dir: drivers
+First, checking the required input files to conduct our kernel instrumentation...
+Popular paths data found. Now processing...
+now processing file: drivers/acpi/acpica/dspkginit.c
+non-popular functions: 0
+popular functions: 3
+npp_bb: 26
+now processing file: drivers/acpi/acpica/exresop.c
+non-popular functions: 1
+popular functions: 1
+npp_bb: 79
+now processing file: drivers/char/misc.c
+non-popular functions: 7
+popular functions: 3
+npp_bb: 42
+now processing file: drivers/mfd/sm501.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/acpica/utstate.c
+non-popular functions: 0
+popular functions: 8
+npp_bb: 6
+now processing file: drivers/pci/slot.c
+non-popular functions: 14
+popular functions: 2
+npp_bb: 65
+now processing file: drivers/acpi/acpica/nspredef.c
+non-popular functions: 0
+popular functions: 4
+npp_bb: 26
+now processing file: drivers/net/macvtap.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/xen/xen-acpi-processor.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/acpica/utmutex.c
+non-popular functions: 2
+popular functions: 4
+npp_bb: 17
+now processing file: drivers/acpi/acpica/hwxface.c
+non-popular functions: 3
+popular functions: 3
+npp_bb: 49
+now processing file: drivers/video/fbdev/core/fbcon.c
+non-popular functions: 86
+popular functions: 3
+npp_bb: 987
+now processing file: drivers/acpi/dptf/int340x_thermal.c
+non-popular functions: 1
+popular functions: 1
+npp_bb: 6
+now processing file: drivers/cpufreq/cpufreq_performance.c
+non-popular functions: 3
+popular functions: 1
+npp_bb: 3
+now processing file: drivers/ata/libata-eh.c
+non-popular functions: 17
+popular functions: 64
+npp_bb: 530
+now processing file: drivers/acpi/ec.c
+non-popular functions: 89
+popular functions: 7
+npp_bb: 467
+now processing file: drivers/pci/xen-pcifront.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/cpufreq/intel_pstate.c
+non-popular functions: 86
+popular functions: 1
+npp_bb: 413
+now processing file: drivers/pci/hotplug/shpchp_core.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/mfd/wl1273-core.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/idle/intel_idle.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/md/dm-snap.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/scsi/scsi_logging.c
+non-popular functions: 15
+popular functions: 3
+npp_bb: 110
+now processing file: drivers/base/regmap/regmap.c
+non-popular functions: 82
+popular functions: 1
+npp_bb: 572
+now processing file: drivers/acpi/acpica/dsinit.c
+non-popular functions: 1
+popular functions: 1
+npp_bb: 10
+now processing file: drivers/md/dm-snap-persistent.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/net/virtio_net.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/hwmon/hwmon.c
+non-popular functions: 22
+popular functions: 2
+npp_bb: 134
+now processing file: drivers/acpi/acpica/evsci.c
+non-popular functions: 2
+popular functions: 0
+npp_bb: 10
+now processing file: drivers/base/syscore.c
+non-popular functions: 4
+popular functions: 1
+npp_bb: 28
+now processing file: drivers/rtc/hctosys.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/connector/cn_proc.c
+non-popular functions: 4
+popular functions: 9
+npp_bb: 49
+now processing file: drivers/input/mousedev.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/acpica/exstore.c
+non-popular functions: 1
+popular functions: 3
+npp_bb: 42
+now processing file: drivers/acpi/resource.c
+non-popular functions: 7
+popular functions: 20
+npp_bb: 83
+now processing file: drivers/base/devtmpfs.c
+non-popular functions: 8
+popular functions: 8
+npp_bb: 59
+now processing file: drivers/base/power/runtime.c
+non-popular functions: 16
+popular functions: 27
+npp_bb: 218
+now processing file: drivers/acpi/acpica/tbinstal.c
+non-popular functions: 1
+popular functions: 3
+npp_bb: 17
+now processing file: drivers/base/devres.c
+non-popular functions: 21
+popular functions: 17
+npp_bb: 100
+now processing file: drivers/base/power/power.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/net/vmxnet3/vmxnet3_drv.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/tty/serial/serial_core.c
+non-popular functions: 41
+popular functions: 34
+npp_bb: 495
+now processing file: drivers/scsi/sr_ioctl.c
+non-popular functions: 14
+popular functions: 4
+npp_bb: 107
+now processing file: drivers/input/serio/libps2.c
+non-popular functions: 2
+popular functions: 8
+npp_bb: 27
+now processing file: drivers/firmware/efi/efi.c
+non-popular functions: 23
+popular functions: 1
+npp_bb: 181
+now processing file: drivers/base/base.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/x86/utils.c
+non-popular functions: 0
+popular functions: 1
+npp_bb: 8
+now processing file: drivers/rtc/rtc-dev.c
+non-popular functions: 2
+popular functions: 5
+npp_bb: 75
+now processing file: drivers/cpufreq/cpufreq_userspace.c
+non-popular functions: 9
+popular functions: 1
+npp_bb: 21
+now processing file: drivers/tty/sysrq.c
+non-popular functions: 34
+popular functions: 11
+npp_bb: 135
+now processing file: drivers/scsi/scsi_lib.c
+non-popular functions: 63
+popular functions: 43
+npp_bb: 539
+now processing file: drivers/scsi/storvsc_drv.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/firmware/efi/vars.c
+non-popular functions: 32
+popular functions: 1
+npp_bb: 183
+now processing file: drivers/input/misc/pcspkr.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/pci/setup-res.c
+non-popular functions: 10
+popular functions: 2
+npp_bb: 80
+now processing file: drivers/acpi/pci_irq.c
+non-popular functions: 4
+popular functions: 7
+npp_bb: 65
+now processing file: drivers/input/joydev.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/firmware/efi/capsule.c
+non-popular functions: 6
+popular functions: 1
+npp_bb: 40
+now processing file: drivers/xen/pcpu.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/firmware/efi/efi-pstore.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/usb/core/driver.c
+non-popular functions: 54
+popular functions: 3
+npp_bb: 385
+now processing file: drivers/video/fbdev/core/fb_notify.c
+non-popular functions: 2
+popular functions: 1
+npp_bb: 2
+now processing file: drivers/video/fbdev/vesafb.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/acpica/exconvrt.c
+non-popular functions: 4
+popular functions: 1
+npp_bb: 86
+now processing file: drivers/nvmem/core.c
+non-popular functions: 43
+popular functions: 1
+npp_bb: 201
+now processing file: drivers/acpi/acpica/dsmthdat.c
+non-popular functions: 0
+popular functions: 8
+npp_bb: 33
+now processing file: drivers/tty/hvc/hvc_xen.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/block/virtio_blk.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/pci/host-bridge.c
+non-popular functions: 0
+popular functions: 8
+npp_bb: 4
+now processing file: drivers/pci/pcie/pme.c
+non-popular functions: 14
+popular functions: 1
+npp_bb: 86
+now processing file: drivers/ata/libata-scsi.c
+non-popular functions: 90
+popular functions: 17
+npp_bb: 834
+now processing file: drivers/acpi/acpica/evxfregn.c
+non-popular functions: 1
+popular functions: 1
+npp_bb: 26
+now processing file: drivers/dax/pmem.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/input/misc/atlas_btns.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/input/keyboard/atkbd.c
+non-popular functions: 39
+popular functions: 12
+npp_bb: 258
+now processing file: drivers/acpi/acpica/utpredef.c
+non-popular functions: 1
+popular functions: 2
+npp_bb: 11
+now processing file: drivers/rtc/class.c
+non-popular functions: 7
+popular functions: 4
+npp_bb: 42
+now processing file: drivers/pnp/pnpacpi/core.c
+non-popular functions: 7
+popular functions: 5
+npp_bb: 70
+now processing file: drivers/thermal/thermal_core.c
+non-popular functions: 39
+popular functions: 8
+npp_bb: 297
+now processing file: drivers/input/serio/i8042-x86ia64io.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/acpica/nsutils.c
+non-popular functions: 3
+popular functions: 9
+npp_bb: 64
+now processing file: drivers/acpi/acpica/tbxface.c
+non-popular functions: 2
+popular functions: 7
+npp_bb: 29
+now processing file: drivers/char/nvram.c
+non-popular functions: 19
+popular functions: 2
+npp_bb: 87
+now processing file: drivers/base/module.c
+non-popular functions: 1
+popular functions: 3
+npp_bb: 13
+now processing file: drivers/pci/bus.c
+non-popular functions: 9
+popular functions: 7
+npp_bb: 54
+now processing file: drivers/acpi/osl.c
+non-popular functions: 38
+popular functions: 31
+npp_bb: 216
+now processing file: drivers/tty/tty_io.c
+non-popular functions: 44
+popular functions: 62
+npp_bb: 401
+now processing file: drivers/platform/x86/wmi.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/pci/hotplug/pci_hotplug_core.c
+non-popular functions: 18
+popular functions: 1
+npp_bb: 123
+now processing file: drivers/md/dm-thin.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/xen/platform-pci.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/clk/x86/clk-pmc-atom.c
+non-popular functions: 19
+popular functions: 1
+npp_bb: 67
+now processing file: drivers/pci/quirks.c
+non-popular functions: 150
+popular functions: 11
+npp_bb: 595
+now processing file: drivers/char/hpet.c
+non-popular functions: 12
+popular functions: 7
+npp_bb: 148
+now processing file: drivers/firmware/dmi-sysfs.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/acpica/nssearch.c
+non-popular functions: 0
+popular functions: 3
+npp_bb: 16
+now processing file: drivers/input/ff-core.c
+non-popular functions: 9
+popular functions: 1
+npp_bb: 80
+now processing file: drivers/pnp/driver.c
+non-popular functions: 9
+popular functions: 8
+npp_bb: 75
+now processing file: drivers/block/nbd.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/net/veth.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/tty/serial/8250/8250_pci.c
+non-popular functions: 74
+popular functions: 0
+npp_bb: 379
+now processing file: drivers/usb/core/hub.c
+non-popular functions: 126
+popular functions: 1
+npp_bb: 1361
+now processing file: drivers/acpi/acpica/evxfgpe.c
+non-popular functions: 16
+popular functions: 1
+npp_bb: 104
+now processing file: drivers/nvdimm/dimm.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/char/hw_random/intel-rng.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/thermal/step_wise.c
+non-popular functions: 5
+popular functions: 1
+npp_bb: 52
+now processing file: drivers/acpi/tables.c
+non-popular functions: 5
+popular functions: 12
+npp_bb: 90
+now processing file: drivers/acpi/acpica/uthex.c
+non-popular functions: 0
+popular functions: 2
+npp_bb: 2
+now processing file: drivers/char/hw_random/timeriomem-rng.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/cpufreq/acpi-cpufreq.c
+non-popular functions: 30
+popular functions: 8
+npp_bb: 177
+now processing file: drivers/acpi/button.c
+non-popular functions: 16
+popular functions: 5
+npp_bb: 90
+now processing file: drivers/base/topology.c
+non-popular functions: 1
+popular functions: 2
+npp_bb: 1
+now processing file: drivers/hv/hv_util.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/char/hw_random/amd-rng.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/acpica/exsystem.c
+non-popular functions: 6
+popular functions: 1
+npp_bb: 20
+now processing file: drivers/xen/manage.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/block/cryptoloop.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/base/power/main.c
+non-popular functions: 62
+popular functions: 5
+npp_bb: 391
+now processing file: drivers/acpi/acpica/rsxface.c
+non-popular functions: 5
+popular functions: 6
+npp_bb: 43
+now processing file: drivers/cpufreq/cpufreq.c
+non-popular functions: 79
+popular functions: 19
+npp_bb: 514
+now processing file: drivers/tty/tty_audit.c
+non-popular functions: 8
+popular functions: 3
+npp_bb: 47
+now processing file: drivers/pci/pcie/aspm.c
+non-popular functions: 35
+popular functions: 1
+npp_bb: 267
+now processing file: drivers/md/dm-ioctl.c
+non-popular functions: 61
+popular functions: 3
+npp_bb: 431
+now processing file: drivers/net/tun.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/nvdimm/label.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/virtio/virtio_pci_modern.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/acpi_apd.c
+non-popular functions: 1
+popular functions: 1
+npp_bb: 10
+now processing file: drivers/nvdimm/pmem.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/clk/clk.c
+non-popular functions: 119
+popular functions: 4
+npp_bb: 646
+now processing file: drivers/hid/hid-debug.c
+non-popular functions: 19
+popular functions: 1
+npp_bb: 140
+now processing file: drivers/tty/tty_buffer.c
+non-popular functions: 5
+popular functions: 19
+npp_bb: 31
+now processing file: drivers/ata/sata_via.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/sbs.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/acpica/dswload.c
+non-popular functions: 0
+popular functions: 3
+npp_bb: 32
+now processing file: drivers/ata/sata_sil.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/usb/core/devio.c
+non-popular functions: 84
+popular functions: 1
+npp_bb: 744
+now processing file: drivers/cdrom/cdrom.c
+non-popular functions: 100
+popular functions: 7
+npp_bb: 892
+now processing file: drivers/scsi/scsi_pm.c
+non-popular functions: 22
+popular functions: 9
+npp_bb: 71
+now processing file: drivers/char/random.c
+non-popular functions: 11
+popular functions: 41
+npp_bb: 166
+now processing file: drivers/dax/device.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/pci/pci.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/video/fbdev/xen-fbfront.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/md/dm-kcopyd.c
+non-popular functions: 28
+popular functions: 1
+npp_bb: 166
+now processing file: drivers/acpi/bus.c
+non-popular functions: 19
+popular functions: 22
+npp_bb: 168
+now processing file: drivers/acpi/acpica/utdecode.c
+non-popular functions: 6
+popular functions: 2
+npp_bb: 39
+now processing file: drivers/virtio/virtio_balloon.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/acpica/nsrepair.c
+non-popular functions: 2
+popular functions: 3
+npp_bb: 42
+now processing file: drivers/acpi/acpica/exresolv.c
+non-popular functions: 1
+popular functions: 2
+npp_bb: 62
+now processing file: drivers/acpi/acpica/evmisc.c
+non-popular functions: 3
+popular functions: 1
+npp_bb: 33
+now processing file: drivers/platform/x86/intel_ips.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/usb/core/notify.c
+non-popular functions: 5
+popular functions: 1
+npp_bb: 5
+now processing file: drivers/input/misc/xen-kbdfront.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/apei/erst.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/pps/pps.c
+non-popular functions: 10
+popular functions: 1
+npp_bb: 79
+now processing file: drivers/acpi/acpica/nsnames.c
+non-popular functions: 0
+popular functions: 5
+npp_bb: 12
+now processing file: drivers/rtc/rtc-mc146818-lib.c
+non-popular functions: 1
+popular functions: 2
+npp_bb: 26
+now processing file: drivers/base/cpu.c
+non-popular functions: 11
+popular functions: 9
+npp_bb: 38
+now processing file: drivers/acpi/event.c
+non-popular functions: 4
+popular functions: 2
+npp_bb: 13
+now processing file: drivers/acpi/acpica/exutils.c
+non-popular functions: 1
+popular functions: 9
+npp_bb: 20
+now processing file: drivers/acpi/acpica/exoparg2.c
+non-popular functions: 2
+popular functions: 2
+npp_bb: 48
+now processing file: drivers/acpi/apei/bert.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/net/ipvlan/ipvlan_core.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/base/cacheinfo.c
+non-popular functions: 16
+popular functions: 10
+npp_bb: 100
+now processing file: drivers/tty/tty_jobctrl.c
+non-popular functions: 1
+popular functions: 18
+npp_bb: 54
+now processing file: drivers/acpi/acpica/rsaddr.c
+non-popular functions: 1
+popular functions: 1
+npp_bb: 8
+now processing file: drivers/acpi/acpica/utxferror.c
+non-popular functions: 1
+popular functions: 0
+npp_bb: 3
+now processing file: drivers/acpi/fan.c
+non-popular functions: 14
+popular functions: 2
+npp_bb: 81
+now processing file: drivers/acpi/acpica/nsload.c
+non-popular functions: 0
+popular functions: 1
+npp_bb: 5
+now processing file: drivers/tty/serial/8250/8250_pnp.c
+non-popular functions: 7
+popular functions: 2
+npp_bb: 34
+now processing file: drivers/tty/n_tty.c
+non-popular functions: 35
+popular functions: 33
+npp_bb: 422
+now processing file: drivers/acpi/pci_root.c
+non-popular functions: 5
+popular functions: 17
+npp_bb: 87
+now processing file: drivers/acpi/acpica/utids.c
+non-popular functions: 0
+popular functions: 4
+npp_bb: 29
+now processing file: drivers/nvdimm/btt.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/acpica/pswalk.c
+non-popular functions: 0
+popular functions: 1
+npp_bb: 5
+now processing file: drivers/pci/vc.c
+non-popular functions: 7
+popular functions: 1
+npp_bb: 75
+now processing file: drivers/video/fbdev/hyperv_fb.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/power/supply/power_supply_sysfs.c
+non-popular functions: 5
+popular functions: 1
+npp_bb: 67
+now processing file: drivers/acpi/acpica/rscalc.c
+non-popular functions: 0
+popular functions: 6
+npp_bb: 51
+now processing file: drivers/acpi/acpica/tbdata.c
+non-popular functions: 6
+popular functions: 18
+npp_bb: 65
+now processing file: drivers/base/power/sysfs.c
+non-popular functions: 27
+popular functions: 7
+npp_bb: 106
+now processing file: drivers/acpi/acpica/nseval.c
+non-popular functions: 1
+popular functions: 2
+npp_bb: 29
+now processing file: drivers/scsi/xen-scsifront.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/virtio/virtio_ring.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/tty/serial/8250/8250.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/char/virtio_console.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/acpica/rsmisc.c
+non-popular functions: 1
+popular functions: 1
+npp_bb: 79
+now processing file: drivers/acpi/acpica/psopinfo.c
+non-popular functions: 1
+popular functions: 2
+npp_bb: 3
+now processing file: drivers/acpi/acpica/exprep.c
+non-popular functions: 0
+popular functions: 3
+npp_bb: 26
+now processing file: drivers/virtio/virtio_pci_legacy.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/tty/tty_port.c
+non-popular functions: 11
+popular functions: 19
+npp_bb: 71
+now processing file: drivers/acpi/acpica/nsaccess.c
+non-popular functions: 0
+popular functions: 2
+npp_bb: 35
+now processing file: drivers/acpi/processor_throttling.c
+non-popular functions: 20
+popular functions: 6
+npp_bb: 250
+now processing file: drivers/pci/setup-irq.c
+non-popular functions: 0
+popular functions: 1
+npp_bb: 10
+now processing file: drivers/acpi/acpica/exresnte.c
+non-popular functions: 0
+popular functions: 1
+npp_bb: 14
+now processing file: drivers/ata/sata_promise.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/processor_perflib.c
+non-popular functions: 11
+popular functions: 7
+npp_bb: 163
+now processing file: drivers/acpi/processor_driver.c
+non-popular functions: 6
+popular functions: 4
+npp_bb: 50
+now processing file: drivers/usb/core/usb.c
+non-popular functions: 35
+popular functions: 4
+npp_bb: 170
+now processing file: drivers/hid/usbhid/hid-quirks.c
+non-popular functions: 6
+popular functions: 1
+npp_bb: 42
+now processing file: drivers/acpi/acpica/utaddress.c
+non-popular functions: 2
+popular functions: 2
+npp_bb: 24
+now processing file: drivers/acpi/acpica/extrace.c
+non-popular functions: 1
+popular functions: 5
+npp_bb: 27
+now processing file: drivers/acpi/acpica/dsobject.c
+non-popular functions: 0
+popular functions: 4
+npp_bb: 26
+now processing file: drivers/char/hangcheck-timer.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/block/xen-blkfront.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/pnp/core.c
+non-popular functions: 9
+popular functions: 6
+npp_bb: 22
+now processing file: drivers/acpi/acpica/psparse.c
+non-popular functions: 0
+popular functions: 5
+npp_bb: 38
+now processing file: drivers/cpufreq/cpufreq_stats.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/acpica/nsparse.c
+non-popular functions: 1
+popular functions: 2
+npp_bb: 30
+now processing file: drivers/acpi/acpica/hwgpe.c
+non-popular functions: 4
+popular functions: 4
+npp_bb: 33
+now processing file: drivers/net/Space.c
+non-popular functions: 0
+popular functions: 3
+npp_bb: 7
+now processing file: drivers/acpi/container.c
+non-popular functions: 3
+popular functions: 3
+npp_bb: 12
+now processing file: drivers/acpi/acpica/exfield.c
+non-popular functions: 2
+popular functions: 1
+npp_bb: 65
+now processing file: drivers/md/dm-bufio.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/acpi_pad.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/base/bus.c
+non-popular functions: 31
+popular functions: 29
+npp_bb: 170
+now processing file: drivers/acpi/acpica/utalloc.c
+non-popular functions: 1
+popular functions: 3
+npp_bb: 19
+now processing file: drivers/base/core.c
+non-popular functions: 61
+popular functions: 52
+npp_bb: 370
+now processing file: drivers/cpufreq/powernow-k8.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/virtio/virtio.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/acpica/nsalloc.c
+non-popular functions: 2
+popular functions: 5
+npp_bb: 38
+now processing file: drivers/md/dm-target.c
+non-popular functions: 11
+popular functions: 3
+npp_bb: 23
+now processing file: drivers/acpi/acpica/evglock.c
+non-popular functions: 1
+popular functions: 3
+npp_bb: 14
+now processing file: drivers/acpi/property.c
+non-popular functions: 42
+popular functions: 2
+npp_bb: 305
+now processing file: drivers/rtc/rtc-lib.c
+non-popular functions: 1
+popular functions: 6
+npp_bb: 6
+now processing file: drivers/acpi/acpica/rsutils.c
+non-popular functions: 5
+popular functions: 9
+npp_bb: 23
+now processing file: drivers/acpi/acpica/psxface.c
+non-popular functions: 2
+popular functions: 2
+npp_bb: 27
+now processing file: drivers/tty/vt/consolemap.c
+non-popular functions: 12
+popular functions: 10
+npp_bb: 138
+now processing file: drivers/acpi/acpica/nsobject.c
+non-popular functions: 1
+popular functions: 6
+npp_bb: 31
+now processing file: drivers/tty/vt/vt.c
+non-popular functions: 81
+popular functions: 50
+npp_bb: 905
+now processing file: drivers/acpi/acpica/dswstate.c
+non-popular functions: 1
+popular functions: 12
+npp_bb: 39
+now processing file: drivers/xen/cpu_hotplug.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/acpica/exstoren.c
+non-popular functions: 0
+popular functions: 2
+npp_bb: 17
+now processing file: drivers/acpi/acpica/utmath.c
+non-popular functions: 3
+popular functions: 2
+npp_bb: 15
+now processing file: drivers/acpi/acpica/dswscope.c
+non-popular functions: 0
+popular functions: 3
+npp_bb: 5
+now processing file: drivers/acpi/acpica/evevent.c
+non-popular functions: 2
+popular functions: 3
+npp_bb: 19
+now processing file: drivers/md/dm-linear.c
+non-popular functions: 9
+popular functions: 1
+npp_bb: 27
+now processing file: drivers/cpuidle/cpuidle.c
+non-popular functions: 25
+popular functions: 6
+npp_bb: 111
+now processing file: drivers/net/phy/mdio_bus.c
+non-popular functions: 25
+popular functions: 1
+npp_bb: 107
+now processing file: drivers/acpi/apei/ghes.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/apei/hest.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/xen/privcmd.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/block/loop.c
+non-popular functions: 72
+popular functions: 4
+npp_bb: 426
+now processing file: drivers/acpi/utils.c
+non-popular functions: 11
+popular functions: 5
+npp_bb: 132
+now processing file: drivers/usb/core/usb-acpi.c
+non-popular functions: 6
+popular functions: 2
+npp_bb: 46
+now processing file: drivers/pnp/manager.c
+non-popular functions: 12
+popular functions: 1
+npp_bb: 98
+now processing file: drivers/ata/libata-core.c
+non-popular functions: 70
+popular functions: 101
+npp_bb: 941
+now processing file: drivers/ata/libata-transport.c
+non-popular functions: 12
+popular functions: 8
+npp_bb: 55
+now processing file: drivers/tty/pty.c
+non-popular functions: 12
+popular functions: 17
+npp_bb: 97
+now processing file: drivers/acpi/acpi_pnp.c
+non-popular functions: 0
+popular functions: 5
+npp_bb: 5
+now processing file: drivers/scsi/sd.c
+non-popular functions: 87
+popular functions: 3
+npp_bb: 814
+now processing file: drivers/tty/vt/vt_ioctl.c
+non-popular functions: 21
+popular functions: 1
+npp_bb: 330
+now processing file: drivers/pci/pci-label.c
+non-popular functions: 10
+popular functions: 5
+npp_bb: 43
+now processing file: drivers/phy/phy-core.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/net/tap.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/nvdimm/core.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/md/dm-crypt.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/video/fbdev/core/fbmem.c
+non-popular functions: 51
+popular functions: 1
+npp_bb: 491
+now processing file: drivers/cpufreq/cpufreq_ondemand.c
+non-popular functions: 20
+popular functions: 1
+npp_bb: 73
+now processing file: drivers/cpufreq/p4-clockmod.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/pci/search.c
+non-popular functions: 2
+popular functions: 8
+npp_bb: 38
+now processing file: drivers/pci/setup-bus.c
+non-popular functions: 42
+popular functions: 14
+npp_bb: 369
+now processing file: drivers/pci/pci-sysfs.c
+non-popular functions: 48
+popular functions: 10
+npp_bb: 294
+now processing file: drivers/acpi/acpi_cmos_rtc.c
+non-popular functions: 2
+popular functions: 2
+npp_bb: 14
+now processing file: drivers/cpuidle/governor.c
+non-popular functions: 0
+popular functions: 3
+npp_bb: 9
+now processing file: drivers/net/xen-netfront.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/acpica/tbxfload.c
+non-popular functions: 4
+popular functions: 1
+npp_bb: 43
+now processing file: drivers/platform/x86/mxm-wmi.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/tty/n_null.c
+non-popular functions: 4
+popular functions: 1
+npp_bb: 4
+now processing file: drivers/net/vxlan.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/acpica/evxface.c
+non-popular functions: 8
+popular functions: 3
+npp_bb: 128
+now processing file: drivers/hid/hid-generic.c
+non-popular functions: 0
+popular functions: 2
+npp_bb: 0
+now processing file: drivers/acpi/acpica/evrgnini.c
+non-popular functions: 4
+popular functions: 4
+npp_bb: 48
+now processing file: drivers/base/firmware_class.c
+non-popular functions: 45
+popular functions: 2
+npp_bb: 165
+now processing file: drivers/input/input-mt.c
+non-popular functions: 14
+popular functions: 1
+npp_bb: 119
+now processing file: drivers/scsi/sr_vendor.c
+non-popular functions: 2
+popular functions: 1
+npp_bb: 52
+now processing file: drivers/acpi/acpica/dswload2.c
+non-popular functions: 0
+popular functions: 2
+npp_bb: 45
+now processing file: drivers/acpi/acpica/exmisc.c
+non-popular functions: 1
+popular functions: 3
+npp_bb: 45
+now processing file: drivers/tty/tty_mutex.c
+non-popular functions: 0
+popular functions: 6
+npp_bb: 6
+now processing file: drivers/rtc/interface.c
+non-popular functions: 12
+popular functions: 19
+npp_bb: 151
+now processing file: drivers/acpi/processor_idle.c
+non-popular functions: 33
+popular functions: 12
+npp_bb: 331
+now processing file: drivers/acpi/acpica/evgpeutil.c
+non-popular functions: 3
+popular functions: 2
+npp_bb: 37
+now processing file: drivers/scsi/scsi_common.c
+non-popular functions: 6
+popular functions: 2
+npp_bb: 64
+now processing file: drivers/mfd/lpc_sch.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/base/firmware.c
+non-popular functions: 0
+popular functions: 1
+npp_bb: 1
+now processing file: drivers/ata/libahci.c
+non-popular functions: 29
+popular functions: 48
+npp_bb: 330
+now processing file: drivers/ata/ahci.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/acpica/nsxfeval.c
+non-popular functions: 2
+popular functions: 8
+npp_bb: 67
+now processing file: drivers/cpuidle/governors/menu.c
+non-popular functions: 7
+popular functions: 1
+npp_bb: 74
+now processing file: drivers/md/dm-bio-prison-v1.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/platform/x86/wmi-bmof.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/tty/vt/vc_screen.c
+non-popular functions: 13
+popular functions: 2
+npp_bb: 139
+now processing file: drivers/acpi/processor_thermal.c
+non-popular functions: 11
+popular functions: 1
+npp_bb: 49
+now processing file: drivers/scsi/scsi_transport_spi.c
+non-popular functions: 39
+popular functions: 5
+npp_bb: 345
+now processing file: drivers/firmware/efi/reboot.c
+non-popular functions: 3
+popular functions: 1
+npp_bb: 18
+now processing file: drivers/acpi/debugfs.c
+non-popular functions: 0
+popular functions: 1
+npp_bb: 0
+now processing file: drivers/acpi/nfit/core.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/nvdimm/blk.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/message/fusion/mptspi.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/acpica/utascii.c
+non-popular functions: 2
+popular functions: 1
+npp_bb: 13
+now processing file: drivers/hv/vmbus_drv.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/base/class.c
+non-popular functions: 15
+popular functions: 15
+npp_bb: 73
+now processing file: drivers/acpi/acpica/utdelete.c
+non-popular functions: 0
+popular functions: 6
+npp_bb: 53
+now processing file: drivers/acpi/acpica/hwregs.c
+non-popular functions: 2
+popular functions: 9
+npp_bb: 51
+now processing file: drivers/rtc/rtc-sysfs.c
+non-popular functions: 11
+popular functions: 3
+npp_bb: 52
+now processing file: drivers/tty/tty_ioctl.c
+non-popular functions: 8
+popular functions: 15
+npp_bb: 111
+now processing file: drivers/acpi/acpica/exoparg1.c
+non-popular functions: 3
+popular functions: 2
+npp_bb: 123
+now processing file: drivers/virtio/virtio_input.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/pci/pci-stub.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/char/hw_random/virtio-rng.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/base/map.c
+non-popular functions: 1
+popular functions: 3
+npp_bb: 15
+now processing file: drivers/input/serio/hyperv-keyboard.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/acpica/utinit.c
+non-popular functions: 3
+popular functions: 1
+npp_bb: 10
+now processing file: drivers/acpi/acpica/evgpeinit.c
+non-popular functions: 1
+popular functions: 2
+npp_bb: 36
+now processing file: drivers/hid/usbhid/hid-core.c
+non-popular functions: 50
+popular functions: 1
+npp_bb: 419
+now processing file: drivers/input/serio/serio_raw.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/acpica/utownerid.c
+non-popular functions: 0
+popular functions: 2
+npp_bb: 7
+now processing file: drivers/acpi/acpica/utlock.c
+non-popular functions: 2
+popular functions: 3
+npp_bb: 5
+now processing file: drivers/acpi/acpica/utstring.c
+non-popular functions: 1
+popular functions: 1
+npp_bb: 23
+now processing file: drivers/acpi/acpica/exmutex.c
+non-popular functions: 4
+popular functions: 3
+npp_bb: 44
+now processing file: drivers/md/dm.c
+non-popular functions: 143
+popular functions: 2
+npp_bb: 594
+now processing file: drivers/acpi/processor_pdc.c
+non-popular functions: 4
+popular functions: 5
+npp_bb: 21
+now processing file: drivers/acpi/acpi_memhotplug.c
+non-popular functions: 0
+popular functions: 1
+npp_bb: 0
+now processing file: drivers/acpi/acpica/exfldio.c
+non-popular functions: 1
+popular functions: 6
+npp_bb: 77
+now processing file: drivers/pci/pcie/portdrv_bus.c
+non-popular functions: 2
+popular functions: 1
+npp_bb: 10
+now processing file: drivers/acpi/acpica/uteval.c
+non-popular functions: 0
+popular functions: 4
+npp_bb: 14
+now processing file: drivers/mfd/lpc_ich.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/cppc_acpi.c
+non-popular functions: 17
+popular functions: 1
+npp_bb: 243
+now processing file: drivers/pci/access.c
+non-popular functions: 30
+popular functions: 16
+npp_bb: 209
+now processing file: drivers/input/serio/serio.c
+non-popular functions: 34
+popular functions: 20
+npp_bb: 150
+now processing file: drivers/acpi/acpica/utxfinit.c
+non-popular functions: 0
+popular functions: 3
+npp_bb: 13
+now processing file: drivers/acpi/acpica/nswalk.c
+non-popular functions: 1
+popular functions: 2
+npp_bb: 21
+now processing file: drivers/tty/serial/8250/8250_port.c
+non-popular functions: 56
+popular functions: 48
+npp_bb: 456
+now processing file: drivers/i2c/i2c-core-base.c
+non-popular functions: 82
+popular functions: 2
+npp_bb: 458
+now processing file: drivers/xen/xenbus/xenbus_probe.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/acpica/exnames.c
+non-popular functions: 0
+popular functions: 3
+npp_bb: 41
+now processing file: drivers/pci/proc.c
+non-popular functions: 13
+popular functions: 2
+npp_bb: 101
+now processing file: drivers/usb/core/file.c
+non-popular functions: 8
+popular functions: 1
+npp_bb: 36
+now processing file: drivers/input/serio/pcips2.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/acpica/psscope.c
+non-popular functions: 0
+popular functions: 6
+npp_bb: 5
+now processing file: drivers/firmware/efi/efivars.c
+non-popular functions: 21
+popular functions: 1
+npp_bb: 173
+now processing file: drivers/crypto/padlock-sha.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/acpica/nsxfname.c
+non-popular functions: 1
+popular functions: 4
+npp_bb: 46
+now processing file: drivers/pci/msi.c
+non-popular functions: 30
+popular functions: 38
+npp_bb: 224
+now processing file: drivers/firmware/dmi-id.c
+non-popular functions: 1
+popular functions: 5
+npp_bb: 9
+now processing file: drivers/net/loopback.c
+non-popular functions: 2
+popular functions: 6
+npp_bb: 11
+now processing file: drivers/acpi/acpica/dscontrol.c
+non-popular functions: 0
+popular functions: 2
+npp_bb: 30
+now processing file: drivers/tty/serial/8250/8250_lpss.c
+non-popular functions: 11
+popular functions: 2
+npp_bb: 43
+now processing file: drivers/cpuidle/sysfs.c
+non-popular functions: 20
+popular functions: 1
+npp_bb: 69
+now processing file: drivers/nvme/host/pci.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/pci/iov.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/xen/xenbus/xenbus_probe_frontend.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/video/console/vgacon.c
+non-popular functions: 22
+popular functions: 14
+npp_bb: 215
+now processing file: drivers/base/power/opp/debugfs.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/firmware/efi/esrt.c
+non-popular functions: 10
+popular functions: 1
+npp_bb: 67
+now processing file: drivers/acpi/acpica/psobject.c
+non-popular functions: 0
+popular functions: 5
+npp_bb: 62
+now processing file: drivers/acpi/acpica/psloop.c
+non-popular functions: 1
+popular functions: 2
+npp_bb: 50
+now processing file: drivers/clocksource/acpi_pm.c
+non-popular functions: 6
+popular functions: 4
+npp_bb: 18
+now processing file: drivers/connector/cn_queue.c
+non-popular functions: 4
+popular functions: 3
+npp_bb: 24
+now processing file: drivers/mfd/vx855.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/acpica/pstree.c
+non-popular functions: 1
+popular functions: 2
+npp_bb: 25
+now processing file: drivers/acpi/acpica/tbutils.c
+non-popular functions: 1
+popular functions: 6
+npp_bb: 21
+now processing file: drivers/net/nlmon.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/battery.c
+non-popular functions: 29
+popular functions: 2
+npp_bb: 242
+now processing file: drivers/rtc/rtc-proc.c
+non-popular functions: 5
+popular functions: 1
+npp_bb: 35
+now processing file: drivers/base/init.c
+non-popular functions: 0
+popular functions: 1
+npp_bb: 0
+now processing file: drivers/xen/gntdev.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/ata/ahci.c
+non-popular functions: 9
+popular functions: 16
+npp_bb: 123
+now processing file: drivers/hv/hv_balloon.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/message/fusion/mptbase.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/scsi/scsi_devinfo.c
+non-popular functions: 9
+popular functions: 10
+npp_bb: 86
+now processing file: drivers/xen/pci.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/scsi/scsi_ioctl.c
+non-popular functions: 4
+popular functions: 2
+npp_bb: 53
+now processing file: drivers/acpi/acpica/nsinit.c
+non-popular functions: 0
+popular functions: 5
+npp_bb: 40
+now processing file: drivers/pci/rom.c
+non-popular functions: 5
+popular functions: 1
+npp_bb: 27
+now processing file: drivers/acpi/acpica/utosi.c
+non-popular functions: 5
+popular functions: 2
+npp_bb: 56
+now processing file: drivers/tty/serial/8250/8250_exar.c
+non-popular functions: 12
+popular functions: 2
+npp_bb: 77
+now processing file: drivers/base/container.c
+non-popular functions: 2
+popular functions: 1
+npp_bb: 4
+now processing file: drivers/xen/evtchn.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/pci/ats.c
+non-popular functions: 13
+popular functions: 1
+npp_bb: 71
+now processing file: drivers/acpi/sleep.c
+non-popular functions: 48
+popular functions: 3
+npp_bb: 156
+now processing file: drivers/power/supply/power_supply_core.c
+non-popular functions: 39
+popular functions: 1
+npp_bb: 156
+now processing file: drivers/scsi/sg.c
+non-popular functions: 62
+popular functions: 3
+npp_bb: 723
+now processing file: drivers/ata/sata_svw.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/base/power/wakeirq.c
+non-popular functions: 9
+popular functions: 2
+npp_bb: 55
+now processing file: drivers/md/dm-exception-store.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/base/attribute_container.c
+non-popular functions: 9
+popular functions: 7
+npp_bb: 41
+now processing file: drivers/acpi/acpica/psutils.c
+non-popular functions: 1
+popular functions: 6
+npp_bb: 11
+now processing file: drivers/acpi/acpica/hwpci.c
+non-popular functions: 0
+popular functions: 5
+npp_bb: 21
+now processing file: drivers/scsi/scsi_sysctl.c
+non-popular functions: 1
+popular functions: 1
+npp_bb: 2
+now processing file: drivers/pci/pci.c
+non-popular functions: 167
+popular functions: 45
+npp_bb: 979
+now processing file: drivers/scsi/sr.c
+non-popular functions: 12
+popular functions: 10
+npp_bb: 111
+now processing file: drivers/acpi/acpica/exregion.c
+non-popular functions: 2
+popular functions: 2
+npp_bb: 29
+now processing file: drivers/xen/balloon.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/ptp/ptp_kvm.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/device_pm.c
+non-popular functions: 38
+popular functions: 2
+npp_bb: 237
+now processing file: drivers/acpi/device_sysfs.c
+non-popular functions: 18
+popular functions: 8
+npp_bb: 117
+now processing file: drivers/ata/ata_piix.c
+non-popular functions: 27
+popular functions: 1
+npp_bb: 179
+now processing file: drivers/virtio/virtio_mmio.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/crypto/padlock-aes.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/md/dm-stripe.c
+non-popular functions: 15
+popular functions: 1
+npp_bb: 98
+now processing file: drivers/oprofile/oprofilefs.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/scsi/scsi_scan.c
+non-popular functions: 19
+popular functions: 14
+npp_bb: 268
+now processing file: drivers/ata/sata_nv.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/xen/xenbus/xenbus_dev_frontend.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/md/dm-stats.c
+non-popular functions: 32
+popular functions: 1
+npp_bb: 311
+now processing file: drivers/acpi/acpica/utcopy.c
+non-popular functions: 3
+popular functions: 7
+npp_bb: 63
+now processing file: drivers/md/dm-bio-prison-v2.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/acpi_lpss.c
+non-popular functions: 0
+popular functions: 1
+npp_bb: 0
+now processing file: drivers/acpi/acpica/rslist.c
+non-popular functions: 0
+popular functions: 2
+npp_bb: 19
+now processing file: drivers/base/dd.c
+non-popular functions: 11
+popular functions: 17
+npp_bb: 117
+now processing file: drivers/acpi/acpica/rscreate.c
+non-popular functions: 2
+popular functions: 2
+npp_bb: 31
+now processing file: drivers/acpi/acpica/dsutils.c
+non-popular functions: 0
+popular functions: 9
+npp_bb: 45
+now processing file: drivers/cpufreq/pcc-cpufreq.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/acpica/dswexec.c
+non-popular functions: 0
+popular functions: 3
+npp_bb: 40
+now processing file: drivers/ata/sata_vsc.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/connector/connector.c
+non-popular functions: 6
+popular functions: 2
+npp_bb: 41
+now processing file: drivers/scsi/scsi_sysfs.c
+non-popular functions: 40
+popular functions: 13
+npp_bb: 210
+now processing file: drivers/pnp/resource.c
+non-popular functions: 24
+popular functions: 4
+npp_bb: 176
+now processing file: drivers/acpi/acpica/evregion.c
+non-popular functions: 1
+popular functions: 7
+npp_bb: 65
+now processing file: drivers/acpi/acpi_processor.c
+non-popular functions: 8
+popular functions: 9
+npp_bb: 83
+now processing file: drivers/acpi/hed.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/char/mem.c
+non-popular functions: 25
+popular functions: 7
+npp_bb: 143
+now processing file: drivers/nvdimm/bus.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/block/brd.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/acpica/evgpeblk.c
+non-popular functions: 1
+popular functions: 4
+npp_bb: 35
+now processing file: drivers/tty/tty_ldisc.c
+non-popular functions: 10
+popular functions: 26
+npp_bb: 88
+now processing file: drivers/acpi/acpica/hwacpi.c
+non-popular functions: 0
+popular functions: 2
+npp_bb: 11
+now processing file: drivers/input/serio/serport.c
+non-popular functions: 10
+popular functions: 1
+npp_bb: 43
+now processing file: drivers/dax/super.c
+non-popular functions: 23
+popular functions: 9
+npp_bb: 95
+now processing file: drivers/acpi/acpica/evhandler.c
+non-popular functions: 0
+popular functions: 5
+npp_bb: 33
+now processing file: drivers/scsi/scsi.c
+non-popular functions: 9
+popular functions: 13
+npp_bb: 86
+now processing file: drivers/acpi/sbshc.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/rtc/rtc-cmos.c
+non-popular functions: 23
+popular functions: 13
+npp_bb: 199
+now processing file: drivers/acpi/acpica/nsxfobj.c
+non-popular functions: 1
+popular functions: 2
+npp_bb: 21
+now processing file: drivers/acpi/acpica/utobject.c
+non-popular functions: 3
+popular functions: 9
+npp_bb: 39
+now processing file: drivers/acpi/acpica/utxface.c
+non-popular functions: 3
+popular functions: 4
+npp_bb: 22
+now processing file: drivers/char/hw_random/core.c
+non-popular functions: 15
+popular functions: 14
+npp_bb: 102
+now processing file: drivers/net/phy/phy_device.c
+non-popular functions: 64
+popular functions: 2
+npp_bb: 397
+now processing file: drivers/nvme/host/core.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/oprofile/oprof.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/base/platform.c
+non-popular functions: 37
+popular functions: 14
+npp_bb: 236
+now processing file: drivers/cpuidle/driver.c
+non-popular functions: 9
+popular functions: 3
+npp_bb: 36
+now processing file: drivers/acpi/acpica/dsfield.c
+non-popular functions: 2
+popular functions: 4
+npp_bb: 44
+now processing file: drivers/acpi/acpica/nsarguments.c
+non-popular functions: 1
+popular functions: 2
+npp_bb: 26
+now processing file: drivers/pci/pcie/portdrv_pci.c
+non-popular functions: 15
+popular functions: 1
+npp_bb: 44
+now processing file: drivers/net/ipvlan/ipvlan_main.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/base/power/common.c
+non-popular functions: 4
+popular functions: 1
+npp_bb: 16
+now processing file: drivers/acpi/scan.c
+non-popular functions: 40
+popular functions: 47
+npp_bb: 383
+now processing file: drivers/ata/sata_sis.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/ata/sata_mv.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/scsi/hosts.c
+non-popular functions: 12
+popular functions: 4
+npp_bb: 86
+now processing file: drivers/acpi/acpica/tbxfroot.c
+non-popular functions: 1
+popular functions: 3
+npp_bb: 20
+now processing file: drivers/acpi/acpica/tbfadt.c
+non-popular functions: 0
+popular functions: 6
+npp_bb: 23
+now processing file: drivers/base/dma-mapping.c
+non-popular functions: 9
+popular functions: 3
+npp_bb: 39
+now processing file: drivers/pci/pcie/portdrv_core.c
+non-popular functions: 16
+popular functions: 1
+npp_bb: 97
+now processing file: drivers/xen/gntalloc.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/i2c/i2c-dev.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/base/regmap/trace.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/ata/pata_sis.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/firmware/dmi_scan.c
+non-popular functions: 10
+popular functions: 29
+npp_bb: 125
+now processing file: drivers/cpuidle/governors/ladder.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/acpica/dsargs.c
+non-popular functions: 2
+popular functions: 4
+npp_bb: 19
+now processing file: drivers/net/hyperv/netvsc_drv.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/ptp/ptp_clock.c
+non-popular functions: 15
+popular functions: 1
+npp_bb: 78
+now processing file: drivers/thermal/thermal_sysfs.c
+non-popular functions: 29
+popular functions: 1
+npp_bb: 165
+now processing file: drivers/acpi/ioapic.c
+non-popular functions: 3
+popular functions: 3
+npp_bb: 71
+now processing file: drivers/usb/core/buffer.c
+non-popular functions: 4
+popular functions: 1
+npp_bb: 37
+now processing file: drivers/nvdimm/region.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/acpica/evgpe.c
+non-popular functions: 7
+popular functions: 4
+npp_bb: 76
+now processing file: drivers/acpi/acpica/excreate.c
+non-popular functions: 3
+popular functions: 4
+npp_bb: 21
+now processing file: drivers/input/misc/uinput.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/wakeup.c
+non-popular functions: 2
+popular functions: 1
+npp_bb: 17
+now processing file: drivers/acpi/acpica/nsconvert.c
+non-popular functions: 5
+popular functions: 1
+npp_bb: 66
+now processing file: drivers/input/serio/i8042.c
+non-popular functions: 24
+popular functions: 41
+npp_bb: 238
+now processing file: drivers/acpi/acpica/dsmethod.c
+non-popular functions: 1
+popular functions: 7
+npp_bb: 48
+now processing file: drivers/ata/sata_uli.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/md/dm-io.c
+non-popular functions: 22
+popular functions: 1
+npp_bb: 85
+now processing file: drivers/base/regmap/regmap-debugfs.c
+non-popular functions: 14
+popular functions: 1
+npp_bb: 122
+now processing file: drivers/input/input.c
+non-popular functions: 49
+popular functions: 31
+npp_bb: 345
+now processing file: drivers/pci/hotplug/pciehp_core.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/base/power/wakeup.c
+non-popular functions: 18
+popular functions: 25
+npp_bb: 115
+now processing file: drivers/acpi/acpi_platform.c
+non-popular functions: 0
+popular functions: 2
+npp_bb: 12
+now processing file: drivers/clk/clk-gpio.c
+non-popular functions: 11
+popular functions: 1
+npp_bb: 54
+now processing file: drivers/pci/pci-acpi.c
+non-popular functions: 15
+popular functions: 14
+npp_bb: 152
+now processing file: drivers/acpi/pci_link.c
+non-popular functions: 9
+popular functions: 14
+npp_bb: 98
+now processing file: drivers/xen/sys-hypervisor.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/ata/libata-sff.c
+non-popular functions: 80
+popular functions: 3
+npp_bb: 511
+now processing file: drivers/xen/xen-acpi-pad.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/pci/probe.c
+non-popular functions: 38
+popular functions: 40
+npp_bb: 403
+now processing file: drivers/tty/serial/8250/8250_core.c
+non-popular functions: 18
+popular functions: 14
+npp_bb: 160
+now processing file: drivers/net/macvlan.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/tty/tty_baudrate.c
+non-popular functions: 1
+popular functions: 3
+npp_bb: 20
+now processing file: drivers/acpi/acpica/utresrc.c
+non-popular functions: 1
+popular functions: 6
+npp_bb: 28
+now processing file: drivers/cpufreq/cpufreq_conservative.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/pnp/quirks.c
+non-popular functions: 11
+popular functions: 1
+npp_bb: 88
+now processing file: drivers/mailbox/pcc.c
+non-popular functions: 11
+popular functions: 2
+npp_bb: 94
+now processing file: drivers/scsi/scsi_error.c
+non-popular functions: 33
+popular functions: 21
+npp_bb: 394
+now processing file: drivers/acpi/thermal.c
+non-popular functions: 39
+popular functions: 1
+npp_bb: 302
+now processing file: drivers/xen/grant-table.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/pnp/system.c
+non-popular functions: 3
+popular functions: 1
+npp_bb: 18
+now processing file: drivers/base/driver.c
+non-popular functions: 6
+popular functions: 4
+npp_bb: 28
+now processing file: drivers/scsi/virtio_scsi.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/pnp/pnpacpi/rsparser.c
+non-popular functions: 29
+popular functions: 3
+npp_bb: 186
+now processing file: drivers/cpufreq/cpufreq_powersave.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/power.c
+non-popular functions: 30
+popular functions: 1
+npp_bb: 174
+now processing file: drivers/acpi/sysfs.c
+non-popular functions: 19
+popular functions: 7
+npp_bb: 148
+now processing file: drivers/acpi/acpica/psargs.c
+non-popular functions: 0
+popular functions: 6
+npp_bb: 60
+now processing file: drivers/acpi/x86/apple.c
+non-popular functions: 0
+popular functions: 1
+npp_bb: 28
+now processing file: drivers/devfreq/governor_simpleondemand.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/base/power/qos.c
+non-popular functions: 18
+popular functions: 9
+npp_bb: 128
+now processing file: drivers/acpi/acpica/dsopcode.c
+non-popular functions: 2
+popular functions: 4
+npp_bb: 50
+now processing file: drivers/acpi/acpica/hwvalid.c
+non-popular functions: 0
+popular functions: 3
+npp_bb: 26
+now processing file: drivers/acpi/acpica/utmisc.c
+non-popular functions: 0
+popular functions: 4
+npp_bb: 16
+now processing file: drivers/acpi/acpica/tbprint.c
+non-popular functions: 0
+popular functions: 5
+npp_bb: 7
+now processing file: drivers/xen/xenfs/super.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/firmware/memmap.c
+non-popular functions: 14
+popular functions: 4
+npp_bb: 31
+now processing file: drivers/tty/vt/keyboard.c
+non-popular functions: 72
+popular functions: 12
+npp_bb: 483
+now processing file: drivers/acpi/glue.c
+non-popular functions: 3
+popular functions: 8
+npp_bb: 61
+now processing file: drivers/md/dm-snap-transient.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/tty/tty_ldsem.c
+non-popular functions: 8
+popular functions: 10
+npp_bb: 90
+now processing file: drivers/tty/serial/earlycon.c
+non-popular functions: 4
+popular functions: 2
+npp_bb: 47
+now processing file: drivers/ata/libata-acpi.c
+non-popular functions: 26
+popular functions: 5
+npp_bb: 212
+now processing file: drivers/base/property.c
+non-popular functions: 59
+popular functions: 2
+npp_bb: 200
+now processing file: drivers/acpi/acpica/nsrepair2.c
+non-popular functions: 7
+popular functions: 5
+npp_bb: 82
+now processing file: drivers/ata/ata_generic.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/acpi/acpica/evxfevnt.c
+non-popular functions: 2
+popular functions: 4
+npp_bb: 42
+now processing file: drivers/acpi/osi.c
+non-popular functions: 14
+popular functions: 4
+npp_bb: 57
+now processing file: drivers/base/memory.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/base/hypervisor.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/char/hw_random/via-rng.c
+non-popular functions: 3
+popular functions: 1
+npp_bb: 28
+now processing file: drivers/acpi/processor_core.c
+non-popular functions: 10
+popular functions: 4
+npp_bb: 69
+now processing file: drivers/virtio/virtio_pci_common.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/devfreq/devfreq.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/scsi/vmw_pvscsi.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/tty/hvc/hvc_console.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: drivers/hid/hid-core.c
+non-popular functions: 74
+popular functions: 2
+npp_bb: 616
+now processing file: drivers/platform/x86/pmc_atom.c
+non-popular functions: 14
+popular functions: 1
+npp_bb: 38
+now processing file: drivers/acpi/acpica/nsprepkg.c
+non-popular functions: 2
+popular functions: 2
+npp_bb: 83
+now processing file: drivers/acpi/ac.c
+non-popular functions: 9
+popular functions: 1
+npp_bb: 49
+now processing file: drivers/input/evdev.c
+non-popular functions: 40
+popular functions: 7
+npp_bb: 297
+now processing file: drivers/base/transport_class.c
+non-popular functions: 7
+popular functions: 7
+npp_bb: 23
+now processing file: drivers/pci/pci-driver.c
+non-popular functions: 39
+popular functions: 13
+npp_bb: 304
+now processing file: drivers/acpi/blacklist.c
+non-popular functions: 1
+popular functions: 1
+npp_bb: 3
+total non-popular functions: 6258
+total popular functions: 2640
+****************
+total npp_bb = 48983

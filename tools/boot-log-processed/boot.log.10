@@ -1,0 +1,847 @@
+[    0.000000] Linux version 4.14.24-linuxkit (root@2dc63bac24ee) (gcc version 6.4.0 (Alpine 6.4.0)) #1 SMP Mon Sep 9 16:21:16 UTC 2019
+[    0.000000] Command line: console=tty0 console=ttyS0 console=ttyAMA0
+[    0.000000] x86/fpu: x87 FPU will use FXSAVE
+[    0.000000] e820: BIOS-provided physical RAM map:
+[    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+[    0.000000] BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000000100000-0x000000007ffdefff] usable
+[    0.000000] BIOS-e820: [mem 0x000000007ffdf000-0x000000007fffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000b0000000-0x00000000bfffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000feffc000-0x00000000feffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000100000000-0x000000017fffffff] usable
+[    0.000000] NX (Execute Disable) protection: active
+[    0.000000] random: fast init done
+[    0.000000] SMBIOS 2.8 present.
+[    0.000000] DMI: QEMU Standard PC (Q35 + ICH9, 2009), BIOS Ubuntu-1.8.2-1ubuntu1 04/01/2014
+[    0.000000] Hypervisor detected: KVM
+[    0.000000] tsc: Fast TSC calibration using PIT
+[    0.000000] e820: last_pfn = 0x180000 max_arch_pfn = 0x400000000
+[    0.000000] x86/PAT: PAT not supported by CPU.
+[    0.000000] x86/PAT: Configuration [0-7]: WB  WT  UC- UC  WB  WT  UC- UC  
+[    0.000000] e820: last_pfn = 0x7ffdf max_arch_pfn = 0x400000000
+[    0.000000] found SMP MP-table at [mem 0x000f6630-0x000f663f] mapped at [ffffffffff200630]
+[    0.000000] RAMDISK: [mem 0x749c6000-0x7ffcffff]
+[    0.000000] ACPI: Early table checksum verification disabled
+[    0.000000] ACPI: RSDP 0x00000000000F6440 000014 (v00 BOCHS )
+[    0.000000] ACPI: RSDT 0x000000007FFE2267 000038 (v01 BOCHS  BXPCRSDT 00000001 BXPC 00000001)
+[    0.000000] ACPI: FACP 0x000000007FFE1E32 000074 (v01 BOCHS  BXPCFACP 00000001 BXPC 00000001)
+[    0.000000] ACPI: DSDT 0x000000007FFE0040 001DF2 (v01 BOCHS  BXPCDSDT 00000001 BXPC 00000001)
+[    0.000000] ACPI: FACS 0x000000007FFE0000 000040
+[    0.000000] ACPI: SSDT 0x000000007FFE1EA6 0002D5 (v01 BOCHS  BXPCSSDT 00000001 BXPC 00000001)
+[    0.000000] ACPI: APIC 0x000000007FFE217B 000078 (v01 BOCHS  BXPCAPIC 00000001 BXPC 00000001)
+[    0.000000] ACPI: HPET 0x000000007FFE21F3 000038 (v01 BOCHS  BXPCHPET 00000001 BXPC 00000001)
+[    0.000000] ACPI: MCFG 0x000000007FFE222B 00003C (v01 BOCHS  BXPCMCFG 00000001 BXPC 00000001)
+[    0.000000] kvm-clock: Using msrs 4b564d01 and 4b564d00
+[    0.000000] kvm-clock: cpu 0, msr 1:7fffc001, primary cpu clock
+[    0.000000] kvm-clock: using sched offset of 20792292179 cycles
+[    0.000000] clocksource: kvm-clock: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns
+[    0.000000] Zone ranges:
+[    0.000000]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+[    0.000000]   DMA32    [mem 0x0000000001000000-0x00000000ffffffff]
+[    0.000000]   Normal   [mem 0x0000000100000000-0x000000017fffffff]
+[    0.000000]   Device   empty
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000001000-0x000000000009efff]
+[    0.000000]   node   0: [mem 0x0000000000100000-0x000000007ffdefff]
+[    0.000000]   node   0: [mem 0x0000000100000000-0x000000017fffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000001000-0x000000017fffffff]
+[    0.000000] ACPI: PM-Timer IO Port: 0x608
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0xff] dfl dfl lint[0x1])
+[    0.000000] IOAPIC[0]: apic_id 0, version 17, address 0xfec00000, GSI 0-23
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 5 global_irq 5 high level)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 high level)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 10 global_irq 10 high level)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 11 global_irq 11 high level)
+[    0.000000] Using ACPI (MADT) for SMP configuration information
+[    0.000000] Using ACPI for processor (LAPIC) configuration information
+[    0.000000] ACPI: HPET id: 0x8086a201 base: 0xfed00000
+[    0.000000] smpboot: Allowing 1 CPUs, 0 hotplug CPUs
+[    0.000000] e820: [mem 0xc0000000-0xfeffbfff] available for PCI devices
+[    0.000000] Booting paravirtualized kernel on KVM
+[    0.000000] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.000000] setup_percpu: NR_CPUS:128 nr_cpumask_bits:128 nr_cpu_ids:1 nr_node_ids:1
+[    0.000000] percpu: Embedded 44 pages/cpu @ffff9b1a7fc00000 s143192 r8192 d28840 u2097152
+[    0.000000] KVM setup async PF for cpu 0
+[    0.000000] kvm-stealtime: cpu 0, msr 17fc15f00
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 1032040
+[    0.000000] Kernel command line: console=tty0 console=ttyS0 console=ttyAMA0
+[    0.000000] PID hash table entries: 4096 (order: 3, 32768 bytes)
+[    0.000000] Dentry cache hash table entries: 524288 (order: 10, 4194304 bytes)
+[    0.000000] Inode-cache hash table entries: 262144 (order: 9, 2097152 bytes)
+[    0.000000] Memory: 3844112K/4193780K available (12300K kernel code, 1452K rwdata, 2980K rodata, 1584K init, 628K bss, 349668K reserved, 0K cma-reserved)
+[    0.000000] Kernel/User page tables isolation: enabled
+[    0.000000] ftrace: allocating 41052 entries in 161 pages
+[    0.010000] Hierarchical RCU implementation.
+[    0.010000] 	RCU restricting CPUs from NR_CPUS=128 to nr_cpu_ids=1.
+[    0.010000] RCU: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
+[    0.010000] NR_IRQS: 8448, nr_irqs: 256, preallocated irqs: 16
+[    0.010000] Console: colour VGA+ 80x25
+[    0.010000] console [tty0] enabled
+[    0.010000] console [ttyS0] enabled
+[    0.010000] clocksource: hpet: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604467 ns
+[    0.010008] tsc: Detected 2993.200 MHz processor
+[    0.011052] Calibrating delay loop (skipped) preset value.. 5986.40 BogoMIPS (lpj=29932000)
+[    0.011813] pid_max: default: 32768 minimum: 301
+[    0.012867] ACPI: Core revision 20170728
+[    0.014645] ACPI: 2 ACPI AML tables successfully acquired and loaded
+[    0.016047] Security Framework initialized
+[    0.017006] Yama: becoming mindful.
+[    0.017864] Mount-cache hash table entries: 8192 (order: 4, 65536 bytes)
+[    0.020011] Mountpoint-cache hash table entries: 8192 (order: 4, 65536 bytes)
+[    0.021766] Last level iTLB entries: 4KB 0, 2MB 0, 4MB 0
+[    0.022945] Last level dTLB entries: 4KB 0, 2MB 0, 4MB 0, 1GB 0
+[    0.024236] Spectre V2 : Vulnerable: Minimal generic ASM retpoline
+[    0.030014] Freeing SMP alternatives memory: 20K
+[    0.031461] smpboot: Max logical packages: 1
+[    0.032755] x2apic enabled
+[    0.033801] Switched APIC routing to physical x2apic.
+[    0.036449] ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+[    0.040000] smpboot: CPU0: Intel QEMU Virtual CPU version 2.5+ (family: 0x6, model: 0x6, stepping: 0x3)
+[    0.040000] Performance Events: PMU not available due to virtualization, using software events only.
+[    0.040000] Hierarchical SRCU implementation.
+[    0.040000] NMI watchdog: Perf event create on CPU 0 failed with -2
+[    0.040000] NMI watchdog: Perf NMI watchdog permanently disabled
+[    0.040000] smp: Bringing up secondary CPUs ...
+[    0.040000] smp: Brought up 1 node, 1 CPU
+[    0.040000] smpboot: Total of 1 processors activated (5986.40 BogoMIPS)
+[    0.040450] devtmpfs: initialized
+[    0.041308] x86/mm: Memory block size: 128MB
+[    0.042710] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.044785] futex hash table entries: 256 (order: 2, 16384 bytes)
+[    0.046236] NET: Registered protocol family 16
+[    0.047358] cpuidle: using governor ladder
+[    0.048291] cpuidle: using governor menu
+[    0.050054] ACPI: bus type PCI registered
+[    0.051089] PCI: MMCONFIG for domain 0000 [bus 00-ff] at [mem 0xb0000000-0xbfffffff] (base 0xb0000000)
+[    0.053058] PCI: MMCONFIG at [mem 0xb0000000-0xbfffffff] reserved in E820
+[    0.054491] PCI: Using configuration type 1 for base access
+[    0.057059] HugeTLB registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.058647] ACPI: Added _OSI(Module Device)
+[    0.060005] ACPI: Added _OSI(Processor Device)
+[    0.060993] ACPI: Added _OSI(3.0 _SCP Extensions)
+[    0.062036] ACPI: Added _OSI(Processor Aggregator Device)
+[    0.065653] ACPI: Interpreter enabled
+[    0.066530] ACPI: (supports S0 S5)
+[    0.067350] ACPI: Using IOAPIC for interrupt routing
+[    0.068452] PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+[    0.070483] ACPI: Enabled 16 GPEs in block 00 to 3F
+[    0.073787] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+[    0.075128] acpi PNP0A08:00: _OSC: OS supports [ExtendedConfig ASPM ClockPM Segments MSI]
+[    0.077015] acpi PNP0A08:00: _OSC: OS now controls [PCIeHotplug PME PCIeCapability]
+[    0.078722] PCI host bridge to bus 0000:00
+[    0.080015] pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+[    0.081474] pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+[    0.082906] pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+[    0.084542] pci_bus 0000:00: root bus resource [mem 0xc0000000-0xfebfffff window]
+[    0.086178] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    0.110170] pci 0000:00:1f.0: quirk: [io  0x0600-0x067f] claimed by ICH6 ACPI/GPIO/TCO
+[    0.123674] ACPI: PCI Interrupt Link [LNKA] (IRQs 5 *10 11)
+[    0.125001] ACPI: PCI Interrupt Link [LNKB] (IRQs 5 *10 11)
+[    0.126308] ACPI: PCI Interrupt Link [LNKC] (IRQs 5 10 *11)
+[    0.127624] ACPI: PCI Interrupt Link [LNKD] (IRQs 5 10 *11)
+[    0.128912] ACPI: PCI Interrupt Link [LNKE] (IRQs 5 *10 11)
+[    0.130095] ACPI: PCI Interrupt Link [LNKF] (IRQs 5 *10 11)
+[    0.131388] ACPI: PCI Interrupt Link [LNKG] (IRQs 5 10 *11)
+[    0.132741] ACPI: PCI Interrupt Link [LNKH] (IRQs 5 10 *11)
+[    0.134019] ACPI: PCI Interrupt Link [GSIA] (IRQs *16)
+[    0.135143] ACPI: PCI Interrupt Link [GSIB] (IRQs *17)
+[    0.136268] ACPI: PCI Interrupt Link [GSIC] (IRQs *18)
+[    0.137412] ACPI: PCI Interrupt Link [GSID] (IRQs *19)
+[    0.138540] ACPI: PCI Interrupt Link [GSIE] (IRQs *20)
+[    0.139668] ACPI: PCI Interrupt Link [GSIF] (IRQs *21)
+[    0.140017] ACPI: PCI Interrupt Link [GSIG] (IRQs *22)
+[    0.150009] ACPI: PCI Interrupt Link [GSIH] (IRQs *23)
+[    0.151189] acpi LNXCPU:00: Invalid PBLK length [0]
+[    0.152455] SCSI subsystem initialized
+[    0.153395] ACPI: bus type USB registered
+[    0.154329] usbcore: registered new interface driver usbfs
+[    0.155529] usbcore: registered new interface driver hub
+[    0.156700] usbcore: registered new device driver usb
+[    0.157822] pps_core: LinuxPPS API ver. 1 registered
+[    0.158908] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.160005] PTP clock support registered
+[    0.160946] PCI: Using ACPI for IRQ routing
+[    0.240033] NetLabel: Initializing
+[    0.240836] NetLabel:  domain hash size = 128
+[    0.241831] NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+[    0.243081] NetLabel:  unlabeled traffic allowed by default
+[    0.244359] HPET: 3 timers in total, 0 timers will be used for per-cpu timer
+[    0.245892] hpet0: at MMIO 0xfed00000, IRQs 2, 8, 0
+[    0.246989] hpet0: 3 comparators, 64-bit 100.000000 MHz counter
+[    0.253095] clocksource: Switched to clocksource kvm-clock
+[    0.264154] VFS: Disk quotas dquot_6.6.0
+[    0.265145] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    0.266681] FS-Cache: Loaded
+[    0.267458] CacheFiles: Loaded
+[    0.268232] pnp: PnP ACPI init
+[    0.269527] pnp: PnP ACPI: found 5 devices
+[    0.276235] clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+[    0.278184] NET: Registered protocol family 2
+[    0.279460] TCP established hash table entries: 32768 (order: 6, 262144 bytes)
+[    0.281087] TCP bind hash table entries: 32768 (order: 7, 524288 bytes)
+[    0.282543] TCP: Hash tables configured (established 32768 bind 32768)
+[    0.283959] UDP hash table entries: 2048 (order: 4, 65536 bytes)
+[    0.285255] UDP-Lite hash table entries: 2048 (order: 4, 65536 bytes)
+[    0.286662] NET: Registered protocol family 1
+[    0.287686] pci 0000:00:01.0: Video device with shadowed ROM at [mem 0x000c0000-0x000dffff]
+[    0.289575] Trying to unpack rootfs image as initramfs...
+[    3.097805] Freeing initrd memory: 186408K
+[    3.098997] PCI-DMA: Using software bounce buffering for IO (SWIOTLB)
+[    3.100406] software IO TLB [mem 0x709c6000-0x749c6000] (64MB) mapped at [ffff9b19709c6000-ffff9b19749c5fff]
+[    3.103444] PCLMULQDQ-NI instructions are not detected.
+[    3.104669] AVX or AES-NI instructions are not detected.
+[    3.105896] CPU feature 'AVX registers' is not supported.
+[    3.107150] CPU feature 'AVX registers' is not supported.
+[    3.108385] CPU feature 'AVX registers' is not supported.
+[    3.109593] CPU feature 'AVX registers' is not supported.
+[    3.110814] AVX2 or AES-NI instructions are not detected.
+[    3.111981] AVX2 instructions are not detected.
+[    3.113107] audit: initializing netlink subsys (disabled)
+[    3.114572] audit: type=2000 audit(1568047049.734:1): state=initialized audit_enabled=0 res=1
+[    3.116416] workingset: timestamp_bits=46 max_order=20 bucket_order=0
+[    3.117938] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    3.119283] FS-Cache: Netfs 'cifs' registered for caching
+[    3.120524] fuse init (API version 7.26)
+[    3.121482] SGI XFS with ACLs, security attributes, no debug enabled
+[    3.123856] 9p: Installing v9fs 9p2000 file system support
+[    3.125079] FS-Cache: Netfs '9p' registered for caching
+[    3.127501] NET: Registered protocol family 38
+[    3.128502] Key type asymmetric registered
+[    3.129430] Asymmetric key parser 'x509' registered
+[    3.130536] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 248)
+[    3.132178] io scheduler noop registered
+[    3.133073] io scheduler deadline registered (default)
+[    3.134223] io scheduler cfq registered
+[    3.135096] io scheduler mq-deadline registered
+[    3.136104] io scheduler kyber registered
+[    3.137087] shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+[    3.138531] hv_vmbus: registering driver hyperv_fb
+[    3.139663] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+[    3.141360] ACPI: Power Button [PWRF]
+[    3.142285] button: probe of LNXPWRBN:00 failed with error -22
+[    3.144006] ACPI: PCI Interrupt Link [GSIG] enabled at IRQ 22
+[    3.145306] virtio-pci 0000:00:02.0: virtio_pci: leaving for legacy driver
+[    3.147428] ACPI: PCI Interrupt Link [GSIH] enabled at IRQ 23
+[    3.148734] virtio-pci 0000:00:03.0: virtio_pci: leaving for legacy driver
+[    3.150685] Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
+[    3.174645] 00:04: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A
+[    3.176640] Non-volatile memory driver v1.3
+[    3.177791] !!! Set our kernel_init_done FLAG !!!
+[    3.178965] Hangcheck: starting hangcheck timer 0.9.1 (tick is 180 seconds, margin is 60 seconds).
+[    3.181818] random: crng init done
+[    3.184000] brd: module loaded
+[    3.187787] loop: module loaded
+[    3.195445] lpc_ich 0000:00:1f.0: RCBA is disabled by hardware/BIOS, device disabled
+[    3.197179] lpc_ich 0000:00:1f.0: I/O space for GPIO uninitialized
+[    3.198495] lpc_ich 0000:00:1f.0: No MFD cells added
+[    3.199646] VMware PVSCSI driver - version 1.0.7.0-k
+[    3.200764] hv_vmbus: registering driver hv_storvsc
+[    3.202297] ACPI: PCI Interrupt Link [GSIA] enabled at IRQ 16
+[    3.204286] ahci 0000:00:1f.2: AHCI 0001.0000 32 slots 6 ports 1.5 Gbps 0x3f impl SATA mode
+[    3.206083] ahci 0000:00:1f.2: flags: ncq only 
+[    3.208116] scsi host0: ahci
+[    3.208909] scsi host1: ahci
+[    3.209703] scsi host2: ahci
+[    3.210531] scsi host3: ahci
+[    3.211315] scsi host4: ahci
+[    3.212092] scsi host5: ahci
+[    3.212835] ata1: SATA max UDMA/133 abar m4096@0xfebd2000 port 0xfebd2100 irq 24
+[    3.214462] ata2: SATA max UDMA/133 abar m4096@0xfebd2000 port 0xfebd2180 irq 24
+[    3.216063] ata3: SATA max UDMA/133 abar m4096@0xfebd2000 port 0xfebd2200 irq 24
+[    3.217659] ata4: SATA max UDMA/133 abar m4096@0xfebd2000 port 0xfebd2280 irq 24
+[    3.219285] ata5: SATA max UDMA/133 abar m4096@0xfebd2000 port 0xfebd2300 irq 24
+[    3.220895] ata6: SATA max UDMA/133 abar m4096@0xfebd2000 port 0xfebd2380 irq 24
+[    3.223080] tun: Universal TUN/TAP device driver, 1.6
+[    3.225056] VMware vmxnet3 virtual NIC driver - version 1.4.a.0-k-NAPI
+[    3.226466] hv_vmbus: registering driver hv_netvsc
+[    3.227522] Fusion MPT base driver 3.04.20
+[    3.228448] Copyright (c) 1999-2008 LSI Corporation
+[    3.229515] Fusion MPT SPI Host driver 3.04.20
+[    3.230555] i8042: PNP: PS/2 Controller [PNP0303:KBD,PNP0f13:MOU] at 0x60,0x64 irq 1,12
+[    3.233101] serio: i8042 KBD port at 0x60,0x64 irq 1
+[    3.234194] serio: i8042 AUX port at 0x60,0x64 irq 12
+[    3.235360] hv_vmbus: registering driver hyperv_keyboard
+[    3.236565] mousedev: PS/2 mouse device common for all mice
+[    3.238065] input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input1
+[    3.240188] input: PC Speaker as /devices/platform/pcspkr/input/input3
+[    3.241730] rtc_cmos 00:00: RTC can wake from S4
+[    3.243069] rtc_cmos 00:00: rtc core: registered rtc_cmos as rtc0
+[    3.244563] rtc_cmos 00:00: alarms up to one day, 114 bytes nvram, hpet irqs
+[    3.246060] i2c /dev entries driver
+[    3.246934] device-mapper: ioctl: 4.37.0-ioctl (2017-09-20) initialised: dm-devel@redhat.com
+[    3.248853] usbcore: registered new interface driver usbhid
+[    3.250072] usbhid: USB HID core driver
+[    3.250979] hv_utils: Registering HyperV Utility Driver
+[    3.252113] hv_vmbus: registering driver hv_util
+[    3.253133] hv_vmbus: registering driver hv_balloon
+[    3.254209] oprofile: using NMI interrupt.
+[    3.255160] GACT probability on
+[    3.255906] Mirror/redirect action on
+[    3.256748] Simple TC action Loaded
+[    3.257562] u32 classifier
+[    3.258226]     Performance counters on
+[    3.259097]     input device check on
+[    3.259941]     Actions configured
+[    3.260813] Netfilter messages via NETLINK v0.30.
+[    3.261860] nfnl_acct: registering with nfnetlink.
+[    3.263024] nf_conntrack version 0.5.0 (16384 buckets, 65536 max)
+[    3.264392] ctnetlink v0.93: registering with nfnetlink.
+[    3.266417] nf_tables: (c) 2007-2009 Patrick McHardy <kaber@trash.net>
+[    3.267797] nf_tables_compat: (c) 2012 Pablo Neira Ayuso <pablo@netfilter.org>
+[    3.269414] xt_time: kernel timezone is -0000
+[    3.270419] ip_set: protocol 6
+[    3.271153] IPVS: Registered protocols (TCP, UDP, SCTP, AH, ESP)
+[    3.272431] IPVS: Connection hash table configured (size=4096, memory=64Kbytes)
+[    3.274118] IPVS: ipvs loaded.
+[    3.274853] IPVS: [rr] scheduler registered.
+[    3.275832] IPVS: [wrr] scheduler registered.
+[    3.276806] IPVS: [lc] scheduler registered.
+[    3.277763] IPVS: [wlc] scheduler registered.
+[    3.278737] IPVS: [fo] scheduler registered.
+[    3.279688] IPVS: [ovf] scheduler registered.
+[    3.280679] IPVS: [lblc] scheduler registered.
+[    3.281674] IPVS: [lblcr] scheduler registered.
+[    3.282680] IPVS: [dh] scheduler registered.
+[    3.283632] IPVS: [sh] scheduler registered.
+[    3.284625] IPVS: [sed] scheduler registered.
+[    3.285613] IPVS: [nq] scheduler registered.
+[    3.286571] IPVS: ftp: loaded support on port[0] = 21
+[    3.296160] ipip: IPv4 and MPLS over IPv4 tunneling driver
+[    3.297445] gre: GRE over IPv4 demultiplexor driver
+[    3.298575] ip_tables: (C) 2000-2006 Netfilter Core Team
+[    3.299762] ipt_CLUSTERIP: ClusterIP Version 0.8 loaded successfully
+[    3.301131] arp_tables: arp_tables: (C) 2002 David S. Miller
+[    3.302403] NET: Registered protocol family 10
+[    3.303697] Segment Routing with IPv6
+[    3.304587] ip6_tables: (C) 2000-2006 Netfilter Core Team
+[    3.305956] NET: Registered protocol family 17
+[    3.307006] Bridge firewalling registered
+[    3.307936] Ebtables v2.0 registered
+[    3.308796] 8021q: 802.1Q VLAN Support v1.8
+[    3.309752] 9pnet: Installing 9P2000 support
+[    3.310776] Key type dns_resolver registered
+[    3.311806] sched_clock: Marking stable (3310752755, 0)->(3704966989, -394214234)
+[    3.313531] registered taskstats version 1
+[    3.319889] Key type big_key registered
+[    3.323325] Key type encrypted registered
+[    3.324544] rtc_cmos 00:00: setting system clock to 2019-09-09 16:37:29 UTC (1568047049)
+[    3.553403] ata3: SATA link up 1.5 Gbps (SStatus 113 SControl 300)
+[    3.555573] ata3.00: ATAPI: QEMU DVD-ROM, 2.5+, max UDMA/100
+[    3.558062] ata3.00: applying bridge limits
+[    3.560446] ata1: SATA link down (SStatus 0 SControl 300)
+[    3.563195] ata5: SATA link down (SStatus 0 SControl 300)
+[    3.565919] ata6: SATA link down (SStatus 0 SControl 300)
+[    3.568524] ata4: SATA link down (SStatus 0 SControl 300)
+[    3.571160] ata2: SATA link down (SStatus 0 SControl 300)
+[    3.573673] ata3.00: configured for UDMA/100
+[    3.576168] scsi 2:0:0:0: CD-ROM            QEMU     QEMU DVD-ROM     2.5+ PQ: 0 ANSI: 5
+[    3.620477] sr 2:0:0:0: [sr0] scsi3-mmc drive: 4x/4x cd/rw xa/form2 tray
+[    3.623086] cdrom: Uniform CD-ROM driver Revision: 3.20
+[    3.625667] sr 2:0:0:0: Attached scsi generic sg0 type 5
+[    3.632866] Freeing unused kernel memory: 1584K
+[    3.634936] Write protecting the kernel read-only data: 18432k
+[    3.638165] Freeing unused kernel memory: 2024K
+[    3.646537] Freeing unused kernel memory: 1116K
+[    4.160072] tsc: Refined TSC clocksource calibration: 2993.205 MHz
+[    4.161474] clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x2b253232534, max_idle_ns: 440795219639 ns
+
+Welcome to LinuxKit
+
+                        ##         .
+                  ## ## ##        ==
+               ## ## ## ## ##    ===
+           /"""""""""""""""""\___/ ===
+          {                       /  ===-
+           \______ O           __/
+             \    \         __/
+              \____\_______/
+
+
+
+Welcome to LinuxKit
+
+                        ##         .
+                  ## ## ##        ==
+               ## ## ## ## ##    ===
+           /"""""""""""""""""___/ ===
+          {                       /  ===-
+           ______ O           __/
+                          __/
+              ___________/
+
+linuxkit-d6e52ae52c1c login: root (automatic login)
+
+Welcome to LinuxKit!
+
+NOTE: This system is namespaced.
+The namespace you are currently in may not be the root.
+my bash_profile_root started...
+list of login shells running:
+4
+  283 root       0:00 -sh
+  288 root       0:00 -sh
+pid of our current login shell:
+288
+[    6.077302] 8021q: adding VLAN 0 to HW filter on device eth0
+linuxkit-d6e52ae52c1c:~# [6n[    6.325040] IPVS: ftp: loaded support on port[0] = 21
+[    6.448256] We reached unpopular paths: kernel/signal.c:1502
+[    6.449539] We reached unpopular paths: kernel/signal.c:1511
+[    6.450793] We reached unpopular paths: kernel/signal.c:1513
+[    6.452025] We reached unpopular paths: kernel/signal.c:1513
+[    6.453256] We reached unpopular paths: kernel/signal.c:1516
+[    6.454486] We reached unpopular paths: kernel/signal.c:1520
+[    6.455714] We reached unpopular paths: kernel/signal.c:1513
+[    6.456937] We reached unpopular paths: kernel/signal.c:1516
+[    6.458174] We reached unpopular paths: kernel/signal.c:1520
+[    6.459416] We reached unpopular paths: kernel/signal.c:1513
+[    6.460651] We reached unpopular paths: kernel/signal.c:1516
+[    6.461876] We reached unpopular paths: kernel/signal.c:1520
+[    6.463103] We reached unpopular paths: kernel/signal.c:1513
+[    6.464325] We reached unpopular paths: kernel/signal.c:1516
+[    6.465590] We reached unpopular paths: kernel/signal.c:1520
+[    6.466819] We reached unpopular paths: kernel/signal.c:1513
+[    6.468064] We reached unpopular paths: kernel/signal.c:1516
+[    6.469291] We reached unpopular paths: kernel/signal.c:1520
+[    6.470524] We reached unpopular paths: kernel/signal.c:1513
+[    6.471747] We reached unpopular paths: kernel/signal.c:1516
+[    6.472969] We reached unpopular paths: kernel/signal.c:1520
+[    6.474216] We reached unpopular paths: kernel/signal.c:1513
+[    6.475463] We reached unpopular paths: kernel/signal.c:1516
+[    6.476719] We reached unpopular paths: kernel/signal.c:1520
+[    6.477939] We reached unpopular paths: kernel/signal.c:1513
+[    6.479164] We reached unpopular paths: kernel/signal.c:1516
+[    6.480395] We reached unpopular paths: kernel/signal.c:1520
+[    6.481622] We reached unpopular paths: kernel/signal.c:1513
+[    6.482855] We reached unpopular paths: kernel/signal.c:1516
+[    6.492678] We reached unpopular paths: kernel/signal.c:1520
+[    6.493903] We reached unpopular paths: kernel/signal.c:1513
+[    6.495136] We reached unpopular paths: kernel/signal.c:1516
+[    6.496365] We reached unpopular paths: kernel/signal.c:1520
+[    6.497592] We reached unpopular paths: kernel/signal.c:1513
+[    6.498818] We reached unpopular paths: kernel/signal.c:1516
+[    6.500048] We reached unpopular paths: kernel/signal.c:1520
+[    6.501271] We reached unpopular paths: kernel/signal.c:1513
+[    6.502501] We reached unpopular paths: kernel/signal.c:1516
+[    6.503727] We reached unpopular paths: kernel/signal.c:1520
+[    6.504973] We reached unpopular paths: kernel/signal.c:1513
+[    6.506222] We reached unpopular paths: kernel/signal.c:1516
+[    6.507445] We reached unpopular paths: kernel/signal.c:1520
+[    6.508677] We reached unpopular paths: kernel/signal.c:1513
+[    6.509930] We reached unpopular paths: kernel/signal.c:1516
+[    6.511191] We reached unpopular paths: kernel/signal.c:1520
+[    6.512420] We reached unpopular paths: kernel/signal.c:1513
+[    6.513643] We reached unpopular paths: kernel/signal.c:1516
+[    6.514868] We reached unpopular paths: kernel/signal.c:1520
+[    6.516091] We reached unpopular paths: kernel/signal.c:1513
+[    6.517319] We reached unpopular paths: kernel/signal.c:1516
+[    6.518551] We reached unpopular paths: kernel/signal.c:1520
+[    6.519780] We reached unpopular paths: kernel/signal.c:1513
+[    6.521012] We reached unpopular paths: kernel/signal.c:1516
+[    6.522240] We reached unpopular paths: kernel/signal.c:1520
+[    6.523463] We reached unpopular paths: kernel/signal.c:1513
+[    6.524691] We reached unpopular paths: kernel/signal.c:1516
+[    6.525939] We reached unpopular paths: kernel/signal.c:1520
+[    6.527171] We reached unpopular paths: kernel/signal.c:1513
+[    6.528394] We reached unpopular paths: kernel/signal.c:1516
+[    6.529617] We reached unpopular paths: kernel/signal.c:1520
+[    6.530853] We reached unpopular paths: kernel/signal.c:1513
+[    6.532076] We reached unpopular paths: kernel/signal.c:1516
+[    6.533306] We reached unpopular paths: kernel/signal.c:1520
+[    6.534537] We reached unpopular paths: kernel/signal.c:1513
+[    6.535765] We reached unpopular paths: kernel/signal.c:1516
+[    6.536989] We reached unpopular paths: kernel/signal.c:1520
+[    6.538213] We reached unpopular paths: kernel/signal.c:1513
+[    6.539434] We reached unpopular paths: kernel/signal.c:1516
+[    6.540669] We reached unpopular paths: kernel/signal.c:1520
+[    6.541899] We reached unpopular paths: kernel/signal.c:1513
+[    6.543150] We reached unpopular paths: kernel/signal.c:1516
+[    6.544372] We reached unpopular paths: kernel/signal.c:1520
+[    6.545633] We reached unpopular paths: kernel/signal.c:1513
+[    6.546860] We reached unpopular paths: kernel/signal.c:1516
+[    6.548104] We reached unpopular paths: kernel/signal.c:1520
+[    6.549332] We reached unpopular paths: kernel/signal.c:1513
+[    6.550586] We reached unpopular paths: kernel/signal.c:1516
+[    6.551812] We reached unpopular paths: kernel/signal.c:1520
+[    6.553036] We reached unpopular paths: kernel/signal.c:1513
+[    6.554286] We reached unpopular paths: kernel/signal.c:1516
+[    6.555514] We reached unpopular paths: kernel/signal.c:1520
+[    6.556742] We reached unpopular paths: kernel/signal.c:1513
+[    6.557970] We reached unpopular paths: kernel/signal.c:1516
+[    6.559214] We reached unpopular paths: kernel/signal.c:1520
+[    6.560442] We reached unpopular paths: kernel/signal.c:1513
+[    6.561663] We reached unpopular paths: kernel/signal.c:1516
+[    6.562908] We reached unpopular paths: kernel/signal.c:1520
+[    6.564136] We reached unpopular paths: kernel/signal.c:1513
+[    6.565398] We reached unpopular paths: kernel/signal.c:1516
+[    6.566654] We reached unpopular paths: kernel/signal.c:1520
+[    6.567875] We reached unpopular paths: kernel/signal.c:1513
+[    6.569124] We reached unpopular paths: kernel/signal.c:1516
+[    6.570387] We reached unpopular paths: kernel/signal.c:1520
+[    6.571653] We reached unpopular paths: kernel/signal.c:1513
+[    6.572919] We reached unpopular paths: kernel/signal.c:1516
+[    6.574177] We reached unpopular paths: kernel/signal.c:1520
+[    6.575446] We reached unpopular paths: kernel/signal.c:1513
+[    6.576718] We reached unpopular paths: kernel/signal.c:1516
+[    6.577978] We reached unpopular paths: kernel/signal.c:1520
+[    6.579247] We reached unpopular paths: kernel/signal.c:1513
+[    6.580503] We reached unpopular paths: kernel/signal.c:1516
+[    6.581729] We reached unpopular paths: kernel/signal.c:1520
+[    6.582969] We reached unpopular paths: kernel/signal.c:1513
+[    6.584189] We reached unpopular paths: kernel/signal.c:1516
+[    6.585444] We reached unpopular paths: kernel/signal.c:1520
+[    6.586703] We reached unpopular paths: kernel/signal.c:1513
+[    6.587929] We reached unpopular paths: kernel/signal.c:1516
+[    6.589173] We reached unpopular paths: kernel/signal.c:1520
+[    6.590422] We reached unpopular paths: kernel/signal.c:1513
+[    6.591645] We reached unpopular paths: kernel/signal.c:1516
+[    6.592869] We reached unpopular paths: kernel/signal.c:1520
+[    6.594096] We reached unpopular paths: kernel/signal.c:1513
+[    6.595344] We reached unpopular paths: kernel/signal.c:1516
+[    6.596571] We reached unpopular paths: kernel/signal.c:1520
+[    6.597793] We reached unpopular paths: kernel/signal.c:1513
+[    6.599035] We reached unpopular paths: kernel/signal.c:1516
+[    6.600265] We reached unpopular paths: kernel/signal.c:1520
+[    6.601491] We reached unpopular paths: kernel/signal.c:1513
+[    6.602740] We reached unpopular paths: kernel/signal.c:1516
+[    6.603965] We reached unpopular paths: kernel/signal.c:1520
+[    6.605213] We reached unpopular paths: kernel/signal.c:1513
+[    6.606527] We reached unpopular paths: kernel/signal.c:1516
+[    6.607829] We reached unpopular paths: kernel/signal.c:1520
+[    6.609130] We reached unpopular paths: kernel/signal.c:1513
+[    6.610445] We reached unpopular paths: kernel/signal.c:1516
+[    6.611760] We reached unpopular paths: kernel/signal.c:1520
+[    6.613020] We reached unpopular paths: kernel/signal.c:1513
+[    6.614284] We reached unpopular paths: kernel/signal.c:1516
+[    6.615546] We reached unpopular paths: kernel/signal.c:1520
+[    6.616808] We reached unpopular paths: kernel/signal.c:1513
+[    6.618074] We reached unpopular paths: kernel/signal.c:1516
+[    6.619346] We reached unpopular paths: kernel/signal.c:1520
+[    6.620620] We reached unpopular paths: kernel/signal.c:1513
+[    6.621882] We reached unpopular paths: kernel/signal.c:1516
+[    6.623144] We reached unpopular paths: kernel/signal.c:1520
+[    6.624406] We reached unpopular paths: kernel/signal.c:1513
+[    6.625671] We reached unpopular paths: kernel/signal.c:1516
+[    6.626942] We reached unpopular paths: kernel/signal.c:1520
+[    6.628208] We reached unpopular paths: kernel/signal.c:1513
+[    6.629469] We reached unpopular paths: kernel/signal.c:1516
+[    6.630738] We reached unpopular paths: kernel/signal.c:1520
+[    6.631995] We reached unpopular paths: kernel/signal.c:1513
+[    6.633268] We reached unpopular paths: kernel/signal.c:1516
+[    6.634539] We reached unpopular paths: kernel/signal.c:1520
+[    6.635805] We reached unpopular paths: kernel/signal.c:1513
+[    6.637066] We reached unpopular paths: kernel/signal.c:1516
+[    6.638331] We reached unpopular paths: kernel/signal.c:1520
+[    6.639592] We reached unpopular paths: kernel/signal.c:1513
+[    6.640869] We reached unpopular paths: kernel/signal.c:1516
+[    6.642137] We reached unpopular paths: kernel/signal.c:1520
+[    6.643409] We reached unpopular paths: kernel/signal.c:1513
+[    6.644671] We reached unpopular paths: kernel/signal.c:1516
+[    6.645933] We reached unpopular paths: kernel/signal.c:1520
+[    6.647199] We reached unpopular paths: kernel/signal.c:1513
+[    6.648465] We reached unpopular paths: kernel/signal.c:1516
+[    6.649733] We reached unpopular paths: kernel/signal.c:1520
+[    6.651013] We reached unpopular paths: kernel/signal.c:1513
+[    6.652276] We reached unpopular paths: kernel/signal.c:1516
+[    6.653540] We reached unpopular paths: kernel/signal.c:1520
+[    6.654805] We reached unpopular paths: kernel/signal.c:1513
+[    6.656071] We reached unpopular paths: kernel/signal.c:1516
+[    6.657336] We reached unpopular paths: kernel/signal.c:1520
+[    6.658607] We reached unpopular paths: kernel/signal.c:1513
+[    6.659875] We reached unpopular paths: kernel/signal.c:1516
+[    6.661145] We reached unpopular paths: kernel/signal.c:1520
+[    6.662411] We reached unpopular paths: kernel/signal.c:1513
+[    6.663672] We reached unpopular paths: kernel/signal.c:1516
+[    6.664938] We reached unpopular paths: kernel/signal.c:1520
+[    6.666209] We reached unpopular paths: kernel/signal.c:1513
+[    6.667477] We reached unpopular paths: kernel/signal.c:1516
+[    6.668740] We reached unpopular paths: kernel/signal.c:1520
+[    6.670010] We reached unpopular paths: kernel/signal.c:1513
+[    6.671277] We reached unpopular paths: kernel/signal.c:1516
+[    6.672546] We reached unpopular paths: kernel/signal.c:1520
+[    6.673815] We reached unpopular paths: kernel/signal.c:1513
+[    6.675089] We reached unpopular paths: kernel/signal.c:1516
+[    6.676353] We reached unpopular paths: kernel/signal.c:1520
+[    6.677616] We reached unpopular paths: kernel/signal.c:1513
+[    6.678893] We reached unpopular paths: kernel/signal.c:1516
+[    6.680169] We reached unpopular paths: kernel/signal.c:1520
+[    6.681436] We reached unpopular paths: kernel/signal.c:1513
+[    6.682696] We reached unpopular paths: kernel/signal.c:1516
+[    6.683921] We reached unpopular paths: kernel/signal.c:1520
+[    6.685151] We reached unpopular paths: kernel/signal.c:1513
+[    6.686415] We reached unpopular paths: kernel/signal.c:1516
+[    6.687645] We reached unpopular paths: kernel/signal.c:1520
+[    6.688873] We reached unpopular paths: kernel/signal.c:1513
+[    6.690124] We reached unpopular paths: kernel/signal.c:1516
+[    6.691368] We reached unpopular paths: kernel/signal.c:1520
+[    6.692592] We reached unpopular paths: kernel/signal.c:1513
+[    6.693815] We reached unpopular paths: kernel/signal.c:1516
+[    6.695066] We reached unpopular paths: kernel/signal.c:1520
+[    6.696292] We reached unpopular paths: kernel/signal.c:1513
+[    6.697519] We reached unpopular paths: kernel/signal.c:1516
+[    6.698746] We reached unpopular paths: kernel/signal.c:1520
+[    6.699969] We reached unpopular paths: kernel/signal.c:1513
+[    6.701199] We reached unpopular paths: kernel/signal.c:1516
+[    6.702425] We reached unpopular paths: kernel/signal.c:1520
+[    6.703653] We reached unpopular paths: kernel/signal.c:1513
+[    6.704897] We reached unpopular paths: kernel/signal.c:1516
+[    6.706161] We reached unpopular paths: kernel/signal.c:1520
+[    6.707398] We reached unpopular paths: kernel/signal.c:1513
+[    6.708630] We reached unpopular paths: kernel/signal.c:1516
+[    6.709885] We reached unpopular paths: kernel/signal.c:1520
+[    6.711151] We reached unpopular paths: kernel/signal.c:1513
+[    6.712387] We reached unpopular paths: kernel/signal.c:1516
+[    6.713618] We reached unpopular paths: kernel/signal.c:1520
+[    6.714846] We reached unpopular paths: kernel/signal.c:1513
+[    6.716070] We reached unpopular paths: kernel/signal.c:1516
+[    6.725970] We reached unpopular paths: kernel/signal.c:1520
+[    6.727211] We reached unpopular paths: kernel/signal.c:1513
+[    6.728433] We reached unpopular paths: kernel/signal.c:1516
+[    6.729657] We reached unpopular paths: kernel/signal.c:1520
+[    6.730906] We reached unpopular paths: kernel/signal.c:1513
+[    6.732135] We reached unpopular paths: kernel/signal.c:1516
+[    6.733363] We reached unpopular paths: kernel/signal.c:1520
+[    6.734609] We reached unpopular paths: kernel/signal.c:1513
+[    6.735832] We reached unpopular paths: kernel/signal.c:1516
+[    6.737053] We reached unpopular paths: kernel/signal.c:1520
+[    6.738294] We reached unpopular paths: kernel/signal.c:1513
+[    6.739522] We reached unpopular paths: kernel/signal.c:1516
+[    6.740758] We reached unpopular paths: kernel/signal.c:1520
+[    6.741985] We reached unpopular paths: kernel/signal.c:1513
+[    6.743232] We reached unpopular paths: kernel/signal.c:1516
+[    6.744455] We reached unpopular paths: kernel/signal.c:1520
+[    6.745716] We reached unpopular paths: kernel/signal.c:1513
+[    6.746949] We reached unpopular paths: kernel/signal.c:1525
+[    6.748176] We reached unpopular paths: kernel/signal.c:1528
+[    6.749963] We reached unpopular paths: kernel/signal.c:989
+[    6.751477] We reached unpopular paths: kernel/signal.c:989
+[    6.752708] We reached unpopular paths: kernel/signal.c:2552
+[    6.754130] We reached unpopular paths: kernel/signal.c:2552
+[    6.756432] We reached unpopular paths: kernel/sched/completion.c:88
+[    6.757802] We reached unpopular paths: kernel/sched/completion.c:99
+[    6.759168] We reached unpopular paths: kernel/sched/completion.c:260
+[    6.760789] We reached unpopular paths: kernel/sched/completion.c:88
+[    6.762155] We reached unpopular paths: kernel/sched/completion.c:99
+[    6.763508] We reached unpopular paths: kernel/sched/completion.c:260
+[    6.764889] We reached unpopular paths: kernel/fork.c:1151
+[    6.766112] We reached unpopular paths: kernel/sched/completion.c:88
+[    6.767471] We reached unpopular paths: kernel/sched/completion.c:99
+[    6.768827] We reached unpopular paths: kernel/sched/completion.c:260
+[    6.771019] We reached unpopular paths: kernel/exit.c:347
+[    6.772197] We reached unpopular paths: kernel/exit.c:347
+[    6.773360] We reached unpopular paths: kernel/exit.c:347
+[    6.778469] We reached unpopular paths: kernel/signal.c:952
+[    6.780096] We reached unpopular paths: kernel/fork.c:1151
+[    6.781523] We reached unpopular paths: kernel/exit.c:711
+[    6.782706] We reached unpopular paths: kernel/signal.c:952
+[    6.783915] We reached unpopular paths: kernel/fork.c:1151
+[    6.785339] We reached unpopular paths: kernel/exit.c:711
+[    6.786528] We reached unpopular paths: kernel/signal.c:952
+[   11.788480] We reached unpopular paths: kernel/signal.c:1502
+[   11.791016] We reached unpopular paths: kernel/signal.c:1511
+[   11.793537] We reached unpopular paths: kernel/signal.c:1513
+[   11.796064] We reached unpopular paths: kernel/signal.c:1513
+[   11.798580] We reached unpopular paths: kernel/signal.c:1516
+[   11.801100] We reached unpopular paths: kernel/signal.c:1520
+[   11.803546] We reached unpopular paths: kernel/signal.c:1513
+[   11.805912] We reached unpopular paths: kernel/signal.c:1516
+[   11.808282] We reached unpopular paths: kernel/signal.c:1520
+[   11.810673] We reached unpopular paths: kernel/signal.c:1513
+[   11.813030] We reached unpopular paths: kernel/signal.c:1516
+[   11.815341] We reached unpopular paths: kernel/signal.c:1520
+[   11.817571] We reached unpopular paths: kernel/signal.c:1513
+[   11.819815] We reached unpopular paths: kernel/signal.c:1516
+[   11.822066] We reached unpopular paths: kernel/signal.c:1520
+[   11.824337] We reached unpopular paths: kernel/signal.c:1513
+[   11.826568] We reached unpopular paths: kernel/signal.c:1516
+[   11.828679] We reached unpopular paths: kernel/signal.c:1520
+[   11.830807] We reached unpopular paths: kernel/signal.c:1513
+[   11.832929] We reached unpopular paths: kernel/signal.c:1516
+[   11.835050] We reached unpopular paths: kernel/signal.c:1520
+[   11.837169] We reached unpopular paths: kernel/signal.c:1513
+[   11.839245] We reached unpopular paths: kernel/signal.c:1516
+[   11.841261] We reached unpopular paths: kernel/signal.c:1520
+[   11.843274] We reached unpopular paths: kernel/signal.c:1513
+[   11.845286] We reached unpopular paths: kernel/signal.c:1516
+[   11.847308] We reached unpopular paths: kernel/signal.c:1520
+[   11.849322] We reached unpopular paths: kernel/signal.c:1513
+[   11.851303] We reached unpopular paths: kernel/signal.c:1516
+[   11.853216] We reached unpopular paths: kernel/signal.c:1520
+[   11.855128] We reached unpopular paths: kernel/signal.c:1513
+[   11.857047] We reached unpopular paths: kernel/signal.c:1516
+[   11.858972] We reached unpopular paths: kernel/signal.c:1520
+[   11.860901] We reached unpopular paths: kernel/signal.c:1513
+[   11.862804] We reached unpopular paths: kernel/signal.c:1516
+[   11.864630] We reached unpopular paths: kernel/signal.c:1520
+[   11.866473] We reached unpopular paths: kernel/signal.c:1513
+[   11.868297] We reached unpopular paths: kernel/signal.c:1516
+[   11.870138] We reached unpopular paths: kernel/signal.c:1520
+[   11.872031] We reached unpopular paths: kernel/signal.c:1513
+[   11.873860] We reached unpopular paths: kernel/signal.c:1516
+[   11.875638] We reached unpopular paths: kernel/signal.c:1520
+[   11.877380] We reached unpopular paths: kernel/signal.c:1513
+[   11.879128] We reached unpopular paths: kernel/signal.c:1516
+[   11.880889] We reached unpopular paths: kernel/signal.c:1520
+[   11.882647] We reached unpopular paths: kernel/signal.c:1513
+[   11.884398] We reached unpopular paths: kernel/signal.c:1516
+[   11.886140] We reached unpopular paths: kernel/signal.c:1520
+[   11.887828] We reached unpopular paths: kernel/signal.c:1513
+[   11.889496] We reached unpopular paths: kernel/signal.c:1516
+[   11.891192] We reached unpopular paths: kernel/signal.c:1520
+[   11.892869] We reached unpopular paths: kernel/signal.c:1513
+[   11.894546] We reached unpopular paths: kernel/signal.c:1516
+[   11.896213] We reached unpopular paths: kernel/signal.c:1520
+[   11.897885] We reached unpopular paths: kernel/signal.c:1513
+[   11.899512] We reached unpopular paths: kernel/signal.c:1516
+[   11.901133] We reached unpopular paths: kernel/signal.c:1520
+[   11.902745] We reached unpopular paths: kernel/signal.c:1513
+[   11.904355] We reached unpopular paths: kernel/signal.c:1516
+[   11.905960] We reached unpopular paths: kernel/signal.c:1520
+[   11.907568] We reached unpopular paths: kernel/signal.c:1513
+[   11.909174] We reached unpopular paths: kernel/signal.c:1516
+[   11.910790] We reached unpopular paths: kernel/signal.c:1520
+[   11.912340] We reached unpopular paths: kernel/signal.c:1513
+[   11.913890] We reached unpopular paths: kernel/signal.c:1516
+[   11.915436] We reached unpopular paths: kernel/signal.c:1520
+[   11.916978] We reached unpopular paths: kernel/signal.c:1513
+[   11.918525] We reached unpopular paths: kernel/signal.c:1516
+[   11.920077] We reached unpopular paths: kernel/signal.c:1520
+[   11.921625] We reached unpopular paths: kernel/signal.c:1513
+[   11.923151] We reached unpopular paths: kernel/signal.c:1516
+[   11.924641] We reached unpopular paths: kernel/signal.c:1520
+[   11.926125] We reached unpopular paths: kernel/signal.c:1513
+[   11.927616] We reached unpopular paths: kernel/signal.c:1516
+[   11.929102] We reached unpopular paths: kernel/signal.c:1520
+[   11.930607] We reached unpopular paths: kernel/signal.c:1513
+[   11.932100] We reached unpopular paths: kernel/signal.c:1516
+[   11.933589] We reached unpopular paths: kernel/signal.c:1520
+[   11.935065] We reached unpopular paths: kernel/signal.c:1513
+[   11.936497] We reached unpopular paths: kernel/signal.c:1516
+[   11.937931] We reached unpopular paths: kernel/signal.c:1520
+[   11.939373] We reached unpopular paths: kernel/signal.c:1513
+[   11.940816] We reached unpopular paths: kernel/signal.c:1516
+[   11.942258] We reached unpopular paths: kernel/signal.c:1520
+[   11.943690] We reached unpopular paths: kernel/signal.c:1513
+[   11.945121] We reached unpopular paths: kernel/signal.c:1516
+[   11.946556] We reached unpopular paths: kernel/signal.c:1520
+[   11.947947] We reached unpopular paths: kernel/signal.c:1513
+[   11.949335] We reached unpopular paths: kernel/signal.c:1516
+[   11.950737] We reached unpopular paths: kernel/signal.c:1520
+[   11.952121] We reached unpopular paths: kernel/signal.c:1513
+[   11.953502] We reached unpopular paths: kernel/signal.c:1516
+[   11.954888] We reached unpopular paths: kernel/signal.c:1520
+[   11.956276] We reached unpopular paths: kernel/signal.c:1513
+[   11.957666] We reached unpopular paths: kernel/signal.c:1516
+[   11.959039] We reached unpopular paths: kernel/signal.c:1520
+[   11.960386] We reached unpopular paths: kernel/signal.c:1513
+[   11.961724] We reached unpopular paths: kernel/signal.c:1516
+[   11.963065] We reached unpopular paths: kernel/signal.c:1520
+[   11.964408] We reached unpopular paths: kernel/signal.c:1513
+[   11.965751] We reached unpopular paths: kernel/signal.c:1516
+[   11.967066] We reached unpopular paths: kernel/signal.c:1520
+[   11.968403] We reached unpopular paths: kernel/signal.c:1513
+[   11.969740] We reached unpopular paths: kernel/signal.c:1516
+[   11.971071] We reached unpopular paths: kernel/signal.c:1520
+[   11.972366] We reached unpopular paths: kernel/signal.c:1513
+[   11.973667] We reached unpopular paths: kernel/signal.c:1516
+[   11.974972] We reached unpopular paths: kernel/signal.c:1520
+[   11.976273] We reached unpopular paths: kernel/signal.c:1513
+[   11.977566] We reached unpopular paths: kernel/signal.c:1516
+[   11.978864] We reached unpopular paths: kernel/signal.c:1520
+[   11.980160] We reached unpopular paths: kernel/signal.c:1513
+[   11.981461] We reached unpopular paths: kernel/signal.c:1516
+[   11.982757] We reached unpopular paths: kernel/signal.c:1520
+[   11.984012] We reached unpopular paths: kernel/signal.c:1513
+[   11.985266] We reached unpopular paths: kernel/signal.c:1516
+[   11.986519] We reached unpopular paths: kernel/signal.c:1520
+[   11.987773] We reached unpopular paths: kernel/signal.c:1513
+[   11.989032] We reached unpopular paths: kernel/signal.c:1516
+[   11.990302] We reached unpopular paths: kernel/signal.c:1520
+[   11.991563] We reached unpopular paths: kernel/signal.c:1513
+[   11.992816] We reached unpopular paths: kernel/signal.c:1516
+[   11.994071] We reached unpopular paths: kernel/signal.c:1520
+[   11.995304] We reached unpopular paths: kernel/signal.c:1513
+[   11.996539] We reached unpopular paths: kernel/signal.c:1516
+[   11.997761] We reached unpopular paths: kernel/signal.c:1520
+[   11.998986] We reached unpopular paths: kernel/signal.c:1513
+[   12.000210] We reached unpopular paths: kernel/signal.c:1516
+[   12.001426] We reached unpopular paths: kernel/signal.c:1520
+[   12.002644] We reached unpopular paths: kernel/signal.c:1513
+[   12.003867] We reached unpopular paths: kernel/signal.c:1516
+[   12.005086] We reached unpopular paths: kernel/signal.c:1520
+[   12.006328] We reached unpopular paths: kernel/signal.c:1513
+[   12.007574] We reached unpopular paths: kernel/signal.c:1516
+[   12.008790] We reached unpopular paths: kernel/signal.c:1520
+[   12.010012] We reached unpopular paths: kernel/signal.c:1513
+[   12.011228] We reached unpopular paths: kernel/signal.c:1516
+[   12.021048] We reached unpopular paths: kernel/signal.c:1520
+[   12.022269] We reached unpopular paths: kernel/signal.c:1513
+[   12.023485] We reached unpopular paths: kernel/signal.c:1516
+[   12.024705] We reached unpopular paths: kernel/signal.c:1520
+[   12.025942] We reached unpopular paths: kernel/signal.c:1513
+[   12.027183] We reached unpopular paths: kernel/signal.c:1516
+[   12.028399] We reached unpopular paths: kernel/signal.c:1520
+[   12.029615] We reached unpopular paths: kernel/signal.c:1513
+[   12.030843] We reached unpopular paths: kernel/signal.c:1516
+[   12.032067] We reached unpopular paths: kernel/signal.c:1520
+[   12.033284] We reached unpopular paths: kernel/signal.c:1513
+[   12.034503] We reached unpopular paths: kernel/signal.c:1516
+[   12.035717] We reached unpopular paths: kernel/signal.c:1520
+[   12.036926] We reached unpopular paths: kernel/signal.c:1513
+[   12.038142] We reached unpopular paths: kernel/signal.c:1516
+[   12.039360] We reached unpopular paths: kernel/signal.c:1520
+[   12.040592] We reached unpopular paths: kernel/signal.c:1513
+[   12.041814] We reached unpopular paths: kernel/signal.c:1516
+[   12.043039] We reached unpopular paths: kernel/signal.c:1520
+[   12.044255] We reached unpopular paths: kernel/signal.c:1513
+[   12.045470] We reached unpopular paths: kernel/signal.c:1516
+[   12.046717] We reached unpopular paths: kernel/signal.c:1520
+[   12.047951] We reached unpopular paths: kernel/signal.c:1513
+[   12.049169] We reached unpopular paths: kernel/signal.c:1516
+[   12.050399] We reached unpopular paths: kernel/signal.c:1520
+[   12.051615] We reached unpopular paths: kernel/signal.c:1513
+[   12.052831] We reached unpopular paths: kernel/signal.c:1516
+[   12.054051] We reached unpopular paths: kernel/signal.c:1520
+[   12.055278] We reached unpopular paths: kernel/signal.c:1513
+[   12.056500] We reached unpopular paths: kernel/signal.c:1516
+[   12.057719] We reached unpopular paths: kernel/signal.c:1520
+[   12.058939] We reached unpopular paths: kernel/signal.c:1513
+[   12.060177] We reached unpopular paths: kernel/signal.c:1516
+[   12.061392] We reached unpopular paths: kernel/signal.c:1520
+[   12.062631] We reached unpopular paths: kernel/signal.c:1513
+[   12.063853] We reached unpopular paths: kernel/signal.c:1516
+[   12.065091] We reached unpopular paths: kernel/signal.c:1520
+[   12.066347] We reached unpopular paths: kernel/signal.c:1513
+[   12.067605] We reached unpopular paths: kernel/signal.c:1516
+[   12.068812] We reached unpopular paths: kernel/signal.c:1520
+[   12.070062] We reached unpopular paths: kernel/signal.c:1513
+[   12.071334] We reached unpopular paths: kernel/signal.c:1516
+[   12.072599] We reached unpopular paths: kernel/signal.c:1520
+[   12.073852] We reached unpopular paths: kernel/signal.c:1513
+[   12.075099] We reached unpopular paths: kernel/signal.c:1516
+[   12.076314] We reached unpopular paths: kernel/signal.c:1520
+[   12.077530] We reached unpopular paths: kernel/signal.c:1513
+[   12.078789] We reached unpopular paths: kernel/signal.c:1525
+[   12.080048] We reached unpopular paths: kernel/signal.c:1528
+[   12.081750] We reached unpopular paths: kernel/reboot.c:271
+[   12.083001] We reached unpopular paths: kernel/events/core.c:11670
+[   12.084325] We reached unpopular paths: kernel/events/core.c:11660
+[   12.085694] We reached unpopular paths: kernel/events/core.c:11616
+[   12.087080] We reached unpopular paths: kernel/events/core.c:156
+[   12.088370] We reached unpopular paths: kernel/events/core.c:11603
+[   12.089688] We reached unpopular paths: kernel/events/core.c:156
+[   12.090978] We reached unpopular paths: kernel/events/core.c:11603
+[   12.092307] We reached unpopular paths: kernel/events/core.c:156
+[   12.093590] We reached unpopular paths: kernel/events/core.c:11603
+[   12.094908] We reached unpopular paths: kernel/events/core.c:156
+[   12.096190] We reached unpopular paths: kernel/events/core.c:11603
+[   12.097520] We reached unpopular paths: kernel/events/core.c:156
+[   12.098811] We reached unpopular paths: kernel/events/core.c:11603
+[   12.100141] We reached unpopular paths: kernel/events/core.c:156
+[   12.101423] We reached unpopular paths: kernel/events/core.c:11603
+[   12.103134] ACPI: Preparing to enter system sleep state S5
+[   12.104417] We reached unpopular paths: kernel/irq/manage.c:82
+[   12.105675] reboot: Power down

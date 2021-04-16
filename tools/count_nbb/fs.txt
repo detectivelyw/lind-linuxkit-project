@@ -1,0 +1,712 @@
+Our program has started ...
+We are going to instrument kernel dir: fs
+First, checking the required input files to conduct our kernel instrumentation...
+Popular paths data found. Now processing...
+now processing file: fs/proc/thread_self.c
+non-popular functions: 1
+popular functions: 2
+npp_bb: 8
+now processing file: fs/filesystems.c
+non-popular functions: 7
+popular functions: 9
+npp_bb: 36
+now processing file: fs/proc_namespace.c
+non-popular functions: 2
+popular functions: 10
+npp_bb: 24
+now processing file: fs/fs-writeback.c
+non-popular functions: 44
+popular functions: 13
+npp_bb: 250
+now processing file: fs/nls/nls_cp437.c
+non-popular functions: 3
+popular functions: 1
+npp_bb: 10
+now processing file: fs/proc/version.c
+non-popular functions: 0
+popular functions: 3
+npp_bb: 0
+now processing file: fs/xfs/xfs_dquot.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/ioctl.c
+non-popular functions: 15
+popular functions: 5
+npp_bb: 141
+now processing file: fs/xfs/xfs_buf.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/notify/inotify/inotify.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/proc/root.c
+non-popular functions: 0
+popular functions: 9
+npp_bb: 19
+now processing file: fs/fat/cache.c
+non-popular functions: 17
+popular functions: 1
+npp_bb: 91
+now processing file: fs/proc/kmsg.c
+non-popular functions: 2
+popular functions: 3
+npp_bb: 6
+now processing file: fs/nls/nls_base.c
+non-popular functions: 13
+popular functions: 1
+npp_bb: 83
+now processing file: fs/notify/fsnotify.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/ext4/sysfs.c
+non-popular functions: 12
+popular functions: 1
+npp_bb: 65
+now processing file: fs/pstore/inode.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/udf/super.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/proc/self.c
+non-popular functions: 0
+popular functions: 3
+npp_bb: 6
+now processing file: fs/overlayfs/ovl_entry.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/proc/array.c
+non-popular functions: 1
+popular functions: 16
+npp_bb: 14
+now processing file: fs/select.c
+non-popular functions: 10
+popular functions: 26
+npp_bb: 176
+now processing file: fs/proc/internal.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/sysfs/mount.c
+non-popular functions: 0
+popular functions: 3
+npp_bb: 6
+now processing file: fs/pnode.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/overlayfs/super.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/9p/v9fs.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/cifs/cache.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/proc/uptime.c
+non-popular functions: 0
+popular functions: 3
+npp_bb: 0
+now processing file: fs/jbd2/transaction.c
+non-popular functions: 48
+popular functions: 1
+npp_bb: 497
+now processing file: fs/xfs/xfs_sysfs.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/libfs.c
+non-popular functions: 33
+popular functions: 23
+npp_bb: 153
+now processing file: fs/fuse/inode.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/fs_pin.c
+non-popular functions: 2
+popular functions: 4
+npp_bb: 18
+now processing file: fs/ext4/page-io.c
+non-popular functions: 18
+popular functions: 1
+npp_bb: 124
+now processing file: fs/utimes.c
+non-popular functions: 4
+popular functions: 11
+npp_bb: 35
+now processing file: fs/devpts/inode.c
+non-popular functions: 3
+popular functions: 16
+npp_bb: 50
+now processing file: fs/kernfs/dir.c
+non-popular functions: 11
+popular functions: 41
+npp_bb: 162
+now processing file: fs/proc/devices.c
+non-popular functions: 4
+popular functions: 1
+npp_bb: 14
+now processing file: fs/sysfs/dir.c
+non-popular functions: 2
+popular functions: 3
+npp_bb: 12
+now processing file: fs/proc/cpuinfo.c
+non-popular functions: 0
+popular functions: 2
+npp_bb: 0
+now processing file: fs/exec.c
+non-popular functions: 9
+popular functions: 39
+npp_bb: 191
+now processing file: fs/notify/notification.c
+non-popular functions: 5
+popular functions: 3
+npp_bb: 24
+now processing file: fs/isofs/inode.c
+non-popular functions: 34
+popular functions: 2
+npp_bb: 330
+now processing file: fs/cifs/cifs_debug.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/notify/mark.c
+non-popular functions: 14
+popular functions: 11
+npp_bb: 115
+now processing file: fs/tracefs/inode.c
+non-popular functions: 11
+popular functions: 12
+npp_bb: 73
+now processing file: fs/xfs/xfs_stats.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/overlayfs/copy_up.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/xfs/xfs_trans_extfree.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/binfmt_elf.c
+non-popular functions: 25
+popular functions: 10
+npp_bb: 297
+now processing file: fs/fscache/cookie.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/squashfs/super.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/fuse/cuse.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/proc/cmdline.c
+non-popular functions: 0
+popular functions: 3
+npp_bb: 0
+now processing file: fs/xfs/libxfs/xfs_da_btree.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/dax.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/proc/proc_tty.c
+non-popular functions: 1
+popular functions: 8
+npp_bb: 13
+now processing file: fs/jbd2/journal.c
+non-popular functions: 72
+popular functions: 5
+npp_bb: 500
+now processing file: fs/overlayfs/util.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/eventpoll.c
+non-popular functions: 19
+popular functions: 40
+npp_bb: 185
+now processing file: fs/debugfs/file.c
+non-popular functions: 43
+popular functions: 8
+npp_bb: 92
+now processing file: fs/xfs/xfs_trans_rmap.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/kernfs/kernfs-internal.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/sysfs/file.c
+non-popular functions: 11
+popular functions: 7
+npp_bb: 81
+now processing file: fs/internal.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/notify/inotify/inotify_user.c
+non-popular functions: 11
+popular functions: 11
+npp_bb: 110
+now processing file: fs/quota/netlink.c
+non-popular functions: 1
+popular functions: 1
+npp_bb: 13
+now processing file: fs/fuse/control.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/char_dev.c
+non-popular functions: 11
+popular functions: 17
+npp_bb: 74
+now processing file: fs/xfs/libxfs/xfs_dir2_block.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/compat_ioctl.c
+non-popular functions: 20
+popular functions: 2
+npp_bb: 214
+now processing file: fs/kernfs/file.c
+non-popular functions: 11
+popular functions: 15
+npp_bb: 142
+now processing file: fs/notify/dnotify/dnotify.c
+non-popular functions: 6
+popular functions: 2
+npp_bb: 85
+now processing file: fs/seq_file.c
+non-popular functions: 10
+popular functions: 27
+npp_bb: 77
+now processing file: fs/proc/generic.c
+non-popular functions: 3
+popular functions: 29
+npp_bb: 52
+now processing file: fs/proc/loadavg.c
+non-popular functions: 0
+popular functions: 2
+npp_bb: 0
+now processing file: fs/proc/proc_sysctl.c
+non-popular functions: 9
+popular functions: 57
+npp_bb: 148
+now processing file: fs/fcntl.c
+non-popular functions: 29
+popular functions: 8
+npp_bb: 207
+now processing file: fs/coredump.c
+non-popular functions: 9
+popular functions: 8
+npp_bb: 126
+now processing file: fs/binfmt_misc.c
+non-popular functions: 13
+popular functions: 5
+npp_bb: 178
+now processing file: fs/proc/inode.c
+non-popular functions: 4
+popular functions: 20
+npp_bb: 55
+now processing file: fs/locks.c
+non-popular functions: 53
+popular functions: 39
+npp_bb: 442
+now processing file: fs/proc/kcore.c
+non-popular functions: 6
+popular functions: 10
+npp_bb: 77
+now processing file: fs/fat/namei_msdos.c
+non-popular functions: 16
+popular functions: 1
+npp_bb: 191
+now processing file: fs/proc/namespaces.c
+non-popular functions: 2
+popular functions: 3
+npp_bb: 20
+now processing file: fs/fs_struct.c
+non-popular functions: 2
+popular functions: 7
+npp_bb: 17
+now processing file: fs/xattr.c
+non-popular functions: 20
+popular functions: 22
+npp_bb: 189
+now processing file: fs/proc/fd.c
+non-popular functions: 5
+popular functions: 8
+npp_bb: 39
+now processing file: fs/nls/nls_utf8.c
+non-popular functions: 3
+popular functions: 1
+npp_bb: 8
+now processing file: fs/pipe.c
+non-popular functions: 12
+popular functions: 32
+npp_bb: 137
+now processing file: fs/proc/softirqs.c
+non-popular functions: 2
+popular functions: 1
+npp_bb: 10
+now processing file: fs/notify/fsnotify.c
+non-popular functions: 1
+popular functions: 7
+npp_bb: 75
+now processing file: fs/namespace.c
+non-popular functions: 30
+popular functions: 106
+npp_bb: 375
+now processing file: fs/jbd2/revoke.c
+non-popular functions: 18
+popular functions: 1
+npp_bb: 123
+now processing file: fs/xfs/xfs_trans_bmap.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/read_write.c
+non-popular functions: 35
+popular functions: 41
+npp_bb: 385
+now processing file: fs/eventfd.c
+non-popular functions: 6
+popular functions: 11
+npp_bb: 67
+now processing file: fs/xfs/xfs_sysctl.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/proc/stat.c
+non-popular functions: 0
+popular functions: 5
+npp_bb: 3
+now processing file: fs/fscache/main.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/xfs/xfs_mru_cache.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/mount.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/open.c
+non-popular functions: 15
+popular functions: 34
+npp_bb: 119
+now processing file: fs/crypto/crypto.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/inode.c
+non-popular functions: 20
+popular functions: 57
+npp_bb: 217
+now processing file: fs/ext4/extents_status.c
+non-popular functions: 26
+popular functions: 1
+npp_bb: 257
+now processing file: fs/mpage.c
+non-popular functions: 10
+popular functions: 2
+npp_bb: 120
+now processing file: fs/namei.c
+non-popular functions: 16
+popular functions: 122
+npp_bb: 620
+now processing file: fs/xfs/kmem.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/file_table.c
+non-popular functions: 2
+popular functions: 14
+npp_bb: 24
+now processing file: fs/direct-io.c
+non-popular functions: 27
+popular functions: 1
+npp_bb: 264
+now processing file: fs/proc/consoles.c
+non-popular functions: 0
+popular functions: 5
+npp_bb: 1
+now processing file: fs/overlayfs/namei.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/mbcache.c
+non-popular functions: 16
+popular functions: 1
+npp_bb: 70
+now processing file: fs/super.c
+non-popular functions: 25
+popular functions: 28
+npp_bb: 208
+now processing file: fs/fuse/dev.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/bad_inode.c
+non-popular functions: 24
+popular functions: 1
+npp_bb: 24
+now processing file: fs/ext4/super.c
+non-popular functions: 130
+popular functions: 4
+npp_bb: 1482
+now processing file: fs/proc/page.c
+non-popular functions: 4
+popular functions: 1
+npp_bb: 66
+now processing file: fs/ext4/mballoc.c
+non-popular functions: 94
+popular functions: 1
+npp_bb: 1147
+now processing file: fs/isofs/compress.c
+non-popular functions: 4
+popular functions: 1
+npp_bb: 96
+now processing file: fs/kernfs/inode.c
+non-popular functions: 3
+popular functions: 10
+npp_bb: 26
+now processing file: fs/fscache/netfs.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/ramfs/inode.c
+non-popular functions: 10
+popular functions: 1
+npp_bb: 36
+now processing file: fs/proc/meminfo.c
+non-popular functions: 0
+popular functions: 4
+npp_bb: 1
+now processing file: fs/readdir.c
+non-popular functions: 6
+popular functions: 7
+npp_bb: 84
+now processing file: fs/nls/nls_ascii.c
+non-popular functions: 3
+popular functions: 1
+npp_bb: 10
+now processing file: fs/pnode.c
+non-popular functions: 8
+popular functions: 16
+npp_bb: 102
+now processing file: fs/xfs/xfs_trans_refcount.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/overlayfs/overlayfs.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/anon_inodes.c
+non-popular functions: 1
+popular functions: 4
+npp_bb: 12
+now processing file: fs/efivarfs/super.c
+non-popular functions: 10
+popular functions: 1
+npp_bb: 44
+now processing file: fs/debugfs/inode.c
+non-popular functions: 8
+popular functions: 16
+npp_bb: 94
+now processing file: fs/cifs/cifsfs.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/fat/namei_vfat.c
+non-popular functions: 33
+popular functions: 1
+npp_bb: 279
+now processing file: fs/block_dev.c
+non-popular functions: 31
+popular functions: 46
+npp_bb: 333
+now processing file: fs/xfs/libxfs/xfs_defer.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/buffer.c
+non-popular functions: 78
+popular functions: 27
+npp_bb: 647
+now processing file: fs/hugetlbfs/inode.c
+non-popular functions: 25
+popular functions: 17
+npp_bb: 210
+now processing file: fs/nsfs.c
+non-popular functions: 5
+popular functions: 6
+npp_bb: 37
+now processing file: fs/proc/fd.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/sync.c
+non-popular functions: 9
+popular functions: 8
+npp_bb: 42
+now processing file: fs/splice.c
+non-popular functions: 26
+popular functions: 15
+npp_bb: 292
+now processing file: fs/overlayfs/dir.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/exportfs/expfs.c
+non-popular functions: 8
+popular functions: 4
+npp_bb: 106
+now processing file: fs/proc/base.c
+non-popular functions: 38
+popular functions: 55
+npp_bb: 354
+now processing file: fs/timerfd.c
+non-popular functions: 5
+popular functions: 17
+npp_bb: 78
+now processing file: fs/notify/fanotify/fanotify_user.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/kernfs/mount.c
+non-popular functions: 10
+popular functions: 7
+npp_bb: 53
+now processing file: fs/stat.c
+non-popular functions: 16
+popular functions: 12
+npp_bb: 71
+now processing file: fs/fat/inode.c
+non-popular functions: 53
+popular functions: 2
+npp_bb: 479
+now processing file: fs/posix_acl.c
+non-popular functions: 25
+popular functions: 8
+npp_bb: 229
+now processing file: fs/proc/task_mmu.c
+non-popular functions: 36
+popular functions: 17
+npp_bb: 316
+now processing file: fs/proc/proc_net.c
+non-popular functions: 3
+popular functions: 8
+npp_bb: 18
+now processing file: fs/statfs.c
+non-popular functions: 17
+popular functions: 9
+npp_bb: 87
+now processing file: fs/quota/dquot.c
+non-popular functions: 88
+popular functions: 1
+npp_bb: 725
+now processing file: fs/file.c
+non-popular functions: 2
+popular functions: 43
+npp_bb: 71
+now processing file: fs/xfs/xfs_trace.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/aio.c
+non-popular functions: 13
+popular functions: 33
+npp_bb: 203
+now processing file: fs/fscache/proc.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/binfmt_script.c
+non-popular functions: 1
+popular functions: 2
+npp_bb: 12
+now processing file: fs/notify/group.c
+non-popular functions: 5
+popular functions: 2
+npp_bb: 14
+now processing file: fs/sysfs/symlink.c
+non-popular functions: 3
+popular functions: 5
+npp_bb: 23
+now processing file: fs/proc/interrupts.c
+non-popular functions: 3
+popular functions: 1
+npp_bb: 5
+now processing file: fs/ext4/block_validity.c
+non-popular functions: 8
+popular functions: 1
+npp_bb: 68
+now processing file: fs/attr.c
+non-popular functions: 0
+popular functions: 4
+npp_bb: 28
+now processing file: fs/overlayfs/readdir.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/sysfs/group.c
+non-popular functions: 4
+popular functions: 9
+npp_bb: 37
+now processing file: fs/nls/nls_iso8859-1.c
+non-popular functions: 3
+popular functions: 1
+npp_bb: 10
+now processing file: fs/xfs/xfs_super.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/kernfs/symlink.c
+non-popular functions: 0
+popular functions: 3
+npp_bb: 14
+now processing file: fs/signalfd.c
+non-popular functions: 9
+popular functions: 1
+npp_bb: 75
+now processing file: fs/cachefiles/main.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/overlayfs/inode.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: fs/dcache.c
+non-popular functions: 25
+popular functions: 96
+npp_bb: 356
+total non-popular functions: 1888
+total popular functions: 1653
+****************
+total npp_bb = 17936

@@ -1,0 +1,29 @@
+kernel:
+  image: detectivelyw/lind-linuxkit-experiment:v4.14.24-original
+  cmdline: "console=tty0 console=ttyS0 console=ttyAMA0 console=ttysclp0"
+init:
+  - linuxkit/init:b212cfeb4bb6330e0a7547d8010fe2e8489b677a
+  - linuxkit/runc:7c39a68490a12cde830e1922f171c451fb08e731
+  - linuxkit/containerd:37e397ebfc6bd5d8e18695b121166ffd0cbfd9f0
+  - linuxkit/getty:v0.2
+onboot:
+  - name: dhcpcd
+    image: linuxkit/dhcpcd:v0.2
+    command: ["/sbin/dhcpcd", "--nobackground", "-f", "/dhcpcd.conf", "-1"]
+services:
+  - name: template
+    image: template:template-tag
+    capabilities:
+     - all
+    command: ["sh", "-c", "sleep 3000"]
+files:
+  - path: /root/.profile
+    source: "/home/liyiwen/Documents/projects/tracks/popular-paths-scripts/bash_profile_root"
+    mode: "0777"
+  - path: /root/linuxkit-script
+    source: "template-script"
+    mode: "0777"
+trust:
+  org:
+    - linuxkit
+    - library

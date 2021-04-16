@@ -1,0 +1,1936 @@
+Our program has started ...
+We are going to instrument kernel dir: net
+First, checking the required input files to conduct our kernel instrumentation...
+Popular paths data found. Now processing...
+now processing file: net/netfilter/xt_l2tp.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nf_conntrack_proto_dccp.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/addrconf_core.c
+non-popular functions: 3
+popular functions: 9
+npp_bb: 17
+now processing file: net/netfilter/xt_rateest.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/netfilter/ip6t_eui64.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/sched/act_mirred.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/tcp_ipv4.c
+non-popular functions: 34
+popular functions: 33
+npp_bb: 381
+now processing file: net/netfilter/ipvs/ip_vs_lblcr.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nfnetlink_cthelper.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/netfilter/nft_reject_ipv6.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/9p/error.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/ip_input.c
+non-popular functions: 2
+popular functions: 4
+npp_bb: 60
+now processing file: net/netfilter/xt_iprange.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/sched/ematch.c
+non-popular functions: 9
+popular functions: 1
+npp_bb: 84
+now processing file: net/ipv4/netfilter/ipt_CLUSTERIP.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/xt_sctp.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/sched/act_simple.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/netfilter/ip6t_ipv6header.c
+non-popular functions: 3
+popular functions: 1
+npp_bb: 33
+now processing file: net/ipv4/arp.c
+non-popular functions: 21
+popular functions: 18
+npp_bb: 232
+now processing file: net/ipv6/mcast.c
+non-popular functions: 58
+popular functions: 45
+npp_bb: 704
+now processing file: net/bridge/br_fdb.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/netfilter/nf_defrag_ipv6_hooks.c
+non-popular functions: 4
+popular functions: 2
+npp_bb: 24
+now processing file: net/ipv4/netfilter/ipt_MASQUERADE.c
+non-popular functions: 5
+popular functions: 1
+npp_bb: 8
+now processing file: net/ipv6/netfilter/nf_conntrack_l3proto_ipv6.c
+non-popular functions: 13
+popular functions: 3
+npp_bb: 70
+now processing file: net/netfilter/ipvs/ip_vs_sh.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/xfrm6_state.c
+non-popular functions: 9
+popular functions: 1
+npp_bb: 27
+now processing file: net/sched/act_police.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/anycast.c
+non-popular functions: 18
+popular functions: 4
+npp_bb: 123
+now processing file: net/ipv4/ipconfig.c
+non-popular functions: 28
+popular functions: 1
+npp_bb: 396
+now processing file: net/netfilter/xt_TRACE.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nf_nat_core.c
+non-popular functions: 23
+popular functions: 4
+npp_bb: 153
+now processing file: net/netfilter/xt_cluster.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nf_queue.c
+non-popular functions: 6
+popular functions: 3
+npp_bb: 49
+now processing file: net/netfilter/ipset/ip_set_hash_netiface.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/bridge/netfilter/ebt_dnat.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/x_tables.c
+non-popular functions: 46
+popular functions: 17
+npp_bb: 318
+now processing file: net/ipv4/netfilter/nf_tables_arp.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/xt_NFLOG.c
+non-popular functions: 3
+popular functions: 1
+npp_bb: 7
+now processing file: net/core/skbuff.c
+non-popular functions: 108
+popular functions: 42
+npp_bb: 1050
+now processing file: net/core/flow_dissector.c
+non-popular functions: 14
+popular functions: 14
+npp_bb: 203
+now processing file: net/sched/act_bpf.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nf_conntrack_timestamp.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/netfilter/iptable_nat.c
+non-popular functions: 2
+popular functions: 7
+npp_bb: 9
+now processing file: net/netfilter/xt_bpf.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/ip_tunnel.c
+non-popular functions: 19
+popular functions: 14
+npp_bb: 312
+now processing file: net/ipv4/ip_tunnel_core.c
+non-popular functions: 13
+popular functions: 2
+npp_bb: 88
+now processing file: net/ipv6/tcpv6_offload.c
+non-popular functions: 3
+popular functions: 1
+npp_bb: 11
+now processing file: net/ipv6/netfilter/ip6table_filter.c
+non-popular functions: 1
+popular functions: 6
+npp_bb: 10
+now processing file: net/core/gen_estimator.c
+non-popular functions: 6
+popular functions: 1
+npp_bb: 35
+now processing file: net/ipv4/inetpeer.c
+non-popular functions: 6
+popular functions: 3
+npp_bb: 46
+now processing file: net/netfilter/ipset/ip_set_bitmap_port.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/xfrm/xfrm_sysctl.c
+non-popular functions: 0
+popular functions: 2
+npp_bb: 4
+now processing file: net/netlabel/netlabel_user.c
+non-popular functions: 0
+popular functions: 2
+npp_bb: 10
+now processing file: net/netfilter/ipvs/ip_vs_sched.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/netfilter/nft_chain_route_ipv6.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/ip6_output.c
+non-popular functions: 10
+popular functions: 22
+npp_bb: 293
+now processing file: net/ipv6/netfilter/nft_redir_ipv6.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/xt_TEE.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/netfilter/nf_tables_ipv6.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/inet_hashtables.c
+non-popular functions: 0
+popular functions: 24
+npp_bb: 84
+now processing file: net/core/netevent.c
+non-popular functions: 2
+popular functions: 1
+npp_bb: 2
+now processing file: net/core/datagram.c
+non-popular functions: 9
+popular functions: 12
+npp_bb: 137
+now processing file: net/ipv4/udp_diag.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nf_conntrack_expect.c
+non-popular functions: 30
+popular functions: 5
+npp_bb: 154
+now processing file: net/netfilter/ipvs/ip_vs_core.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/switchdev/switchdev.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/sysctl_net.c
+non-popular functions: 0
+popular functions: 9
+npp_bb: 1
+now processing file: net/sched/cls_fw.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/xt_nfacct.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/netfilter/nf_log_ipv4.c
+non-popular functions: 4
+popular functions: 3
+npp_bb: 80
+now processing file: net/netfilter/xt_NETMAP.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/netfilter/nf_nat_h323.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/tcp_cubic.c
+non-popular functions: 4
+popular functions: 19
+npp_bb: 80
+now processing file: net/dns_resolver/dns_key.c
+non-popular functions: 7
+popular functions: 2
+npp_bb: 62
+now processing file: net/ipv4/netfilter/arpt_mangle.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/udp.c
+non-popular functions: 19
+popular functions: 21
+npp_bb: 324
+now processing file: net/ipv6/inet6_connection_sock.c
+non-popular functions: 1
+popular functions: 4
+npp_bb: 10
+now processing file: net/bridge/netfilter/ebt_limit.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nf_nat_amanda.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/bridge/netfilter/ebtable_filter.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/core/filter.c
+non-popular functions: 116
+popular functions: 26
+npp_bb: 844
+now processing file: net/netfilter/xt_osf.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/bridge/netfilter/ebt_nflog.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/fib_rules.c
+non-popular functions: 14
+popular functions: 4
+npp_bb: 72
+now processing file: net/ipv4/ip_options.c
+non-popular functions: 10
+popular functions: 2
+npp_bb: 215
+now processing file: net/bridge/netfilter/ebtables.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nf_conntrack_acct.c
+non-popular functions: 2
+popular functions: 5
+npp_bb: 10
+now processing file: net/netfilter/nf_conntrack_netlink.c
+non-popular functions: 78
+popular functions: 3
+npp_bb: 668
+now processing file: net/ipv4/fib_notifier.c
+non-popular functions: 3
+popular functions: 3
+npp_bb: 6
+now processing file: net/ipv6/inet6_hashtables.c
+non-popular functions: 2
+popular functions: 7
+npp_bb: 45
+now processing file: net/ipv6/netfilter/ip6table_raw.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nf_conntrack_h323_main.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/netfilter/arp_tables.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/ipset/ip_set_list_set.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/bridge/br_mdb.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/bridge/netfilter/ebt_log.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/xt_set.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/udp.c
+non-popular functions: 27
+popular functions: 56
+npp_bb: 454
+now processing file: net/ipv4/netfilter/nf_conntrack_l3proto_ipv4.c
+non-popular functions: 13
+popular functions: 3
+npp_bb: 66
+now processing file: net/ipv6/netfilter/ip6t_hbh.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netlink/af_netlink.c
+non-popular functions: 29
+popular functions: 61
+npp_bb: 421
+now processing file: net/netfilter/ipvs/ip_vs_sed.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/unix/af_unix.c
+non-popular functions: 27
+popular functions: 60
+npp_bb: 369
+now processing file: net/netfilter/nf_conntrack_timeout.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/core/dev_addr_lists.c
+non-popular functions: 26
+popular functions: 13
+npp_bb: 129
+now processing file: net/ipv4/tcp_diag.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/ipset/ip_set_hash_netport.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nf_conntrack_pptp.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/unix/garbage.c
+non-popular functions: 6
+popular functions: 4
+npp_bb: 51
+now processing file: net/netfilter/nft_nat.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/raw.c
+non-popular functions: 25
+popular functions: 11
+npp_bb: 337
+now processing file: net/netfilter/xt_mac.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nft_log.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nf_log.c
+non-popular functions: 17
+popular functions: 9
+npp_bb: 103
+now processing file: net/core/net-procfs.c
+non-popular functions: 13
+popular functions: 12
+npp_bb: 68
+now processing file: net/ipv6/ping.c
+non-popular functions: 7
+popular functions: 3
+npp_bb: 50
+now processing file: net/ipv6/route.c
+non-popular functions: 62
+popular functions: 57
+npp_bb: 686
+now processing file: net/ipv6/reassembly.c
+non-popular functions: 13
+popular functions: 6
+npp_bb: 117
+now processing file: net/ipv4/fib_trie.c
+non-popular functions: 32
+popular functions: 47
+npp_bb: 304
+now processing file: net/ipv6/netfilter/nf_nat_l3proto_ipv6.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/8021q/vlan.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/fib6_notifier.c
+non-popular functions: 3
+popular functions: 3
+npp_bb: 5
+now processing file: net/sched/em_text.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/netfilter/ip_tables.c
+non-popular functions: 37
+popular functions: 16
+npp_bb: 369
+now processing file: net/ipv4/netfilter/nft_chain_route_ipv4.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/tcp_cong.c
+non-popular functions: 15
+popular functions: 8
+npp_bb: 89
+now processing file: net/netlabel/netlabel_mgmt.c
+non-popular functions: 10
+popular functions: 1
+npp_bb: 139
+now processing file: net/netfilter/xt_LOG.c
+non-popular functions: 5
+popular functions: 1
+npp_bb: 11
+now processing file: net/8021q/vlan.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/core/link_watch.c
+non-popular functions: 1
+popular functions: 11
+npp_bb: 36
+now processing file: net/netfilter/nf_conntrack_irc.c
+non-popular functions: 3
+popular functions: 4
+npp_bb: 58
+now processing file: net/ipv4/route.c
+non-popular functions: 46
+popular functions: 35
+npp_bb: 522
+now processing file: net/ipv6/netfilter/nft_masq_ipv6.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/ipvs/ip_vs_nq.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/netfilter/ip6t_mh.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/xt_ipcomp.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/netfilter/ip6t_REJECT.c
+non-popular functions: 3
+popular functions: 1
+npp_bb: 17
+now processing file: net/llc/llc_core.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nf_conntrack_sip.c
+non-popular functions: 47
+popular functions: 1
+npp_bb: 456
+now processing file: net/netfilter/xt_nat.c
+non-popular functions: 9
+popular functions: 1
+npp_bb: 10
+now processing file: net/xfrm/xfrm_state.c
+non-popular functions: 79
+popular functions: 4
+npp_bb: 557
+now processing file: net/sched/cls_u32.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nft_ct.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/ipvs/ip_vs_ctl.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/xt_TCPOPTSTRIP.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/packet/af_packet.c
+non-popular functions: 105
+popular functions: 25
+npp_bb: 955
+now processing file: net/netfilter/nft_fwd_netdev.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/af_inet6.c
+non-popular functions: 2
+popular functions: 19
+npp_bb: 134
+now processing file: net/ipv4/icmp.c
+non-popular functions: 10
+popular functions: 15
+npp_bb: 119
+now processing file: net/core/netprio_cgroup.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/netfilter/nft_dup_ipv4.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/xfrm/xfrm_proc.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/sched/cls_matchall.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/ipset/ip_set_core.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/gre_offload.c
+non-popular functions: 3
+popular functions: 1
+npp_bb: 50
+now processing file: net/netfilter/ipvs/ip_vs_proto_tcp.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/udp_offload.c
+non-popular functions: 4
+popular functions: 1
+npp_bb: 26
+now processing file: net/sched/cls_tcindex.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/vmw_vsock/virtio_transport.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/netfilter/ip6t_rt.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/ip6_fib.c
+non-popular functions: 18
+popular functions: 47
+npp_bb: 279
+now processing file: net/sched/sch_generic.c
+non-popular functions: 13
+popular functions: 29
+npp_bb: 126
+now processing file: net/ipv4/gre_demux.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/ipvs/ip_vs_proto_udp.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/core/rtnetlink.c
+non-popular functions: 56
+popular functions: 57
+npp_bb: 938
+now processing file: net/netfilter/nft_exthdr.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/socket.c
+non-popular functions: 57
+popular functions: 54
+npp_bb: 482
+now processing file: net/ipv4/netfilter/nf_tables_ipv4.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/xt_ipvs.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/xt_multiport.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/9p/trans_fd.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/xt_u32.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/tcp_rate.c
+non-popular functions: 0
+popular functions: 4
+npp_bb: 9
+now processing file: net/netfilter/ipvs/ip_vs_ftp.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/sched/sch_blackhole.c
+non-popular functions: 2
+popular functions: 1
+npp_bb: 2
+now processing file: net/ipv4/netfilter/nf_conntrack_proto_icmp.c
+non-popular functions: 9
+popular functions: 5
+npp_bb: 54
+now processing file: net/ipv4/xfrm4_policy.c
+non-popular functions: 5
+popular functions: 7
+npp_bb: 37
+now processing file: net/netfilter/xt_tcpmss.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/xt_HL.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/netfilter/nft_dup_ipv6.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/netfilter/nft_reject_ipv4.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netlabel/netlabel_cipso_v4.c
+non-popular functions: 9
+popular functions: 1
+npp_bb: 150
+now processing file: net/bridge/br_netlink.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/icmp.c
+non-popular functions: 9
+popular functions: 17
+npp_bb: 151
+now processing file: net/ipv6/netfilter/ip6_tables.c
+non-popular functions: 37
+popular functions: 16
+npp_bb: 376
+now processing file: net/core/secure_seq.c
+non-popular functions: 0
+popular functions: 6
+npp_bb: 5
+now processing file: net/netfilter/xt_owner.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/core/net_namespace.c
+non-popular functions: 21
+popular functions: 27
+npp_bb: 136
+now processing file: net/xfrm/xfrm_policy.c
+non-popular functions: 90
+popular functions: 12
+npp_bb: 711
+now processing file: net/sched/act_gact.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/8021q/vlan_core.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nft_hash.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/sched/cls_bpf.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/xt_DSCP.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/netfilter/nf_log_ipv6.c
+non-popular functions: 4
+popular functions: 3
+npp_bb: 91
+now processing file: net/ipv4/tcp_fastopen.c
+non-popular functions: 12
+popular functions: 3
+npp_bb: 92
+now processing file: net/netfilter/nf_nat_irc.c
+non-popular functions: 5
+popular functions: 1
+npp_bb: 15
+now processing file: net/core/sock.c
+non-popular functions: 66
+popular functions: 60
+npp_bb: 492
+now processing file: net/sched/cls_cgroup.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/sched/cls_api.c
+non-popular functions: 33
+popular functions: 2
+npp_bb: 270
+now processing file: net/netfilter/nf_conntrack_tftp.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netlabel/netlabel_kapi.c
+non-popular functions: 32
+popular functions: 1
+npp_bb: 239
+now processing file: net/netfilter/xt_quota.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/netfilter/ip6t_NPT.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/netfilter/nf_nat_masquerade_ipv6.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/netfilter/ip6t_ah.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/bridge/netfilter/ebt_arp.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/sched/em_cmp.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/netfilter/nf_nat_masquerade_ipv4.c
+non-popular functions: 3
+popular functions: 3
+npp_bb: 19
+now processing file: net/ipv4/tcp_metrics.c
+non-popular functions: 14
+popular functions: 16
+npp_bb: 212
+now processing file: net/sched/act_csum.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/xfrm/xfrm_hash.c
+non-popular functions: 0
+popular functions: 2
+npp_bb: 6
+now processing file: net/netfilter/nfnetlink_cttimeout.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/xt_REDIRECT.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/bridge/netfilter/nft_reject_bridge.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/xt_connmark.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/xt_HMARK.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/inet_fragment.c
+non-popular functions: 15
+popular functions: 3
+npp_bb: 76
+now processing file: net/netfilter/nf_nat_tftp.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nf_conntrack_sane.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nf_tables_api.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nfnetlink_queue.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/datagram.c
+non-popular functions: 13
+popular functions: 4
+npp_bb: 212
+now processing file: net/netfilter/xt_string.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/core/lwtunnel.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/sched/act_skbedit.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/exthdrs.c
+non-popular functions: 21
+popular functions: 3
+npp_bb: 188
+now processing file: net/ipv4/ipmr.c
+non-popular functions: 73
+popular functions: 7
+npp_bb: 701
+now processing file: net/netfilter/nf_conntrack_amanda.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/xt_connlabel.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/sched/sch_api.c
+non-popular functions: 51
+popular functions: 7
+npp_bb: 516
+now processing file: net/netfilter/xt_comment.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/ping.c
+non-popular functions: 33
+popular functions: 6
+npp_bb: 319
+now processing file: net/9p/trans_virtio.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/802/psnap.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/ipset/ip_set_hash_ipportip.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/fib_semantics.c
+non-popular functions: 8
+popular functions: 29
+npp_bb: 293
+now processing file: net/netfilter/xt_connlimit.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/core/stream.c
+non-popular functions: 5
+popular functions: 2
+npp_bb: 53
+now processing file: net/8021q/vlanproc.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/core/scm.c
+non-popular functions: 1
+popular functions: 6
+npp_bb: 42
+now processing file: net/sched/em_meta.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/ip_fragment.c
+non-popular functions: 18
+popular functions: 5
+npp_bb: 168
+now processing file: net/netfilter/nft_queue.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/netfilter/nf_defrag_ipv4.c
+non-popular functions: 5
+popular functions: 2
+npp_bb: 24
+now processing file: net/ipv4/datagram.c
+non-popular functions: 0
+popular functions: 2
+npp_bb: 18
+now processing file: net/ipv4/netfilter/nf_nat_pptp.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/ip6_icmp.c
+non-popular functions: 1
+popular functions: 2
+npp_bb: 3
+now processing file: net/9p/mod.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nf_conntrack_netbios_ns.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/ip6_tunnel.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/proc.c
+non-popular functions: 7
+popular functions: 5
+npp_bb: 30
+now processing file: net/netfilter/nft_limit.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/bridge/netfilter/nf_log_bridge.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/sched/cls_flow.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netlabel/netlabel_calipso.c
+non-popular functions: 23
+popular functions: 2
+npp_bb: 69
+now processing file: net/netfilter/nf_conntrack_helper.c
+non-popular functions: 16
+popular functions: 10
+npp_bb: 99
+now processing file: net/bridge/netfilter/nf_tables_bridge.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/ipvs/ip_vs_conn.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/netfilter.c
+non-popular functions: 7
+popular functions: 1
+npp_bb: 37
+now processing file: net/ipv6/addrlabel.c
+non-popular functions: 11
+popular functions: 13
+npp_bb: 98
+now processing file: net/ipv4/fib_lookup.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/udp_offload.c
+non-popular functions: 5
+popular functions: 3
+npp_bb: 70
+now processing file: net/ipv6/exthdrs_offload.c
+non-popular functions: 0
+popular functions: 1
+npp_bb: 1
+now processing file: net/netfilter/xt_CT.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nft_compat.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/netfilter/ipt_SYNPROXY.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/unix/diag.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/sysctl_net_ipv4.c
+non-popular functions: 12
+popular functions: 5
+npp_bb: 66
+now processing file: net/netfilter/ipvs/ip_vs_lc.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/ip6_checksum.c
+non-popular functions: 1
+popular functions: 1
+npp_bb: 10
+now processing file: net/netfilter/xt_time.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nf_conntrack_extend.c
+non-popular functions: 1
+popular functions: 3
+npp_bb: 13
+now processing file: net/ipv6/ndisc.c
+non-popular functions: 32
+popular functions: 12
+npp_bb: 432
+now processing file: net/bridge/br.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nf_conntrack_ftp.c
+non-popular functions: 15
+popular functions: 1
+npp_bb: 127
+now processing file: net/8021q/vlan_netlink.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nft_meta.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/seg6.c
+non-popular functions: 8
+popular functions: 3
+npp_bb: 36
+now processing file: net/netfilter/xt_tcpudp.c
+non-popular functions: 7
+popular functions: 1
+npp_bb: 36
+now processing file: net/core/dev.c
+non-popular functions: 156
+popular functions: 127
+npp_bb: 1278
+now processing file: net/bridge/netfilter/ebt_redirect.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/xt_CLASSIFY.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/fou6.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/vmw_vsock/hyperv_transport.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/tcp_input.c
+non-popular functions: 73
+popular functions: 91
+npp_bb: 1148
+now processing file: net/sched/em_ipset.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/bridge/netfilter/ebtable_nat.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/xt_devgroup.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/protocol.c
+non-popular functions: 2
+popular functions: 2
+npp_bb: 5
+now processing file: net/core/request_sock.c
+non-popular functions: 1
+popular functions: 1
+npp_bb: 7
+now processing file: net/ipv4/tcp_minisocks.c
+non-popular functions: 3
+popular functions: 8
+npp_bb: 116
+now processing file: net/netfilter/ipset/ip_set_hash_net.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/sched/act_nat.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/ipvs/ip_vs_sync.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netlabel/netlabel_unlabeled.c
+non-popular functions: 22
+popular functions: 5
+npp_bb: 226
+now processing file: net/netfilter/xt_esp.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nf_conntrack_core.c
+non-popular functions: 55
+popular functions: 16
+npp_bb: 386
+now processing file: net/netfilter/xt_helper.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/tcp_recovery.c
+non-popular functions: 2
+popular functions: 4
+npp_bb: 26
+now processing file: net/bridge/netfilter/ebt_snat.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/core/neighbour.c
+non-popular functions: 65
+popular functions: 35
+npp_bb: 628
+now processing file: net/ipv6/netfilter/nf_conntrack_reasm.c
+non-popular functions: 10
+popular functions: 5
+npp_bb: 123
+now processing file: net/netlink/diag.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/bridge/br_private.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/cipso_ipv4.c
+non-popular functions: 47
+popular functions: 2
+npp_bb: 397
+now processing file: net/netlink/genetlink.c
+non-popular functions: 9
+popular functions: 26
+npp_bb: 144
+now processing file: net/netfilter/xt_dscp.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/sched/cls_rsvp.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nfnetlink.c
+non-popular functions: 17
+popular functions: 6
+npp_bb: 115
+now processing file: net/bridge/netfilter/ebtable_broute.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/tcp_offload.c
+non-popular functions: 5
+popular functions: 3
+npp_bb: 66
+now processing file: net/netfilter/xt_state.c
+non-popular functions: 4
+popular functions: 1
+npp_bb: 9
+now processing file: net/netfilter/xt_hl.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/proc.c
+non-popular functions: 10
+popular functions: 3
+npp_bb: 77
+now processing file: net/netfilter/xt_connbytes.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nf_conntrack_ecache.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/core/ptp_classifier.c
+non-popular functions: 1
+popular functions: 1
+npp_bb: 1
+now processing file: net/ipv4/fou.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nfnetlink_log.c
+non-popular functions: 30
+popular functions: 5
+npp_bb: 214
+now processing file: net/netfilter/ipvs/ip_vs_dh.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/ip_sockglue.c
+non-popular functions: 18
+popular functions: 8
+npp_bb: 428
+now processing file: net/ipv4/netfilter/nft_redir_ipv4.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/xt_physdev.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/netfilter/ip6t_MASQUERADE.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/protocol.c
+non-popular functions: 2
+popular functions: 2
+npp_bb: 4
+now processing file: net/ipv6/udplite.c
+non-popular functions: 4
+popular functions: 4
+npp_bb: 5
+now processing file: net/ipv4/netfilter/ipt_ECN.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/bridge/netfilter/ebt_among.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/netfilter/nft_chain_nat_ipv4.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/core/sysctl_net_core.c
+non-popular functions: 5
+popular functions: 3
+npp_bb: 65
+now processing file: net/sched/act_api.c
+non-popular functions: 37
+popular functions: 3
+npp_bb: 308
+now processing file: net/sched/act_pedit.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/ipvs/ip_vs_lblc.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/ipset/ip_set_hash_ipportnet.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/sched/act_ipt.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/ipvs/ip_vs_fo.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/xt_NFQUEUE.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nft_reject_inet.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nft_counter.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/tcp_timer.c
+non-popular functions: 8
+popular functions: 9
+npp_bb: 139
+now processing file: net/netfilter/ipvs/ip_vs_ovf.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/xt_length.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/ipset/ip_set_bitmap_ipmac.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/xfrm6_protocol.c
+non-popular functions: 12
+popular functions: 1
+npp_bb: 61
+now processing file: net/ipv4/tcp_output.c
+non-popular functions: 29
+popular functions: 68
+npp_bb: 538
+now processing file: net/ipv6/fib6_rules.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/bridge/netfilter/ebt_802_3.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/tcp_ipv6.c
+non-popular functions: 16
+popular functions: 27
+npp_bb: 290
+now processing file: net/netfilter/nfnetlink_acct.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/bridge/netfilter/ebt_arpreply.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/l3mdev/l3mdev.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/ipip.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/netfilter/ip6table_mangle.c
+non-popular functions: 1
+popular functions: 5
+npp_bb: 11
+now processing file: net/netfilter/ipset/ip_set_hash_ip.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/xt_TPROXY.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/core/sock_reuseport.c
+non-popular functions: 7
+popular functions: 2
+npp_bb: 57
+now processing file: net/netfilter/ipvs/ip_vs_rr.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/netfilter/nf_log_arp.c
+non-popular functions: 3
+popular functions: 3
+npp_bb: 19
+now processing file: net/core/gro_cells.c
+non-popular functions: 2
+popular functions: 2
+npp_bb: 17
+now processing file: net/core/dst_cache.c
+non-popular functions: 7
+popular functions: 2
+npp_bb: 28
+now processing file: net/ipv4/netfilter/iptable_raw.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/igmp.c
+non-popular functions: 68
+popular functions: 22
+npp_bb: 827
+now processing file: net/ipv4/tcp.c
+non-popular functions: 32
+popular functions: 30
+npp_bb: 679
+now processing file: net/netfilter/nf_tables_inet.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nf_conntrack_proto_udp.c
+non-popular functions: 6
+popular functions: 4
+npp_bb: 28
+now processing file: net/netfilter/nf_sockopt.c
+non-popular functions: 8
+popular functions: 2
+npp_bb: 31
+now processing file: net/netfilter/nf_conntrack_proto_sctp.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nf_tables_netdev.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nf_tables_core.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/core/dst.c
+non-popular functions: 6
+popular functions: 9
+npp_bb: 29
+now processing file: net/ipv6/ip6_offload.c
+non-popular functions: 10
+popular functions: 1
+npp_bb: 74
+now processing file: net/sched/em_u32.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/calipso.c
+non-popular functions: 33
+popular functions: 2
+npp_bb: 248
+now processing file: net/netfilter/xt_RATEEST.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/ipvs/ip_vs_proto.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/netfilter/nft_masq_ipv4.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/netfilter/ipt_rpfilter.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/netfilter/ipt_ah.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nf_conntrack_proto.c
+non-popular functions: 12
+popular functions: 17
+npp_bb: 61
+now processing file: net/core/netclassid_cgroup.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/bridge/netfilter/ebt_mark.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/fib_frontend.c
+non-popular functions: 8
+popular functions: 27
+npp_bb: 212
+now processing file: net/core/fib_rules.c
+non-popular functions: 20
+popular functions: 10
+npp_bb: 279
+now processing file: net/ipv4/netfilter/nf_nat_proto_gre.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/bridge/br_nf_core.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/ipvs/ip_vs_app.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/xfrm6_policy.c
+non-popular functions: 9
+popular functions: 7
+npp_bb: 43
+now processing file: net/netfilter/nf_conntrack_seqadj.c
+non-popular functions: 8
+popular functions: 1
+npp_bb: 57
+now processing file: net/netfilter/xt_statistic.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/core/lwt_bpf.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/bridge/netfilter/ebt_mark_m.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/ip6_flowlabel.c
+non-popular functions: 24
+popular functions: 6
+npp_bb: 236
+now processing file: net/netfilter/ipvs/ip_vs_proto_sctp.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/ip_output.c
+non-popular functions: 7
+popular functions: 23
+npp_bb: 245
+now processing file: net/netfilter/ipset/ip_set_hash_ipport.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nf_conntrack_proto_generic.c
+non-popular functions: 6
+popular functions: 4
+npp_bb: 10
+now processing file: net/core/sock_diag.c
+non-popular functions: 14
+popular functions: 5
+npp_bb: 74
+now processing file: net/ipv4/raw.c
+non-popular functions: 34
+popular functions: 9
+npp_bb: 261
+now processing file: net/ipv6/ipv6_sockglue.c
+non-popular functions: 7
+popular functions: 3
+npp_bb: 369
+now processing file: net/bridge/netfilter/ebt_ip6.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/xt_limit.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/netfilter/ip6table_security.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/bridge/netfilter/nft_meta_bridge.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/netfilter/nf_nat_snmp_basic.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/xt_IDLETIMER.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nf_conntrack_labels.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/xt_cpu.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nf_conntrack_snmp.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/802/stp.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/core.c
+non-popular functions: 3
+popular functions: 17
+npp_bb: 70
+now processing file: net/netfilter/xt_addrtype.c
+non-popular functions: 8
+popular functions: 1
+npp_bb: 66
+now processing file: net/netfilter/nft_dup_netdev.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/xfrm4_state.c
+non-popular functions: 4
+popular functions: 1
+npp_bb: 11
+now processing file: net/netfilter/nf_conntrack_proto_tcp.c
+non-popular functions: 15
+popular functions: 6
+npp_bb: 300
+now processing file: net/netfilter/xt_conntrack.c
+non-popular functions: 12
+popular functions: 1
+npp_bb: 87
+now processing file: net/ipv4/netfilter.c
+non-popular functions: 6
+popular functions: 1
+npp_bb: 48
+now processing file: net/netfilter/xt_realm.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/xt_pkttype.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/xfrm4_protocol.c
+non-popular functions: 12
+popular functions: 1
+npp_bb: 64
+now processing file: net/netfilter/nf_conntrack_standalone.c
+non-popular functions: 17
+popular functions: 6
+npp_bb: 109
+now processing file: net/netfilter/xt_cgroup.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/core/fib_notifier.c
+non-popular functions: 6
+popular functions: 6
+npp_bb: 28
+now processing file: net/ipv6/netfilter/ip6table_nat.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nf_log_common.c
+non-popular functions: 5
+popular functions: 1
+npp_bb: 48
+now processing file: net/ipv6/netfilter/nft_chain_nat_ipv6.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/packet/diag.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/netfilter/arptable_filter.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/core/net-sysfs.c
+non-popular functions: 55
+popular functions: 18
+npp_bb: 251
+now processing file: net/bridge/netfilter/ebt_stp.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/bridge/br_netfilter_hooks.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/inet_diag.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/sched/cls_route.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/netfilter/ip6t_rpfilter.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/ipset/ip_set_bitmap_ip.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/netfilter/ipt_REJECT.c
+non-popular functions: 3
+popular functions: 1
+npp_bb: 16
+now processing file: net/netfilter/nf_nat_sip.c
+non-popular functions: 16
+popular functions: 1
+npp_bb: 135
+now processing file: net/ipv6/output_core.c
+non-popular functions: 4
+popular functions: 3
+npp_bb: 22
+now processing file: net/ipv4/udplite.c
+non-popular functions: 2
+popular functions: 4
+npp_bb: 6
+now processing file: net/netfilter/xt_CHECKSUM.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/netfilter/ip6t_frag.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/bridge/netfilter/ebt_ip.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/nf_nat_ftp.c
+non-popular functions: 4
+popular functions: 1
+npp_bb: 22
+now processing file: net/netfilter/xt_TCPMSS.c
+non-popular functions: 9
+popular functions: 1
+npp_bb: 79
+now processing file: net/netfilter/xt_recent.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/netfilter/iptable_security.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/xt_policy.c
+non-popular functions: 7
+popular functions: 1
+npp_bb: 50
+now processing file: net/netfilter/nf_conntrack_proto_gre.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/tcp_ulp.c
+non-popular functions: 6
+popular functions: 1
+npp_bb: 28
+now processing file: net/ipv6/sysctl_net_ipv6.c
+non-popular functions: 1
+popular functions: 2
+npp_bb: 8
+now processing file: net/ipv4/netfilter/iptable_filter.c
+non-popular functions: 1
+popular functions: 6
+npp_bb: 11
+now processing file: net/xfrm/xfrm_device.c
+non-popular functions: 1
+popular functions: 5
+npp_bb: 15
+now processing file: net/ipv6/addrconf.c
+non-popular functions: 85
+popular functions: 85
+npp_bb: 1039
+now processing file: net/ipv4/devinet.c
+non-popular functions: 20
+popular functions: 47
+npp_bb: 378
+now processing file: net/bridge/netfilter/ebt_vlan.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/ipvs/ip_vs_wrr.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/netfilter/iptable_mangle.c
+non-popular functions: 1
+popular functions: 5
+npp_bb: 14
+now processing file: net/netfilter/xt_mark.c
+non-popular functions: 3
+popular functions: 1
+npp_bb: 6
+now processing file: net/ipv6/tunnel6.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/netfilter/ipvs/ip_vs_wlc.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/sched/cls_basic.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/unix/sysctl_net_unix.c
+non-popular functions: 0
+popular functions: 1
+npp_bb: 4
+now processing file: net/netfilter/xt_dccp.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/exthdrs_core.c
+non-popular functions: 2
+popular functions: 2
+npp_bb: 64
+now processing file: net/ipv6/netfilter/nf_conntrack_proto_icmpv6.c
+non-popular functions: 9
+popular functions: 5
+npp_bb: 50
+now processing file: net/netfilter/xt_hashlimit.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/inet_timewait_sock.c
+non-popular functions: 3
+popular functions: 7
+npp_bb: 24
+now processing file: net/ipv4/inet_connection_sock.c
+non-popular functions: 10
+popular functions: 26
+npp_bb: 139
+now processing file: net/netfilter/xt_ecn.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/af_inet.c
+non-popular functions: 12
+popular functions: 28
+npp_bb: 208
+now processing file: net/ipv4/tunnel4.c
+non-popular functions: 6
+popular functions: 3
+npp_bb: 30
+now processing file: net/netfilter/nf_synproxy_core.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv6/ip6_input.c
+non-popular functions: 1
+popular functions: 4
+npp_bb: 41
+now processing file: net/netlabel/netlabel_domainhash.c
+non-popular functions: 12
+popular functions: 7
+npp_bb: 175
+now processing file: net/core/dev_ioctl.c
+non-popular functions: 3
+popular functions: 5
+npp_bb: 116
+now processing file: net/netfilter/ipvs/ip_vs_est.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/bridge/netfilter/ebt_pkttype.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ipv4/netfilter/nf_nat_l3proto_ipv4.c
+non-popular functions: 9
+popular functions: 5
+npp_bb: 99
+now processing file: net/ipv6/netfilter/ip6t_SYNPROXY.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/ethernet/eth.c
+non-popular functions: 12
+popular functions: 9
+npp_bb: 60
+now processing file: net/sched/em_nbyte.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: net/xfrm/xfrm_input.c
+non-popular functions: 12
+popular functions: 2
+npp_bb: 134
+total non-popular functions: 3703
+total popular functions: 2405
+****************
+total npp_bb = 37642

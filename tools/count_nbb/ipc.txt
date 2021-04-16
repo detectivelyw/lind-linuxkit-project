@@ -1,0 +1,44 @@
+Our program has started ...
+We are going to instrument kernel dir: ipc
+First, checking the required input files to conduct our kernel instrumentation...
+Popular paths data found. Now processing...
+now processing file: ipc/mq_sysctl.c
+non-popular functions: 2
+popular functions: 1
+npp_bb: 2
+now processing file: ipc/namespace.c
+non-popular functions: 2
+popular functions: 10
+npp_bb: 17
+now processing file: ipc/sem.c
+non-popular functions: 25
+popular functions: 30
+npp_bb: 355
+now processing file: ipc/msg.c
+non-popular functions: 35
+popular functions: 3
+npp_bb: 249
+now processing file: ipc/util.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: ipc/mqueue.c
+non-popular functions: 39
+popular functions: 12
+npp_bb: 373
+now processing file: ipc/ipc_sysctl.c
+non-popular functions: 5
+popular functions: 1
+npp_bb: 11
+now processing file: ipc/util.c
+non-popular functions: 5
+popular functions: 22
+npp_bb: 66
+now processing file: ipc/shm.c
+non-popular functions: 25
+popular functions: 23
+npp_bb: 210
+total non-popular functions: 138
+total popular functions: 102
+****************
+total npp_bb = 1283

@@ -1,0 +1,856 @@
+Our program has started ...
+We are going to instrument kernel dir: arch
+First, checking the required input files to conduct our kernel instrumentation...
+Popular paths data found. Now processing...
+now processing file: arch/x86/include/asm/i8259.h
+now processing file: arch/x86/kernel/apic/x2apic_phys.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/mm/extable.c
+non-popular functions: 9
+popular functions: 4
+npp_bb: 33
+now processing file: arch/x86/crypto/cast5_avx_glue.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/realmode/init.c
+non-popular functions: 0
+popular functions: 3
+npp_bb: 5
+now processing file: arch/x86/kernel/pcspeaker.c
+non-popular functions: 0
+popular functions: 1
+npp_bb: 0
+now processing file: arch/x86/kernel/cpu/intel_cacheinfo.c
+non-popular functions: 12
+popular functions: 11
+npp_bb: 152
+now processing file: arch/x86/include/asm/mpspec.h
+now processing file: arch/x86/include/asm/bios_ebda.h
+now processing file: arch/x86/mm/pat.c
+non-popular functions: 22
+popular functions: 19
+npp_bb: 162
+now processing file: arch/x86/crypto/cast6_avx_glue.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/include/asm/io.h
+now processing file: arch/x86/crypto/serpent_sse2_glue.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/pci/early.c
+non-popular functions: 5
+popular functions: 1
+npp_bb: 16
+now processing file: arch/x86/kernel/early-quirks.c
+non-popular functions: 22
+popular functions: 3
+npp_bb: 102
+now processing file: arch/x86/kernel/cpu/match.c
+non-popular functions: 0
+popular functions: 1
+npp_bb: 2
+now processing file: arch/x86/include/asm/dma-mapping.h
+now processing file: arch/x86/kernel/audit_64.c
+non-popular functions: 2
+popular functions: 0
+npp_bb: 10
+now processing file: arch/x86/kernel/amd_nb.c
+non-popular functions: 12
+popular functions: 6
+npp_bb: 90
+now processing file: arch/x86/kernel/setup.c
+non-popular functions: 8
+popular functions: 17
+npp_bb: 84
+now processing file: arch/x86/kernel/acpi/cstate.c
+non-popular functions: 5
+popular functions: 1
+npp_bb: 30
+now processing file: arch/x86/kernel/fpu/signal.c
+non-popular functions: 4
+popular functions: 8
+npp_bb: 72
+now processing file: arch/x86/include/asm/elf.h
+now processing file: arch/x86/pci/direct.c
+non-popular functions: 3
+popular functions: 6
+npp_bb: 66
+now processing file: arch/x86/entry/vsyscall/vsyscall_64.c
+non-popular functions: 8
+popular functions: 2
+npp_bb: 67
+now processing file: arch/x86/lib/csum-partial_64.c
+non-popular functions: 1
+popular functions: 2
+npp_bb: 4
+now processing file: arch/x86/kernel/nmi.c
+non-popular functions: 9
+popular functions: 5
+npp_bb: 60
+now processing file: arch/x86/kernel/cpu/hypervisor.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/include/asm/bitops.h
+now processing file: arch/x86/mm/init_64.c
+non-popular functions: 10
+popular functions: 22
+npp_bb: 117
+now processing file: arch/x86/include/asm/syscall.h
+now processing file: arch/x86/crypto/aesni-intel_glue.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/power/cpu.c
+non-popular functions: 12
+popular functions: 1
+npp_bb: 31
+now processing file: arch/x86/kernel/ksysfs.c
+non-popular functions: 9
+popular functions: 2
+npp_bb: 66
+now processing file: arch/x86/crypto/crc32-pclmul_glue.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/kernel/module.c
+non-popular functions: 3
+popular functions: 2
+npp_bb: 41
+now processing file: arch/x86/kernel/pci-swiotlb.c
+non-popular functions: 1
+popular functions: 5
+npp_bb: 9
+now processing file: arch/x86/lib/msr.c
+non-popular functions: 6
+popular functions: 4
+npp_bb: 12
+now processing file: arch/x86/oprofile/init.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/include/asm/futex.h
+now processing file: arch/x86/include/asm/trace/irq_vectors.h
+now processing file: arch/x86/entry/vsyscall/vsyscall_trace.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/pci/legacy.c
+non-popular functions: 1
+popular functions: 3
+npp_bb: 9
+now processing file: arch/x86/include/asm/compat.h
+now processing file: arch/x86/crypto/twofish_glue.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/kernel/cpu/cpuid-deps.c
+non-popular functions: 1
+popular functions: 3
+npp_bb: 6
+now processing file: arch/x86/kernel/hw_breakpoint.c
+non-popular functions: 10
+popular functions: 2
+npp_bb: 99
+now processing file: arch/x86/include/asm/archrandom.h
+now processing file: arch/x86/kernel/uprobes.c
+non-popular functions: 27
+popular functions: 1
+npp_bb: 138
+now processing file: arch/x86/include/asm/bootparam_utils.h
+now processing file: arch/x86/xen/apic.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/include/asm/kbdleds.h
+now processing file: arch/x86/include/asm/microcode.h
+now processing file: arch/x86/mm/pti.c
+non-popular functions: 11
+popular functions: 2
+npp_bb: 70
+now processing file: arch/x86/kernel/cpu/mshyperv.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/kernel/signal_compat.c
+non-popular functions: 4
+popular functions: 1
+npp_bb: 85
+now processing file: arch/x86/kernel/time.c
+non-popular functions: 1
+popular functions: 5
+npp_bb: 9
+now processing file: arch/x86/include/asm/atomic64_64.h
+now processing file: arch/x86/kernel/sysfb_efi.c
+non-popular functions: 2
+popular functions: 1
+npp_bb: 26
+now processing file: arch/x86/kernel/platform-quirks.c
+non-popular functions: 0
+popular functions: 1
+npp_bb: 3
+now processing file: arch/x86/mm/physaddr.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/include/asm/nospec-branch.h
+now processing file: arch/x86/kernel/alternative.c
+non-popular functions: 6
+popular functions: 14
+npp_bb: 50
+now processing file: arch/x86/include/asm/preempt.h
+now processing file: arch/x86/kernel/paravirt.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/kernel/vsmp_64.c
+non-popular functions: 4
+popular functions: 3
+npp_bb: 17
+now processing file: arch/x86/kernel/setup_percpu.c
+non-popular functions: 2
+popular functions: 4
+npp_bb: 14
+now processing file: arch/x86/include/asm/special_insns.h
+now processing file: arch/x86/include/asm/smap.h
+now processing file: arch/x86/kernel/msr.c
+non-popular functions: 6
+popular functions: 2
+npp_bb: 44
+now processing file: arch/x86/include/asm/msr-trace.h
+now processing file: arch/x86/kernel/head64.c
+non-popular functions: 4
+popular functions: 5
+npp_bb: 40
+now processing file: arch/x86/include/asm/desc.h
+now processing file: arch/x86/kernel/cpu/proc.c
+non-popular functions: 0
+popular functions: 5
+npp_bb: 7
+now processing file: arch/x86/xen/pci-swiotlb-xen.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/kernel/apic/htirq.c
+non-popular functions: 6
+popular functions: 1
+npp_bb: 24
+now processing file: arch/x86/include/asm/irq.h
+now processing file: arch/x86/events/intel/uncore.c
+non-popular functions: 48
+popular functions: 1
+npp_bb: 336
+now processing file: arch/x86/kernel/pci-dma.c
+non-popular functions: 3
+popular functions: 5
+npp_bb: 55
+now processing file: arch/x86/include/asm/tsc.h
+now processing file: arch/x86/kernel/cpu/mtrr/generic.c
+non-popular functions: 9
+popular functions: 20
+npp_bb: 99
+now processing file: arch/x86/include/asm/tlbflush.h
+now processing file: arch/x86/events/intel/cstate.c
+non-popular functions: 14
+popular functions: 1
+npp_bb: 86
+now processing file: arch/x86/kernel/cpu/common.c
+non-popular functions: 17
+popular functions: 31
+npp_bb: 128
+now processing file: arch/x86/include/asm/xen/hypervisor.h
+now processing file: arch/x86/events/perf_event.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/mm/mmap.c
+non-popular functions: 1
+popular functions: 11
+npp_bb: 16
+now processing file: arch/x86/kernel/cpu/amd.c
+non-popular functions: 13
+popular functions: 8
+npp_bb: 121
+now processing file: arch/x86/pci/fixup.c
+non-popular functions: 21
+popular functions: 1
+npp_bb: 66
+now processing file: arch/x86/kernel/cpu/mtrr/if.c
+non-popular functions: 7
+popular functions: 2
+npp_bb: 126
+now processing file: arch/x86/pci/mmconfig_64.c
+non-popular functions: 2
+popular functions: 6
+npp_bb: 22
+now processing file: arch/x86/include/asm/stackprotector.h
+now processing file: arch/x86/lib/cmdline.c
+non-popular functions: 1
+popular functions: 4
+npp_bb: 21
+now processing file: arch/x86/kernel/cpu/mtrr/main.c
+non-popular functions: 16
+popular functions: 8
+npp_bb: 140
+now processing file: arch/x86/kernel/cpu/bugs.c
+non-popular functions: 9
+popular functions: 3
+npp_bb: 63
+now processing file: arch/x86/mm/setup_nx.c
+non-popular functions: 1
+popular functions: 2
+npp_bb: 10
+now processing file: arch/x86/events/intel/rapl.c
+non-popular functions: 20
+popular functions: 1
+npp_bb: 109
+now processing file: arch/x86/crypto/salsa20_glue.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/mm/pat_rbtree.c
+non-popular functions: 2
+popular functions: 12
+npp_bb: 30
+now processing file: arch/x86/crypto/des3_ede_glue.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/kernel/cpu/aperfmperf.c
+non-popular functions: 3
+popular functions: 2
+npp_bb: 29
+now processing file: arch/x86/mm/pageattr.c
+non-popular functions: 49
+popular functions: 29
+npp_bb: 305
+now processing file: arch/x86/include/asm/cpufeature.h
+now processing file: arch/x86/include/asm/processor.h
+now processing file: arch/x86/kernel/apic/probe_64.c
+non-popular functions: 1
+popular functions: 2
+npp_bb: 6
+now processing file: arch/x86/events/amd/uncore.c
+non-popular functions: 20
+popular functions: 1
+npp_bb: 131
+now processing file: arch/x86/include/asm/pgalloc.h
+now processing file: arch/x86/pci/mmconfig-shared.c
+non-popular functions: 9
+popular functions: 17
+npp_bb: 148
+now processing file: arch/x86/include/asm/smp.h
+now processing file: arch/x86/lib/kaslr.c
+now processing file: arch/x86/pci/i386.c
+non-popular functions: 7
+popular functions: 8
+npp_bb: 55
+now processing file: arch/x86/kernel/kdebugfs.c
+non-popular functions: 4
+popular functions: 1
+npp_bb: 37
+now processing file: arch/x86/crypto/crc32c-intel_glue.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/include/asm/e820/api.h
+now processing file: arch/x86/kernel/fpu/xstate.c
+non-popular functions: 33
+popular functions: 3
+npp_bb: 193
+now processing file: arch/x86/include/asm/trace/hyperv.h
+now processing file: arch/x86/kernel/cpu/mtrr/cleanup.c
+non-popular functions: 3
+popular functions: 2
+npp_bb: 75
+now processing file: arch/x86/kernel/e820.c
+non-popular functions: 10
+popular functions: 33
+npp_bb: 108
+now processing file: arch/x86/kernel/irqinit.c
+non-popular functions: 0
+popular functions: 3
+npp_bb: 2
+now processing file: arch/x86/include/asm/arch_hweight.h
+now processing file: arch/x86/kernel/x86_init.c
+non-popular functions: 4
+popular functions: 2
+npp_bb: 4
+now processing file: arch/x86/kernel/kvmclock.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/kernel/traps.c
+non-popular functions: 19
+popular functions: 8
+npp_bb: 122
+now processing file: arch/x86/include/asm/mmu_context.h
+now processing file: arch/x86/include/asm/realmode.h
+now processing file: arch/x86/include/asm/rwsem.h
+now processing file: arch/x86/include/asm/debugreg.h
+now processing file: arch/x86/kernel/ptrace.c
+non-popular functions: 33
+popular functions: 2
+npp_bb: 233
+now processing file: arch/x86/mm/tlb.c
+non-popular functions: 6
+popular functions: 14
+npp_bb: 71
+now processing file: arch/x86/platform/efi/quirks.c
+non-popular functions: 11
+popular functions: 1
+npp_bb: 85
+now processing file: arch/x86/include/asm/pgtable_64.h
+now processing file: arch/x86/events/intel/core.c
+non-popular functions: 72
+popular functions: 1
+npp_bb: 451
+now processing file: arch/x86/mm/ioremap.c
+non-popular functions: 14
+popular functions: 10
+npp_bb: 93
+now processing file: arch/x86/crypto/twofish_avx_glue.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/include/asm/barrier.h
+now processing file: arch/x86/crypto/camellia_aesni_avx_glue.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/kernel/apic/hw_nmi.c
+non-popular functions: 3
+popular functions: 0
+npp_bb: 5
+now processing file: arch/x86/kernel/tsc_msr.c
+non-popular functions: 1
+popular functions: 1
+npp_bb: 18
+now processing file: arch/x86/entry/vsyscall/vsyscall_gtod.c
+non-popular functions: 1
+popular functions: 1
+npp_bb: 3
+now processing file: arch/x86/include/asm/ipi.h
+now processing file: arch/x86/crypto/sha512_ssse3_glue.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/crypto/camellia_glue.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/kernel/cpu/rdrand.c
+non-popular functions: 1
+popular functions: 1
+npp_bb: 5
+now processing file: arch/x86/xen/grant-table.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/kernel/cpu/vmware.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/kernel/pci-iommu_table.c
+non-popular functions: 0
+popular functions: 3
+npp_bb: 5
+now processing file: arch/x86/include/asm/msr.h
+now processing file: arch/x86/kernel/apic/msi.c
+non-popular functions: 12
+popular functions: 7
+npp_bb: 26
+now processing file: arch/x86/kernel/bootflag.c
+non-popular functions: 4
+popular functions: 1
+npp_bb: 20
+now processing file: arch/x86/kernel/ftrace.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/oprofile/op_model_amd.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/kernel/cpuid.c
+non-popular functions: 4
+popular functions: 2
+npp_bb: 18
+now processing file: arch/x86/include/asm/jump_label.h
+now processing file: arch/x86/include/asm/page_types.h
+now processing file: arch/x86/include/asm/percpu.h
+now processing file: arch/x86/kernel/mpparse.c
+non-popular functions: 21
+popular functions: 8
+npp_bb: 182
+now processing file: arch/x86/mm/kaslr.c
+non-popular functions: 1
+popular functions: 5
+npp_bb: 12
+now processing file: arch/x86/include/asm/paravirt.h
+now processing file: arch/x86/crypto/twofish_glue_3way.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/kernel/process_64.c
+non-popular functions: 5
+popular functions: 12
+npp_bb: 60
+now processing file: arch/x86/lib/csum-wrappers_64.c
+non-popular functions: 1
+popular functions: 3
+npp_bb: 15
+now processing file: arch/x86/kernel/i8237.c
+non-popular functions: 1
+popular functions: 1
+npp_bb: 3
+now processing file: arch/x86/crypto/sha1_ssse3_glue.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/include/asm/pgtable.h
+now processing file: arch/x86/include/asm/vgtod.h
+now processing file: arch/x86/include/asm/atomic.h
+now processing file: arch/x86/kernel/apic/vector.c
+non-popular functions: 16
+popular functions: 19
+npp_bb: 182
+now processing file: arch/x86/kernel/step.c
+non-popular functions: 6
+popular functions: 2
+npp_bb: 39
+now processing file: arch/x86/kernel/irq_64.c
+non-popular functions: 1
+popular functions: 1
+npp_bb: 15
+now processing file: arch/x86/include/asm/string_64.h
+now processing file: arch/x86/mm/init.c
+non-popular functions: 3
+popular functions: 22
+npp_bb: 59
+now processing file: arch/x86/kernel/fpu/core.c
+non-popular functions: 16
+popular functions: 6
+npp_bb: 64
+now processing file: arch/x86/include/asm/pkeys.h
+now processing file: arch/x86/include/asm/pci.h
+now processing file: arch/x86/include/asm/apic.h
+now processing file: arch/x86/kernel/apic/io_apic.c
+non-popular functions: 35
+popular functions: 71
+npp_bb: 334
+now processing file: arch/x86/crypto/serpent_avx_glue.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/kernel/paravirt_patch_64.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/include/asm/page.h
+now processing file: arch/x86/crypto/aes_glue.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/crypto/sha256_ssse3_glue.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/kernel/fpu/init.c
+non-popular functions: 2
+popular functions: 10
+npp_bb: 32
+now processing file: arch/x86/kernel/sys_x86_64.c
+non-popular functions: 1
+popular functions: 8
+npp_bb: 37
+now processing file: arch/x86/include/asm/trace/fpu.h
+now processing file: arch/x86/kernel/signal.c
+non-popular functions: 6
+popular functions: 11
+npp_bb: 40
+now processing file: arch/x86/kernel/hpet.c
+non-popular functions: 28
+popular functions: 34
+npp_bb: 139
+now processing file: arch/x86/kernel/ebda.c
+non-popular functions: 0
+popular functions: 1
+npp_bb: 3
+now processing file: arch/x86/mm/hugetlbpage.c
+non-popular functions: 2
+popular functions: 4
+npp_bb: 26
+now processing file: arch/x86/pci/irq.c
+non-popular functions: 52
+popular functions: 1
+npp_bb: 258
+now processing file: arch/x86/mm/mm_internal.h
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/kernel/rtc.c
+non-popular functions: 2
+popular functions: 5
+npp_bb: 23
+now processing file: arch/x86/include/asm/segment.h
+now processing file: arch/x86/include/asm/ptrace.h
+now processing file: arch/x86/events/intel/bts.c
+non-popular functions: 18
+popular functions: 1
+npp_bb: 143
+now processing file: arch/x86/events/amd/ibs.c
+non-popular functions: 32
+popular functions: 5
+npp_bb: 176
+now processing file: arch/x86/include/asm/irq_regs.h
+now processing file: arch/x86/kernel/probe_roms.c
+non-popular functions: 6
+popular functions: 3
+npp_bb: 34
+now processing file: arch/x86/include/asm/hypervisor.h
+now processing file: arch/x86/include/asm/io_apic.h
+now processing file: arch/x86/kernel/quirks.c
+non-popular functions: 21
+popular functions: 1
+npp_bb: 94
+now processing file: arch/x86/kernel/idt.c
+non-popular functions: 2
+popular functions: 9
+npp_bb: 8
+now processing file: arch/x86/kernel/topology.c
+non-popular functions: 2
+popular functions: 2
+npp_bb: 8
+now processing file: arch/x86/oprofile/nmi_int.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/lib/delay.c
+non-popular functions: 4
+popular functions: 6
+npp_bb: 13
+now processing file: arch/x86/kernel/cpu/scattered.c
+non-popular functions: 1
+popular functions: 1
+npp_bb: 8
+now processing file: arch/x86/include/asm/pci_x86.h
+now processing file: arch/x86/include/asm/uaccess_64.h
+now processing file: arch/x86/xen/enlighten_pv.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/kernel/pci-nommu.c
+non-popular functions: 4
+popular functions: 2
+npp_bb: 13
+now processing file: arch/x86/kernel/irq.c
+non-popular functions: 9
+popular functions: 3
+npp_bb: 120
+now processing file: arch/x86/mm/pkeys.c
+non-popular functions: 6
+popular functions: 1
+npp_bb: 38
+now processing file: arch/x86/kernel/kvm.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/kernel/tsc_sync.c
+non-popular functions: 5
+popular functions: 2
+npp_bb: 68
+now processing file: arch/x86/mm/cpu_entry_area.c
+non-popular functions: 0
+popular functions: 5
+npp_bb: 11
+now processing file: arch/x86/events/intel/pt.c
+non-popular functions: 51
+popular functions: 1
+npp_bb: 297
+now processing file: arch/x86/include/asm/word-at-a-time.h
+now processing file: arch/x86/kernel/smpboot.c
+non-popular functions: 38
+popular functions: 15
+npp_bb: 275
+now processing file: arch/x86/include/asm/setup.h
+now processing file: arch/x86/include/asm/irqflags.h
+now processing file: arch/x86/include/asm/qspinlock.h
+now processing file: arch/x86/lib/cpu.c
+non-popular functions: 0
+popular functions: 3
+npp_bb: 1
+now processing file: arch/x86/include/asm/tlb.h
+now processing file: arch/x86/mm/fault.c
+non-popular functions: 9
+popular functions: 23
+npp_bb: 208
+now processing file: arch/x86/kernel/apic/x2apic_cluster.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/kernel/kprobes/core.c
+non-popular functions: 34
+popular functions: 2
+npp_bb: 185
+now processing file: arch/x86/kernel/apic/ipi.c
+non-popular functions: 4
+popular functions: 1
+npp_bb: 15
+now processing file: arch/x86/xen/platform-pci-unplug.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/events/amd/core.c
+non-popular functions: 17
+popular functions: 8
+npp_bb: 111
+now processing file: arch/x86/entry/common.c
+non-popular functions: 6
+popular functions: 4
+npp_bb: 49
+now processing file: arch/x86/pci/init.c
+non-popular functions: 0
+popular functions: 1
+npp_bb: 2
+now processing file: arch/x86/mm/physaddr.c
+non-popular functions: 0
+popular functions: 1
+npp_bb: 2
+now processing file: arch/x86/kernel/cpu/microcode/core.c
+non-popular functions: 28
+popular functions: 3
+npp_bb: 150
+now processing file: arch/x86/net/bpf_jit_comp.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/lib/usercopy_64.c
+non-popular functions: 6
+popular functions: 1
+npp_bb: 29
+now processing file: arch/x86/crypto/blowfish_glue.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/kernel/reboot.c
+non-popular functions: 25
+popular functions: 1
+npp_bb: 90
+now processing file: arch/x86/xen/enlighten_hvm.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/include/asm/fpu/internal.h
+now processing file: arch/x86/include/asm/page_64.h
+now processing file: arch/x86/include/asm/uaccess.h
+now processing file: arch/x86/include/asm/dmi.h
+now processing file: arch/x86/kernel/acpi/boot.c
+non-popular functions: 24
+popular functions: 32
+npp_bb: 178
+now processing file: arch/x86/kernel/process.c
+non-popular functions: 16
+popular functions: 15
+npp_bb: 111
+now processing file: arch/x86/crypto/camellia_aesni_avx2_glue.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/kernel/apic/apic.c
+non-popular functions: 42
+popular functions: 36
+npp_bb: 302
+now processing file: arch/x86/events/core.c
+non-popular functions: 80
+popular functions: 4
+npp_bb: 578
+now processing file: arch/x86/kernel/io_delay.c
+non-popular functions: 2
+popular functions: 2
+npp_bb: 17
+now processing file: arch/x86/kernel/paravirt-spinlocks.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/pci/acpi.c
+non-popular functions: 7
+popular functions: 8
+npp_bb: 44
+now processing file: arch/x86/include/asm/trace/exceptions.h
+now processing file: arch/x86/mm/mmio-mod.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/crypto/poly1305_glue.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/kernel/sysfb.c
+non-popular functions: 0
+popular functions: 1
+npp_bb: 5
+now processing file: arch/x86/pci/common.c
+non-popular functions: 14
+popular functions: 15
+npp_bb: 111
+now processing file: arch/x86/kernel/apic/apic_flat_64.c
+non-popular functions: 6
+popular functions: 10
+npp_bb: 22
+now processing file: arch/x86/include/asm/cpu_entry_area.h
+now processing file: arch/x86/kernel/jump_label.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/crypto/ghash-clmulni-intel_glue.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/pci/amd_bus.c
+non-popular functions: 3
+popular functions: 3
+npp_bb: 70
+now processing file: arch/x86/include/asm/hugetlb.h
+now processing file: arch/x86/crypto/chacha20_glue.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/include/asm/pgtable_types.h
+now processing file: arch/x86/kernel/i8259.c
+non-popular functions: 12
+popular functions: 8
+npp_bb: 29
+now processing file: arch/x86/mm/pgtable.c
+non-popular functions: 9
+popular functions: 20
+npp_bb: 60
+now processing file: arch/x86/events/msr.c
+non-popular functions: 6
+popular functions: 6
+npp_bb: 37
+now processing file: arch/x86/kernel/unwind_orc.c
+non-popular functions: 11
+popular functions: 4
+npp_bb: 109
+now processing file: arch/x86/include/asm/checksum_64.h
+now processing file: arch/x86/include/asm/acpi.h
+now processing file: arch/x86/kernel/tsc.c
+non-popular functions: 13
+popular functions: 25
+npp_bb: 136
+now processing file: arch/x86/crypto/serpent_avx2_glue.c
+non-popular functions: 0
+popular functions: 0
+npp_bb: 0
+now processing file: arch/x86/include/asm/current.h
+now processing file: arch/x86/include/asm/switch_to.h
+total non-popular functions: 1528
+total popular functions: 968
+****************
+total npp_bb = 11028

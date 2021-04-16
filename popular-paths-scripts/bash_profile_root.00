@@ -1,0 +1,17 @@
+echo "my bash_profile_root started..."
+sleep 30
+echo "list of login shells running:"
+echo $(ps aux | grep -w '[-]sh' | wc -l)
+ps aux | grep -w '[-]sh'
+echo "pid of our current login shell:"
+echo $$
+
+if [ $(ps aux | grep -w '[-]sh' | head -n 1| tail -1 | awk '{print $1}') = $$ ]
+then
+    echo "start running the LinuxKit containers..."
+    /root/linuxkit-script
+    echo "my bash_profile_root finished."
+    echo "ready to halt LinuxKit VM."
+    poweroff
+fi
+
